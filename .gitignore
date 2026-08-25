@@ -1,0 +1,5 @@
+# Machine-local run state and intermediates
+state/
+automation-spotter/.work/
+node_modules/
+.DS_Store
