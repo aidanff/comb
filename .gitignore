@@ -1,5 +1,13 @@
-# Machine-local run state and intermediates
+# Run state — contains the hashing salt and raw transcript path keys
+# (project dir names encode client paths), so it must never be committed.
 state/
-automation-spotter/.work/
+
+# Derived motif output is regenerated on every run.
+automation-spotter/.work/*
+# ...but the action skeletons ARE committed. They are audit-verified to contain
+# no client data (see test/projection.test.mjs), and they are the durable corpus:
+# they survive transcript pruning, machine changes, and are shareable with the team.
+!automation-spotter/.work/skeletons.jsonl
+
 node_modules/
 .DS_Store

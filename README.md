@@ -29,4 +29,12 @@ a mechanical assertion:
 That test is the security control. No model ever sees raw transcript data — the skill's
 inputs are the projected motifs only.
 
+### The corpus is committed
+
+`automation-spotter/.work/skeletons.jsonl` is checked in. It is safe by construction —
+every token in it is a member of the closed vocabulary, and session/project identifiers
+are salted hashes whose salt lives only in the gitignored `state/`. Committing it makes
+the corpus durable: it survives transcript pruning by Claude Code, machine changes, and
+can be pooled across the team. Motif output is regenerated on each run and stays ignored.
+
 Design: [`docs/superpowers/specs/2026-08-25-automation-spotter-design.md`](./docs/superpowers/specs/2026-08-25-automation-spotter-design.md)
