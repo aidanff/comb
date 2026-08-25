@@ -114,7 +114,7 @@ Consumes skeletons, emits ranked motifs. No model involvement.
 Overlapping n-grams are collapsed to the longest form meeting the threshold to avoid
 flooding the table with sub-motifs.
 
-### Stage 3 — `SKILL.md`
+### Stage 3 — `.claude/skills/automation-spotter/SKILL.md`
 
 The agent reads **only** `motifs.json`. Its job is interpretation, not extraction:
 name each motif, propose a concrete tool, classify it (hook / skill / script / MCP),
@@ -162,10 +162,13 @@ a populated ranked table immediately. Subsequent runs are incremental top-ups.
 
 ```
 RnD/
+  .claude/skills/automation-spotter/
+    SKILL.md              # registered as a project-level skill
   automation-spotter/
     project.mjs
     motifs.mjs
-    SKILL.md
+    vocabulary.mjs
+    test/
   candidates.md
   state/processed.json
   docs/superpowers/specs/2026-08-25-automation-spotter-design.md
