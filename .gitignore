@@ -1,4 +1,4 @@
-# Run state — contains the hashing salt and raw transcript path keys
+# Run state — contains the team key and raw transcript path keys
 # (project dir names encode client paths), so it must never be committed.
 state/
 

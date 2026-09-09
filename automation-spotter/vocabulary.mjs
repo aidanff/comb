@@ -2,8 +2,9 @@
  * The projection vocabulary — the single source of truth for every token the
  * projector is allowed to emit.
  *
- * INVARIANT: the projector never copies bytes from a transcript into its output.
- * Input is used ONLY to *select* a constant from the tables below. Anything
+ * INVARIANT: the projector never copies bytes from a transcript into a token.
+ * Input is used ONLY to *select* a constant from the tables below. The record
+ * timestamp is the one field carried through, for elapsed-time measurement. Anything
  * unrecognized selects a fallback constant. This makes the set of possible
  * outputs finite and enumerable, which `test/projection.test.mjs` asserts
  * mechanically against the real corpus.
@@ -57,7 +58,7 @@ export const BARE_TOOLS = new Set([
 export const FILE_TOOLS = new Set(['Read', 'Edit', 'Write', 'NotebookEdit', 'MultiEdit']);
 
 // Skill names known to be generic (public marketplaces / superpowers / official).
-// Client marketplace skills (e.g. ies-marketplace's `wind-ar-master-refresh`)
+// Client marketplace skills (e.g. an `acme-marketplace` skill named `acme-ledger-refresh`)
 // encode client business domain in the NAME, so they collapse to a constant.
 export const GENERIC_SKILLS = new Set([
   'brainstorming', 'writing-plans', 'executing-plans', 'test-driven-development',

@@ -10,12 +10,16 @@
  *   - CYCLE   an (A B)+ run repeating within a single session. Trial-and-error.
  *   - RITUAL  an n-gram recurring across multiple distinct sessions.
  *
- * Usage: bun automation-spotter/motifs.mjs [--in FILE] [--out FILE]
- *                                          [--min-sessions N] [--min-cycles N]
+ * Usage: bun motifs.mjs [--workspace DIR] [--in FILE] [--out FILE]
+ *                       [--min-sessions N] [--min-cycles N]
+ *
+ * Runs under Bun or Node (>= 20). Paths default to the workspace
+ * (--workspace, else $SPOTTER_WORKSPACE, else cwd), like project.mjs.
  */
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
-import { join, dirname } from 'node:path';
+import { join, dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { isLowSignal } from './vocabulary.mjs';
 
@@ -193,15 +197,16 @@ function parseArgs(argv) {
     else if (argv[i] === '--out') a.out = argv[++i];
     else if (argv[i] === '--min-sessions') a.minSessions = Number(argv[++i]);
     else if (argv[i] === '--min-cycles') a.minCycles = Number(argv[++i]);
+    else if (argv[i] === '--workspace') a.workspace = argv[++i];
   }
   return a;
 }
 
 function main() {
   const args = parseArgs(process.argv.slice(2));
-  const repoRoot = join(dirname(new URL(import.meta.url).pathname), '..');
-  const inPath = args.in ?? join(repoRoot, 'automation-spotter', '.work', 'skeletons.jsonl');
-  const outPath = args.out ?? join(repoRoot, 'automation-spotter', '.work', 'motifs.json');
+  const workspace = resolve(args.workspace ?? process.env.SPOTTER_WORKSPACE ?? process.cwd());
+  const inPath = args.in ?? join(workspace, 'automation-spotter', '.work', 'skeletons.jsonl');
+  const outPath = args.out ?? join(workspace, 'automation-spotter', '.work', 'motifs.json');
 
   if (!existsSync(inPath)) {
     console.error(`no skeletons at ${inPath} — run project.mjs first`);
@@ -219,4 +224,5 @@ function main() {
   console.error(`motifs -> ${outPath}`);
 }
 
-if (import.meta.main) main();
+const isMain = process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+if (isMain) main();

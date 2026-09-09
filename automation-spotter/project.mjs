@@ -10,12 +10,24 @@
  * is ever copied into the output. Unrecognized input selects a fallback
  * constant, so the projector fails closed on anything it has not seen before.
  *
+ * One field is carried through verbatim: the record timestamp, which stage 2 needs
+ * to measure elapsed time. It is the only transcript value that reaches the output.
+ *
  * Usage:
- *   bun automation-spotter/project.mjs [--out FILE] [--state FILE] [--all] [--projects DIR]
+ *   bun project.mjs [--workspace DIR] [--out FILE] [--state FILE] [--team-key HEX] [--all] [--projects DIR]
+ *
+ * Runs under Bun or Node (>= 20). Paths default to the WORKSPACE, which is
+ * --workspace, else $SPOTTER_WORKSPACE, else the current directory. The
+ * workspace is the checkout that holds candidates.md and the committed corpus.
+ * Session and project IDs are hashes of transcript directory names mixed with a
+ * secret TEAM KEY. The key keeps the IDs unguessable and, when every teammate uses
+ * the same key, identical across machines so skeletons can be pooled. It comes from
+ * $SPOTTER_TEAM_KEY (or --team-key); otherwise a per-machine key is generated.
  */
 
 import { readdirSync, readFileSync, writeFileSync, existsSync, mkdirSync, statSync } from 'node:fs';
-import { join, dirname, basename, extname } from 'node:path';
+import { join, dirname, basename, extname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { homedir } from 'node:os';
 import { createHash, randomBytes } from 'node:crypto';
 import {
@@ -84,7 +96,7 @@ export function projectFile(toolName, input) {
   return FILE_EXTS.has(ext) ? `${toolName}(${ext})` : `${toolName}(.other)`;
 }
 
-/** Skill names can encode client domain (e.g. `wind-ar-master-refresh`), so allowlist them. */
+/** Skill names can encode client domain (e.g. `acme-ledger-refresh`), so allowlist them. */
 export function projectSkill(input) {
   const raw = input?.skill;
   if (typeof raw !== 'string') return 'Skill(other)';
@@ -193,34 +205,73 @@ function parseArgs(argv) {
     else if (argv[i] === '--out') a.out = argv[++i];
     else if (argv[i] === '--state') a.state = argv[++i];
     else if (argv[i] === '--projects') a.projects = argv[++i];
+    else if (argv[i] === '--workspace') a.workspace = argv[++i];
+    else if (argv[i] === '--team-key') a.teamKey = argv[++i];
   }
   return a;
 }
 
-function loadState(path) {
-  if (!existsSync(path)) return { salt: randomBytes(16).toString('hex'), files: {} };
-  try {
-    const s = JSON.parse(readFileSync(path, 'utf8'));
-    if (!s.salt) s.salt = randomBytes(16).toString('hex');
-    if (!s.files) s.files = {};
-    return s;
-  } catch {
-    return { salt: randomBytes(16).toString('hex'), files: {} };
-  }
+/** Resolve the workspace: --workspace, else $SPOTTER_WORKSPACE, else cwd. */
+export function resolveWorkspace(args, env = process.env) {
+  return resolve(args.workspace ?? env.SPOTTER_WORKSPACE ?? process.cwd());
 }
 
-const hashId = (salt, value) => createHash('sha256').update(salt).update(value).digest('hex').slice(0, 12);
+/**
+ * Load run state. A team key supplied via --team-key / $SPOTTER_TEAM_KEY wins over
+ * the stored one, but switching keys silently would fragment session and project
+ * IDs, so a mismatch is refused unless --all rebuilds the corpus from scratch.
+ * State files written before the rename stored the key under `salt`; that field is
+ * still read and migrated.
+ */
+export function loadState(path, { teamKey, all = false } = {}) {
+  let s = { teamKey: null, files: {} };
+  if (existsSync(path)) {
+    try { s = JSON.parse(readFileSync(path, 'utf8')); } catch { s = { teamKey: null, files: {} }; }
+    if (!s.files) s.files = {};
+    if (!s.teamKey && s.salt) { s.teamKey = s.salt; delete s.salt; }
+  }
+  if (teamKey) {
+    if (s.teamKey && s.teamKey !== teamKey) {
+      if (!all) throw new Error(`team key differs from the one in ${path}; re-run with --all to rebuild under the new key`);
+      s.files = {};
+    }
+    s.teamKey = teamKey;
+  }
+  if (!s.teamKey) s.teamKey = randomBytes(16).toString('hex');
+  if (all) s.files = {};
+  return s;
+}
+
+const hashId = (teamKey, value) => createHash('sha256').update(teamKey).update(value).digest('hex').slice(0, 12);
 
 function main() {
   const args = parseArgs(process.argv.slice(2));
   const root = args.projects ?? join(homedir(), '.claude', 'projects');
-  const repoRoot = join(dirname(new URL(import.meta.url).pathname), '..');
-  const statePath = args.state ?? join(repoRoot, 'state', 'processed.json');
-  const outPath = args.out ?? join(repoRoot, 'automation-spotter', '.work', 'skeletons.jsonl');
+  const workspace = resolveWorkspace(args);
+  const statePath = args.state ?? join(workspace, 'state', 'processed.json');
+  const outPath = args.out ?? join(workspace, 'automation-spotter', '.work', 'skeletons.jsonl');
 
-  const state = loadState(statePath);
-  // Self-exclusion: never mine our own project directory.
-  const selfDir = repoRoot.replace(/\//g, '-');
+  let state;
+  try {
+    state = loadState(statePath, { teamKey: args.teamKey ?? process.env.SPOTTER_TEAM_KEY, all: args.all });
+  } catch (e) {
+    console.error(e.message);
+    process.exit(2);
+  }
+  // Self-exclusion: never mine sessions run inside the workspace or any of its
+  // subdirectories (they discuss this tool). Claude Code names a project dir by
+  // replacing '/' with '-' in the cwd, so a subdirectory shares the prefix.
+  const selfDir = workspace.replace(/\//g, '-');
+  const isSelf = (name) => name === selfDir || name.startsWith(`${selfDir}-`);
+
+  // The state file holds the team key and keys watermarks by raw transcript path,
+  // which encodes client directory names. It must stay out of git; warn if the
+  // workspace does not ignore it.
+  const gi = join(workspace, '.gitignore');
+  const ignoresState = existsSync(gi) && /^state\/?\s*$/m.test(readFileSync(gi, 'utf8'));
+  if (existsSync(join(workspace, '.git')) && !ignoresState) {
+    console.error(`warning: ${gi} does not ignore state/ ; state/processed.json contains the team key and transcript paths and must not be committed`);
+  }
 
   const out = [];
   let filesProcessed = 0;
@@ -228,9 +279,9 @@ function main() {
 
   const projectDirs = readdirSync(root, { withFileTypes: true }).filter((d) => d.isDirectory());
   for (const dir of projectDirs) {
-    if (dir.name === selfDir || dir.name.endsWith('-dev-RnD')) { filesSkipped++; continue; }
+    if (isSelf(dir.name)) { filesSkipped++; continue; }
     const dirPath = join(root, dir.name);
-    const projectId = hashId(state.salt, dir.name);
+    const projectId = hashId(state.teamKey, dir.name);
 
     let files;
     try { files = readdirSync(dirPath).filter((f) => f.endsWith('.jsonl')); } catch { continue; }
@@ -245,8 +296,10 @@ function main() {
       let lines;
       try { lines = readFileSync(full, 'utf8').split('\n'); } catch { continue; }
 
-      const startLine = prior?.lines ?? 0;
-      const sessionId = hashId(state.salt, file);
+      // A file shorter than its watermark was pruned or rewritten; re-project it
+      // from the top rather than silently emitting nothing.
+      const startLine = prior && prior.lines <= lines.length ? prior.lines : 0;
+      const sessionId = hashId(state.teamKey, file);
       const { steps, lastUuid, linesSeen } = projectLines(lines, { sessionId, projectId, startLine });
 
       out.push(...steps);
@@ -268,4 +321,6 @@ function main() {
   console.error(`skeletons -> ${outPath}`);
 }
 
-if (import.meta.main) main();
+// Bun and Node >= 20: run main() only when invoked directly, not when imported by tests.
+const isMain = process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+if (isMain) main();

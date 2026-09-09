@@ -36,6 +36,9 @@ bun automation-spotter/motifs.mjs       # skeletons -> ranked motifs
 
 Add `--all` to `project.mjs` to rebuild from scratch, ignoring watermarks. Useful after
 changing the projection vocabulary, since old skeletons were built with the old tables.
+Run from the repo root: paths resolve against the current directory. `SPOTTER_TEAM_KEY`
+should be set to the team key so pooled skeletons hash consistently; a changed key
+is refused unless `--all` is passed.
 
 ### 2. Read the motifs
 

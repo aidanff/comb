@@ -1,4 +1,5 @@
-import { test, expect, describe } from 'bun:test';
+import { test, describe } from 'node:test';
+import assert from 'node:assert/strict';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { homedir } from 'node:os';
@@ -6,74 +7,74 @@ import { projectBash, projectFile, projectSkill, projectTask, projectMcp, projec
 import { VOCABULARY } from '../vocabulary.mjs';
 
 describe('projectBash — match-and-emit-a-constant', () => {
-  test('recognizes a plain verb', () => {
-    expect(projectBash('pytest -k foo')).toBe('Bash(pytest)');
+  test('recognizes a plain verb', { timeout: 120000 }, () => {
+    assert.equal(projectBash('pytest -k foo'), 'Bash(pytest)');
   });
   test('strips env assignments', () => {
-    expect(projectBash('AWS_PROFILE=acme-prod aws s3 sync x y')).toBe('Bash(aws)');
+    assert.equal(projectBash('AWS_PROFILE=acme-prod aws s3 sync x y'), 'Bash(aws)');
   });
   test('strips sudo', () => {
-    expect(projectBash('sudo docker ps')).toBe('Bash(docker)');
+    assert.equal(projectBash('sudo docker ps'), 'Bash(docker)');
   });
   test('skips cd scaffolding and takes the payload', () => {
-    expect(projectBash('cd infra && terraform apply -var-file=acme-prod.tfvars')).toBe('Bash(terraform)');
+    assert.equal(projectBash('cd infra && terraform apply -var-file=acme-prod.tfvars'), 'Bash(terraform)');
   });
   test('takes the first pipeline stage, not the pager', () => {
-    expect(projectBash('pytest tests/ | head -50')).toBe('Bash(pytest)');
+    assert.equal(projectBash('pytest tests/ | head -50'), 'Bash(pytest)');
   });
   test('path-like commands fail closed', () => {
-    expect(projectBash('./scripts/acme_ledger_sync.sh --client acme')).toBe('Bash(other)');
-    expect(projectBash('/usr/local/bin/acmectl deploy')).toBe('Bash(other)');
+    assert.equal(projectBash('./scripts/acme_ledger_sync.sh --client acme'), 'Bash(other)');
+    assert.equal(projectBash('/usr/local/bin/acmectl deploy'), 'Bash(other)');
   });
   test('unknown verbs fail closed', () => {
-    expect(projectBash('acmectl reconcile --tenant northwind')).toBe('Bash(other)');
+    assert.equal(projectBash('acmectl reconcile --tenant northwind'), 'Bash(other)');
   });
   test('pure scaffolding is marked as noise', () => {
-    expect(projectBash('cd /Users/aidan/clients/Acme')).toBe('Bash(noise)');
+    assert.equal(projectBash('cd /Users/<name>/clients/Acme'), 'Bash(noise)');
   });
   test('empty / non-string input is safe', () => {
-    expect(projectBash('')).toBe('Bash(other)');
-    expect(projectBash(undefined)).toBe('Bash(other)');
-    expect(projectBash(null)).toBe('Bash(other)');
+    assert.equal(projectBash(''), 'Bash(other)');
+    assert.equal(projectBash(undefined), 'Bash(other)');
+    assert.equal(projectBash(null), 'Bash(other)');
   });
 });
 
 describe('projectFile — extension only', () => {
   test('known extension survives, path does not', () => {
-    expect(projectFile('Edit', { file_path: '/Users/aidan/clients/Acme/src/acme_recon.py' })).toBe('Edit(.py)');
+    assert.equal(projectFile('Edit', { file_path: '/Users/<name>/clients/Acme/src/acme_recon.py' }), 'Edit(.py)');
   });
   test('unknown extension fails closed', () => {
-    expect(projectFile('Read', { file_path: '/x/y/tenant.acmeconf' })).toBe('Read(.other)');
+    assert.equal(projectFile('Read', { file_path: '/x/y/tenant.acmeconf' }), 'Read(.other)');
   });
   test('missing path is safe', () => {
-    expect(projectFile('Write', {})).toBe('Write(.none)');
-    expect(projectFile('Write', undefined)).toBe('Write(.none)');
+    assert.equal(projectFile('Write', {}), 'Write(.none)');
+    assert.equal(projectFile('Write', undefined), 'Write(.none)');
   });
 });
 
 describe('projectSkill — client marketplace names collapse', () => {
   test('generic skills survive', () => {
-    expect(projectSkill({ skill: 'superpowers:brainstorming' })).toBe('Skill(brainstorming)');
+    assert.equal(projectSkill({ skill: 'superpowers:brainstorming' }), 'Skill(brainstorming)');
   });
   test('client-domain skill names never surface', () => {
-    // ies-marketplace ships these; the NAME encodes the client business line.
-    expect(projectSkill({ skill: 'wind-ar-master-refresh' })).toBe('Skill(other)');
-    expect(projectSkill({ skill: 'ies:payroll-to-billing' })).toBe('Skill(other)');
+    // A client marketplace ships these; the NAME encodes the client business line.
+    assert.equal(projectSkill({ skill: 'acme-ledger-refresh' }), 'Skill(other)');
+    assert.equal(projectSkill({ skill: 'acme:payroll-to-billing' }), 'Skill(other)');
   });
 });
 
 describe('projectTask / projectMcp', () => {
   test('known agent types survive', () => {
-    expect(projectTask({ subagent_type: 'Explore' })).toBe('Task(Explore)');
+    assert.equal(projectTask({ subagent_type: 'Explore' }), 'Task(Explore)');
   });
   test('unknown agent types collapse', () => {
-    expect(projectTask({ subagent_type: 'acme-ledger-auditor' })).toBe('Task(other)');
+    assert.equal(projectTask({ subagent_type: 'acme-ledger-auditor' }), 'Task(other)');
   });
   test('vendor mcp servers are recognized', () => {
-    expect(projectMcp('mcp__harvest__log_time')).toBe('Mcp(harvest)');
+    assert.equal(projectMcp('mcp__harvest__log_time'), 'Mcp(harvest)');
   });
   test('unknown mcp servers collapse', () => {
-    expect(projectMcp('mcp__acme_internal__fetch_ledger')).toBe('Mcp(other)');
+    assert.equal(projectMcp('mcp__acme_internal__fetch_ledger'), 'Mcp(other)');
   });
 });
 
@@ -87,7 +88,7 @@ describe('projectLines — record triage and robustness', () => {
       mk({ type: 'file-history-snapshot', snapshot: { '/clients/Acme/x.py': 'secret' } }),
     ];
     const { steps } = projectLines(lines, { sessionId: 's', projectId: 'p' });
-    expect(steps).toEqual([]);
+    assert.deepEqual(steps, []);
   });
 
   test('tolerates a torn trailing line', () => {
@@ -96,7 +97,7 @@ describe('projectLines — record triage and robustness', () => {
       '{"type":"assistant","message":{"content":[{"type":"tool_u',
     ];
     const { steps } = projectLines(lines, { sessionId: 's', projectId: 'p' });
-    expect(steps.map((s) => s.step)).toEqual(['Bash(git)']);
+    assert.deepEqual(steps.map((s) => s.step), ['Bash(git)']);
   });
 
   test('drops thinking and text blocks', () => {
@@ -109,7 +110,7 @@ describe('projectLines — record triage and robustness', () => {
       ] },
     })];
     const { steps } = projectLines(lines, { sessionId: 's', projectId: 'p' });
-    expect(steps.map((s) => s.step)).toEqual(['Edit(.py)']);
+    assert.deepEqual(steps.map((s) => s.step), ['Edit(.py)']);
   });
 
   test('counts human turns but not tool_result deliveries', () => {
@@ -118,17 +119,17 @@ describe('projectLines — record triage and robustness', () => {
       mk({ type: 'user', message: { content: [{ type: 'tool_result', content: 'acme rows: 1423' }] } }),
     ];
     const { steps } = projectLines(lines, { sessionId: 's', projectId: 'p' });
-    expect(steps.map((s) => s.step)).toEqual(['User']);
+    assert.deepEqual(steps.map((s) => s.step), ['User']);
   });
 });
 
 describe('NO-BYTE-FLOW: adversarial inputs never surface', () => {
-  const SECRETS = ['Acme', 'acme', 'northwind', 'wind-ar', 'cutoff', 'invoice', 'ledger', 'prod'];
+  const SECRETS = ['Acme', 'acme', 'northwind', 'acme-ledger', 'cutoff', 'invoice', 'ledger', 'prod'];
   const hostile = [
     { name: 'Bash', input: { command: 'acmectl sync --tenant northwind --ledger prod' } },
     { name: 'Bash', input: { command: './scripts/acme_invoice_cutoff.sh' } },
-    { name: 'Edit', input: { file_path: '/Users/aidan/clients/Acme/acme_ledger.acmeconf' } },
-    { name: 'Skill', input: { skill: 'wind-ar-master-refresh' } },
+    { name: 'Edit', input: { file_path: '/Users/<name>/clients/Acme/acme_ledger.acmeconf' } },
+    { name: 'Skill', input: { skill: 'acme-ledger-refresh' } },
     { name: 'Task', input: { subagent_type: 'acme-ledger-auditor' } },
     { name: 'mcp__acme_prod__ledger', input: { q: 'invoice' } },
     { name: 'AcmeCustomTool', input: { anything: 'northwind' } },
@@ -138,14 +139,14 @@ describe('NO-BYTE-FLOW: adversarial inputs never surface', () => {
     for (const h of hostile) {
       const token = projectToolUse(h.name, h.input);
       for (const secret of SECRETS) {
-        expect(token.toLowerCase()).not.toContain(secret.toLowerCase());
+        assert.ok(!(token.toLowerCase()).includes(secret.toLowerCase()));
       }
     }
   });
 
   test('every projected token is a member of the closed vocabulary', () => {
     for (const h of hostile) {
-      expect(VOCABULARY.has(projectToolUse(h.name, h.input))).toBe(true);
+      assert.equal(VOCABULARY.has(projectToolUse(h.name, h.input)), true);
     }
   });
 });
@@ -178,7 +179,51 @@ describe('AUDIT — vocabulary closure over the real corpus', () => {
     }
 
     console.log(`  audited ${tokens} tokens across ${dirs.length} project dirs`);
-    expect([...violations]).toEqual([]);
-    expect(tokens).toBeGreaterThan(0);
-  }, 120000);
+    assert.deepEqual([...violations], []);
+    assert.ok((tokens) > 0);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Run state: team-key handling and watermark reset.
+// ---------------------------------------------------------------------------
+import { loadState } from '../project.mjs';
+import { mkdtempSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+
+describe('loadState — team key', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'spotter-state-'));
+  const path = join(dir, 'processed.json');
+
+  test('generates a team key when none is stored or supplied', () => {
+    const s = loadState(join(dir, 'missing.json'));
+    assert.equal(typeof s.teamKey, 'string');
+    assert.equal(s.teamKey.length, 32);
+  });
+  test('adopts a supplied team key on a fresh state', () => {
+    const s = loadState(join(dir, 'missing2.json'), { teamKey: 'abc123' });
+    assert.equal(s.teamKey, 'abc123');
+  });
+  test('refuses a differing team key without --all, so IDs never fragment silently', () => {
+    writeFileSync(path, JSON.stringify({ teamKey: 'old', files: { 'a/b.jsonl': { lines: 3, size: 9 } } }));
+    assert.throws(() => loadState(path, { teamKey: 'new' }), /--all/);
+  });
+  test('accepts a differing team key with --all and drops stale watermarks', () => {
+    const s = loadState(path, { teamKey: 'new', all: true });
+    assert.equal(s.teamKey, 'new');
+    assert.deepEqual(s.files, {});
+  });
+  test('keeps the stored team key when the supplied one matches', () => {
+    const s = loadState(path, { teamKey: 'old' });
+    assert.equal(s.teamKey, 'old');
+    assert.equal(s.files['a/b.jsonl'].lines, 3);
+  });
+  test('migrates a pre-rename state file that stored the key as salt', () => {
+    const legacy = join(dir, 'legacy.json');
+    writeFileSync(legacy, JSON.stringify({ salt: 'oldkey', files: { 'a/b.jsonl': { lines: 1, size: 2 } } }));
+    const s = loadState(legacy);
+    assert.equal(s.teamKey, 'oldkey');
+    assert.equal(s.salt, undefined);
+    assert.equal(s.files['a/b.jsonl'].lines, 1);
+  });
 });

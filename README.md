@@ -14,6 +14,20 @@ bun test automation-spotter/          # includes the redaction audit
 ```
 
 Then run the `automation-spotter` skill to interpret the motifs and update `candidates.md`.
+The scripts run under Bun or Node 20+.
+
+Run from the repo root. This repo is the **workspace**: the scripts resolve paths from
+`--workspace DIR`, else `$SPOTTER_WORKSPACE`, else the current directory.
+
+**Team key.** Session and project IDs are hashes of transcript directory names mixed
+with a secret team key. The key keeps IDs unguessable, and when everyone uses the same
+key the same project gets the same ID on every machine, so skeletons can be pooled here.
+Set `SPOTTER_TEAM_KEY` from the shared secret store. Switching keys requires `--all`,
+which rebuilds the corpus; the scripts refuse a silent key change.
+
+The scripts and tests are mirrored into the PressW marketplace plugin at
+`plugins/toolcraft/automation-spotter/skills/automation-spotter/scripts/`. Keep the two
+in sync until this repo becomes data-only (candidates, corpus, state).
 
 ### How the redaction works
 
@@ -33,7 +47,7 @@ inputs are the projected motifs only.
 
 `automation-spotter/.work/skeletons.jsonl` is checked in. It is safe by construction —
 every token in it is a member of the closed vocabulary, and session/project identifiers
-are salted hashes whose salt lives only in the gitignored `state/`. Committing it makes
+are keyed hashes whose team key lives only in the gitignored `state/`. Committing it makes
 the corpus durable: it survives transcript pruning by Claude Code, machine changes, and
 can be pooled across the team. Motif output is regenerated on each run and stays ignored.
 
