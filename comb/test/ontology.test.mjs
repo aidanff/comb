@@ -268,3 +268,85 @@ describe('upsert — ownership', () => {
     assert.equal(o.corpus.steps, 3);
   });
 });
+
+import { render, annotate, setStatus, mergeNodes, dismissMerge, moveMotif } from '../ontology.mjs';
+
+const populated = () => {
+  const o = emptyOntology();
+  const ms = [
+    motif('M1', ['Bash(grep)', 'Bash(sed)'], { rank: 30, occurrences: 40, median: 5000, correctionRate: 0.3 }),
+    motif('M2', ['Bash(sed)', 'Bash(grep)'], { rank: 20, occurrences: 20, median: 7000 }),
+    motif('M3', ['ToolSearch', 'Mcp(linear)'], { rank: 10, occurrences: 100, median: 4000 }),
+  ];
+  const steps = [];
+  for (let s = 0; s < 3; s++) {
+    steps.push(stepAt('Bash(grep)', 0, { session: `s${s}` }), stepAt('Bash(sed)', 1, { session: `s${s}` }),
+      stepAt('ToolSearch', 10, { session: `s${s}` }), stepAt('Mcp(linear)', 11, { session: `s${s}` }));
+  }
+  upsert(o, ms, steps, '2026-09-14');
+  return o;
+};
+
+describe('render', () => {
+  test('is deterministic and contains every section in order', () => {
+    const o = populated();
+    const a = render(o); const b = render(o);
+    assert.equal(a, b);
+    const heads = ['# Automation Candidates', '## Themes', '## Candidates', '## Build order', '## Flow', '## Network', '## Similarity', '## Merge proposals', '## Since last run'];
+    let pos = -1;
+    for (const h of heads) { const i = a.indexOf(h); assert.ok(i > pos, `missing or misordered: ${h}`); pos = i; }
+  });
+  test('shows the seed for an unnamed node and the name once annotated', () => {
+    const o = populated();
+    assert.ok(render(o).includes('`Bash(grep) → Bash(sed)`'));
+    annotate(o, 'N001', { name: 'guarded batch edit' });
+    assert.ok(render(o).includes('| guarded batch edit |'));
+  });
+  test('renders a mermaid flow graph and "no window yet" on a first run', () => {
+    const md = render(populated());
+    assert.ok(md.includes('```mermaid\ngraph LR'));
+    assert.ok(md.includes('N001 -->|3| N002'));
+    assert.ok(md.includes('no window yet'));
+  });
+});
+
+describe('CLI mutations', () => {
+  test('annotate sets only the four descriptive fields and validates type', () => {
+    const o = populated();
+    annotate(o, 'N001', { name: 'x', summary: 'y', tool: 'z', type: 'skill' });
+    assert.equal(o.nodes.N001.type, 'skill');
+    assert.throws(() => annotate(o, 'N001', { type: 'rocket' }), /type/);
+    assert.throws(() => annotate(o, 'N001', { status: 'built' }), /not annotatable/);
+    annotate(o, o.nodes.N001.theme, { name: 'editing' });
+    assert.equal(o.themes[o.nodes.N001.theme].name, 'editing');
+  });
+  test('status validates its value', () => {
+    const o = populated();
+    setStatus(o, 'N001', 'built');
+    assert.equal(o.nodes.N001.status, 'built');
+    assert.throws(() => setStatus(o, 'N001', 'done'), /status/);
+    assert.throws(() => setStatus(o, 'N999', 'built'), /unknown node/);
+  });
+  test('merge moves motifs, records mergedFrom, deletes the dropped node, redirects assignments', () => {
+    const o = populated();
+    mergeNodes(o, 'N001', 'N002');
+    assert.equal(o.nodes.N002, undefined);
+    assert.deepEqual(o.nodes.N001.motifs, ['M1', 'M2', 'M3']);
+    assert.deepEqual(o.nodes.N001.mergedFrom, ['N002']);
+    assert.equal(o.assignments.M3, 'N001');
+    assert.equal(o.flow.some((e) => e.from === 'N002' || e.to === 'N002'), false);
+  });
+  test('dismiss records a sorted pair once', () => {
+    const o = populated();
+    dismissMerge(o, 'N002', 'N001'); dismissMerge(o, 'N001', 'N002');
+    assert.deepEqual(o.dismissedMerges, [['N001', 'N002']]);
+  });
+  test('move reassigns one motif', () => {
+    const o = populated();
+    moveMotif(o, 'M2', 'N002');
+    assert.equal(o.assignments.M2, 'N002');
+    assert.deepEqual(o.nodes.N001.motifs, ['M1']);
+    assert.deepEqual(o.nodes.N002.motifs, ['M2', 'M3']);
+    assert.throws(() => moveMotif(o, 'M2', 'N999'), /unknown node/);
+  });
+});
