@@ -199,3 +199,106 @@ export function runOnce({ workspace, exec = realExec, now = new Date(), commit =
   appendFileSync(join(P.logDir, `comb-${localDate(now)}.log`), line);
   return rec;
 }
+
+// ---------------------------------------------------------------------------
+// Install, inspect, remove
+// ---------------------------------------------------------------------------
+
+const readJson = (p, fallback = null) => { try { return JSON.parse(readFileSync(p, 'utf8')); } catch { return fallback; } };
+const pad2 = (n) => String(n).padStart(2, '0');
+const fmtLocal = (d) => `${localDate(d)} ${pad2(d.getHours())}:${pad2(d.getMinutes())}`;
+
+/**
+ * Write the config and plist, then (re)load the agent. `days` and `at` are the structured
+ * flags the skill produced; nothing here parses a sentence.
+ */
+export function setSchedule({ workspace, days, at, exec = realExec, env = process.env, platform = process.platform, bunPath = process.execPath, uid = process.getuid?.() ?? 501 }) {
+  if (platform !== 'darwin') throw new Error('scheduling uses launchd and works on macOS only; cron support is not built');
+  const spec = { days: parseDays(days), ...parseTime(at), label: LABEL, set: new Date().toISOString() };
+  const P = schedulePaths(workspace, env);
+  mkdirSync(dirname(P.config), { recursive: true });
+  mkdirSync(P.logDir, { recursive: true });
+  mkdirSync(P.plistDir, { recursive: true });
+  writeFileSync(P.config, `${JSON.stringify(spec, null, 2)}\n`);
+  writeFileSync(P.plist, buildPlist({
+    label: LABEL, bunPath, scriptPath: fileURLToPath(import.meta.url), workspace: resolve(workspace),
+    days: spec.days, hour: spec.hour, minute: spec.minute, logDir: P.logDir,
+  }));
+  exec('launchctl', ['bootout', `gui/${uid}/${LABEL}`]);          // ignored when nothing is loaded
+  const r = exec('launchctl', ['bootstrap', `gui/${uid}`, P.plist]);
+  if (r.status !== 0) throw new Error(`launchctl bootstrap failed: ${r.stderr.trim()}`);
+  return spec;
+}
+
+export function removeSchedule({ workspace, exec = realExec, env = process.env, uid = process.getuid?.() ?? 501 }) {
+  const P = schedulePaths(workspace, env);
+  exec('launchctl', ['bootout', `gui/${uid}/${LABEL}`]);
+  rmSync(P.plist, { force: true });
+  rmSync(P.config, { force: true });
+}
+
+export function showSchedule({ workspace, env = process.env, now = new Date() }) {
+  const P = schedulePaths(workspace, env);
+  const spec = readJson(P.config);
+  const last = readJson(P.lastRun);
+  const lines = [];
+  if (!spec) lines.push('no schedule is set');
+  else {
+    const next = nextFire(spec, now);
+    lines.push(`Schedule: ${describeDays(spec.days)} at ${pad2(spec.hour)}:${pad2(spec.minute)}`);
+    lines.push(`Agent: ${P.plist}${existsSync(P.plist) ? '' : ' (plist missing; run set again)'}`);
+    lines.push(`Next run: ${next ? fmtLocal(next) : 'none'}`);
+  }
+  if (!last) lines.push('Last run: never');
+  else {
+    lines.push(`Last run: ${last.started} exit=${last.exit} new nodes=${last.newNodes} waiting=${last.waiting} committed=${last.committed} pushed=${last.pushed}`);
+    if (last.error) lines.push(`Last error: ${last.error}`);
+  }
+  return lines.join('\n');
+}
+
+// ---------------------------------------------------------------------------
+// CLI
+// ---------------------------------------------------------------------------
+
+function parseArgs(argv) {
+  const a = { positional: [] };
+  for (let i = 0; i < argv.length; i++) {
+    const k = argv[i];
+    if (k === '--no-commit') a.noCommit = true;
+    else if (k.startsWith('--')) a[k.slice(2)] = argv[++i];
+    else a.positional.push(k);
+  }
+  return a;
+}
+
+function main() {
+  const a = parseArgs(process.argv.slice(2));
+  const workspace = resolve(a.workspace ?? process.env.COMB_WORKSPACE ?? process.cwd());
+  const [cmd] = a.positional;
+  try {
+    switch (cmd) {
+      case 'set': {
+        if (!a.days || !a.at) throw new Error('usage: set --days <daily|mon-fri|mon,wed,fri> --at HH:MM');
+        const spec = setSchedule({ workspace, days: a.days, at: a.at });
+        console.log(`comb runs ${describeDays(spec.days)} at ${pad2(spec.hour)}:${pad2(spec.minute)}.`);
+        console.log(showSchedule({ workspace }));
+        break;
+      }
+      case 'show': console.log(showSchedule({ workspace })); break;
+      case 'remove': removeSchedule({ workspace }); console.log('schedule removed'); break;
+      case 'run': {
+        const rec = runOnce({ workspace, commit: !a.noCommit });
+        console.log(JSON.stringify(rec, null, 2));
+        process.exit(rec.exit === 0 ? 0 : 1);
+        break;
+      }
+      default:
+        console.error('usage: schedule.mjs <set|show|remove|run> [--workspace DIR] [--days D] [--at HH:MM] [--no-commit]');
+        process.exit(2);
+    }
+  } catch (e) { console.error(e.message); process.exit(1); }
+}
+
+const isMain = process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+if (isMain) main();

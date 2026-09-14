@@ -158,3 +158,47 @@ describe('runOnce', () => {
     assert.match(rec.error, /push/);
   });
 });
+
+import { setSchedule, removeSchedule, showSchedule } from '../schedule.mjs';
+
+describe('setSchedule / removeSchedule / showSchedule', () => {
+  const env = (ws) => ({ COMB_LAUNCH_AGENTS_DIR: join(ws, 'agents') });
+  const ws = () => mkdtempSync(join(tmpdir(), 'comb-set-'));
+
+  test('set writes the config and plist and (re)loads the agent', () => {
+    const w = ws(); const { exec, calls } = fakeExec([]);
+    const spec = setSchedule({ workspace: w, days: 'mon-fri', at: '18:00', exec, env: env(w), platform: 'darwin', bunPath: '/bun', uid: 501 });
+    assert.deepEqual(spec.days, [1, 2, 3, 4, 5]);
+    assert.equal(spec.hour, 18);
+    assert.ok(existsSync(join(w, 'state', 'schedule.json')));
+    assert.ok(existsSync(join(w, 'agents', 'com.pressw.comb.plist')));
+    const lc = calls.filter((c) => c.startsWith('launchctl'));
+    assert.equal(lc.length, 2);
+    assert.ok(lc[0].startsWith('launchctl bootout gui/501/com.pressw.comb'));
+    assert.ok(lc[1].startsWith('launchctl bootstrap gui/501'));
+  });
+
+  test('set refuses off macOS', () => {
+    const w = ws(); const { exec } = fakeExec([]);
+    assert.throws(() => setSchedule({ workspace: w, days: 'daily', at: '07:00', exec, env: env(w), platform: 'linux' }), /launchd/);
+  });
+
+  test('remove unloads the agent and deletes both files', () => {
+    const w = ws(); const { exec, calls } = fakeExec([]);
+    setSchedule({ workspace: w, days: 'daily', at: '07:00', exec, env: env(w), platform: 'darwin', bunPath: '/bun', uid: 501 });
+    removeSchedule({ workspace: w, exec, env: env(w), uid: 501 });
+    assert.equal(existsSync(join(w, 'state', 'schedule.json')), false);
+    assert.equal(existsSync(join(w, 'agents', 'com.pressw.comb.plist')), false);
+    assert.ok(calls.filter((c) => c.startsWith('launchctl bootout')).length >= 2);
+  });
+
+  test('show reports no schedule, then the schedule with the next run', () => {
+    const w = ws(); const { exec } = fakeExec([]);
+    assert.match(showSchedule({ workspace: w, env: env(w) }), /no schedule/);
+    setSchedule({ workspace: w, days: 'mon-fri', at: '18:00', exec, env: env(w), platform: 'darwin', bunPath: '/bun', uid: 501 });
+    const s = showSchedule({ workspace: w, env: env(w), now: new Date(2026, 8, 14, 17, 0) });
+    assert.match(s, /Mon to Fri at 18:00/);
+    assert.match(s, /Next run: 2026-09-14 18:00/);
+    assert.match(s, /Last run: never/);
+  });
+});
