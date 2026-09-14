@@ -75,3 +75,86 @@ describe('schedulePaths', () => {
     assert.equal(p.label, 'com.pressw.comb');
   });
 });
+
+import { existsSync, readFileSync, mkdirSync, readdirSync } from 'node:fs';
+import { runOnce } from '../schedule.mjs';
+
+/** A scripted exec: matches on `${cmd} ${args[0]} ${args[1]}` prefixes, records every call. */
+const fakeExec = (script) => {
+  const calls = [];
+  const exec = (cmd, args) => {
+    const key = [cmd, ...args].join(' ');
+    calls.push(key);
+    for (const [prefix, res] of script) if (key.startsWith(prefix)) return typeof res === 'function' ? res() : res;
+    return { status: 0, stdout: '', stderr: '' };
+  };
+  return { exec, calls };
+};
+const ok = (stdout = '') => ({ status: 0, stdout, stderr: '' });
+const PIPE_JSON = JSON.stringify({ run: '2026-09-14', unnamedNodes: [{ id: 'N040' }, { id: 'N041' }], proposals: [], buildOrder: [], waiting: 7 });
+
+describe('runOnce', () => {
+  const ws = () => { const d = mkdtempSync(join(tmpdir(), 'comb-run-')); mkdirSync(join(d, 'state'), { recursive: true }); return d; };
+  const now = new Date(2026, 8, 14, 18, 0, 0);
+
+  test('clean tree: runs the pipeline, commits the generated files, pushes, records the run', () => {
+    let statusCalls = 0;
+    const { exec, calls } = fakeExec([
+      ['git status --porcelain', () => ok(statusCalls++ === 0 ? '' : ' M candidates.md\n')],
+      ['/bun', ok(PIPE_JSON)],
+    ]);
+    const w = ws();
+    const rec = runOnce({ workspace: w, exec, now, bunPath: '/bun' });
+    assert.equal(rec.exit, 0);
+    assert.equal(rec.newNodes, 2);
+    assert.equal(rec.waiting, 7);
+    assert.equal(rec.committed, true);
+    assert.equal(rec.pushed, true);
+    assert.ok(calls.some((c) => c.startsWith('git add')));
+    assert.ok(calls.some((c) => c.includes('git commit') && c.includes('scheduled run 2026-09-14 (2 new nodes, 7 waiting)')));
+    assert.ok(calls.some((c) => c.startsWith('git push')));
+    assert.ok(existsSync(join(w, 'state', 'last-run.json')));
+    assert.equal(JSON.parse(readFileSync(join(w, 'state', 'last-run.json'), 'utf8')).committed, true);
+    assert.ok(readdirSync(join(w, 'state', 'logs')).some((f) => f === 'comb-2026-09-14.log'));
+  });
+
+  test('dirty tree before the run: pipeline runs, nothing is committed, the log says dirty', () => {
+    const { exec, calls } = fakeExec([['git status --porcelain', ok(' M README.md\n')], ['/bun', ok(PIPE_JSON)]]);
+    const w = ws();
+    const rec = runOnce({ workspace: w, exec, now, bunPath: '/bun' });
+    assert.equal(rec.exit, 0);
+    assert.equal(rec.committed, false);
+    assert.equal(rec.pushed, false);
+    assert.equal(calls.some((c) => c.startsWith('git add') || c.startsWith('git commit') || c.startsWith('git push')), false);
+    assert.ok(readFileSync(join(w, 'state', 'logs', 'comb-2026-09-14.log'), 'utf8').includes('dirty'));
+  });
+
+  test('pipeline failure: exit code recorded, no commit', () => {
+    const { exec, calls } = fakeExec([['/bun', { status: 1, stdout: '', stderr: 'boom' }]]);
+    const rec = runOnce({ workspace: ws(), exec, now, bunPath: '/bun' });
+    assert.equal(rec.exit, 1);
+    assert.equal(rec.committed, false);
+    assert.match(rec.error, /boom/);
+    assert.equal(calls.some((c) => c.startsWith('git commit')), false);
+  });
+
+  test('commit: false skips git writes even on a clean tree', () => {
+    let n = 0;
+    const { exec, calls } = fakeExec([['git status --porcelain', () => ok(n++ === 0 ? '' : ' M x\n')], ['/bun', ok(PIPE_JSON)]]);
+    const rec = runOnce({ workspace: ws(), exec, now, bunPath: '/bun', commit: false });
+    assert.equal(rec.committed, false);
+    assert.equal(calls.some((c) => c.startsWith('git commit')), false);
+  });
+
+  test('push failure is recorded, commit stands', () => {
+    let n = 0;
+    const { exec } = fakeExec([
+      ['git status --porcelain', () => ok(n++ === 0 ? '' : ' M x\n')], ['/bun', ok(PIPE_JSON)],
+      ['git push', { status: 1, stdout: '', stderr: 'rejected' }],
+    ]);
+    const rec = runOnce({ workspace: ws(), exec, now, bunPath: '/bun' });
+    assert.equal(rec.committed, true);
+    assert.equal(rec.pushed, false);
+    assert.match(rec.error, /push/);
+  });
+});

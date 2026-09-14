@@ -135,3 +135,67 @@ export function schedulePaths(workspace, env = process.env) {
     label: LABEL,
   };
 }
+
+// ---------------------------------------------------------------------------
+// The job body
+// ---------------------------------------------------------------------------
+
+const localDate = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+
+/** Files a run regenerates. Only these are ever committed by the job. */
+export const GENERATED = ['comb/ontology.json', 'candidates.md', 'comb/.work/skeletons.jsonl'];
+
+/** Real exec: synchronous, captured output, never throws. */
+export const realExec = (cmd, args, opts = {}) => {
+  const r = spawnSync(cmd, args, { encoding: 'utf8', ...opts });
+  return { status: r.status ?? 1, stdout: r.stdout ?? '', stderr: r.error ? String(r.error) : (r.stderr ?? '') };
+};
+
+/**
+ * One scheduled run: pipeline, then commit and push the generated files if the tree was
+ * clean before the run. Writes state/last-run.json and appends to state/logs/.
+ */
+export function runOnce({ workspace, exec = realExec, now = new Date(), commit = true, bunPath = process.execPath }) {
+  const P = schedulePaths(workspace);
+  mkdirSync(P.logDir, { recursive: true });
+  const git = (...args) => exec('git', args, { cwd: workspace });
+  const rec = { started: now.toISOString(), finished: null, exit: null, newNodes: 0, waiting: 0, committed: false, pushed: false, error: null };
+  const notes = [];
+
+  const cleanBefore = git('status', '--porcelain').stdout.trim() === '';
+  if (!cleanBefore) notes.push('tree was dirty before the run; commit and push skipped');
+
+  const run = exec(bunPath, [join(workspace, 'comb', 'comb.mjs'), '--workspace', workspace], { cwd: workspace });
+  rec.exit = run.status;
+  if (run.status !== 0) rec.error = `pipeline exited ${run.status}: ${run.stderr.trim().slice(-500)}`;
+  else {
+    try {
+      const out = JSON.parse(run.stdout);
+      rec.newNodes = out.unnamedNodes?.length ?? 0;
+      rec.waiting = out.waiting ?? 0;
+    } catch { notes.push('pipeline output was not JSON'); }
+  }
+
+  if (rec.exit === 0 && cleanBefore && commit) {
+    const dirtyAfter = git('status', '--porcelain').stdout.trim() !== '';
+    if (!dirtyAfter) notes.push('no changes to commit');
+    else {
+      git('add', '--', ...GENERATED);
+      const msg = `comb: scheduled run ${localDate(now)} (${rec.newNodes} new nodes, ${rec.waiting} waiting)`;
+      const c = git('commit', '-q', '-m', msg);
+      rec.committed = c.status === 0;
+      if (!rec.committed) rec.error = `commit failed: ${c.stderr.trim()}`;
+      else {
+        const p = git('push', '-q');
+        rec.pushed = p.status === 0;
+        if (!rec.pushed) rec.error = `push failed: ${p.stderr.trim()}`;
+      }
+    }
+  }
+
+  rec.finished = new Date().toISOString();
+  writeFileSync(P.lastRun, `${JSON.stringify(rec, null, 2)}\n`);
+  const line = `${rec.started} exit=${rec.exit} new=${rec.newNodes} waiting=${rec.waiting} committed=${rec.committed} pushed=${rec.pushed}${rec.error ? ` error="${rec.error}"` : ''}${notes.length ? ` notes="${notes.join('; ')}"` : ''}\n`;
+  appendFileSync(join(P.logDir, `comb-${localDate(now)}.log`), line);
+  return rec;
+}
