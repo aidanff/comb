@@ -8,7 +8,8 @@
  *
  * Ownership: `upsert` writes machine fields only. The skill writes name, summary, tool,
  * type, and theme through `annotate`. A human writes status, merges, moves, and
- * dismissals. `upsert` never touches those fields.
+ * dismissals. `upsert` never touches those fields. The independent reviewer's proposals
+ * live in `review` and are written by review.mjs; `upsert` leaves them alone too.
  *
  * Usage:
  *   bun ontology.mjs upsert  [--workspace DIR] [--run YYYY-MM-DD]
@@ -63,6 +64,7 @@ export function emptyOntology() {
     corpus: { steps: 0, sessions: 0, projects: 0 }, runs: [],
     nodes: {}, assignments: {}, unassigned: [], motifIndex: {},
     similarity: [], flow: [], dismissedMerges: [],
+    review: null, dismissedReviews: [],
   };
 }
 
@@ -483,6 +485,21 @@ export function render(o) {
     L.push('');
   }
 
+  L.push('## Review', '');
+  if (!o.review) L.push('No review recorded. The skill runs an independent reviewer after it names new nodes.', '');
+  else {
+    L.push(`Proposals from the independent reviewer, run ${o.review.run}. Its brief is to prune candidates not worth building. Accept: \`bun comb/review.mjs accept R001\`. Dismiss: \`bun comb/review.mjs dismiss R001\`.`, '');
+    if (!o.review.proposals.length) L.push('No open proposals.', '');
+    else {
+      L.push('| ID | Kind | Node | Detail | Reason |', '|---|---|---|---|---|');
+      for (const p of o.review.proposals) {
+        const detail = p.kind === 'merge' ? `into \`${p.into}\` ${cell(label(o, p.into))}` : p.kind === 'edit' ? cell(Object.entries(p.fields).map(([k, v]) => `${k}: ${v}`).join('; ')) : 'status → rejected';
+        L.push(`| \`${p.id}\` | ${p.kind} | \`${p.node}\` ${cell(label(o, p.node))} | ${detail} | ${cell(p.reason)} |`);
+      }
+      L.push('');
+    }
+  }
+
   L.push('## Since last run', '');
   const { window, signals } = impactSignals(o);
   if (!window) L.push('no window yet', '');
@@ -535,6 +552,7 @@ export function mergeNodes(o, keep, drop) {
   delete o.nodes[drop];
   o.flow = o.flow.filter((e) => e.from !== drop && e.to !== drop);
   o.similarity = o.similarity.filter((e) => e.a !== drop && e.b !== drop);
+  if (o.review) o.review.proposals = o.review.proposals.filter((p) => p.node !== drop && p.into !== drop);
   return o;
 }
 

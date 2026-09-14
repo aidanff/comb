@@ -40,8 +40,10 @@ describe('comb.mjs driver', () => {
     o.nodes.N001 = { name: null, seed: ['A'], stats: { occurrences: 1 }, status: 'new', theme: null, motifs: [] };
     o.nodes.N002 = { name: 'named', seed: ['B'], stats: { occurrences: 1 }, status: 'new', theme: 'x', motifs: [] };
     o.unassigned = ['M9'];
+    o.review = { run: '2026-09-14', proposals: [{ id: 'R001', kind: 'prune', node: 'N002', reason: 'x' }] };
     const s = skillInput(o);
     assert.deepEqual(s.unnamedNodes.map((n) => n.id), ['N001']);
     assert.equal(s.waiting, 1);
+    assert.equal(s.reviewPending, 1);
   });
 });
