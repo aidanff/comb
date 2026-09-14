@@ -220,6 +220,7 @@
     "MB6EB1": "N018",
     "MB78F6": "N010",
     "MB7B0B": "N005",
+    "MB85C1": "N018",
     "MB8615": "N023",
     "MB93EC": "N006",
     "MBBD8C": "N004",
@@ -291,8 +292,8 @@
   },
   "corpus": {
     "projects": 68,
-    "sessions": 216,
-    "steps": 10428
+    "sessions": 218,
+    "steps": 10470
   },
   "dismissedMerges": [],
   "dismissedReviews": [
@@ -317,10 +318,10 @@
       "to": "N004"
     },
     {
-      "count": 85,
+      "count": 86,
       "from": "N006",
-      "medianGapMs": 14947,
-      "sessions": 36,
+      "medianGapMs": 14942,
+      "sessions": 37,
       "to": "N007"
     },
     {
@@ -577,6 +578,13 @@
     },
     {
       "count": 27,
+      "from": "N004",
+      "medianGapMs": 24977,
+      "sessions": 26,
+      "to": "N002"
+    },
+    {
+      "count": 27,
       "from": "N007",
       "medianGapMs": 0,
       "sessions": 25,
@@ -586,13 +594,6 @@
       "count": 27,
       "from": "N016",
       "medianGapMs": 0,
-      "sessions": 25,
-      "to": "N002"
-    },
-    {
-      "count": 26,
-      "from": "N004",
-      "medianGapMs": 25319,
       "sessions": 25,
       "to": "N002"
     },
@@ -731,17 +732,17 @@
     },
     {
       "count": 19,
+      "from": "N002",
+      "medianGapMs": 0,
+      "sessions": 18,
+      "to": "N004"
+    },
+    {
+      "count": 19,
       "from": "N015",
       "medianGapMs": 0,
       "sessions": 17,
       "to": "N019"
-    },
-    {
-      "count": 18,
-      "from": "N002",
-      "medianGapMs": 0,
-      "sessions": 17,
-      "to": "N004"
     },
     {
       "count": 18,
@@ -863,10 +864,10 @@
       "to": "N020"
     },
     {
-      "count": 13,
+      "count": 14,
       "from": "N018",
-      "medianGapMs": 23123,
-      "sessions": 9,
+      "medianGapMs": 23082,
+      "sessions": 10,
       "to": "N007"
     },
     {
@@ -899,10 +900,24 @@
     },
     {
       "count": 11,
+      "from": "N001",
+      "medianGapMs": 0,
+      "sessions": 10,
+      "to": "N018"
+    },
+    {
+      "count": 11,
       "from": "N005",
       "medianGapMs": 24273,
       "sessions": 11,
       "to": "N006"
+    },
+    {
+      "count": 11,
+      "from": "N007",
+      "medianGapMs": 12366,
+      "sessions": 9,
+      "to": "N018"
     },
     {
       "count": 11,
@@ -917,13 +932,6 @@
       "medianGapMs": 74763,
       "sessions": 8,
       "to": "N002"
-    },
-    {
-      "count": 10,
-      "from": "N001",
-      "medianGapMs": 0,
-      "sessions": 9,
-      "to": "N018"
     },
     {
       "count": 10,
@@ -975,18 +983,18 @@
       "to": "N006"
     },
     {
+      "count": 10,
+      "from": "N018",
+      "medianGapMs": 48189,
+      "sessions": 8,
+      "to": "N006"
+    },
+    {
       "count": 9,
       "from": "N001",
       "medianGapMs": 0,
       "sessions": 9,
       "to": "N035"
-    },
-    {
-      "count": 9,
-      "from": "N007",
-      "medianGapMs": 12366,
-      "sessions": 8,
-      "to": "N018"
     },
     {
       "count": 9,
@@ -997,17 +1005,17 @@
     },
     {
       "count": 9,
-      "from": "N018",
-      "medianGapMs": 54544,
-      "sessions": 7,
-      "to": "N006"
-    },
-    {
-      "count": 9,
       "from": "N031",
       "medianGapMs": 85228,
       "sessions": 6,
       "to": "N001"
+    },
+    {
+      "count": 9,
+      "from": "N031",
+      "medianGapMs": 7167,
+      "sessions": 9,
+      "to": "N004"
     },
     {
       "count": 9,
@@ -1029,6 +1037,13 @@
       "medianGapMs": 0,
       "sessions": 6,
       "to": "N013"
+    },
+    {
+      "count": 8,
+      "from": "N002",
+      "medianGapMs": 23379,
+      "sessions": 7,
+      "to": "N031"
     },
     {
       "count": 8,
@@ -1089,7 +1104,7 @@
     {
       "count": 8,
       "from": "N018",
-      "medianGapMs": 48609,
+      "medianGapMs": 48436,
       "sessions": 7,
       "to": "N002"
     },
@@ -1108,25 +1123,11 @@
       "to": "N011"
     },
     {
-      "count": 8,
-      "from": "N031",
-      "medianGapMs": 12513,
-      "sessions": 8,
-      "to": "N004"
-    },
-    {
       "count": 7,
       "from": "N002",
       "medianGapMs": 137287,
       "sessions": 7,
       "to": "N015"
-    },
-    {
-      "count": 7,
-      "from": "N002",
-      "medianGapMs": 22992,
-      "sessions": 6,
-      "to": "N031"
     },
     {
       "count": 7,
@@ -1292,6 +1293,13 @@
     {
       "count": 6,
       "from": "N004",
+      "medianGapMs": 43873,
+      "sessions": 5,
+      "to": "N031"
+    },
+    {
+      "count": 6,
+      "from": "N004",
       "medianGapMs": 90875,
       "sessions": 5,
       "to": "N006"
@@ -1414,13 +1422,6 @@
       "medianGapMs": 109436,
       "sessions": 5,
       "to": "N012"
-    },
-    {
-      "count": 5,
-      "from": "N004",
-      "medianGapMs": 72594,
-      "sessions": 4,
-      "to": "N031"
     },
     {
       "count": 5,
@@ -1873,6 +1874,13 @@
     {
       "count": 3,
       "from": "N021",
+      "medianGapMs": 7882,
+      "sessions": 3,
+      "to": "N031"
+    },
+    {
+      "count": 3,
+      "from": "N021",
       "medianGapMs": 0,
       "sessions": 2,
       "to": "N001"
@@ -2223,7 +2231,7 @@
     {
       "count": 2,
       "from": "N018",
-      "medianGapMs": 2101229,
+      "medianGapMs": 2098510,
       "sessions": 2,
       "to": "N005"
     },
@@ -2240,13 +2248,6 @@
       "medianGapMs": 330788,
       "sessions": 2,
       "to": "N032"
-    },
-    {
-      "count": 2,
-      "from": "N021",
-      "medianGapMs": 6457,
-      "sessions": 2,
-      "to": "N031"
     },
     {
       "count": 2,
@@ -2324,6 +2325,13 @@
       "medianGapMs": 0,
       "sessions": 2,
       "to": "N015"
+    },
+    {
+      "count": 2,
+      "from": "N031",
+      "medianGapMs": 115065,
+      "sessions": 2,
+      "to": "N021"
     },
     {
       "count": 2,
@@ -2720,7 +2728,7 @@
     {
       "count": 1,
       "from": "N018",
-      "medianGapMs": 78903,
+      "medianGapMs": 67402,
       "sessions": 1,
       "to": "N008"
     },
@@ -2940,13 +2948,6 @@
       "medianGapMs": 2779,
       "sessions": 1,
       "to": "N018"
-    },
-    {
-      "count": 1,
-      "from": "N031",
-      "medianGapMs": 142906,
-      "sessions": 1,
-      "to": "N021"
     },
     {
       "count": 1,
@@ -4896,6 +4897,15 @@
         "User"
       ]
     },
+    "MB85C1": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "ToolSearch",
+        "Mcp(fireflies)",
+        "Mcp(fireflies)"
+      ]
+    },
     "MB8615": {
       "kind": "ritual",
       "sequence": [
@@ -5513,8 +5523,8 @@
       "created": "2026-09-14",
       "history": [
         {
-          "distinctSessions": 109,
-          "occurrences": 532,
+          "distinctSessions": 110,
+          "occurrences": 533,
           "run": "2026-09-14"
         }
       ],
@@ -5557,16 +5567,16 @@
       ],
       "stats": {
         "betweenness": 0.066,
-        "buildScore": 26981953,
+        "buildScore": 26989341,
         "correctionRate": 0.054,
         "crossProject": true,
         "distinctProjects": 35,
-        "distinctSessions": 109,
-        "frictionMassMs": 25311401,
+        "distinctSessions": 110,
+        "frictionMassMs": 25318331,
         "medianElapsedMs": 11615,
-        "occurrences": 532,
+        "occurrences": 533,
         "retryDepth": 1,
-        "weightedDegree": 358
+        "weightedDegree": 359
       },
       "status": "new",
       "summary": "A request lands and the first action is fetching deferred tool schemas, 450 times across 35 projects at a 12s median. The fetch is a fixed per-session cost that precedes the real work.",
@@ -5579,8 +5589,8 @@
       "created": "2026-09-14",
       "history": [
         {
-          "distinctSessions": 96,
-          "occurrences": 908,
+          "distinctSessions": 97,
+          "occurrences": 909,
           "run": "2026-09-14"
         }
       ],
@@ -5623,16 +5633,16 @@
       ],
       "stats": {
         "betweenness": 1,
-        "buildScore": 190764108,
-        "correctionRate": 0.19,
+        "buildScore": 190769194,
+        "correctionRate": 0.189,
         "crossProject": true,
         "distinctProjects": 43,
-        "distinctSessions": 96,
-        "frictionMassMs": 95382054,
+        "distinctSessions": 97,
+        "frictionMassMs": 95384597,
         "medianElapsedMs": 47689,
-        "occurrences": 908,
+        "occurrences": 909,
         "retryDepth": 9,
-        "weightedDegree": 1039
+        "weightedDegree": 1042
       },
       "status": "new",
       "summary": "A request is answered with an unrecognized or custom command, 900 times across 43 projects, with a 19% correction rate and re-run streaks up to 9 deep. This node has the highest betweenness in the flow graph: most workflows pass through it.",
@@ -5702,8 +5712,8 @@
       "created": "2026-09-14",
       "history": [
         {
-          "distinctSessions": 102,
-          "occurrences": 1266,
+          "distinctSessions": 103,
+          "occurrences": 1267,
           "run": "2026-09-14"
         }
       ],
@@ -5762,16 +5772,16 @@
       ],
       "stats": {
         "betweenness": 0.083,
-        "buildScore": 158456615,
+        "buildScore": 158477633,
         "correctionRate": 0.117,
         "crossProject": true,
         "distinctProjects": 30,
-        "distinctSessions": 102,
-        "frictionMassMs": 146312664,
+        "distinctSessions": 103,
+        "frictionMassMs": 146332071,
         "medianElapsedMs": 8425,
-        "occurrences": 1266,
+        "occurrences": 1267,
         "retryDepth": 15,
-        "weightedDegree": 508
+        "weightedDegree": 512
       },
       "status": "new",
       "summary": "Consecutive Linear MCP calls drive ticket creation and edits one API call at a time, 1266 times across 30 projects, with streaks up to 15 calls and a 12% correction rate. Ticket content is then reworked by hand.",
@@ -5828,7 +5838,7 @@
       "history": [
         {
           "distinctSessions": 82,
-          "occurrences": 841,
+          "occurrences": 836,
           "run": "2026-09-14"
         }
       ],
@@ -5877,16 +5887,16 @@
       ],
       "stats": {
         "betweenness": 0.161,
-        "buildScore": 53501691,
-        "correctionRate": 0.095,
+        "buildScore": 52883876,
+        "correctionRate": 0.096,
         "crossProject": true,
         "distinctProjects": 40,
         "distinctSessions": 82,
-        "frictionMassMs": 46082421,
+        "frictionMassMs": 45550281,
         "medianElapsedMs": 17956,
-        "occurrences": 841,
+        "occurrences": 836,
         "retryDepth": 13,
-        "weightedDegree": 542
+        "weightedDegree": 544
       },
       "status": "new",
       "summary": "Hand-written Python fed through stdin for data inspection and munging, 780 times across 36 projects with re-run streaks up to 12 deep. Each request routinely costs several one-off scripts.",
@@ -5899,8 +5909,8 @@
       "created": "2026-09-14",
       "history": [
         {
-          "distinctSessions": 60,
-          "occurrences": 413,
+          "distinctSessions": 61,
+          "occurrences": 416,
           "run": "2026-09-14"
         }
       ],
@@ -5928,16 +5938,16 @@
       ],
       "stats": {
         "betweenness": 0.457,
-        "buildScore": 5499693,
-        "correctionRate": 0.066,
+        "buildScore": 5484192,
+        "correctionRate": 0.065,
         "crossProject": true,
         "distinctProjects": 31,
-        "distinctSessions": 60,
-        "frictionMassMs": 3774669,
-        "medianElapsedMs": 6690,
-        "occurrences": 413,
+        "distinctSessions": 61,
+        "frictionMassMs": 3764030,
+        "medianElapsedMs": 6403,
+        "occurrences": 416,
         "retryDepth": 11,
-        "weightedDegree": 916
+        "weightedDegree": 920
       },
       "status": "new",
       "summary": "grep to locate, sed to rewrite in place, grep again to verify, 413 times across 31 projects with streaks up to 11 edits. The verification is manual and sed fails silently on a miss.",
@@ -6387,8 +6397,8 @@
       "created": "2026-09-14",
       "history": [
         {
-          "distinctSessions": 25,
-          "occurrences": 167,
+          "distinctSessions": 26,
+          "occurrences": 189,
           "run": "2026-09-14"
         }
       ],
@@ -6397,7 +6407,8 @@
         "M1C32D",
         "M3BE62",
         "M3FE02",
-        "MB6EB1"
+        "MB6EB1",
+        "MB85C1"
       ],
       "name": "fireflies transcript loops",
       "seed": [
@@ -6405,16 +6416,16 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 973838,
-        "correctionRate": 0.042,
+        "buildScore": 1137905,
+        "correctionRate": 0.047,
         "crossProject": true,
         "distinctProjects": 14,
-        "distinctSessions": 25,
-        "frictionMassMs": 973838,
-        "medianElapsedMs": 4695,
-        "occurrences": 167,
+        "distinctSessions": 26,
+        "frictionMassMs": 1137905,
+        "medianElapsedMs": 4624,
+        "occurrences": 189,
         "retryDepth": 8,
-        "weightedDegree": 100
+        "weightedDegree": 105
       },
       "status": "new",
       "summary": "Consecutive Fireflies MCP calls pull meeting data one call at a time, 167 times across 14 projects with streaks up to 8. Same per-item shape as the Box and Linear loops.",
@@ -6515,8 +6526,8 @@
       "created": "2026-09-14",
       "history": [
         {
-          "distinctSessions": 29,
-          "occurrences": 57,
+          "distinctSessions": 30,
+          "occurrences": 58,
           "run": "2026-09-14"
         }
       ],
@@ -6533,14 +6544,14 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 10462718,
-        "correctionRate": 0.263,
+        "buildScore": 10347896,
+        "correctionRate": 0.258,
         "crossProject": true,
         "distinctProjects": 16,
-        "distinctSessions": 29,
-        "frictionMassMs": 10462718,
+        "distinctSessions": 30,
+        "frictionMassMs": 10347896,
         "medianElapsedMs": 212936,
-        "occurrences": 57,
+        "occurrences": 58,
         "retryDepth": 1,
         "weightedDegree": 24
       },
@@ -6829,8 +6840,8 @@
       "created": "2026-09-14",
       "history": [
         {
-          "distinctSessions": 14,
-          "occurrences": 125,
+          "distinctSessions": 15,
+          "occurrences": 128,
           "run": "2026-09-14"
         }
       ],
@@ -6844,16 +6855,16 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 356375,
-        "correctionRate": 0.088,
+        "buildScore": 333952,
+        "correctionRate": 0.094,
         "crossProject": true,
         "distinctProjects": 3,
-        "distinctSessions": 14,
-        "frictionMassMs": 356375,
-        "medianElapsedMs": 2851,
-        "occurrences": 125,
+        "distinctSessions": 15,
+        "frictionMassMs": 333952,
+        "medianElapsedMs": 2609,
+        "occurrences": 128,
         "retryDepth": 18,
-        "weightedDegree": 58
+        "weightedDegree": 61
       },
       "status": "new",
       "summary": "Consecutive Harvest MCP calls log time one entry at a time, 125 times across 3 projects with streaks up to 18 calls. Bulk time tracking done per entry.",
@@ -7136,7 +7147,7 @@
   "runs": [
     {
       "run": "2026-09-14",
-      "sessions": 216
+      "sessions": 218
     }
   ],
   "similarity": [
@@ -7144,6 +7155,11 @@
       "a": "N005",
       "b": "N008",
       "weight": 0.6
+    },
+    {
+      "a": "N013",
+      "b": "N018",
+      "weight": 0.429
     },
     {
       "a": "N001",
@@ -7226,6 +7242,11 @@
       "weight": 0.4
     },
     {
+      "a": "N004",
+      "b": "N018",
+      "weight": 0.385
+    },
+    {
       "a": "N009",
       "b": "N014",
       "weight": 0.333
@@ -7343,11 +7364,6 @@
     {
       "a": "N017",
       "b": "N037",
-      "weight": 0.333
-    },
-    {
-      "a": "N018",
-      "b": "N035",
       "weight": 0.333
     },
     {
@@ -7442,11 +7458,6 @@
     },
     {
       "a": "N004",
-      "b": "N018",
-      "weight": 0.308
-    },
-    {
-      "a": "N004",
       "b": "N019",
       "weight": 0.308
     },
@@ -7482,11 +7493,6 @@
     },
     {
       "a": "N013",
-      "b": "N018",
-      "weight": 0.286
-    },
-    {
-      "a": "N013",
       "b": "N035",
       "weight": 0.286
     },
@@ -7498,6 +7504,11 @@
     {
       "a": "N016",
       "b": "N020",
+      "weight": 0.286
+    },
+    {
+      "a": "N018",
+      "b": "N035",
       "weight": 0.286
     },
     {
@@ -7568,6 +7579,11 @@
     {
       "a": "N001",
       "b": "N013",
+      "weight": 0.231
+    },
+    {
+      "a": "N001",
+      "b": "N018",
       "weight": 0.231
     },
     {
@@ -8002,11 +8018,6 @@
     },
     {
       "a": "N001",
-      "b": "N018",
-      "weight": 0.154
-    },
-    {
-      "a": "N001",
       "b": "N019",
       "weight": 0.154
     },
@@ -8043,6 +8054,11 @@
     {
       "a": "N003",
       "b": "N013",
+      "weight": 0.143
+    },
+    {
+      "a": "N003",
+      "b": "N018",
       "weight": 0.143
     },
     {
@@ -8122,12 +8138,22 @@
     },
     {
       "a": "N008",
+      "b": "N018",
+      "weight": 0.143
+    },
+    {
+      "a": "N008",
       "b": "N020",
       "weight": 0.143
     },
     {
       "a": "N010",
       "b": "N013",
+      "weight": 0.143
+    },
+    {
+      "a": "N010",
+      "b": "N018",
       "weight": 0.143
     },
     {
@@ -8138,6 +8164,11 @@
     {
       "a": "N011",
       "b": "N013",
+      "weight": 0.143
+    },
+    {
+      "a": "N011",
+      "b": "N018",
       "weight": 0.143
     },
     {
@@ -8148,6 +8179,11 @@
     {
       "a": "N012",
       "b": "N013",
+      "weight": 0.143
+    },
+    {
+      "a": "N012",
+      "b": "N018",
       "weight": 0.143
     },
     {
@@ -8192,7 +8228,42 @@
     },
     {
       "a": "N015",
+      "b": "N018",
+      "weight": 0.143
+    },
+    {
+      "a": "N015",
       "b": "N020",
+      "weight": 0.143
+    },
+    {
+      "a": "N018",
+      "b": "N021",
+      "weight": 0.143
+    },
+    {
+      "a": "N018",
+      "b": "N024",
+      "weight": 0.143
+    },
+    {
+      "a": "N018",
+      "b": "N025",
+      "weight": 0.143
+    },
+    {
+      "a": "N018",
+      "b": "N030",
+      "weight": 0.143
+    },
+    {
+      "a": "N018",
+      "b": "N032",
+      "weight": 0.143
+    },
+    {
+      "a": "N018",
+      "b": "N036",
       "weight": 0.143
     },
     {
@@ -8307,11 +8378,21 @@
     },
     {
       "a": "N005",
+      "b": "N018",
+      "weight": 0.111
+    },
+    {
+      "a": "N005",
       "b": "N020",
       "weight": 0.111
     },
     {
       "a": "N013",
+      "b": "N020",
+      "weight": 0.111
+    },
+    {
+      "a": "N018",
       "b": "N020",
       "weight": 0.111
     },
@@ -8501,6 +8582,11 @@
       "weight": 0.059
     },
     {
+      "a": "N002",
+      "b": "N018",
+      "weight": 0.059
+    },
+    {
       "a": "N004",
       "b": "N005",
       "weight": 0.059
@@ -8553,6 +8639,11 @@
     {
       "a": "N006",
       "b": "N013",
+      "weight": 0.04
+    },
+    {
+      "a": "N006",
+      "b": "N018",
       "weight": 0.04
     }
   ],
