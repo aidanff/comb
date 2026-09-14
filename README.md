@@ -1,54 +1,100 @@
-# RnD
+# comb
 
-Internal R&D for PressW MSP-division developer tooling.
+comb reads past Claude Code sessions and builds a network of automation candidates for
+the PressW MSP division. Each node is a recurring workflow. Each edge is a measured
+relation between two workflows. The team uses the network to pick the next internal tool
+to build, and to check whether a built tool removed the friction it targeted.
 
-## automation-spotter
+No model reads a transcript. See "Redaction".
 
-Mines past Claude Code sessions for recurring action patterns and maintains a ranked list
-of automation candidates in [`candidates.md`](./candidates.md).
+## Run it
 
 ```sh
-bun automation-spotter/project.mjs    # transcripts -> redacted action skeletons
-bun automation-spotter/motifs.mjs     # skeletons  -> ranked motifs
-bun test automation-spotter/          # includes the redaction audit
+bun comb/comb.mjs            # project, mine, update the ontology, render candidates.md
+bun comb/comb.mjs --all      # rebuild the corpus after a vocabulary change
+bun test comb/               # unit tests and the redaction audit
 ```
 
-Then run the `automation-spotter` skill to interpret the motifs and update `candidates.md`.
-The scripts run under Bun or Node 20+.
+Then run the `comb` skill. It names new nodes and themes and reports the build order.
 
-Run from the repo root. This repo is the **workspace**: the scripts resolve paths from
-`--workspace DIR`, else `$SPOTTER_WORKSPACE`, else the current directory.
+Run from the repo root. Set `COMB_TEAM_KEY` from the shared secret store before the first
+run. The key makes session and project IDs identical on every machine, so the team can
+pool one corpus. A changed key needs `--all`.
 
-**Team key.** Session and project IDs are hashes of transcript directory names mixed
-with a secret team key. The key keeps IDs unguessable, and when everyone uses the same
-key the same project gets the same ID on every machine, so skeletons can be pooled here.
-Set `SPOTTER_TEAM_KEY` from the shared secret store. Switching keys requires `--all`,
-which rebuilds the corpus; the scripts refuse a silent key change.
+## Pipeline
 
-The scripts and tests are mirrored into the PressW marketplace plugin at
-`plugins/toolcraft/automation-spotter/skills/automation-spotter/scripts/`. Keep the two
-in sync until this repo becomes data-only (candidates, corpus, state).
+| Stage | File | Reads | Writes | Model? |
+|---|---|---|---|---|
+| 1. Projector | `comb/project.mjs` | `~/.claude/projects/*/*.jsonl` | `comb/.work/skeletons.jsonl` | No |
+| 2. Miner | `comb/motifs.mjs` | skeletons | `comb/.work/motifs.json` | No |
+| 3. Ontology | `comb/ontology.mjs` | motifs, skeletons, `comb/ontology.json` | `comb/ontology.json`, `candidates.md` | No |
+| 4. Skill | `.claude/skills/comb/SKILL.md` | the driver's output | node names and prose, through the CLI | Yes |
 
-### How the redaction works
+Stage 1 is the trust boundary. It is the only stage that opens a transcript.
 
-The projector **never copies bytes** from a transcript into its output. Transcript
-content is used only to *select* a constant from the tables in `vocabulary.mjs`; anything
-unrecognized selects a fallback constant. The set of strings the projector can emit is
-therefore finite and enumerable (currently 525), which turns "did we leak anything?" into
-a mechanical assertion:
+The projector reads the top-level session files only. It skips the nested subagent and
+workflow transcripts on purpose. comb measures operator friction, not delegated work.
 
-> `test/projection.test.mjs` runs the projector over the entire real transcript corpus and
-> asserts every emitted token is a member of the closed vocabulary.
+## Files
 
-That test is the security control. No model ever sees raw transcript data — the skill's
-inputs are the projected motifs only.
+| File | Committed | Role |
+|---|---|---|
+| `comb/ontology.json` | Yes | The source of truth: nodes, edges, themes, assignments, history |
+| `candidates.md` | Yes | Rendered from the ontology on every run. Do not edit it by hand |
+| `comb/.work/skeletons.jsonl` | Yes | The redacted corpus. Safe by construction |
+| `comb/.work/motifs.json` | No | Regenerated each run |
+| `state/processed.json` | No | The team key, watermarks, and excluded directories |
 
-### The corpus is committed
+## The ontology
 
-`automation-spotter/.work/skeletons.jsonl` is checked in. It is safe by construction —
-every token in it is a member of the closed vocabulary, and session/project identifiers
-are keyed hashes whose team key lives only in the gitignored `state/`. Committing it makes
-the corpus durable: it survives transcript pruning by Claude Code, machine changes, and
-can be pooled across the team. Motif output is regenerated on each run and stays ignored.
+A **motif** is a short action sequence that the miner found in two or more sessions, or a
+loop inside one session. A **node** is a group of motifs with a similarity score of 0.7 or
+more. A **theme** is a group of nodes with a score of 0.3 or more.
 
-Design: [`docs/superpowers/specs/2026-08-25-automation-spotter-design.md`](./docs/superpowers/specs/2026-08-25-automation-spotter-design.md)
+Two edge types connect nodes:
+
+| Edge | Direction | Meaning |
+|---|---|---|
+| Similarity | none | The two nodes use the same tools |
+| Flow | from, to | An operator moved from one node to the other inside a session |
+
+Each node carries stats: occurrences, distinct projects, median time, correction rate,
+friction mass, and a build score. The build score ranks nodes by friction mass. Nodes that
+sit between other nodes in the flow graph score higher.
+
+Assignments are sticky. A motif joins a node once and stays there. A human moves it with
+the CLI. The network grows by deepening nodes, not by adding rows.
+
+## CLI
+
+| Command | Who runs it | Effect |
+|---|---|---|
+| `bun comb/ontology.mjs annotate N001 --name .. --summary .. --tool .. --type ..` | the skill | Set the descriptive fields |
+| `bun comb/ontology.mjs annotate T01 --name ..` | the skill | Name a theme |
+| `bun comb/ontology.mjs status N001 built` | a human | `new`, `building`, `built`, or `rejected` |
+| `bun comb/ontology.mjs merge N001 N004` | a human | Fold N004 into N001 |
+| `bun comb/ontology.mjs merge --dismiss N002 N005` | a human | Stop proposing this merge |
+| `bun comb/ontology.mjs move M015DF N007` | a human | Reassign one motif |
+
+Every command rewrites `ontology.json` with sorted keys and re-renders `candidates.md`.
+
+## Redaction
+
+The projector never copies a byte from a transcript. It uses transcript content only to
+select a constant from the tables in `comb/vocabulary.mjs`. Unknown input selects a
+fallback constant. The set of strings the projector can emit is finite.
+
+`comb/test/projection.test.mjs` runs the projector over the whole local transcript corpus
+and asserts that every emitted token is in that set. That test is the security control.
+Run it after every change to `vocabulary.mjs`.
+
+Two more rules protect the output:
+
+- `Distinct projects` is a count. No engagement name reaches an output file.
+- A node seen in one project gets a mechanical description. The skill writes free prose
+  only for nodes seen in two or more projects.
+
+## Docs
+
+- Design: [`docs/superpowers/specs/2026-09-14-comb-ontology-design.md`](docs/superpowers/specs/2026-09-14-comb-ontology-design.md)
+- History: the two `automation-spotter` specs in the same directory
