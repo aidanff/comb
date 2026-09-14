@@ -8,12 +8,16 @@
  * Nothing here parses English.
  *
  * Usage:
- *   bun comb/schedule.mjs set --days <daily|mon-fri|mon,wed,fri> --at HH:MM [--workspace DIR]
+ *   bun comb/schedule.mjs set --days <daily|mon-fri|mon,wed,fri> --at HH:MM [--until YYYY-MM-DD] [--workspace DIR]
  *   bun comb/schedule.mjs show   [--workspace DIR]
  *   bun comb/schedule.mjs remove [--workspace DIR]
  *   bun comb/schedule.mjs run    [--workspace DIR] [--no-commit]
  *
  * Per-machine state lives in state/ (gitignored): schedule.json, last-run.json, logs/.
+ *
+ * `--until` gives the schedule a last day (inclusive). launchd has no end date, so the job
+ * enforces it: after the run on the last day it removes its own agent, and a stale agent
+ * that fires later removes itself without running the pipeline.
  */
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync, appendFileSync, rmSync } from 'node:fs';
@@ -29,6 +33,8 @@ const DAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 // ---------------------------------------------------------------------------
 // Pure functions
 // ---------------------------------------------------------------------------
+
+export const localDate = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 
 /** 'daily' | 'weekdays' | 'mon-fri' | 'mon,wed,fri' | 'sat-mon' (wraps) -> sorted-by-appearance day indexes. */
 export function parseDays(spec) {
@@ -57,11 +63,21 @@ export function parseTime(spec) {
   return { hour, minute };
 }
 
-/** The next Date at or after `now` that matches the spec. */
-export function nextFire({ days, hour, minute }, now = new Date()) {
+/** 'YYYY-MM-DD', a real calendar date. Returned as the same string. */
+export function parseUntil(spec) {
+  const str = String(spec ?? '').trim();
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(str);
+  if (!m) throw new Error(`until must be YYYY-MM-DD, got "${spec}"`);
+  const d = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+  if (localDate(d) !== str) throw new Error(`until is not a real date: "${spec}"`);
+  return str;
+}
+
+/** The next Date at or after `now` that matches the spec, or null past `until` (inclusive last day). */
+export function nextFire({ days, hour, minute, until }, now = new Date()) {
   for (let add = 0; add < 8; add++) {
     const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + add, hour, minute, 0, 0);
-    if (days.includes(d.getDay()) && d.getTime() > now.getTime()) return d;
+    if (days.includes(d.getDay()) && d.getTime() > now.getTime()) return until && localDate(d) > until ? null : d;
   }
   return null;
 }
@@ -140,8 +156,6 @@ export function schedulePaths(workspace, env = process.env) {
 // The job body
 // ---------------------------------------------------------------------------
 
-const localDate = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-
 /** Files a run regenerates. Only these are ever committed by the job. */
 export const GENERATED = ['comb/ontology.json', 'candidates.md', 'comb/.work/skeletons.jsonl'];
 
@@ -155,12 +169,28 @@ export const realExec = (cmd, args, opts = {}) => {
  * One scheduled run: pipeline, then commit and push the generated files if the tree was
  * clean before the run. Writes state/last-run.json and appends to state/logs/.
  */
-export function runOnce({ workspace, exec = realExec, now = new Date(), commit = true, bunPath = process.execPath }) {
-  const P = schedulePaths(workspace);
+export function runOnce({ workspace, exec = realExec, now = new Date(), commit = true, bunPath = process.execPath, env = process.env, uid = process.getuid?.() ?? 501 }) {
+  const P = schedulePaths(workspace, env);
   mkdirSync(P.logDir, { recursive: true });
   const git = (...args) => exec('git', args, { cwd: workspace });
-  const rec = { started: now.toISOString(), finished: null, exit: null, newNodes: 0, waiting: 0, committed: false, pushed: false, error: null };
+  const rec = { started: now.toISOString(), finished: null, exit: null, newNodes: 0, waiting: 0, committed: false, pushed: false, scheduleRemoved: false, error: null };
   const notes = [];
+  const spec = readJson(P.config);
+  const finish = () => {
+    rec.finished = new Date().toISOString();
+    writeFileSync(P.lastRun, `${JSON.stringify(rec, null, 2)}\n`);
+    const line = `${rec.started} exit=${rec.exit} new=${rec.newNodes} waiting=${rec.waiting} committed=${rec.committed} pushed=${rec.pushed}${rec.scheduleRemoved ? ' scheduleRemoved=true' : ''}${rec.error ? ` error="${rec.error}"` : ''}${notes.length ? ` notes="${notes.join('; ')}"` : ''}\n`;
+    appendFileSync(join(P.logDir, `comb-${localDate(now)}.log`), line);
+    return rec;
+  };
+
+  // A stale agent firing after the last day: clean up, run nothing.
+  if (spec?.until && localDate(now) > spec.until) {
+    removeSchedule({ workspace, exec, env, uid });
+    rec.exit = 0; rec.scheduleRemoved = true;
+    notes.push(`schedule ended ${spec.until}; agent removed without a run`);
+    return finish();
+  }
 
   const cleanBefore = git('status', '--porcelain').stdout.trim() === '';
   if (!cleanBefore) notes.push('tree was dirty before the run; commit and push skipped');
@@ -193,11 +223,14 @@ export function runOnce({ workspace, exec = realExec, now = new Date(), commit =
     }
   }
 
-  rec.finished = new Date().toISOString();
-  writeFileSync(P.lastRun, `${JSON.stringify(rec, null, 2)}\n`);
-  const line = `${rec.started} exit=${rec.exit} new=${rec.newNodes} waiting=${rec.waiting} committed=${rec.committed} pushed=${rec.pushed}${rec.error ? ` error="${rec.error}"` : ''}${notes.length ? ` notes="${notes.join('; ')}"` : ''}\n`;
-  appendFileSync(join(P.logDir, `comb-${localDate(now)}.log`), line);
-  return rec;
+  // The last scheduled run has happened: remove the agent so it never fires again.
+  if (spec?.until && nextFire(spec, now) === null) {
+    removeSchedule({ workspace, exec, env, uid });
+    rec.scheduleRemoved = true;
+    notes.push(`schedule ended ${spec.until}; agent removed after the last run`);
+  }
+
+  return finish();
 }
 
 // ---------------------------------------------------------------------------
@@ -212,9 +245,13 @@ const fmtLocal = (d) => `${localDate(d)} ${pad2(d.getHours())}:${pad2(d.getMinut
  * Write the config and plist, then (re)load the agent. `days` and `at` are the structured
  * flags the skill produced; nothing here parses a sentence.
  */
-export function setSchedule({ workspace, days, at, exec = realExec, env = process.env, platform = process.platform, bunPath = process.execPath, uid = process.getuid?.() ?? 501 }) {
+export function setSchedule({ workspace, days, at, until, exec = realExec, env = process.env, platform = process.platform, bunPath = process.execPath, uid = process.getuid?.() ?? 501, now = new Date() }) {
   if (platform !== 'darwin') throw new Error('scheduling uses launchd and works on macOS only; cron support is not built');
-  const spec = { days: parseDays(days), ...parseTime(at), label: LABEL, set: new Date().toISOString() };
+  const spec = { days: parseDays(days), ...parseTime(at), label: LABEL, set: now.toISOString() };
+  if (until !== undefined) {
+    spec.until = parseUntil(until);
+    if (spec.until < localDate(now)) throw new Error(`until ${spec.until} is already past`);
+  }
   const P = schedulePaths(workspace, env);
   mkdirSync(dirname(P.config), { recursive: true });
   mkdirSync(P.logDir, { recursive: true });
@@ -246,6 +283,7 @@ export function showSchedule({ workspace, env = process.env, now = new Date() })
   else {
     const next = nextFire(spec, now);
     lines.push(`Schedule: ${describeDays(spec.days)} at ${pad2(spec.hour)}:${pad2(spec.minute)}`);
+    if (spec.until) lines.push(`Ends: ${spec.until} (the agent removes itself after that day's run)`);
     lines.push(`Agent: ${P.plist}${existsSync(P.plist) ? '' : ' (plist missing; run set again)'}`);
     lines.push(`Next run: ${next ? fmtLocal(next) : 'none'}`);
   }
@@ -279,9 +317,9 @@ function main() {
   try {
     switch (cmd) {
       case 'set': {
-        if (!a.days || !a.at) throw new Error('usage: set --days <daily|mon-fri|mon,wed,fri> --at HH:MM');
-        const spec = setSchedule({ workspace, days: a.days, at: a.at });
-        console.log(`comb runs ${describeDays(spec.days)} at ${pad2(spec.hour)}:${pad2(spec.minute)}.`);
+        if (!a.days || !a.at) throw new Error('usage: set --days <daily|mon-fri|mon,wed,fri> --at HH:MM [--until YYYY-MM-DD]');
+        const spec = setSchedule({ workspace, days: a.days, at: a.at, until: a.until });
+        console.log(`comb runs ${describeDays(spec.days)} at ${pad2(spec.hour)}:${pad2(spec.minute)}${spec.until ? ` until ${spec.until}` : ''}.`);
         console.log(showSchedule({ workspace }));
         break;
       }
@@ -294,7 +332,7 @@ function main() {
         break;
       }
       default:
-        console.error('usage: schedule.mjs <set|show|remove|run> [--workspace DIR] [--days D] [--at HH:MM] [--no-commit]');
+        console.error('usage: schedule.mjs <set|show|remove|run> [--workspace DIR] [--days D] [--at HH:MM] [--until YYYY-MM-DD] [--no-commit]');
         process.exit(2);
     }
   } catch (e) { console.error(e.message); process.exit(1); }

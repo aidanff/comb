@@ -110,6 +110,7 @@ comb every weekday at 6pm") or use the CLI:
 
 ```sh
 bun comb/schedule.mjs set --days mon-fri --at 18:00   # install or replace the schedule
+bun comb/schedule.mjs set --days mon-fri --at 17:00 --until 2026-09-18   # ...with a last day
 bun comb/schedule.mjs show                           # days, time, last run, next run
 bun comb/schedule.mjs run --no-commit                # one run now, without git writes
 bun comb/schedule.mjs remove                         # unload and delete the schedule
@@ -119,6 +120,10 @@ A scheduled run executes `bun comb/comb.mjs`, then commits `comb/ontology.json`,
 `candidates.md`, and the corpus and pushes, but only when the tree was clean before the run.
 It runs no model. New nodes wait unnamed until the next `/comb`. Per-machine state lives in
 `state/schedule.json`, `state/last-run.json`, and `state/logs/`.
+
+`--until YYYY-MM-DD` gives the schedule a last day, inclusive. launchd has no end date, so
+the job enforces it: after the run on the last day it unloads and deletes its own agent. A
+stale agent that fires after the date removes itself without running the pipeline.
 
 ## Redaction
 

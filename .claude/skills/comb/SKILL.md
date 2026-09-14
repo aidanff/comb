@@ -141,6 +141,7 @@ generated files, and pushes. It runs no model: new nodes wait unnamed until the 
 | "when does comb run?" / "schedule status" | `bun comb/schedule.mjs show` |
 | "stop the schedule" / "don't run comb automatically" | `bun comb/schedule.mjs remove` |
 | "run it now" | `bun comb/schedule.mjs run` |
+| "run comb daily at 5pm until Friday" / "this week only" | `bun comb/schedule.mjs set --days mon-fri --at 17:00 --until 2026-09-18` |
 | "review the graph" / "what should we prune" | Steps 3 and 4 only, no pipeline run |
 | "accept R003" / "dismiss R003" | Tell the user the command: `bun comb/review.mjs accept R003`. You do not run it. |
 
@@ -150,7 +151,12 @@ Rules:
   `--at` takes 24-hour `HH:MM`. Convert "6pm" to `18:00` yourself.
 - If the sentence names no time, ask one question: "What time?" Do not guess.
 - If the sentence names no days, use `weekdays` and say so in the confirmation.
-- After `set`, repeat the CLI's confirmation to the user: the days, the time, and the next run.
+- If the sentence names an end ("until Friday", "this week only", "through the 18th"), resolve
+  it to a `YYYY-MM-DD` date yourself from today's date and pass `--until`. The last day is
+  inclusive. The agent removes itself after that day's run. Without an end the schedule
+  repeats until `remove`. Say which of the two you set.
+- After `set`, repeat the CLI's confirmation to the user: the days, the time, the end date if
+  any, and the next run.
 - On the first `set` on a machine, also run `bun comb/schedule.mjs run --no-commit` once and
   report the `exit`, `newNodes`, and `error` fields. That proves the job body works before
   launchd is trusted with it.

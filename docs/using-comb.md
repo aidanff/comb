@@ -209,6 +209,19 @@ Or say "stop the schedule" in `/comb`. The agent unloads and the schedule files 
 The schedule is per machine. A teammate who wants a schedule installs one on their own
 machine.
 
+### Give the schedule a last day
+
+Say when it should stop: "run comb daily at 5pm until Friday" or "this week only". The skill
+turns that into a date and passes `--until`.
+
+```sh
+bun comb/schedule.mjs set --days mon-fri --at 17:00 --until 2026-09-18
+```
+
+The last day is inclusive. After that day's run the agent removes itself, so nothing is left
+to clean up. `show` prints the end date while the schedule is live. A schedule without an end
+date repeats until you run `remove`.
+
 ## Rules the skill follows
 
 - It never reads a transcript.

@@ -202,3 +202,81 @@ describe('setSchedule / removeSchedule / showSchedule', () => {
     assert.match(s, /Last run: never/);
   });
 });
+
+import { parseUntil } from '../schedule.mjs';
+
+describe('--until: an end date for the schedule', () => {
+  const env = (ws) => ({ COMB_LAUNCH_AGENTS_DIR: join(ws, 'agents') });
+  const ws = () => { const d = mkdtempSync(join(tmpdir(), 'comb-until-')); mkdirSync(join(d, 'state'), { recursive: true }); return d; };
+
+  test('parseUntil accepts YYYY-MM-DD and rejects anything else', () => {
+    assert.equal(parseUntil('2026-09-18'), '2026-09-18');
+    assert.throws(() => parseUntil('18/09/2026'), /YYYY-MM-DD/);
+    assert.throws(() => parseUntil('2026-13-40'), /date/);
+    assert.throws(() => parseUntil('friday'), /YYYY-MM-DD/);
+  });
+
+  test('nextFire returns null once the next fire would fall after until', () => {
+    const spec = { days: [1, 2, 3, 4, 5], hour: 17, minute: 0, until: '2026-09-18' };
+    assert.equal(nextFire(spec, new Date(2026, 8, 14, 12, 0)).getTime(), new Date(2026, 8, 14, 17, 0).getTime());
+    assert.equal(nextFire(spec, new Date(2026, 8, 18, 12, 0)).getTime(), new Date(2026, 8, 18, 17, 0).getTime());   // Friday itself still fires
+    assert.equal(nextFire(spec, new Date(2026, 8, 18, 18, 0)), null);                                                // after Friday's run, nothing
+  });
+
+  test('set stores until, refuses a date already past, and show prints it', () => {
+    const w = ws(); const { exec } = fakeExec([]);
+    const now = new Date(2026, 8, 14, 12, 0);
+    const spec = setSchedule({ workspace: w, days: 'mon-fri', at: '17:00', until: '2026-09-18', exec, env: env(w), platform: 'darwin', bunPath: '/bun', uid: 501, now });
+    assert.equal(spec.until, '2026-09-18');
+    assert.equal(JSON.parse(readFileSync(join(w, 'state', 'schedule.json'), 'utf8')).until, '2026-09-18');
+    assert.throws(() => setSchedule({ workspace: w, days: 'daily', at: '17:00', until: '2026-09-13', exec, env: env(w), platform: 'darwin', bunPath: '/bun', uid: 501, now }), /past/);
+    const s = showSchedule({ workspace: w, env: env(w), now });
+    assert.match(s, /Ends: 2026-09-18/);
+    assert.match(s, /Next run: 2026-09-14 17:00/);
+    const later = showSchedule({ workspace: w, env: env(w), now: new Date(2026, 8, 18, 18, 0) });
+    assert.match(later, /Next run: none/);
+  });
+
+  test('runOnce on the last day runs, commits, then removes the schedule', () => {
+    const w = ws(); let n = 0;
+    const { exec, calls } = fakeExec([['git status --porcelain', () => ok(n++ === 0 ? '' : ' M x\n')], ['/bun', ok(PIPE_JSON)]]);
+    setSchedule({ workspace: w, days: 'mon-fri', at: '17:00', until: '2026-09-18', exec, env: env(w), platform: 'darwin', bunPath: '/bun', uid: 501, now: new Date(2026, 8, 14) });
+    const rec = runOnce({ workspace: w, exec, now: new Date(2026, 8, 18, 17, 0), bunPath: '/bun', env: env(w), uid: 501 });
+    assert.equal(rec.exit, 0);
+    assert.equal(rec.committed, true);
+    assert.equal(rec.scheduleRemoved, true);
+    assert.equal(existsSync(join(w, 'state', 'schedule.json')), false);
+    assert.equal(existsSync(join(w, 'agents', 'com.pressw.comb.plist')), false);
+    assert.ok(calls.filter((c) => c.startsWith('launchctl bootout')).length >= 2);
+    assert.ok(readFileSync(join(w, 'state', 'logs', 'comb-2026-09-18.log'), 'utf8').includes('schedule ended'));
+  });
+
+  test('runOnce before the last day leaves the schedule in place', () => {
+    const w = ws(); let n = 0;
+    const { exec } = fakeExec([['git status --porcelain', () => ok(n++ === 0 ? '' : ' M x\n')], ['/bun', ok(PIPE_JSON)]]);
+    setSchedule({ workspace: w, days: 'mon-fri', at: '17:00', until: '2026-09-18', exec, env: env(w), platform: 'darwin', bunPath: '/bun', uid: 501, now: new Date(2026, 8, 14) });
+    const rec = runOnce({ workspace: w, exec, now: new Date(2026, 8, 16, 17, 0), bunPath: '/bun', env: env(w), uid: 501 });
+    assert.equal(rec.scheduleRemoved, false);
+    assert.ok(existsSync(join(w, 'state', 'schedule.json')));
+  });
+
+  test('runOnce fired after until (a stale agent) removes the schedule without running the pipeline', () => {
+    const w = ws();
+    const { exec, calls } = fakeExec([['/bun', ok(PIPE_JSON)]]);
+    setSchedule({ workspace: w, days: 'mon-fri', at: '17:00', until: '2026-09-18', exec, env: env(w), platform: 'darwin', bunPath: '/bun', uid: 501, now: new Date(2026, 8, 14) });
+    const rec = runOnce({ workspace: w, exec, now: new Date(2026, 8, 21, 17, 0), bunPath: '/bun', env: env(w), uid: 501 });
+    assert.equal(rec.scheduleRemoved, true);
+    assert.equal(rec.exit, 0);
+    assert.equal(calls.some((c) => c.startsWith('/bun')), false);
+    assert.equal(existsSync(join(w, 'state', 'schedule.json')), false);
+  });
+
+  test('a schedule without until never removes itself', () => {
+    const w = ws(); let n = 0;
+    const { exec } = fakeExec([['git status --porcelain', () => ok(n++ === 0 ? '' : ' M x\n')], ['/bun', ok(PIPE_JSON)]]);
+    setSchedule({ workspace: w, days: 'daily', at: '17:00', exec, env: env(w), platform: 'darwin', bunPath: '/bun', uid: 501 });
+    const rec = runOnce({ workspace: w, exec, now: new Date(2026, 8, 18, 17, 0), bunPath: '/bun', env: env(w), uid: 501 });
+    assert.equal(rec.scheduleRemoved, false);
+    assert.ok(existsSync(join(w, 'state', 'schedule.json')));
+  });
+});
