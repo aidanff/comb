@@ -114,5 +114,6 @@ Two more rules protect the output:
 
 ## Docs
 
+- How to use the skill, the legend, and scheduling: [`docs/using-comb.md`](docs/using-comb.md)
 - Design: [`docs/superpowers/specs/2026-09-14-comb-ontology-design.md`](docs/superpowers/specs/2026-09-14-comb-ontology-design.md)
 - History: the two earlier specs in the same directory
