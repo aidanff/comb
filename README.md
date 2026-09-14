@@ -15,7 +15,8 @@ bun comb/comb.mjs --all      # rebuild the corpus after a vocabulary change
 bun test comb/               # unit tests and the redaction audit
 ```
 
-Then run the `comb` skill. It names and labels new nodes and reports the build order.
+Then run the `comb` skill. It names and labels new nodes, hands the graph to an independent
+reviewer that proposes what to prune, and reports the build order.
 
 Run from the repo root. Set `COMB_TEAM_KEY` from the shared secret store before the first
 run. The key makes session and project IDs identical on every machine, so the team can
@@ -29,8 +30,14 @@ pool one corpus. A changed key needs `--all`.
 | 2. Miner | `comb/motifs.mjs` | skeletons | `comb/.work/motifs.json` | No |
 | 3. Ontology | `comb/ontology.mjs` | motifs, skeletons, `comb/ontology.json` | `comb/ontology.json`, `candidates.md` | No |
 | 4. Skill | `.claude/skills/comb/SKILL.md` | the driver's output | node names and prose, through the CLI | Yes |
+| 5. Review | `comb/review.mjs` + `.claude/skills/comb/reviewer.md` | `review.mjs input` (from `ontology.json`) | `review` proposals in `ontology.json`, through the CLI | Yes, a second instance |
 
 Stage 1 is the trust boundary. It is the only stage that opens a transcript.
+
+Stage 5 is a fresh model instance with no memory of stage 4. Its brief is to prune: it
+proposes `prune`, `merge`, and `edit` changes with a cited reason each. `review.mjs record`
+validates the verdict and stores it. Nothing is applied until a human runs `review.mjs
+accept`. The scheduled job never runs stage 4 or 5.
 
 The projector reads the top-level session files only. It skips the nested subagent and
 workflow transcripts on purpose. comb measures operator friction, not delegated work.
@@ -76,8 +83,25 @@ the CLI. The network grows by deepening nodes, not by adding rows.
 | `bun comb/ontology.mjs merge N001 N004` | a human | Fold N004 into N001 |
 | `bun comb/ontology.mjs merge --dismiss N002 N005` | a human | Stop proposing this merge |
 | `bun comb/ontology.mjs move M015DF N007` | a human | Reassign one motif |
+| `bun comb/review.mjs input` | the skill | Print the reviewer's input: nodes, stats, edges, dismissed proposals |
+| `bun comb/review.mjs record --file verdict.json` | the skill | Validate and store the reviewer's proposals |
+| `bun comb/review.mjs accept R001` | a human | Apply one proposal: prune sets `rejected`, merge folds, edit annotates |
+| `bun comb/review.mjs dismiss R001` | a human | Drop one proposal and refuse it in every later review |
 
 Every command rewrites `ontology.json` with sorted keys and re-renders `candidates.md`.
+
+### Review proposals
+
+The validator in `review.mjs` enforces what the brief only asks for:
+
+- Only `status: new` nodes may be pruned. A node a human moved to `building`, `built`, or
+  `rejected` is off limits.
+- Edits touch `name`, `summary`, `tool`, `type`, `theme` only. On a single-project node the
+  prose fields `summary` and `tool` are refused (prose tiering).
+- One proposal per node per kind, a non-empty reason under 400 characters, a valid `type`.
+- A dismissed proposal is filtered out of every later verdict.
+
+One malformed proposal rejects the whole verdict and writes nothing.
 
 ## Schedule
 
@@ -110,10 +134,13 @@ Two more rules protect the output:
 
 - `Distinct projects` is a count. No engagement name reaches an output file.
 - A node seen in one project gets a mechanical description. The skill writes free prose
-  only for nodes seen in two or more projects.
+  only for nodes seen in two or more projects, and the reviewer may not rewrite prose there.
+- The reviewer's input is derived from `ontology.json` alone. It carries counts and node
+  ids, never motif, session, or project ids.
 
 ## Docs
 
 - How to use the skill, the legend, and scheduling: [`docs/using-comb.md`](docs/using-comb.md)
 - Design: [`docs/superpowers/specs/2026-09-14-comb-ontology-design.md`](docs/superpowers/specs/2026-09-14-comb-ontology-design.md)
+- The reviewer stage: [`docs/superpowers/specs/2026-09-14-comb-graph-review-design.md`](docs/superpowers/specs/2026-09-14-comb-graph-review-design.md)
 - History: the two earlier specs in the same directory

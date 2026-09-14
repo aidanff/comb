@@ -2,7 +2,9 @@
 /**
  * comb — one command. Runs the projector, the miner, and the ontology upsert in order,
  * then prints the skill's input as JSON on stdout: unnamed nodes, merge proposals, the
- * top of the build order, and how many motifs wait below the seed floor. Stage logs go to stderr.
+ * top of the build order, how many motifs wait below the seed floor, and how many review
+ * proposals await a human. Stage logs go to stderr. The review itself (review.mjs) runs
+ * from the skill, after naming, because it needs a model.
  *
  * Usage: bun comb/comb.mjs [--all] [--exclude DIR]... [--workspace DIR] [--projects DIR]
  *                          [--team-key HEX] [--min-sessions N] [--min-cycles N]
@@ -38,6 +40,7 @@ export function skillInput(o) {
     unnamedNodes: Object.entries(o.nodes).filter(([, n]) => !n.name)
       .map(([id, n]) => ({ id, seed: n.seed, theme: n.theme, motifs: n.motifs, stats: n.stats, class: n.class })),
     waiting: o.unassigned.length,
+    reviewPending: o.review?.proposals.length ?? 0,
     proposals: mergeProposals(o),
     buildOrder: buildOrder(o).slice(0, 5),
   };

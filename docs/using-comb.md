@@ -34,16 +34,19 @@ Read these terms before you read `candidates.md`.
 | Class | `tool`, `doc`, or `unclassified`. The machine sets it. |
 | Type | `hook`, `skill`, `script`, `mcp`, or `harness`. The skill sets it. |
 | Status | `new`, `building`, `built`, or `rejected`. A human sets it. No run changes it. |
+| Review proposal | A suggestion from the independent reviewer: prune, merge, or edit one node. IDs run `R001`, `R002`. Reset on every review. |
 | Waiting | Motifs that are too small to open a node. They join a node later or open one when they grow. |
 
 ## Run the skill
 
 1. Open Claude Code in the comb repository.
 2. Type `/comb`, or say "run comb".
-3. Wait. The skill runs the pipeline, names new nodes, and reports.
+3. Wait. The skill runs the pipeline, names new nodes, sends the graph to an independent
+   reviewer, and reports.
 
-The report lists the nodes named this run, the merge proposals, the top three of the build
-order, and the signals since the last run. Read `candidates.md` for the full table.
+The report lists the nodes named this run, the reviewer's proposals with the skill's opinion
+on each, the merge proposals, the top three of the build order, and the signals since the
+last run. Read `candidates.md` for the full table.
 
 ## Say what you want
 
@@ -54,6 +57,7 @@ The skill understands plain sentences. Use these forms.
 | "run comb" | Runs the pipeline and names new nodes |
 | "what should I automate" | Same as "run comb", then explains the top three |
 | "update the ontology" | Same as "run comb" |
+| "review the graph" / "what should we prune" | Runs the reviewer on the current graph without re-running the pipeline |
 | "run comb every weekday at 6pm" | Installs a schedule. See "Schedule comb" below. |
 | "when does comb run" | Shows the schedule and the last run |
 | "stop the schedule" | Removes the schedule |
@@ -72,6 +76,31 @@ bun comb/ontology.mjs status N004 rejected   # not worth building
 After you set a status, the next run reports the effect. A `built` node whose rate falls by
 half or more is a confirmed win. A `rejected` node whose rate rises by half or more is a
 re-open signal.
+
+## Accept or dismiss a review proposal
+
+After naming, the skill hands the whole graph to a second model instance that has seen
+nothing else. Its brief is to prune candidates that are not worth building: too small, not
+friction, not actionable, or a duplicate of a stronger node. It can also propose a merge or
+an edit to a name, summary, tool, type, or theme. Every proposal cites the numbers it relied
+on. The proposals appear under "Review" in `candidates.md`.
+
+Nothing is applied until you say so.
+
+```sh
+bun comb/review.mjs accept R001    # prune: sets the node to rejected; merge: folds it; edit: rewrites the fields
+bun comb/review.mjs dismiss R001   # drop it, and never let the reviewer propose it again
+```
+
+Dismiss is per node and kind. Dismissing a prune means "never propose pruning this node".
+Dismissing an edit means "leave this node's description alone"; later edit proposals on that
+node are filtered too. Dismissing a merge blocks that direction only.
+
+A pruned node keeps its motifs and stats. It leaves the build order. If its rate rises later,
+the "Since last run" section shows a re-open signal, the same as any rejected node.
+
+The reviewer cannot prune a node you have set to `building`, `built`, or `rejected`. Set a
+status first if you want a node protected.
 
 ## Accept or dismiss a merge
 
@@ -186,4 +215,6 @@ machine.
 - It never writes `Status`.
 - It never edits `candidates.md` or `comb/ontology.json` by hand. It uses the CLI.
 - It never applies a merge. It proposes.
+- It never applies a review proposal. The reviewer proposes, the skill records, you accept.
+- The reviewer is a fresh model instance. It sees the graph JSON and its brief, nothing else.
 - It describes a node seen in one project in mechanical terms only.
