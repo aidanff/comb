@@ -7,7 +7,7 @@ import { projectBash, projectFile, projectSkill, projectTask, projectMcp, projec
 import { VOCABULARY } from '../vocabulary.mjs';
 
 describe('projectBash — match-and-emit-a-constant', () => {
-  test('recognizes a plain verb', { timeout: 120000 }, () => {
+  test('recognizes a plain verb', () => {
     assert.equal(projectBash('pytest -k foo'), 'Bash(pytest)');
   });
   test('strips env assignments', () => {
@@ -22,9 +22,30 @@ describe('projectBash — match-and-emit-a-constant', () => {
   test('takes the first pipeline stage, not the pager', () => {
     assert.equal(projectBash('pytest tests/ | head -50'), 'Bash(pytest)');
   });
-  test('path-like commands fail closed', () => {
-    assert.equal(projectBash('./scripts/acme_ledger_sync.sh --client acme'), 'Bash(other)');
-    assert.equal(projectBash('/usr/local/bin/acmectl deploy'), 'Bash(other)');
+  test('path-like commands emit Bash(script), never the path', () => {
+    assert.equal(projectBash('./scripts/acme_ledger_sync.sh --client acme'), 'Bash(script)');
+    assert.equal(projectBash('/usr/local/bin/acmectl deploy'), 'Bash(script)');
+  });
+  test('internal script basenames emit their own constant', () => {
+    assert.equal(projectBash('scripts/validate-all.sh --all'), 'Bash(script:validate-all.sh)');
+    assert.equal(projectBash('./plugins/x/evals/run_checks.sh'), 'Bash(script:run_checks.sh)');
+  });
+  test('a client script that shares an internal basename is attributed to us, not leaked', () => {
+    assert.equal(projectBash('/clients/acme/tools/delivery.sh acme'), 'Bash(script:delivery.sh)');
+  });
+  test('runner second tokens are named', () => {
+    assert.equal(projectBash('uv run pytest -x'), 'Bash(uv:run)');
+    assert.equal(projectBash('npm test'), 'Bash(npm:test)');
+    assert.equal(projectBash('make build'), 'Bash(make:build)');
+    assert.equal(projectBash('uv sync'), 'Bash(uv)');
+  });
+  test('python shapes are named', () => {
+    assert.equal(projectBash('python3 -c "import json; print(1)"'), 'Bash(python3:-c)');
+    assert.equal(projectBash('python3 -m pytest'), 'Bash(python3:-m)');
+    assert.equal(projectBash('python3 - <<EOF\nprint(1)\nEOF'), 'Bash(python3:stdin)');
+    assert.equal(projectBash('python3 evals/check_palette.py'), 'Bash(python3:file)');
+    assert.equal(projectBash('python3'), 'Bash(python3)');
+    assert.equal(projectBash('python -c "1"'), 'Bash(python:-c)');
   });
   test('unknown verbs fail closed', () => {
     assert.equal(projectBash('acmectl reconcile --tenant northwind'), 'Bash(other)');
@@ -128,6 +149,7 @@ describe('NO-BYTE-FLOW: adversarial inputs never surface', () => {
   const hostile = [
     { name: 'Bash', input: { command: 'acmectl sync --tenant northwind --ledger prod' } },
     { name: 'Bash', input: { command: './scripts/acme_invoice_cutoff.sh' } },
+    { name: 'Bash', input: { command: '/clients/acme/tools/delivery.sh northwind' } },
     { name: 'Edit', input: { file_path: '/Users/<name>/clients/Acme/acme_ledger.acmeconf' } },
     { name: 'Skill', input: { skill: 'acme-ledger-refresh' } },
     { name: 'Task', input: { subagent_type: 'acme-ledger-auditor' } },
@@ -156,7 +178,7 @@ describe('NO-BYTE-FLOW: adversarial inputs never surface', () => {
 // real transcript corpus and assert closure over the finite vocabulary.
 // ---------------------------------------------------------------------------
 describe('AUDIT — vocabulary closure over the real corpus', () => {
-  test('every token emitted from every real transcript is in VOCABULARY', () => {
+  test('every token emitted from every real transcript is in VOCABULARY', { timeout: 120000 }, () => {
     const root = join(homedir(), '.claude', 'projects');
     let dirs = [];
     try { dirs = readdirSync(root, { withFileTypes: true }).filter((d) => d.isDirectory()); } catch { return; }
@@ -225,5 +247,43 @@ describe('loadState — team key', () => {
     assert.equal(s.teamKey, 'oldkey');
     assert.equal(s.salt, undefined);
     assert.equal(s.files['a/b.jsonl'].lines, 1);
+  });
+});
+
+import { listTranscripts } from '../project.mjs';
+import { mkdirSync } from 'node:fs';
+
+describe('listTranscripts — main chain only', () => {
+  const root = mkdtempSync(join(tmpdir(), 'comb-projects-'));
+  mkdirSync(join(root, 'proj-a', 'subagents'), { recursive: true });
+  mkdirSync(join(root, 'proj-a', 'wf_abc'), { recursive: true });
+  mkdirSync(join(root, 'proj-b'), { recursive: true });
+  writeFileSync(join(root, 'proj-a', 'sess1.jsonl'), '');
+  writeFileSync(join(root, 'proj-a', 'subagents', 'agent-1.jsonl'), '');
+  writeFileSync(join(root, 'proj-a', 'wf_abc', 'x.jsonl'), '');
+  writeFileSync(join(root, 'proj-b', 'sess2.jsonl'), '');
+
+  test('returns top-level session files only', () => {
+    const files = listTranscripts(root, { skip: () => false }).map((f) => `${f.dir}/${f.file}`).sort();
+    assert.deepEqual(files, ['proj-a/sess1.jsonl', 'proj-b/sess2.jsonl']);
+  });
+  test('applies the skip predicate to project dirs', () => {
+    const files = listTranscripts(root, { skip: (d) => d === 'proj-a' }).map((f) => f.dir);
+    assert.deepEqual(files, ['proj-b']);
+  });
+});
+
+describe('loadState — excludeDirs', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'comb-exclude-'));
+  const path = join(dir, 'processed.json');
+  test('stores excludes and unions them on later calls', () => {
+    let s = loadState(path, { exclude: ['-Users-x-dev-RnD'] });
+    assert.deepEqual(s.excludeDirs, ['-Users-x-dev-RnD']);
+    writeFileSync(path, JSON.stringify(s));
+    s = loadState(path, { exclude: ['-Users-x-other'] });
+    assert.deepEqual(s.excludeDirs, ['-Users-x-dev-RnD', '-Users-x-other']);
+  });
+  test('defaults to an empty list', () => {
+    assert.deepEqual(loadState(join(dir, 'none.json')).excludeDirs, []);
   });
 });
