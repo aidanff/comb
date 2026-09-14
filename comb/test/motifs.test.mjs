@@ -103,3 +103,39 @@ describe('analyze', () => {
     assert.equal(r.motifsFound, 3);
   });
 });
+
+describe('correction and retry signals', () => {
+  const at = (tokens, secondsList, o = {}) => tokens.map((t, i) => step(t, { ...o, ts: new Date(Date.UTC(2026, 0, 1, 0, 0, secondsList[i])).toISOString() }));
+
+  test('correctionRate counts a User step 2s or more after the motif, not a same-instant one', () => {
+    // Session a: motif then User 3s later (counts). Session b: motif then User at the same
+    // instant (does not). Session c: no User, so the pair outnumbers the 3-gram and survives
+    // collapseSubsumed.
+    const a = at(['Bash(git)', 'Bash(pytest)', 'User'], [0, 1, 4], { session: 'a' });
+    const b = at(['Bash(git)', 'Bash(pytest)', 'User'], [0, 1, 1], { session: 'b' });
+    const c = at(['Bash(git)', 'Bash(pytest)'], [0, 1], { session: 'c' });
+    const { motifs } = analyze([...a, ...b, ...c], { minSessions: 2 });
+    const m = motifs.find((x) => x.sequence.join('>') === 'Bash(git)>Bash(pytest)');
+    assert.equal(m.correctionRate, 0.333);
+  });
+
+  test('retryDepth is the longest back-to-back repeat in one session', () => {
+    const toks = ['Bash(uv)', 'Bash(uv)', 'Bash(uv)', 'Bash(uv)', 'Edit(.py)', 'Bash(uv)', 'Bash(uv)'];
+    const { motifs } = analyze(seqOf(toks, { session: 'a' }).concat(seqOf(toks, { session: 'b' })), { minSessions: 2, minCycles: 2 });
+    const m = motifs.find((x) => x.kind === 'cycle' && x.sequence.join('>') === 'Bash(uv)');
+    assert.equal(m.retryDepth, 4);
+  });
+
+  test('emits session and project id arrays', () => {
+    const a = seqOf(['Bash(git)', 'Bash(pytest)'], { session: 'a', project: 'p1' });
+    const b = seqOf(['Bash(git)', 'Bash(pytest)'], { session: 'b', project: 'p2' });
+    const { motifs } = analyze([...a, ...b], { minSessions: 2 });
+    const m = motifs.find((x) => x.sequence.join('>') === 'Bash(git)>Bash(pytest)');
+    assert.deepEqual(m.sessions.sort(), ['a', 'b']);
+    assert.deepEqual(m.projects.sort(), ['p1', 'p2']);
+  });
+
+  test('default cap is 300', () => {
+    assert.equal(analyze([], {}).thresholds.maxMotifs, 300);
+  });
+});
