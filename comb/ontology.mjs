@@ -7,13 +7,13 @@
  * history, and renders candidates.md. comb/ontology.json is the source of truth.
  *
  * Ownership: `upsert` writes machine fields only. The skill writes name, summary, tool,
- * type, and theme names through `annotate`. A human writes status, merges, moves, and
+ * type, and theme through `annotate`. A human writes status, merges, moves, and
  * dismissals. `upsert` never touches those fields.
  *
  * Usage:
  *   bun ontology.mjs upsert  [--workspace DIR] [--run YYYY-MM-DD]
  *   bun ontology.mjs render  [--workspace DIR]
- *   bun ontology.mjs annotate <N001|T01> [--name S] [--summary S] [--tool S] [--type S]
+ *   bun ontology.mjs annotate <N001> [--name S] [--summary S] [--tool S] [--type S] [--theme S]
  *   bun ontology.mjs status <N001> <new|building|built|rejected>
  *   bun ontology.mjs merge <keep> <drop>
  *   bun ontology.mjs merge --dismiss <A> <B>
@@ -26,7 +26,14 @@ import { fileURLToPath } from 'node:url';
 import { buildSequences } from './motifs.mjs';
 
 export const THRESHOLDS = {
-  JOIN: 0.7, THEME: 0.3, MERGE: 0.7, RENDER_SIM: 0.3, RENDER_FLOW_COUNT: 3, RENDER_FLOW_SESSIONS: 2,
+  JOIN: 0.5,                 // a motif joins a node, or a seed's group, at or above this
+  SEED_PROJECTS: 3,          // a motif may open a new node only with this many distinct projects
+  SEED_OCCURRENCES: 15,      // ...and this many occurrences; smaller motifs wait in `unassigned`
+  MERGE: 0.7,                // node pairs at or above this are proposed for merge
+  RENDER_SIM: 0.3,           // node-level similarity edges shown
+  RENDER_FLOW_COUNT: 5,      // flow edges shown need this many transitions
+  RENDER_FLOW_SESSIONS: 3,   // ...across this many distinct sessions
+  GRAPH_EDGES: 40,           // the Mermaid graph draws the top N flow edges by count
 };
 
 export const STATUSES = ['new', 'building', 'built', 'rejected'];
@@ -52,9 +59,9 @@ export function similarity(a, b) {
 
 export function emptyOntology() {
   return {
-    version: 1, run: null, nextNode: 1, nextTheme: 1,
+    version: 1, run: null, nextNode: 1,
     corpus: { steps: 0, sessions: 0, projects: 0 }, runs: [],
-    nodes: {}, themes: {}, assignments: {}, motifIndex: {},
+    nodes: {}, assignments: {}, unassigned: [], motifIndex: {},
     similarity: [], flow: [], dismissedMerges: [],
   };
 }
@@ -76,7 +83,6 @@ export function saveOntology(path, o) {
 }
 
 const nodeId = (n) => `N${String(n).padStart(3, '0')}`;
-const themeId = (n) => `T${String(n).padStart(2, '0')}`;
 
 /** Remember each motif's sequence so a motif that drops out of motifs.json keeps its tokens. */
 export function indexMotifs(o, motifs) {
@@ -103,7 +109,10 @@ function newNode(o, seedMotifId, runDate) {
 
 /**
  * Sticky assignment. Already-assigned motifs stay. Each new motif joins the best existing
- * node at or above JOIN; the rest form connected components at JOIN and become new nodes.
+ * node at or above JOIN. The rest are grouped by seed: the highest-ranked pending motif
+ * that clears the seed floor opens a node, and every pending motif at or above JOIN to
+ * that SEED joins it. No transitive chaining, so one node cannot swallow the corpus.
+ * Motifs below the floor that match nothing wait in `unassigned` until they grow.
  */
 export function assignMotifs(o, motifs, runDate) {
   const created = [];
@@ -130,62 +139,27 @@ export function assignMotifs(o, motifs, runDate) {
     else pending.push(m);
   }
 
-  // Connected components among the pending motifs at JOIN.
+  // Seed-anchored grouping among the pending motifs.
   const seen = new Set();
+  const clearsFloor = (m) => m.distinctProjects >= THRESHOLDS.SEED_PROJECTS && m.occurrences >= THRESHOLDS.SEED_OCCURRENCES;
+  const unassigned = [];
   for (const m of pending) {
     if (seen.has(m.id)) continue;
-    const comp = [m]; seen.add(m.id);
-    for (let i = 0; i < comp.length; i++) {
-      for (const other of pending) {
-        if (seen.has(other.id)) continue;
-        if (similarity(new Set(comp[i].sequence), new Set(other.sequence)) >= THRESHOLDS.JOIN) { comp.push(other); seen.add(other.id); }
-      }
+    if (!clearsFloor(m)) { unassigned.push(m.id); continue; }
+    seen.add(m.id);
+    const seedToks = new Set(m.sequence);
+    const group = [m];
+    for (const other of pending) {
+      if (seen.has(other.id)) continue;
+      if (similarity(seedToks, new Set(other.sequence)) >= THRESHOLDS.JOIN) { group.push(other); seen.add(other.id); }
     }
-    const id = newNode(o, m.id, runDate);   // m is the highest-ranked in its component
-    for (const c of comp) { o.assignments[c.id] = id; o.nodes[id].motifs.push(c.id); }
+    const id = newNode(o, m.id, runDate);
+    for (const g of group) { o.assignments[g.id] = id; o.nodes[id].motifs.push(g.id); }
     created.push(id);
   }
+  o.unassigned = unassigned.sort();
   for (const n of Object.values(o.nodes)) n.motifs.sort();
   return { created };
-}
-
-// ---------------------------------------------------------------------------
-// Themes
-// ---------------------------------------------------------------------------
-
-function components(ids, connected) {
-  const seen = new Set(); const out = [];
-  for (const id of ids) {
-    if (seen.has(id)) continue;
-    const comp = [id]; seen.add(id);
-    for (let i = 0; i < comp.length; i++) for (const other of ids) {
-      if (!seen.has(other) && connected(comp[i], other)) { comp.push(other); seen.add(other); }
-    }
-    out.push(comp.sort());
-  }
-  return out;
-}
-
-/** Node-level components at THEME. Names persist by largest member overlap. */
-export function computeThemes(o) {
-  const ids = Object.keys(o.nodes).sort();
-  const toks = new Map(ids.map((id) => [id, nodeTokens(o, id)]));
-  const comps = components(ids, (a, b) => similarity(toks.get(a), toks.get(b)) >= THRESHOLDS.THEME);
-
-  const old = o.themes; const next = {}; const used = new Set();
-  for (const comp of comps) {
-    let bestId = null; let bestOverlap = 0;
-    for (const [tid, t] of Object.entries(old)) {
-      if (used.has(tid)) continue;
-      const overlap = t.nodes.filter((n) => comp.includes(n)).length;
-      if (overlap > bestOverlap) { bestOverlap = overlap; bestId = tid; }
-    }
-    const tid = bestId ?? themeId(o.nextTheme++);
-    used.add(tid);
-    next[tid] = { name: old[tid]?.name ?? null, nodes: comp };
-    for (const n of comp) o.nodes[n].theme = tid;
-  }
-  o.themes = next;
 }
 
 // ---------------------------------------------------------------------------
@@ -427,7 +401,6 @@ export function upsert(o, motifs, steps, runDate) {
   indexMotifs(o, motifs);
   const { created } = assignMotifs(o, motifs, runDate);
   computeStats(o, new Map(motifs.map((m) => [m.id, m])));
-  computeThemes(o);
   computeFlow(o, sequences);
   computeSimilarityEdges(o);
   computeCentrality(o);
@@ -457,14 +430,17 @@ export function render(o) {
     '`bun comb/ontology.mjs status N001 built`. `Status` is human-owned and survives every run.', '',
     '**`Distinct projects` is a count, never engagement names.** Nodes seen in one project get a',
     'mechanical description only.', '',
-    `_Last run: ${o.run} · corpus: ${o.corpus.steps} steps / ${o.corpus.sessions} sessions / ${o.corpus.projects} project dirs · ${nodes.length} nodes · ${Object.keys(o.themes).length} themes · ${flow.length} flow edges_`, '');
+    `_Last run: ${o.run} · corpus: ${o.corpus.steps} steps / ${o.corpus.sessions} sessions / ${o.corpus.projects} project dirs · ${nodes.length} nodes · ${flow.length} flow edges · ${o.unassigned.length} motifs waiting_`, '');
 
   const totalMass = nodes.reduce((a, [, n]) => a + (n.stats.frictionMassMs ?? 0), 0) || 1;
-  L.push('## Themes', '', '| ID | Theme | Nodes | Friction share |', '|---|---|---|---|');
-  for (const [tid, t] of Object.entries(o.themes).sort()) {
-    const mass = t.nodes.reduce((a, id) => a + (o.nodes[id]?.stats.frictionMassMs ?? 0), 0);
-    L.push(`| \`${tid}\` | ${cell(t.name ?? '(unnamed)')} | ${t.nodes.length} | ${fmtPct(mass / totalMass)} |`);
+  L.push('## Themes', '', 'Labels the skill assigns per node with `annotate --theme`.', '', '| Theme | Nodes | Friction share |', '|---|---|---|');
+  const byTheme = new Map();
+  for (const [, n] of nodes) {
+    const t = n.theme ?? '(unlabeled)';
+    if (!byTheme.has(t)) byTheme.set(t, { count: 0, mass: 0 });
+    byTheme.get(t).count++; byTheme.get(t).mass += n.stats.frictionMassMs ?? 0;
   }
+  for (const [t, v] of [...byTheme.entries()].sort((a, b) => b[1].mass - a[1].mass)) L.push(`| ${cell(t)} | ${v.count} | ${fmtPct(v.mass / totalMass)} |`);
   L.push('');
 
   L.push('## Candidates', '',
@@ -473,7 +449,7 @@ export function render(o) {
   const byScore = [...nodes].sort(([ia, a], [ib, b]) => (b.stats.buildScore - a.stats.buildScore) || (ia < ib ? -1 : 1));
   for (const [id, n] of byScore) {
     const s = n.stats;
-    L.push(`| \`${id}\` | ${n.name ? cell(n.name) : seedText(n)} | \`${n.theme}\` | ${n.motifs.length} | ${s.occurrences} | ${s.distinctProjects} | ${fmtSecs(s.medianElapsedMs)} | ${fmtPct(s.correctionRate)} | ${n.class} | ${n.type ?? ''} | ${n.status} | ${cell(n.tool ?? n.summary ?? '')} |`);
+    L.push(`| \`${id}\` | ${n.name ? cell(n.name) : seedText(n)} | ${cell(n.theme ?? '')} | ${n.motifs.length} | ${s.occurrences} | ${s.distinctProjects} | ${fmtSecs(s.medianElapsedMs)} | ${fmtPct(s.correctionRate)} | ${n.class} | ${n.type ?? ''} | ${n.status} | ${cell(n.tool ?? n.summary ?? '')} |`);
   }
   L.push('');
 
@@ -487,10 +463,11 @@ export function render(o) {
   for (const e of flow) L.push(`| \`${e.from}\` ${cell(label(o, e.from))} | \`${e.to}\` ${cell(label(o, e.to))} | ${e.count} | ${e.sessions} | ${fmtSecs(e.medianGapMs)} |`);
   L.push('');
 
-  L.push('## Network', '', '```mermaid', 'graph LR');
-  const inGraph = new Set(flow.flatMap((e) => [e.from, e.to]));
+  const graphEdges = flow.slice(0, THRESHOLDS.GRAPH_EDGES);
+  L.push('## Network', '', `The top ${graphEdges.length} flow edges by count. The full list is in "Flow".`, '', '```mermaid', 'graph LR');
+  const inGraph = new Set(graphEdges.flatMap((e) => [e.from, e.to]));
   for (const id of [...inGraph].sort()) L.push(`  ${id}["${cell(label(o, id)).replace(/"/g, "'")}"]`);
-  for (const e of flow) L.push(`  ${e.from} -->|${e.count}| ${e.to}`);
+  for (const e of graphEdges) L.push(`  ${e.from} -->|${e.count}| ${e.to}`);
   L.push('```', '');
 
   L.push('## Similarity', '', `Node pairs with weighted Jaccard ≥ ${THRESHOLDS.RENDER_SIM}.`, '', '| A | B | Weight |', '|---|---|---|');
@@ -531,13 +508,10 @@ export function renderTo(workspace, o) {
 
 const requireNode = (o, id) => { if (!o.nodes[id]) throw new Error(`unknown node ${id}`); return o.nodes[id]; };
 
+export const ANNOTATABLE = ['name', 'summary', 'tool', 'type', 'theme'];
+
 export function annotate(o, id, fields) {
-  const allowedNode = ['name', 'summary', 'tool', 'type'];
-  if (o.themes[id]) {
-    for (const k of Object.keys(fields)) if (k !== 'name') throw new Error(`${k} is not annotatable on a theme`);
-    if (fields.name !== undefined) o.themes[id].name = fields.name;
-    return o;
-  }
+  const allowedNode = ANNOTATABLE;
   const node = requireNode(o, id);
   for (const k of Object.keys(fields)) if (!allowedNode.includes(k)) throw new Error(`${k} is not annotatable; use status/merge/move`);
   if (fields.type !== undefined && !TYPES.includes(fields.type)) throw new Error(`type must be one of ${TYPES.join(', ')}`);
@@ -561,7 +535,6 @@ export function mergeNodes(o, keep, drop) {
   delete o.nodes[drop];
   o.flow = o.flow.filter((e) => e.from !== drop && e.to !== drop);
   o.similarity = o.similarity.filter((e) => e.a !== drop && e.b !== drop);
-  for (const t of Object.values(o.themes)) t.nodes = t.nodes.filter((n) => n !== drop);
   return o;
 }
 
@@ -628,8 +601,8 @@ function main() {
       }
       case 'render': break;
       case 'annotate': {
-        const [id] = rest; if (!id) throw new Error('usage: annotate <id> [--name S] [--summary S] [--tool S] [--type S]');
-        const fields = {}; for (const k of ['name', 'summary', 'tool', 'type']) if (flags[k] !== undefined) fields[k] = flags[k];
+        const [id] = rest; if (!id) throw new Error('usage: annotate <id> [--name S] [--summary S] [--tool S] [--type S] [--theme S]');
+        const fields = {}; for (const k of ANNOTATABLE) if (flags[k] !== undefined) fields[k] = flags[k];
         annotate(o, id, fields); break;
       }
       case 'status': { const [id, status] = rest; setStatus(o, id, status); break; }

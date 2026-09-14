@@ -1,0 +1,9315 @@
+{
+  "assignments": {
+    "M0025D": "N001",
+    "M01317": "N007",
+    "M015DF": "N007",
+    "M01E0B": "N002",
+    "M03C90": "N017",
+    "M04631": "N004",
+    "M0617C": "N036",
+    "M063E8": "N002",
+    "M06C08": "N035",
+    "M06DC0": "N039",
+    "M073B9": "N019",
+    "M0832A": "N020",
+    "M08E6B": "N007",
+    "M0A236": "N010",
+    "M0A3F3": "N009",
+    "M0A9EB": "N002",
+    "M0AEFD": "N003",
+    "M0B063": "N015",
+    "M0B56B": "N001",
+    "M0C195": "N011",
+    "M0C1D2": "N002",
+    "M0C3A3": "N002",
+    "M0C96A": "N006",
+    "M0CB0A": "N029",
+    "M0CCB4": "N027",
+    "M0CF4B": "N004",
+    "M0D445": "N004",
+    "M0E052": "N006",
+    "M0F469": "N003",
+    "M0F498": "N007",
+    "M109FD": "N014",
+    "M1172E": "N027",
+    "M1216A": "N006",
+    "M12AE1": "N002",
+    "M13156": "N001",
+    "M1471E": "N007",
+    "M147BC": "N002",
+    "M147DA": "N022",
+    "M1487F": "N007",
+    "M14D89": "N017",
+    "M15B37": "N006",
+    "M15BBF": "N004",
+    "M16200": "N004",
+    "M192D2": "N028",
+    "M19A33": "N004",
+    "M1ADAB": "N010",
+    "M1C32D": "N018",
+    "M1CE89": "N003",
+    "M1D2D1": "N002",
+    "M1D98C": "N015",
+    "M1EEA9": "N012",
+    "M1FF4F": "N006",
+    "M20424": "N002",
+    "M207B6": "N023",
+    "M2327F": "N003",
+    "M23978": "N039",
+    "M254FE": "N015",
+    "M25A33": "N019",
+    "M26219": "N004",
+    "M27B09": "N002",
+    "M27C5A": "N003",
+    "M289A6": "N022",
+    "M2A24F": "N002",
+    "M2C0F3": "N027",
+    "M2D5A6": "N026",
+    "M2DDE1": "N023",
+    "M2F52D": "N008",
+    "M3014F": "N026",
+    "M3347D": "N002",
+    "M34180": "N038",
+    "M3796E": "N002",
+    "M39855": "N007",
+    "M3A05D": "N019",
+    "M3A75D": "N010",
+    "M3AAB2": "N037",
+    "M3B001": "N002",
+    "M3B007": "N034",
+    "M3B6D0": "N006",
+    "M3BE62": "N018",
+    "M3CD5D": "N001",
+    "M3D8AF": "N002",
+    "M3FE02": "N018",
+    "M3FFF6": "N006",
+    "M4156E": "N004",
+    "M4430D": "N003",
+    "M444B3": "N004",
+    "M44592": "N020",
+    "M45638": "N005",
+    "M4582B": "N027",
+    "M46048": "N002",
+    "M4655D": "N024",
+    "M46C18": "N002",
+    "M47752": "N011",
+    "M481EC": "N031",
+    "M48FD5": "N009",
+    "M49A78": "N032",
+    "M49E09": "N020",
+    "M4A87E": "N004",
+    "M4B19E": "N020",
+    "M4C474": "N013",
+    "M4D878": "N007",
+    "M4EB84": "N002",
+    "M50CF3": "N008",
+    "M51424": "N007",
+    "M52EF4": "N001",
+    "M53F23": "N010",
+    "M55773": "N014",
+    "M55CC3": "N007",
+    "M56043": "N010",
+    "M560AA": "N009",
+    "M5663E": "N015",
+    "M57537": "N024",
+    "M58EAA": "N004",
+    "M59229": "N009",
+    "M59868": "N003",
+    "M59E22": "N014",
+    "M5B158": "N011",
+    "M5B3C7": "N004",
+    "M5C007": "N001",
+    "M5C663": "N006",
+    "M5C862": "N004",
+    "M5DEE1": "N002",
+    "M5ED14": "N009",
+    "M5F5EE": "N003",
+    "M5FBC4": "N003",
+    "M61AC7": "N004",
+    "M620E4": "N001",
+    "M625A8": "N005",
+    "M62EF1": "N001",
+    "M63ACA": "N011",
+    "M63E3C": "N003",
+    "M64343": "N020",
+    "M643B3": "N007",
+    "M6449B": "N014",
+    "M64CB4": "N001",
+    "M67A02": "N001",
+    "M67D81": "N002",
+    "M69CDA": "N004",
+    "M6AED1": "N002",
+    "M6D409": "N010",
+    "M6E396": "N011",
+    "M6E924": "N004",
+    "M6ED2F": "N011",
+    "M70EED": "N009",
+    "M7180B": "N016",
+    "M71C31": "N017",
+    "M720A2": "N014",
+    "M72D08": "N006",
+    "M73DC8": "N014",
+    "M75BBA": "N010",
+    "M75C56": "N001",
+    "M76961": "N001",
+    "M76C0D": "N004",
+    "M7768F": "N004",
+    "M778AD": "N014",
+    "M78DE2": "N004",
+    "M7A0E9": "N004",
+    "M7B317": "N003",
+    "M7B591": "N013",
+    "M7C70B": "N006",
+    "M7E0F0": "N001",
+    "M7F4CC": "N007",
+    "M81C02": "N004",
+    "M820B0": "N004",
+    "M829AC": "N004",
+    "M87831": "N012",
+    "M87DEF": "N004",
+    "M87FCF": "N035",
+    "M8812E": "N004",
+    "M881EB": "N015",
+    "M88C51": "N002",
+    "M89357": "N003",
+    "M8B10C": "N021",
+    "M8B6B3": "N006",
+    "M8B8B7": "N006",
+    "M8BD70": "N010",
+    "M8C20A": "N029",
+    "M8E6CC": "N002",
+    "M8FCE7": "N006",
+    "M8FD55": "N006",
+    "M8FD5C": "N003",
+    "M9120D": "N006",
+    "M916DD": "N006",
+    "M92E45": "N001",
+    "M93784": "N011",
+    "M97E7F": "N034",
+    "M99610": "N004",
+    "M999E8": "N006",
+    "M9B3B5": "N015",
+    "M9CE35": "N033",
+    "M9DC10": "N027",
+    "M9ED40": "N013",
+    "M9EFAB": "N015",
+    "M9F9EC": "N013",
+    "MA2FB7": "N002",
+    "MA369C": "N006",
+    "MA3A9C": "N012",
+    "MA4F33": "N003",
+    "MA7740": "N001",
+    "MA8FB0": "N004",
+    "MA9006": "N003",
+    "MA916D": "N012",
+    "MA91B4": "N001",
+    "MA9202": "N006",
+    "MAA975": "N004",
+    "MABFDF": "N025",
+    "MAD085": "N020",
+    "MAE684": "N015",
+    "MAFD79": "N014",
+    "MB13CF": "N002",
+    "MB22DF": "N028",
+    "MB2635": "N004",
+    "MB3A4B": "N002",
+    "MB4CEB": "N005",
+    "MB6288": "N004",
+    "MB6A22": "N001",
+    "MB6EB1": "N018",
+    "MB78F6": "N010",
+    "MB7B0B": "N005",
+    "MB8615": "N023",
+    "MB93EC": "N006",
+    "MBBD8C": "N004",
+    "MBCD89": "N022",
+    "MBCF0E": "N006",
+    "MBD308": "N004",
+    "MBD840": "N013",
+    "MBDD26": "N002",
+    "MBE91D": "N021",
+    "MBEB86": "N007",
+    "MBF5A0": "N011",
+    "MC0B0C": "N004",
+    "MC0F27": "N004",
+    "MC1695": "N004",
+    "MC16D9": "N021",
+    "MC22C1": "N006",
+    "MC481A": "N006",
+    "MC64EA": "N004",
+    "MC6669": "N011",
+    "MC690C": "N022",
+    "MC712F": "N004",
+    "MC84E5": "N039",
+    "MCA041": "N019",
+    "MCB8CB": "N006",
+    "MCD3C5": "N011",
+    "MCE0C0": "N004",
+    "MD022E": "N004",
+    "MD0521": "N003",
+    "MD0580": "N004",
+    "MD1A69": "N006",
+    "MD28CA": "N006",
+    "MD391B": "N004",
+    "MD6063": "N003",
+    "MD76A4": "N003",
+    "MD83CB": "N015",
+    "MD8E66": "N006",
+    "MD8F0A": "N009",
+    "MDA856": "N009",
+    "MDA993": "N004",
+    "MDB4A4": "N005",
+    "MDDF1F": "N011",
+    "MDFB7D": "N004",
+    "ME0AF3": "N004",
+    "ME3F08": "N016",
+    "ME468C": "N017",
+    "ME633B": "N001",
+    "ME886F": "N003",
+    "ME8889": "N001",
+    "MEA8FD": "N006",
+    "MEC56A": "N027",
+    "MEF129": "N006",
+    "MEFA34": "N005",
+    "MF15C8": "N015",
+    "MF20BE": "N007",
+    "MF49B4": "N004",
+    "MF5815": "N001",
+    "MF7426": "N006",
+    "MF8107": "N004",
+    "MF8B70": "N010",
+    "MF8FF9": "N008",
+    "MF9436": "N006",
+    "MFB97A": "N011",
+    "MFC66A": "N003",
+    "MFD346": "N011",
+    "MFF42D": "N002",
+    "MFFB3F": "N030",
+    "MFFE0F": "N010"
+  },
+  "corpus": {
+    "projects": 68,
+    "sessions": 216,
+    "steps": 10417
+  },
+  "dismissedMerges": [],
+  "flow": [
+    {
+      "count": 116,
+      "from": "N007",
+      "medianGapMs": 0,
+      "sessions": 41,
+      "to": "N006"
+    },
+    {
+      "count": 110,
+      "from": "N001",
+      "medianGapMs": 0,
+      "sessions": 59,
+      "to": "N004"
+    },
+    {
+      "count": 85,
+      "from": "N009",
+      "medianGapMs": 0,
+      "sessions": 51,
+      "to": "N002"
+    },
+    {
+      "count": 79,
+      "from": "N010",
+      "medianGapMs": 0,
+      "sessions": 42,
+      "to": "N007"
+    },
+    {
+      "count": 74,
+      "from": "N002",
+      "medianGapMs": 0,
+      "sessions": 39,
+      "to": "N009"
+    },
+    {
+      "count": 74,
+      "from": "N003",
+      "medianGapMs": 0,
+      "sessions": 43,
+      "to": "N009"
+    },
+    {
+      "count": 74,
+      "from": "N006",
+      "medianGapMs": 15001,
+      "sessions": 31,
+      "to": "N007"
+    },
+    {
+      "count": 63,
+      "from": "N009",
+      "medianGapMs": 0,
+      "sessions": 40,
+      "to": "N003"
+    },
+    {
+      "count": 61,
+      "from": "N014",
+      "medianGapMs": 0,
+      "sessions": 34,
+      "to": "N002"
+    },
+    {
+      "count": 60,
+      "from": "N002",
+      "medianGapMs": 0,
+      "sessions": 31,
+      "to": "N014"
+    },
+    {
+      "count": 57,
+      "from": "N004",
+      "medianGapMs": 0,
+      "sessions": 27,
+      "to": "N001"
+    },
+    {
+      "count": 57,
+      "from": "N007",
+      "medianGapMs": 0,
+      "sessions": 26,
+      "to": "N010"
+    },
+    {
+      "count": 50,
+      "from": "N002",
+      "medianGapMs": 0,
+      "sessions": 16,
+      "to": "N020"
+    },
+    {
+      "count": 45,
+      "from": "N003",
+      "medianGapMs": 0,
+      "sessions": 24,
+      "to": "N017"
+    },
+    {
+      "count": 44,
+      "from": "N012",
+      "medianGapMs": 0,
+      "sessions": 33,
+      "to": "N007"
+    },
+    {
+      "count": 43,
+      "from": "N006",
+      "medianGapMs": 60630,
+      "sessions": 24,
+      "to": "N002"
+    },
+    {
+      "count": 43,
+      "from": "N020",
+      "medianGapMs": 8287,
+      "sessions": 17,
+      "to": "N002"
+    },
+    {
+      "count": 42,
+      "from": "N003",
+      "medianGapMs": 0,
+      "sessions": 22,
+      "to": "N019"
+    },
+    {
+      "count": 40,
+      "from": "N002",
+      "medianGapMs": 0,
+      "sessions": 28,
+      "to": "N003"
+    },
+    {
+      "count": 40,
+      "from": "N011",
+      "medianGapMs": 0,
+      "sessions": 10,
+      "to": "N002"
+    },
+    {
+      "count": 39,
+      "from": "N007",
+      "medianGapMs": 0,
+      "sessions": 29,
+      "to": "N014"
+    },
+    {
+      "count": 38,
+      "from": "N004",
+      "medianGapMs": 19388,
+      "sessions": 31,
+      "to": "N003"
+    },
+    {
+      "count": 38,
+      "from": "N014",
+      "medianGapMs": 0,
+      "sessions": 31,
+      "to": "N007"
+    },
+    {
+      "count": 37,
+      "from": "N002",
+      "medianGapMs": 25145,
+      "sessions": 24,
+      "to": "N006"
+    },
+    {
+      "count": 36,
+      "from": "N003",
+      "medianGapMs": 0,
+      "sessions": 27,
+      "to": "N004"
+    },
+    {
+      "count": 36,
+      "from": "N006",
+      "medianGapMs": 47620,
+      "sessions": 22,
+      "to": "N003"
+    },
+    {
+      "count": 36,
+      "from": "N017",
+      "medianGapMs": 0,
+      "sessions": 24,
+      "to": "N007"
+    },
+    {
+      "count": 34,
+      "from": "N007",
+      "medianGapMs": 0,
+      "sessions": 27,
+      "to": "N012"
+    },
+    {
+      "count": 32,
+      "from": "N002",
+      "medianGapMs": 0,
+      "sessions": 29,
+      "to": "N016"
+    },
+    {
+      "count": 32,
+      "from": "N016",
+      "medianGapMs": 0,
+      "sessions": 29,
+      "to": "N007"
+    },
+    {
+      "count": 31,
+      "from": "N015",
+      "medianGapMs": 0,
+      "sessions": 23,
+      "to": "N004"
+    },
+    {
+      "count": 31,
+      "from": "N019",
+      "medianGapMs": 0,
+      "sessions": 22,
+      "to": "N015"
+    },
+    {
+      "count": 30,
+      "from": "N002",
+      "medianGapMs": 0,
+      "sessions": 26,
+      "to": "N022"
+    },
+    {
+      "count": 30,
+      "from": "N019",
+      "medianGapMs": 0,
+      "sessions": 21,
+      "to": "N003"
+    },
+    {
+      "count": 29,
+      "from": "N002",
+      "medianGapMs": 0,
+      "sessions": 9,
+      "to": "N029"
+    },
+    {
+      "count": 29,
+      "from": "N003",
+      "medianGapMs": 6081,
+      "sessions": 25,
+      "to": "N002"
+    },
+    {
+      "count": 29,
+      "from": "N029",
+      "medianGapMs": 0,
+      "sessions": 9,
+      "to": "N011"
+    },
+    {
+      "count": 27,
+      "from": "N007",
+      "medianGapMs": 0,
+      "sessions": 25,
+      "to": "N016"
+    },
+    {
+      "count": 27,
+      "from": "N016",
+      "medianGapMs": 0,
+      "sessions": 25,
+      "to": "N002"
+    },
+    {
+      "count": 26,
+      "from": "N004",
+      "medianGapMs": 25319,
+      "sessions": 25,
+      "to": "N002"
+    },
+    {
+      "count": 26,
+      "from": "N004",
+      "medianGapMs": 13674,
+      "sessions": 22,
+      "to": "N015"
+    },
+    {
+      "count": 26,
+      "from": "N017",
+      "medianGapMs": 0,
+      "sessions": 17,
+      "to": "N003"
+    },
+    {
+      "count": 25,
+      "from": "N002",
+      "medianGapMs": 31700,
+      "sessions": 9,
+      "to": "N011"
+    },
+    {
+      "count": 24,
+      "from": "N004",
+      "medianGapMs": 15140,
+      "sessions": 20,
+      "to": "N007"
+    },
+    {
+      "count": 24,
+      "from": "N015",
+      "medianGapMs": 0,
+      "sessions": 21,
+      "to": "N023"
+    },
+    {
+      "count": 24,
+      "from": "N023",
+      "medianGapMs": 0,
+      "sessions": 21,
+      "to": "N002"
+    },
+    {
+      "count": 23,
+      "from": "N003",
+      "medianGapMs": 0,
+      "sessions": 15,
+      "to": "N028"
+    },
+    {
+      "count": 23,
+      "from": "N004",
+      "medianGapMs": 11134,
+      "sessions": 15,
+      "to": "N018"
+    },
+    {
+      "count": 23,
+      "from": "N028",
+      "medianGapMs": 0,
+      "sessions": 15,
+      "to": "N007"
+    },
+    {
+      "count": 22,
+      "from": "N007",
+      "medianGapMs": 17525,
+      "sessions": 19,
+      "to": "N004"
+    },
+    {
+      "count": 22,
+      "from": "N020",
+      "medianGapMs": 11994,
+      "sessions": 17,
+      "to": "N007"
+    },
+    {
+      "count": 22,
+      "from": "N026",
+      "medianGapMs": 0,
+      "sessions": 15,
+      "to": "N020"
+    },
+    {
+      "count": 21,
+      "from": "N003",
+      "medianGapMs": 26550,
+      "sessions": 10,
+      "to": "N006"
+    },
+    {
+      "count": 21,
+      "from": "N005",
+      "medianGapMs": 0,
+      "sessions": 11,
+      "to": "N001"
+    },
+    {
+      "count": 21,
+      "from": "N007",
+      "medianGapMs": 0,
+      "sessions": 16,
+      "to": "N028"
+    },
+    {
+      "count": 21,
+      "from": "N022",
+      "medianGapMs": 0,
+      "sessions": 20,
+      "to": "N002"
+    },
+    {
+      "count": 21,
+      "from": "N028",
+      "medianGapMs": 0,
+      "sessions": 16,
+      "to": "N003"
+    },
+    {
+      "count": 20,
+      "from": "N002",
+      "medianGapMs": 0,
+      "sessions": 15,
+      "to": "N023"
+    },
+    {
+      "count": 20,
+      "from": "N003",
+      "medianGapMs": 279946,
+      "sessions": 19,
+      "to": "N001"
+    },
+    {
+      "count": 20,
+      "from": "N023",
+      "medianGapMs": 0,
+      "sessions": 15,
+      "to": "N015"
+    },
+    {
+      "count": 20,
+      "from": "N027",
+      "medianGapMs": 0,
+      "sessions": 19,
+      "to": "N003"
+    },
+    {
+      "count": 19,
+      "from": "N003",
+      "medianGapMs": 0,
+      "sessions": 14,
+      "to": "N027"
+    },
+    {
+      "count": 19,
+      "from": "N015",
+      "medianGapMs": 0,
+      "sessions": 17,
+      "to": "N019"
+    },
+    {
+      "count": 18,
+      "from": "N002",
+      "medianGapMs": 0,
+      "sessions": 17,
+      "to": "N004"
+    },
+    {
+      "count": 18,
+      "from": "N006",
+      "medianGapMs": 69027,
+      "sessions": 12,
+      "to": "N020"
+    },
+    {
+      "count": 18,
+      "from": "N007",
+      "medianGapMs": 14881,
+      "sessions": 5,
+      "to": "N033"
+    },
+    {
+      "count": 17,
+      "from": "N007",
+      "medianGapMs": 0,
+      "sessions": 11,
+      "to": "N017"
+    },
+    {
+      "count": 17,
+      "from": "N008",
+      "medianGapMs": 0,
+      "sessions": 17,
+      "to": "N002"
+    },
+    {
+      "count": 16,
+      "from": "N001",
+      "medianGapMs": 4722,
+      "sessions": 9,
+      "to": "N031"
+    },
+    {
+      "count": 16,
+      "from": "N002",
+      "medianGapMs": 0,
+      "sessions": 15,
+      "to": "N039"
+    },
+    {
+      "count": 16,
+      "from": "N015",
+      "medianGapMs": 14358,
+      "sessions": 12,
+      "to": "N007"
+    },
+    {
+      "count": 15,
+      "from": "N001",
+      "medianGapMs": 0,
+      "sessions": 15,
+      "to": "N027"
+    },
+    {
+      "count": 15,
+      "from": "N002",
+      "medianGapMs": 0,
+      "sessions": 12,
+      "to": "N034"
+    },
+    {
+      "count": 15,
+      "from": "N003",
+      "medianGapMs": 0,
+      "sessions": 12,
+      "to": "N037"
+    },
+    {
+      "count": 15,
+      "from": "N007",
+      "medianGapMs": 53454,
+      "sessions": 13,
+      "to": "N002"
+    },
+    {
+      "count": 15,
+      "from": "N011",
+      "medianGapMs": 0,
+      "sessions": 7,
+      "to": "N029"
+    },
+    {
+      "count": 15,
+      "from": "N018",
+      "medianGapMs": 0,
+      "sessions": 9,
+      "to": "N004"
+    },
+    {
+      "count": 15,
+      "from": "N020",
+      "medianGapMs": 33379,
+      "sessions": 8,
+      "to": "N006"
+    },
+    {
+      "count": 15,
+      "from": "N020",
+      "medianGapMs": 0,
+      "sessions": 13,
+      "to": "N026"
+    },
+    {
+      "count": 15,
+      "from": "N029",
+      "medianGapMs": 0,
+      "sessions": 7,
+      "to": "N002"
+    },
+    {
+      "count": 15,
+      "from": "N033",
+      "medianGapMs": 13382,
+      "sessions": 5,
+      "to": "N007"
+    },
+    {
+      "count": 15,
+      "from": "N033",
+      "medianGapMs": 16643,
+      "sessions": 3,
+      "to": "N020"
+    },
+    {
+      "count": 15,
+      "from": "N037",
+      "medianGapMs": 0,
+      "sessions": 12,
+      "to": "N011"
+    },
+    {
+      "count": 14,
+      "from": "N007",
+      "medianGapMs": 46862,
+      "sessions": 12,
+      "to": "N020"
+    },
+    {
+      "count": 14,
+      "from": "N020",
+      "medianGapMs": 20547,
+      "sessions": 11,
+      "to": "N003"
+    },
+    {
+      "count": 13,
+      "from": "N018",
+      "medianGapMs": 23123,
+      "sessions": 9,
+      "to": "N007"
+    },
+    {
+      "count": 12,
+      "from": "N004",
+      "medianGapMs": 20571,
+      "sessions": 8,
+      "to": "N013"
+    },
+    {
+      "count": 12,
+      "from": "N008",
+      "medianGapMs": 10848,
+      "sessions": 12,
+      "to": "N007"
+    },
+    {
+      "count": 12,
+      "from": "N011",
+      "medianGapMs": 157603,
+      "sessions": 10,
+      "to": "N003"
+    },
+    {
+      "count": 12,
+      "from": "N013",
+      "medianGapMs": 6309,
+      "sessions": 5,
+      "to": "N035"
+    },
+    {
+      "count": 11,
+      "from": "N020",
+      "medianGapMs": 55609,
+      "sessions": 3,
+      "to": "N033"
+    },
+    {
+      "count": 11,
+      "from": "N034",
+      "medianGapMs": 74763,
+      "sessions": 8,
+      "to": "N002"
+    },
+    {
+      "count": 11,
+      "from": "N039",
+      "medianGapMs": 13201,
+      "sessions": 7,
+      "to": "N007"
+    },
+    {
+      "count": 11,
+      "from": "N039",
+      "medianGapMs": 12426,
+      "sessions": 8,
+      "to": "N006"
+    },
+    {
+      "count": 11,
+      "from": "N039",
+      "medianGapMs": 27080,
+      "sessions": 10,
+      "to": "N002"
+    },
+    {
+      "count": 10,
+      "from": "N001",
+      "medianGapMs": 0,
+      "sessions": 9,
+      "to": "N018"
+    },
+    {
+      "count": 10,
+      "from": "N001",
+      "medianGapMs": 0,
+      "sessions": 10,
+      "to": "N005"
+    },
+    {
+      "count": 10,
+      "from": "N005",
+      "medianGapMs": 0,
+      "sessions": 9,
+      "to": "N008"
+    },
+    {
+      "count": 10,
+      "from": "N007",
+      "medianGapMs": 10544,
+      "sessions": 8,
+      "to": "N015"
+    },
+    {
+      "count": 10,
+      "from": "N007",
+      "medianGapMs": 11175,
+      "sessions": 9,
+      "to": "N039"
+    },
+    {
+      "count": 10,
+      "from": "N007",
+      "medianGapMs": 141883,
+      "sessions": 7,
+      "to": "N003"
+    },
+    {
+      "count": 10,
+      "from": "N007",
+      "medianGapMs": 9730,
+      "sessions": 7,
+      "to": "N013"
+    },
+    {
+      "count": 9,
+      "from": "N007",
+      "medianGapMs": 12366,
+      "sessions": 8,
+      "to": "N018"
+    },
+    {
+      "count": 9,
+      "from": "N011",
+      "medianGapMs": 89475,
+      "sessions": 7,
+      "to": "N006"
+    },
+    {
+      "count": 9,
+      "from": "N013",
+      "medianGapMs": 9921,
+      "sessions": 6,
+      "to": "N007"
+    },
+    {
+      "count": 9,
+      "from": "N031",
+      "medianGapMs": 85228,
+      "sessions": 6,
+      "to": "N001"
+    },
+    {
+      "count": 9,
+      "from": "N035",
+      "medianGapMs": 9450,
+      "sessions": 4,
+      "to": "N013"
+    },
+    {
+      "count": 8,
+      "from": "N001",
+      "medianGapMs": 0,
+      "sessions": 8,
+      "to": "N003"
+    },
+    {
+      "count": 8,
+      "from": "N003",
+      "medianGapMs": 421977,
+      "sessions": 8,
+      "to": "N010"
+    },
+    {
+      "count": 8,
+      "from": "N004",
+      "medianGapMs": 82118,
+      "sessions": 8,
+      "to": "N005"
+    },
+    {
+      "count": 8,
+      "from": "N004",
+      "medianGapMs": 5542,
+      "sessions": 4,
+      "to": "N035"
+    },
+    {
+      "count": 8,
+      "from": "N012",
+      "medianGapMs": 0,
+      "sessions": 7,
+      "to": "N010"
+    },
+    {
+      "count": 8,
+      "from": "N013",
+      "medianGapMs": 28010,
+      "sessions": 7,
+      "to": "N004"
+    },
+    {
+      "count": 8,
+      "from": "N013",
+      "medianGapMs": 39882,
+      "sessions": 6,
+      "to": "N003"
+    },
+    {
+      "count": 8,
+      "from": "N018",
+      "medianGapMs": 48609,
+      "sessions": 7,
+      "to": "N002"
+    },
+    {
+      "count": 8,
+      "from": "N020",
+      "medianGapMs": 31652,
+      "sessions": 5,
+      "to": "N011"
+    },
+    {
+      "count": 8,
+      "from": "N027",
+      "medianGapMs": 0,
+      "sessions": 8,
+      "to": "N004"
+    },
+    {
+      "count": 8,
+      "from": "N030",
+      "medianGapMs": 0,
+      "sessions": 2,
+      "to": "N011"
+    },
+    {
+      "count": 8,
+      "from": "N031",
+      "medianGapMs": 12513,
+      "sessions": 8,
+      "to": "N004"
+    },
+    {
+      "count": 7,
+      "from": "N001",
+      "medianGapMs": 836,
+      "sessions": 7,
+      "to": "N015"
+    },
+    {
+      "count": 7,
+      "from": "N001",
+      "medianGapMs": 0,
+      "sessions": 5,
+      "to": "N013"
+    },
+    {
+      "count": 7,
+      "from": "N001",
+      "medianGapMs": 0,
+      "sessions": 7,
+      "to": "N035"
+    },
+    {
+      "count": 7,
+      "from": "N002",
+      "medianGapMs": 137287,
+      "sessions": 7,
+      "to": "N015"
+    },
+    {
+      "count": 7,
+      "from": "N002",
+      "medianGapMs": 22992,
+      "sessions": 6,
+      "to": "N031"
+    },
+    {
+      "count": 7,
+      "from": "N002",
+      "medianGapMs": 104213,
+      "sessions": 7,
+      "to": "N001"
+    },
+    {
+      "count": 7,
+      "from": "N002",
+      "medianGapMs": 77311,
+      "sessions": 6,
+      "to": "N032"
+    },
+    {
+      "count": 7,
+      "from": "N003",
+      "medianGapMs": 8039,
+      "sessions": 4,
+      "to": "N013"
+    },
+    {
+      "count": 7,
+      "from": "N003",
+      "medianGapMs": 152435,
+      "sessions": 7,
+      "to": "N015"
+    },
+    {
+      "count": 7,
+      "from": "N006",
+      "medianGapMs": 38719,
+      "sessions": 5,
+      "to": "N039"
+    },
+    {
+      "count": 7,
+      "from": "N006",
+      "medianGapMs": 35365,
+      "sessions": 6,
+      "to": "N036"
+    },
+    {
+      "count": 7,
+      "from": "N006",
+      "medianGapMs": 132338,
+      "sessions": 6,
+      "to": "N011"
+    },
+    {
+      "count": 7,
+      "from": "N006",
+      "medianGapMs": 23179,
+      "sessions": 3,
+      "to": "N032"
+    },
+    {
+      "count": 7,
+      "from": "N010",
+      "medianGapMs": 0,
+      "sessions": 7,
+      "to": "N003"
+    },
+    {
+      "count": 7,
+      "from": "N011",
+      "medianGapMs": 294770,
+      "sessions": 3,
+      "to": "N030"
+    },
+    {
+      "count": 7,
+      "from": "N013",
+      "medianGapMs": 51599,
+      "sessions": 6,
+      "to": "N002"
+    },
+    {
+      "count": 7,
+      "from": "N015",
+      "medianGapMs": 88252,
+      "sessions": 5,
+      "to": "N006"
+    },
+    {
+      "count": 7,
+      "from": "N018",
+      "medianGapMs": 29570,
+      "sessions": 6,
+      "to": "N003"
+    },
+    {
+      "count": 7,
+      "from": "N021",
+      "medianGapMs": 2072,
+      "sessions": 7,
+      "to": "N003"
+    },
+    {
+      "count": 7,
+      "from": "N031",
+      "medianGapMs": 19013,
+      "sessions": 6,
+      "to": "N002"
+    },
+    {
+      "count": 7,
+      "from": "N035",
+      "medianGapMs": 7472,
+      "sessions": 6,
+      "to": "N004"
+    },
+    {
+      "count": 6,
+      "from": "N001",
+      "medianGapMs": 6046,
+      "sessions": 6,
+      "to": "N002"
+    },
+    {
+      "count": 6,
+      "from": "N002",
+      "medianGapMs": 216569,
+      "sessions": 3,
+      "to": "N030"
+    },
+    {
+      "count": 6,
+      "from": "N002",
+      "medianGapMs": 163146,
+      "sessions": 6,
+      "to": "N010"
+    },
+    {
+      "count": 6,
+      "from": "N002",
+      "medianGapMs": 51752,
+      "sessions": 5,
+      "to": "N007"
+    },
+    {
+      "count": 6,
+      "from": "N002",
+      "medianGapMs": 65027,
+      "sessions": 4,
+      "to": "N038"
+    },
+    {
+      "count": 6,
+      "from": "N003",
+      "medianGapMs": 52313,
+      "sessions": 6,
+      "to": "N007"
+    },
+    {
+      "count": 6,
+      "from": "N003",
+      "medianGapMs": 15150,
+      "sessions": 6,
+      "to": "N005"
+    },
+    {
+      "count": 6,
+      "from": "N003",
+      "medianGapMs": 21797,
+      "sessions": 6,
+      "to": "N020"
+    },
+    {
+      "count": 6,
+      "from": "N005",
+      "medianGapMs": 21052,
+      "sessions": 6,
+      "to": "N039"
+    },
+    {
+      "count": 6,
+      "from": "N006",
+      "medianGapMs": 43705,
+      "sessions": 6,
+      "to": "N021"
+    },
+    {
+      "count": 6,
+      "from": "N006",
+      "medianGapMs": 52989,
+      "sessions": 4,
+      "to": "N015"
+    },
+    {
+      "count": 6,
+      "from": "N007",
+      "medianGapMs": 18610,
+      "sessions": 6,
+      "to": "N025"
+    },
+    {
+      "count": 6,
+      "from": "N010",
+      "medianGapMs": 0,
+      "sessions": 6,
+      "to": "N002"
+    },
+    {
+      "count": 6,
+      "from": "N011",
+      "medianGapMs": 45850,
+      "sessions": 5,
+      "to": "N004"
+    },
+    {
+      "count": 6,
+      "from": "N015",
+      "medianGapMs": 126989,
+      "sessions": 5,
+      "to": "N003"
+    },
+    {
+      "count": 6,
+      "from": "N025",
+      "medianGapMs": 40736,
+      "sessions": 6,
+      "to": "N007"
+    },
+    {
+      "count": 6,
+      "from": "N032",
+      "medianGapMs": 0,
+      "sessions": 3,
+      "to": "N006"
+    },
+    {
+      "count": 6,
+      "from": "N036",
+      "medianGapMs": 0,
+      "sessions": 4,
+      "to": "N002"
+    },
+    {
+      "count": 5,
+      "from": "N002",
+      "medianGapMs": 141529,
+      "sessions": 5,
+      "to": "N021"
+    },
+    {
+      "count": 5,
+      "from": "N002",
+      "medianGapMs": 37552,
+      "sessions": 4,
+      "to": "N005"
+    },
+    {
+      "count": 5,
+      "from": "N003",
+      "medianGapMs": 75231,
+      "sessions": 4,
+      "to": "N011"
+    },
+    {
+      "count": 5,
+      "from": "N003",
+      "medianGapMs": 109436,
+      "sessions": 5,
+      "to": "N012"
+    },
+    {
+      "count": 5,
+      "from": "N004",
+      "medianGapMs": 72594,
+      "sessions": 4,
+      "to": "N031"
+    },
+    {
+      "count": 5,
+      "from": "N005",
+      "medianGapMs": 26421,
+      "sessions": 5,
+      "to": "N006"
+    },
+    {
+      "count": 5,
+      "from": "N006",
+      "medianGapMs": 11951,
+      "sessions": 4,
+      "to": "N033"
+    },
+    {
+      "count": 5,
+      "from": "N006",
+      "medianGapMs": 12186,
+      "sessions": 5,
+      "to": "N004"
+    },
+    {
+      "count": 5,
+      "from": "N006",
+      "medianGapMs": 192304,
+      "sessions": 4,
+      "to": "N001"
+    },
+    {
+      "count": 5,
+      "from": "N006",
+      "medianGapMs": 18895,
+      "sessions": 3,
+      "to": "N018"
+    },
+    {
+      "count": 5,
+      "from": "N006",
+      "medianGapMs": 13826,
+      "sessions": 4,
+      "to": "N038"
+    },
+    {
+      "count": 5,
+      "from": "N007",
+      "medianGapMs": 43061,
+      "sessions": 4,
+      "to": "N021"
+    },
+    {
+      "count": 5,
+      "from": "N007",
+      "medianGapMs": 10272,
+      "sessions": 4,
+      "to": "N038"
+    },
+    {
+      "count": 5,
+      "from": "N008",
+      "medianGapMs": 8361,
+      "sessions": 5,
+      "to": "N003"
+    },
+    {
+      "count": 5,
+      "from": "N012",
+      "medianGapMs": 0,
+      "sessions": 5,
+      "to": "N002"
+    },
+    {
+      "count": 5,
+      "from": "N015",
+      "medianGapMs": 790029,
+      "sessions": 4,
+      "to": "N010"
+    },
+    {
+      "count": 5,
+      "from": "N015",
+      "medianGapMs": 6000,
+      "sessions": 5,
+      "to": "N031"
+    },
+    {
+      "count": 5,
+      "from": "N015",
+      "medianGapMs": 109875,
+      "sessions": 4,
+      "to": "N002"
+    },
+    {
+      "count": 5,
+      "from": "N018",
+      "medianGapMs": 67044,
+      "sessions": 4,
+      "to": "N006"
+    },
+    {
+      "count": 5,
+      "from": "N026",
+      "medianGapMs": 0,
+      "sessions": 5,
+      "to": "N002"
+    },
+    {
+      "count": 5,
+      "from": "N033",
+      "medianGapMs": 12755,
+      "sessions": 4,
+      "to": "N006"
+    },
+    {
+      "count": 5,
+      "from": "N038",
+      "medianGapMs": 9437,
+      "sessions": 3,
+      "to": "N002"
+    },
+    {
+      "count": 4,
+      "from": "N001",
+      "medianGapMs": 45489,
+      "sessions": 4,
+      "to": "N007"
+    },
+    {
+      "count": 4,
+      "from": "N002",
+      "medianGapMs": 26103,
+      "sessions": 4,
+      "to": "N013"
+    },
+    {
+      "count": 4,
+      "from": "N002",
+      "medianGapMs": 2527862,
+      "sessions": 4,
+      "to": "N008"
+    },
+    {
+      "count": 4,
+      "from": "N003",
+      "medianGapMs": 559635,
+      "sessions": 4,
+      "to": "N026"
+    },
+    {
+      "count": 4,
+      "from": "N004",
+      "medianGapMs": 259745,
+      "sessions": 4,
+      "to": "N024"
+    },
+    {
+      "count": 4,
+      "from": "N004",
+      "medianGapMs": 4000451,
+      "sessions": 4,
+      "to": "N006"
+    },
+    {
+      "count": 4,
+      "from": "N005",
+      "medianGapMs": 24,
+      "sessions": 4,
+      "to": "N002"
+    },
+    {
+      "count": 4,
+      "from": "N005",
+      "medianGapMs": 0,
+      "sessions": 4,
+      "to": "N010"
+    },
+    {
+      "count": 4,
+      "from": "N005",
+      "medianGapMs": 17651,
+      "sessions": 4,
+      "to": "N025"
+    },
+    {
+      "count": 4,
+      "from": "N006",
+      "medianGapMs": 89269,
+      "sessions": 4,
+      "to": "N024"
+    },
+    {
+      "count": 4,
+      "from": "N006",
+      "medianGapMs": 183334,
+      "sessions": 4,
+      "to": "N005"
+    },
+    {
+      "count": 4,
+      "from": "N007",
+      "medianGapMs": 20759,
+      "sessions": 3,
+      "to": "N035"
+    },
+    {
+      "count": 4,
+      "from": "N007",
+      "medianGapMs": 41925,
+      "sessions": 4,
+      "to": "N011"
+    },
+    {
+      "count": 4,
+      "from": "N010",
+      "medianGapMs": 0,
+      "sessions": 3,
+      "to": "N015"
+    },
+    {
+      "count": 4,
+      "from": "N011",
+      "medianGapMs": 457181,
+      "sessions": 3,
+      "to": "N010"
+    },
+    {
+      "count": 4,
+      "from": "N012",
+      "medianGapMs": 0,
+      "sessions": 4,
+      "to": "N003"
+    },
+    {
+      "count": 4,
+      "from": "N013",
+      "medianGapMs": 23310,
+      "sessions": 4,
+      "to": "N006"
+    },
+    {
+      "count": 4,
+      "from": "N015",
+      "medianGapMs": 78709,
+      "sessions": 4,
+      "to": "N013"
+    },
+    {
+      "count": 4,
+      "from": "N015",
+      "medianGapMs": 4954,
+      "sessions": 4,
+      "to": "N018"
+    },
+    {
+      "count": 4,
+      "from": "N015",
+      "medianGapMs": 711417,
+      "sessions": 4,
+      "to": "N012"
+    },
+    {
+      "count": 4,
+      "from": "N018",
+      "medianGapMs": 16477,
+      "sessions": 3,
+      "to": "N013"
+    },
+    {
+      "count": 4,
+      "from": "N022",
+      "medianGapMs": 0,
+      "sessions": 4,
+      "to": "N008"
+    },
+    {
+      "count": 4,
+      "from": "N024",
+      "medianGapMs": 86918,
+      "sessions": 4,
+      "to": "N001"
+    },
+    {
+      "count": 4,
+      "from": "N025",
+      "medianGapMs": 0,
+      "sessions": 4,
+      "to": "N006"
+    },
+    {
+      "count": 4,
+      "from": "N031",
+      "medianGapMs": 15441,
+      "sessions": 3,
+      "to": "N015"
+    },
+    {
+      "count": 4,
+      "from": "N032",
+      "medianGapMs": 0,
+      "sessions": 2,
+      "to": "N002"
+    },
+    {
+      "count": 4,
+      "from": "N035",
+      "medianGapMs": 16183,
+      "sessions": 4,
+      "to": "N006"
+    },
+    {
+      "count": 4,
+      "from": "N035",
+      "medianGapMs": 30605,
+      "sessions": 4,
+      "to": "N007"
+    },
+    {
+      "count": 4,
+      "from": "N035",
+      "medianGapMs": 28965,
+      "sessions": 4,
+      "to": "N003"
+    },
+    {
+      "count": 4,
+      "from": "N035",
+      "medianGapMs": 150889,
+      "sessions": 3,
+      "to": "N015"
+    },
+    {
+      "count": 4,
+      "from": "N038",
+      "medianGapMs": 23953,
+      "sessions": 3,
+      "to": "N006"
+    },
+    {
+      "count": 4,
+      "from": "N038",
+      "medianGapMs": 18528,
+      "sessions": 4,
+      "to": "N007"
+    },
+    {
+      "count": 4,
+      "from": "N038",
+      "medianGapMs": 260312,
+      "sessions": 4,
+      "to": "N003"
+    },
+    {
+      "count": 3,
+      "from": "N001",
+      "medianGapMs": 12147,
+      "sessions": 3,
+      "to": "N030"
+    },
+    {
+      "count": 3,
+      "from": "N002",
+      "medianGapMs": 28628,
+      "sessions": 3,
+      "to": "N018"
+    },
+    {
+      "count": 3,
+      "from": "N002",
+      "medianGapMs": 71797,
+      "sessions": 3,
+      "to": "N026"
+    },
+    {
+      "count": 3,
+      "from": "N002",
+      "medianGapMs": 302487,
+      "sessions": 3,
+      "to": "N012"
+    },
+    {
+      "count": 3,
+      "from": "N002",
+      "medianGapMs": 232259,
+      "sessions": 3,
+      "to": "N036"
+    },
+    {
+      "count": 3,
+      "from": "N003",
+      "medianGapMs": 140226,
+      "sessions": 3,
+      "to": "N024"
+    },
+    {
+      "count": 3,
+      "from": "N003",
+      "medianGapMs": 16036,
+      "sessions": 3,
+      "to": "N018"
+    },
+    {
+      "count": 3,
+      "from": "N004",
+      "medianGapMs": 232319,
+      "sessions": 3,
+      "to": "N010"
+    },
+    {
+      "count": 3,
+      "from": "N004",
+      "medianGapMs": 45114,
+      "sessions": 3,
+      "to": "N021"
+    },
+    {
+      "count": 3,
+      "from": "N005",
+      "medianGapMs": 47553,
+      "sessions": 3,
+      "to": "N007"
+    },
+    {
+      "count": 3,
+      "from": "N006",
+      "medianGapMs": 253359,
+      "sessions": 3,
+      "to": "N008"
+    },
+    {
+      "count": 3,
+      "from": "N008",
+      "medianGapMs": 46973,
+      "sessions": 3,
+      "to": "N004"
+    },
+    {
+      "count": 3,
+      "from": "N011",
+      "medianGapMs": 583014,
+      "sessions": 2,
+      "to": "N012"
+    },
+    {
+      "count": 3,
+      "from": "N013",
+      "medianGapMs": 276217,
+      "sessions": 2,
+      "to": "N011"
+    },
+    {
+      "count": 3,
+      "from": "N013",
+      "medianGapMs": 17383,
+      "sessions": 2,
+      "to": "N018"
+    },
+    {
+      "count": 3,
+      "from": "N013",
+      "medianGapMs": 69974,
+      "sessions": 2,
+      "to": "N021"
+    },
+    {
+      "count": 3,
+      "from": "N013",
+      "medianGapMs": 19175,
+      "sessions": 2,
+      "to": "N020"
+    },
+    {
+      "count": 3,
+      "from": "N015",
+      "medianGapMs": 297627,
+      "sessions": 3,
+      "to": "N021"
+    },
+    {
+      "count": 3,
+      "from": "N015",
+      "medianGapMs": 38578,
+      "sessions": 3,
+      "to": "N020"
+    },
+    {
+      "count": 3,
+      "from": "N018",
+      "medianGapMs": 981,
+      "sessions": 2,
+      "to": "N015"
+    },
+    {
+      "count": 3,
+      "from": "N020",
+      "medianGapMs": 38695,
+      "sessions": 3,
+      "to": "N038"
+    },
+    {
+      "count": 3,
+      "from": "N020",
+      "medianGapMs": 103679,
+      "sessions": 2,
+      "to": "N013"
+    },
+    {
+      "count": 3,
+      "from": "N021",
+      "medianGapMs": 0,
+      "sessions": 2,
+      "to": "N001"
+    },
+    {
+      "count": 3,
+      "from": "N021",
+      "medianGapMs": 0,
+      "sessions": 3,
+      "to": "N004"
+    },
+    {
+      "count": 3,
+      "from": "N021",
+      "medianGapMs": 17669,
+      "sessions": 3,
+      "to": "N005"
+    },
+    {
+      "count": 3,
+      "from": "N022",
+      "medianGapMs": 12374,
+      "sessions": 3,
+      "to": "N007"
+    },
+    {
+      "count": 3,
+      "from": "N025",
+      "medianGapMs": 177124,
+      "sessions": 3,
+      "to": "N005"
+    },
+    {
+      "count": 3,
+      "from": "N026",
+      "medianGapMs": 0,
+      "sessions": 3,
+      "to": "N003"
+    },
+    {
+      "count": 3,
+      "from": "N030",
+      "medianGapMs": 0,
+      "sessions": 3,
+      "to": "N006"
+    },
+    {
+      "count": 3,
+      "from": "N030",
+      "medianGapMs": 0,
+      "sessions": 3,
+      "to": "N012"
+    },
+    {
+      "count": 3,
+      "from": "N034",
+      "medianGapMs": 21660,
+      "sessions": 3,
+      "to": "N031"
+    },
+    {
+      "count": 3,
+      "from": "N036",
+      "medianGapMs": 0,
+      "sessions": 3,
+      "to": "N003"
+    },
+    {
+      "count": 3,
+      "from": "N038",
+      "medianGapMs": 7715,
+      "sessions": 3,
+      "to": "N020"
+    },
+    {
+      "count": 3,
+      "from": "N039",
+      "medianGapMs": 309668,
+      "sessions": 3,
+      "to": "N012"
+    },
+    {
+      "count": 2,
+      "from": "N002",
+      "medianGapMs": 27570,
+      "sessions": 1,
+      "to": "N033"
+    },
+    {
+      "count": 2,
+      "from": "N003",
+      "medianGapMs": 6218,
+      "sessions": 2,
+      "to": "N031"
+    },
+    {
+      "count": 2,
+      "from": "N003",
+      "medianGapMs": 1297967,
+      "sessions": 2,
+      "to": "N008"
+    },
+    {
+      "count": 2,
+      "from": "N003",
+      "medianGapMs": 13837,
+      "sessions": 2,
+      "to": "N039"
+    },
+    {
+      "count": 2,
+      "from": "N003",
+      "medianGapMs": 21250,
+      "sessions": 2,
+      "to": "N021"
+    },
+    {
+      "count": 2,
+      "from": "N004",
+      "medianGapMs": 19914,
+      "sessions": 2,
+      "to": "N039"
+    },
+    {
+      "count": 2,
+      "from": "N004",
+      "medianGapMs": 181644,
+      "sessions": 2,
+      "to": "N011"
+    },
+    {
+      "count": 2,
+      "from": "N004",
+      "medianGapMs": 205378,
+      "sessions": 2,
+      "to": "N030"
+    },
+    {
+      "count": 2,
+      "from": "N004",
+      "medianGapMs": 65555,
+      "sessions": 2,
+      "to": "N020"
+    },
+    {
+      "count": 2,
+      "from": "N004",
+      "medianGapMs": 523183,
+      "sessions": 2,
+      "to": "N026"
+    },
+    {
+      "count": 2,
+      "from": "N005",
+      "medianGapMs": 12,
+      "sessions": 2,
+      "to": "N024"
+    },
+    {
+      "count": 2,
+      "from": "N005",
+      "medianGapMs": 25,
+      "sessions": 2,
+      "to": "N026"
+    },
+    {
+      "count": 2,
+      "from": "N005",
+      "medianGapMs": 288012,
+      "sessions": 2,
+      "to": "N012"
+    },
+    {
+      "count": 2,
+      "from": "N005",
+      "medianGapMs": 58550,
+      "sessions": 2,
+      "to": "N011"
+    },
+    {
+      "count": 2,
+      "from": "N005",
+      "medianGapMs": 70387,
+      "sessions": 2,
+      "to": "N003"
+    },
+    {
+      "count": 2,
+      "from": "N006",
+      "medianGapMs": 211588,
+      "sessions": 2,
+      "to": "N025"
+    },
+    {
+      "count": 2,
+      "from": "N006",
+      "medianGapMs": 538032,
+      "sessions": 2,
+      "to": "N034"
+    },
+    {
+      "count": 2,
+      "from": "N006",
+      "medianGapMs": 134025,
+      "sessions": 1,
+      "to": "N026"
+    },
+    {
+      "count": 2,
+      "from": "N007",
+      "medianGapMs": 73047,
+      "sessions": 2,
+      "to": "N024"
+    },
+    {
+      "count": 2,
+      "from": "N007",
+      "medianGapMs": 47972,
+      "sessions": 2,
+      "to": "N032"
+    },
+    {
+      "count": 2,
+      "from": "N007",
+      "medianGapMs": 255425,
+      "sessions": 2,
+      "to": "N005"
+    },
+    {
+      "count": 2,
+      "from": "N007",
+      "medianGapMs": 11116,
+      "sessions": 2,
+      "to": "N036"
+    },
+    {
+      "count": 2,
+      "from": "N007",
+      "medianGapMs": 13134,
+      "sessions": 2,
+      "to": "N022"
+    },
+    {
+      "count": 2,
+      "from": "N008",
+      "medianGapMs": 37904,
+      "sessions": 2,
+      "to": "N024"
+    },
+    {
+      "count": 2,
+      "from": "N008",
+      "medianGapMs": 361942,
+      "sessions": 2,
+      "to": "N005"
+    },
+    {
+      "count": 2,
+      "from": "N008",
+      "medianGapMs": 2846,
+      "sessions": 2,
+      "to": "N039"
+    },
+    {
+      "count": 2,
+      "from": "N008",
+      "medianGapMs": 39818,
+      "sessions": 2,
+      "to": "N006"
+    },
+    {
+      "count": 2,
+      "from": "N010",
+      "medianGapMs": 239343,
+      "sessions": 2,
+      "to": "N021"
+    },
+    {
+      "count": 2,
+      "from": "N010",
+      "medianGapMs": 0,
+      "sessions": 2,
+      "to": "N001"
+    },
+    {
+      "count": 2,
+      "from": "N010",
+      "medianGapMs": 0,
+      "sessions": 2,
+      "to": "N012"
+    },
+    {
+      "count": 2,
+      "from": "N011",
+      "medianGapMs": 2357149,
+      "sessions": 2,
+      "to": "N007"
+    },
+    {
+      "count": 2,
+      "from": "N011",
+      "medianGapMs": 23899,
+      "sessions": 2,
+      "to": "N015"
+    },
+    {
+      "count": 2,
+      "from": "N011",
+      "medianGapMs": 161166,
+      "sessions": 2,
+      "to": "N021"
+    },
+    {
+      "count": 2,
+      "from": "N011",
+      "medianGapMs": 1812952,
+      "sessions": 2,
+      "to": "N026"
+    },
+    {
+      "count": 2,
+      "from": "N011",
+      "medianGapMs": 925214,
+      "sessions": 2,
+      "to": "N001"
+    },
+    {
+      "count": 2,
+      "from": "N011",
+      "medianGapMs": 15254,
+      "sessions": 2,
+      "to": "N020"
+    },
+    {
+      "count": 2,
+      "from": "N012",
+      "medianGapMs": 5869,
+      "sessions": 2,
+      "to": "N024"
+    },
+    {
+      "count": 2,
+      "from": "N012",
+      "medianGapMs": 27307,
+      "sessions": 2,
+      "to": "N006"
+    },
+    {
+      "count": 2,
+      "from": "N012",
+      "medianGapMs": 0,
+      "sessions": 2,
+      "to": "N001"
+    },
+    {
+      "count": 2,
+      "from": "N013",
+      "medianGapMs": 249063,
+      "sessions": 2,
+      "to": "N001"
+    },
+    {
+      "count": 2,
+      "from": "N013",
+      "medianGapMs": 10109,
+      "sessions": 2,
+      "to": "N015"
+    },
+    {
+      "count": 2,
+      "from": "N015",
+      "medianGapMs": 22579,
+      "sessions": 2,
+      "to": "N030"
+    },
+    {
+      "count": 2,
+      "from": "N015",
+      "medianGapMs": 308096,
+      "sessions": 2,
+      "to": "N005"
+    },
+    {
+      "count": 2,
+      "from": "N015",
+      "medianGapMs": 6063,
+      "sessions": 2,
+      "to": "N035"
+    },
+    {
+      "count": 2,
+      "from": "N018",
+      "medianGapMs": 557040,
+      "sessions": 2,
+      "to": "N001"
+    },
+    {
+      "count": 2,
+      "from": "N018",
+      "medianGapMs": 2101229,
+      "sessions": 2,
+      "to": "N005"
+    },
+    {
+      "count": 2,
+      "from": "N018",
+      "medianGapMs": 32178,
+      "sessions": 2,
+      "to": "N039"
+    },
+    {
+      "count": 2,
+      "from": "N018",
+      "medianGapMs": 24111,
+      "sessions": 2,
+      "to": "N035"
+    },
+    {
+      "count": 2,
+      "from": "N020",
+      "medianGapMs": 24160,
+      "sessions": 2,
+      "to": "N039"
+    },
+    {
+      "count": 2,
+      "from": "N021",
+      "medianGapMs": 6457,
+      "sessions": 2,
+      "to": "N031"
+    },
+    {
+      "count": 2,
+      "from": "N021",
+      "medianGapMs": 9187,
+      "sessions": 2,
+      "to": "N007"
+    },
+    {
+      "count": 2,
+      "from": "N021",
+      "medianGapMs": 5967,
+      "sessions": 2,
+      "to": "N002"
+    },
+    {
+      "count": 2,
+      "from": "N021",
+      "medianGapMs": 3467,
+      "sessions": 1,
+      "to": "N018"
+    },
+    {
+      "count": 2,
+      "from": "N021",
+      "medianGapMs": 31896,
+      "sessions": 2,
+      "to": "N011"
+    },
+    {
+      "count": 2,
+      "from": "N021",
+      "medianGapMs": 47626,
+      "sessions": 2,
+      "to": "N006"
+    },
+    {
+      "count": 2,
+      "from": "N022",
+      "medianGapMs": 105121,
+      "sessions": 2,
+      "to": "N003"
+    },
+    {
+      "count": 2,
+      "from": "N022",
+      "medianGapMs": 60353,
+      "sessions": 2,
+      "to": "N039"
+    },
+    {
+      "count": 2,
+      "from": "N024",
+      "medianGapMs": 1300136,
+      "sessions": 2,
+      "to": "N006"
+    },
+    {
+      "count": 2,
+      "from": "N024",
+      "medianGapMs": 143904,
+      "sessions": 2,
+      "to": "N002"
+    },
+    {
+      "count": 2,
+      "from": "N024",
+      "medianGapMs": 2253054,
+      "sessions": 2,
+      "to": "N010"
+    },
+    {
+      "count": 2,
+      "from": "N025",
+      "medianGapMs": 267698,
+      "sessions": 2,
+      "to": "N002"
+    },
+    {
+      "count": 2,
+      "from": "N027",
+      "medianGapMs": 0,
+      "sessions": 2,
+      "to": "N035"
+    },
+    {
+      "count": 2,
+      "from": "N030",
+      "medianGapMs": 0,
+      "sessions": 2,
+      "to": "N002"
+    },
+    {
+      "count": 2,
+      "from": "N030",
+      "medianGapMs": 0,
+      "sessions": 1,
+      "to": "N026"
+    },
+    {
+      "count": 2,
+      "from": "N030",
+      "medianGapMs": 0,
+      "sessions": 2,
+      "to": "N015"
+    },
+    {
+      "count": 2,
+      "from": "N032",
+      "medianGapMs": 28093,
+      "sessions": 2,
+      "to": "N038"
+    },
+    {
+      "count": 2,
+      "from": "N032",
+      "medianGapMs": 8835,
+      "sessions": 2,
+      "to": "N005"
+    },
+    {
+      "count": 2,
+      "from": "N032",
+      "medianGapMs": 6969,
+      "sessions": 2,
+      "to": "N012"
+    },
+    {
+      "count": 2,
+      "from": "N033",
+      "medianGapMs": 27004,
+      "sessions": 2,
+      "to": "N038"
+    },
+    {
+      "count": 2,
+      "from": "N033",
+      "medianGapMs": 33950,
+      "sessions": 1,
+      "to": "N002"
+    },
+    {
+      "count": 2,
+      "from": "N034",
+      "medianGapMs": 0,
+      "sessions": 2,
+      "to": "N024"
+    },
+    {
+      "count": 2,
+      "from": "N035",
+      "medianGapMs": 11454,
+      "sessions": 2,
+      "to": "N018"
+    },
+    {
+      "count": 2,
+      "from": "N035",
+      "medianGapMs": 794099,
+      "sessions": 2,
+      "to": "N005"
+    },
+    {
+      "count": 2,
+      "from": "N038",
+      "medianGapMs": 87390,
+      "sessions": 2,
+      "to": "N033"
+    },
+    {
+      "count": 2,
+      "from": "N038",
+      "medianGapMs": 323869,
+      "sessions": 2,
+      "to": "N024"
+    },
+    {
+      "count": 2,
+      "from": "N039",
+      "medianGapMs": 19456,
+      "sessions": 2,
+      "to": "N020"
+    },
+    {
+      "count": 2,
+      "from": "N039",
+      "medianGapMs": 81781,
+      "sessions": 1,
+      "to": "N033"
+    },
+    {
+      "count": 2,
+      "from": "N039",
+      "medianGapMs": 17700,
+      "sessions": 2,
+      "to": "N003"
+    },
+    {
+      "count": 2,
+      "from": "N039",
+      "medianGapMs": 42418,
+      "sessions": 2,
+      "to": "N015"
+    },
+    {
+      "count": 1,
+      "from": "N001",
+      "medianGapMs": 29374,
+      "sessions": 1,
+      "to": "N021"
+    },
+    {
+      "count": 1,
+      "from": "N001",
+      "medianGapMs": 75859,
+      "sessions": 1,
+      "to": "N011"
+    },
+    {
+      "count": 1,
+      "from": "N001",
+      "medianGapMs": 114653,
+      "sessions": 1,
+      "to": "N025"
+    },
+    {
+      "count": 1,
+      "from": "N001",
+      "medianGapMs": 1215206,
+      "sessions": 1,
+      "to": "N008"
+    },
+    {
+      "count": 1,
+      "from": "N002",
+      "medianGapMs": 6180,
+      "sessions": 1,
+      "to": "N025"
+    },
+    {
+      "count": 1,
+      "from": "N002",
+      "medianGapMs": 2309,
+      "sessions": 1,
+      "to": "N035"
+    },
+    {
+      "count": 1,
+      "from": "N003",
+      "medianGapMs": 40397,
+      "sessions": 1,
+      "to": "N033"
+    },
+    {
+      "count": 1,
+      "from": "N003",
+      "medianGapMs": 92726,
+      "sessions": 1,
+      "to": "N032"
+    },
+    {
+      "count": 1,
+      "from": "N003",
+      "medianGapMs": 68635,
+      "sessions": 1,
+      "to": "N036"
+    },
+    {
+      "count": 1,
+      "from": "N003",
+      "medianGapMs": 37149,
+      "sessions": 1,
+      "to": "N025"
+    },
+    {
+      "count": 1,
+      "from": "N003",
+      "medianGapMs": 664717,
+      "sessions": 1,
+      "to": "N030"
+    },
+    {
+      "count": 1,
+      "from": "N003",
+      "medianGapMs": 590,
+      "sessions": 1,
+      "to": "N035"
+    },
+    {
+      "count": 1,
+      "from": "N004",
+      "medianGapMs": 1315633,
+      "sessions": 1,
+      "to": "N012"
+    },
+    {
+      "count": 1,
+      "from": "N004",
+      "medianGapMs": 326128,
+      "sessions": 1,
+      "to": "N025"
+    },
+    {
+      "count": 1,
+      "from": "N004",
+      "medianGapMs": 533289,
+      "sessions": 1,
+      "to": "N008"
+    },
+    {
+      "count": 1,
+      "from": "N005",
+      "medianGapMs": 16,
+      "sessions": 1,
+      "to": "N004"
+    },
+    {
+      "count": 1,
+      "from": "N005",
+      "medianGapMs": 15632,
+      "sessions": 1,
+      "to": "N018"
+    },
+    {
+      "count": 1,
+      "from": "N005",
+      "medianGapMs": 19,
+      "sessions": 1,
+      "to": "N021"
+    },
+    {
+      "count": 1,
+      "from": "N005",
+      "medianGapMs": 7772,
+      "sessions": 1,
+      "to": "N035"
+    },
+    {
+      "count": 1,
+      "from": "N005",
+      "medianGapMs": 46879,
+      "sessions": 1,
+      "to": "N020"
+    },
+    {
+      "count": 1,
+      "from": "N006",
+      "medianGapMs": 14770,
+      "sessions": 1,
+      "to": "N030"
+    },
+    {
+      "count": 1,
+      "from": "N006",
+      "medianGapMs": 634967,
+      "sessions": 1,
+      "to": "N012"
+    },
+    {
+      "count": 1,
+      "from": "N006",
+      "medianGapMs": 61799,
+      "sessions": 1,
+      "to": "N027"
+    },
+    {
+      "count": 1,
+      "from": "N006",
+      "medianGapMs": 1945,
+      "sessions": 1,
+      "to": "N013"
+    },
+    {
+      "count": 1,
+      "from": "N006",
+      "medianGapMs": 416160,
+      "sessions": 1,
+      "to": "N010"
+    },
+    {
+      "count": 1,
+      "from": "N007",
+      "medianGapMs": 148181,
+      "sessions": 1,
+      "to": "N030"
+    },
+    {
+      "count": 1,
+      "from": "N007",
+      "medianGapMs": 13624322,
+      "sessions": 1,
+      "to": "N027"
+    },
+    {
+      "count": 1,
+      "from": "N007",
+      "medianGapMs": 34457,
+      "sessions": 1,
+      "to": "N034"
+    },
+    {
+      "count": 1,
+      "from": "N007",
+      "medianGapMs": 8090,
+      "sessions": 1,
+      "to": "N008"
+    },
+    {
+      "count": 1,
+      "from": "N008",
+      "medianGapMs": 9843,
+      "sessions": 1,
+      "to": "N031"
+    },
+    {
+      "count": 1,
+      "from": "N008",
+      "medianGapMs": 33203,
+      "sessions": 1,
+      "to": "N025"
+    },
+    {
+      "count": 1,
+      "from": "N008",
+      "medianGapMs": 15573,
+      "sessions": 1,
+      "to": "N018"
+    },
+    {
+      "count": 1,
+      "from": "N008",
+      "medianGapMs": 490896,
+      "sessions": 1,
+      "to": "N001"
+    },
+    {
+      "count": 1,
+      "from": "N008",
+      "medianGapMs": 103267,
+      "sessions": 1,
+      "to": "N015"
+    },
+    {
+      "count": 1,
+      "from": "N008",
+      "medianGapMs": 52948,
+      "sessions": 1,
+      "to": "N012"
+    },
+    {
+      "count": 1,
+      "from": "N008",
+      "medianGapMs": 965059,
+      "sessions": 1,
+      "to": "N013"
+    },
+    {
+      "count": 1,
+      "from": "N008",
+      "medianGapMs": 4413,
+      "sessions": 1,
+      "to": "N022"
+    },
+    {
+      "count": 1,
+      "from": "N010",
+      "medianGapMs": 214494,
+      "sessions": 1,
+      "to": "N006"
+    },
+    {
+      "count": 1,
+      "from": "N010",
+      "medianGapMs": 0,
+      "sessions": 1,
+      "to": "N039"
+    },
+    {
+      "count": 1,
+      "from": "N010",
+      "medianGapMs": 0,
+      "sessions": 1,
+      "to": "N005"
+    },
+    {
+      "count": 1,
+      "from": "N010",
+      "medianGapMs": 0,
+      "sessions": 1,
+      "to": "N026"
+    },
+    {
+      "count": 1,
+      "from": "N011",
+      "medianGapMs": 351626,
+      "sessions": 1,
+      "to": "N039"
+    },
+    {
+      "count": 1,
+      "from": "N011",
+      "medianGapMs": 513103,
+      "sessions": 1,
+      "to": "N038"
+    },
+    {
+      "count": 1,
+      "from": "N011",
+      "medianGapMs": 8,
+      "sessions": 1,
+      "to": "N018"
+    },
+    {
+      "count": 1,
+      "from": "N012",
+      "medianGapMs": 0,
+      "sessions": 1,
+      "to": "N011"
+    },
+    {
+      "count": 1,
+      "from": "N012",
+      "medianGapMs": 0,
+      "sessions": 1,
+      "to": "N013"
+    },
+    {
+      "count": 1,
+      "from": "N012",
+      "medianGapMs": 14427,
+      "sessions": 1,
+      "to": "N015"
+    },
+    {
+      "count": 1,
+      "from": "N012",
+      "medianGapMs": 0,
+      "sessions": 1,
+      "to": "N021"
+    },
+    {
+      "count": 1,
+      "from": "N013",
+      "medianGapMs": 21493,
+      "sessions": 1,
+      "to": "N005"
+    },
+    {
+      "count": 1,
+      "from": "N013",
+      "medianGapMs": 45465,
+      "sessions": 1,
+      "to": "N032"
+    },
+    {
+      "count": 1,
+      "from": "N015",
+      "medianGapMs": 1668395,
+      "sessions": 1,
+      "to": "N026"
+    },
+    {
+      "count": 1,
+      "from": "N015",
+      "medianGapMs": 80489,
+      "sessions": 1,
+      "to": "N001"
+    },
+    {
+      "count": 1,
+      "from": "N015",
+      "medianGapMs": 88773,
+      "sessions": 1,
+      "to": "N011"
+    },
+    {
+      "count": 1,
+      "from": "N018",
+      "medianGapMs": 78903,
+      "sessions": 1,
+      "to": "N008"
+    },
+    {
+      "count": 1,
+      "from": "N018",
+      "medianGapMs": 2009,
+      "sessions": 1,
+      "to": "N022"
+    },
+    {
+      "count": 1,
+      "from": "N018",
+      "medianGapMs": 36,
+      "sessions": 1,
+      "to": "N031"
+    },
+    {
+      "count": 1,
+      "from": "N018",
+      "medianGapMs": 88088,
+      "sessions": 1,
+      "to": "N032"
+    },
+    {
+      "count": 1,
+      "from": "N018",
+      "medianGapMs": 48851,
+      "sessions": 1,
+      "to": "N024"
+    },
+    {
+      "count": 1,
+      "from": "N020",
+      "medianGapMs": 8415,
+      "sessions": 1,
+      "to": "N032"
+    },
+    {
+      "count": 1,
+      "from": "N020",
+      "medianGapMs": 14635,
+      "sessions": 1,
+      "to": "N018"
+    },
+    {
+      "count": 1,
+      "from": "N020",
+      "medianGapMs": 48422,
+      "sessions": 1,
+      "to": "N004"
+    },
+    {
+      "count": 1,
+      "from": "N020",
+      "medianGapMs": 14977,
+      "sessions": 1,
+      "to": "N036"
+    },
+    {
+      "count": 1,
+      "from": "N020",
+      "medianGapMs": 210024,
+      "sessions": 1,
+      "to": "N008"
+    },
+    {
+      "count": 1,
+      "from": "N021",
+      "medianGapMs": 0,
+      "sessions": 1,
+      "to": "N013"
+    },
+    {
+      "count": 1,
+      "from": "N021",
+      "medianGapMs": 0,
+      "sessions": 1,
+      "to": "N010"
+    },
+    {
+      "count": 1,
+      "from": "N021",
+      "medianGapMs": 12738,
+      "sessions": 1,
+      "to": "N038"
+    },
+    {
+      "count": 1,
+      "from": "N022",
+      "medianGapMs": 45908,
+      "sessions": 1,
+      "to": "N006"
+    },
+    {
+      "count": 1,
+      "from": "N022",
+      "medianGapMs": 28599,
+      "sessions": 1,
+      "to": "N020"
+    },
+    {
+      "count": 1,
+      "from": "N024",
+      "medianGapMs": 103870,
+      "sessions": 1,
+      "to": "N021"
+    },
+    {
+      "count": 1,
+      "from": "N024",
+      "medianGapMs": 28287,
+      "sessions": 1,
+      "to": "N031"
+    },
+    {
+      "count": 1,
+      "from": "N024",
+      "medianGapMs": 338251,
+      "sessions": 1,
+      "to": "N013"
+    },
+    {
+      "count": 1,
+      "from": "N024",
+      "medianGapMs": 76845,
+      "sessions": 1,
+      "to": "N034"
+    },
+    {
+      "count": 1,
+      "from": "N024",
+      "medianGapMs": 273380,
+      "sessions": 1,
+      "to": "N039"
+    },
+    {
+      "count": 1,
+      "from": "N024",
+      "medianGapMs": 1949908,
+      "sessions": 1,
+      "to": "N036"
+    },
+    {
+      "count": 1,
+      "from": "N024",
+      "medianGapMs": 62816,
+      "sessions": 1,
+      "to": "N004"
+    },
+    {
+      "count": 1,
+      "from": "N024",
+      "medianGapMs": 152766,
+      "sessions": 1,
+      "to": "N007"
+    },
+    {
+      "count": 1,
+      "from": "N024",
+      "medianGapMs": 655753,
+      "sessions": 1,
+      "to": "N020"
+    },
+    {
+      "count": 1,
+      "from": "N024",
+      "medianGapMs": 11478,
+      "sessions": 1,
+      "to": "N015"
+    },
+    {
+      "count": 1,
+      "from": "N025",
+      "medianGapMs": 0,
+      "sessions": 1,
+      "to": "N010"
+    },
+    {
+      "count": 1,
+      "from": "N025",
+      "medianGapMs": 0,
+      "sessions": 1,
+      "to": "N008"
+    },
+    {
+      "count": 1,
+      "from": "N026",
+      "medianGapMs": 0,
+      "sessions": 1,
+      "to": "N006"
+    },
+    {
+      "count": 1,
+      "from": "N026",
+      "medianGapMs": 51029,
+      "sessions": 1,
+      "to": "N010"
+    },
+    {
+      "count": 1,
+      "from": "N026",
+      "medianGapMs": 61570,
+      "sessions": 1,
+      "to": "N032"
+    },
+    {
+      "count": 1,
+      "from": "N026",
+      "medianGapMs": 0,
+      "sessions": 1,
+      "to": "N013"
+    },
+    {
+      "count": 1,
+      "from": "N026",
+      "medianGapMs": 0,
+      "sessions": 1,
+      "to": "N012"
+    },
+    {
+      "count": 1,
+      "from": "N027",
+      "medianGapMs": 11955,
+      "sessions": 1,
+      "to": "N015"
+    },
+    {
+      "count": 1,
+      "from": "N027",
+      "medianGapMs": 4447,
+      "sessions": 1,
+      "to": "N031"
+    },
+    {
+      "count": 1,
+      "from": "N027",
+      "medianGapMs": 0,
+      "sessions": 1,
+      "to": "N013"
+    },
+    {
+      "count": 1,
+      "from": "N027",
+      "medianGapMs": 5253,
+      "sessions": 1,
+      "to": "N007"
+    },
+    {
+      "count": 1,
+      "from": "N027",
+      "medianGapMs": 187626,
+      "sessions": 1,
+      "to": "N012"
+    },
+    {
+      "count": 1,
+      "from": "N027",
+      "medianGapMs": 51470,
+      "sessions": 1,
+      "to": "N030"
+    },
+    {
+      "count": 1,
+      "from": "N030",
+      "medianGapMs": 0,
+      "sessions": 1,
+      "to": "N003"
+    },
+    {
+      "count": 1,
+      "from": "N030",
+      "medianGapMs": 0,
+      "sessions": 1,
+      "to": "N008"
+    },
+    {
+      "count": 1,
+      "from": "N030",
+      "medianGapMs": 0,
+      "sessions": 1,
+      "to": "N005"
+    },
+    {
+      "count": 1,
+      "from": "N030",
+      "medianGapMs": 0,
+      "sessions": 1,
+      "to": "N010"
+    },
+    {
+      "count": 1,
+      "from": "N031",
+      "medianGapMs": 11346,
+      "sessions": 1,
+      "to": "N035"
+    },
+    {
+      "count": 1,
+      "from": "N031",
+      "medianGapMs": 2779,
+      "sessions": 1,
+      "to": "N018"
+    },
+    {
+      "count": 1,
+      "from": "N031",
+      "medianGapMs": 142906,
+      "sessions": 1,
+      "to": "N021"
+    },
+    {
+      "count": 1,
+      "from": "N031",
+      "medianGapMs": 3690,
+      "sessions": 1,
+      "to": "N007"
+    },
+    {
+      "count": 1,
+      "from": "N032",
+      "medianGapMs": 0,
+      "sessions": 1,
+      "to": "N003"
+    },
+    {
+      "count": 1,
+      "from": "N032",
+      "medianGapMs": 32170,
+      "sessions": 1,
+      "to": "N007"
+    },
+    {
+      "count": 1,
+      "from": "N032",
+      "medianGapMs": 337332,
+      "sessions": 1,
+      "to": "N021"
+    },
+    {
+      "count": 1,
+      "from": "N032",
+      "medianGapMs": 243066,
+      "sessions": 1,
+      "to": "N013"
+    },
+    {
+      "count": 1,
+      "from": "N032",
+      "medianGapMs": 99423,
+      "sessions": 1,
+      "to": "N026"
+    },
+    {
+      "count": 1,
+      "from": "N033",
+      "medianGapMs": 22302,
+      "sessions": 1,
+      "to": "N003"
+    },
+    {
+      "count": 1,
+      "from": "N033",
+      "medianGapMs": 34876,
+      "sessions": 1,
+      "to": "N039"
+    },
+    {
+      "count": 1,
+      "from": "N034",
+      "medianGapMs": 290580,
+      "sessions": 1,
+      "to": "N015"
+    },
+    {
+      "count": 1,
+      "from": "N034",
+      "medianGapMs": 387399,
+      "sessions": 1,
+      "to": "N006"
+    },
+    {
+      "count": 1,
+      "from": "N034",
+      "medianGapMs": 2231691,
+      "sessions": 1,
+      "to": "N018"
+    },
+    {
+      "count": 1,
+      "from": "N035",
+      "medianGapMs": 9610,
+      "sessions": 1,
+      "to": "N036"
+    },
+    {
+      "count": 1,
+      "from": "N035",
+      "medianGapMs": 24785,
+      "sessions": 1,
+      "to": "N002"
+    },
+    {
+      "count": 1,
+      "from": "N035",
+      "medianGapMs": 201344,
+      "sessions": 1,
+      "to": "N012"
+    },
+    {
+      "count": 1,
+      "from": "N035",
+      "medianGapMs": 334419,
+      "sessions": 1,
+      "to": "N001"
+    },
+    {
+      "count": 1,
+      "from": "N035",
+      "medianGapMs": 105499,
+      "sessions": 1,
+      "to": "N021"
+    },
+    {
+      "count": 1,
+      "from": "N036",
+      "medianGapMs": 513643,
+      "sessions": 1,
+      "to": "N006"
+    },
+    {
+      "count": 1,
+      "from": "N036",
+      "medianGapMs": 24157,
+      "sessions": 1,
+      "to": "N035"
+    },
+    {
+      "count": 1,
+      "from": "N036",
+      "medianGapMs": 541796,
+      "sessions": 1,
+      "to": "N004"
+    },
+    {
+      "count": 1,
+      "from": "N036",
+      "medianGapMs": 0,
+      "sessions": 1,
+      "to": "N012"
+    },
+    {
+      "count": 1,
+      "from": "N036",
+      "medianGapMs": 582646,
+      "sessions": 1,
+      "to": "N011"
+    },
+    {
+      "count": 1,
+      "from": "N036",
+      "medianGapMs": 0,
+      "sessions": 1,
+      "to": "N026"
+    },
+    {
+      "count": 1,
+      "from": "N038",
+      "medianGapMs": 7093,
+      "sessions": 1,
+      "to": "N032"
+    },
+    {
+      "count": 1,
+      "from": "N039",
+      "medianGapMs": 432682,
+      "sessions": 1,
+      "to": "N010"
+    },
+    {
+      "count": 1,
+      "from": "N039",
+      "medianGapMs": 39811,
+      "sessions": 1,
+      "to": "N011"
+    },
+    {
+      "count": 1,
+      "from": "N039",
+      "medianGapMs": 17743,
+      "sessions": 1,
+      "to": "N021"
+    },
+    {
+      "count": 1,
+      "from": "N039",
+      "medianGapMs": 48417,
+      "sessions": 1,
+      "to": "N004"
+    }
+  ],
+  "motifIndex": {
+    "M0025D": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "User",
+        "User",
+        "User",
+        "ToolSearch"
+      ]
+    },
+    "M01317": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(grep)",
+        "Bash(grep)",
+        "Bash(sed)"
+      ]
+    },
+    "M015DF": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(grep)",
+        "Bash(sed)"
+      ]
+    },
+    "M01E0B": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(other)",
+        "User"
+      ]
+    },
+    "M03C90": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "Bash(sed)",
+        "Bash(sed)"
+      ]
+    },
+    "M04631": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(gh)",
+        "Mcp(linear)",
+        "Mcp(linear)"
+      ]
+    },
+    "M0617C": {
+      "kind": "ritual",
+      "sequence": [
+        "Artifact",
+        "User"
+      ]
+    },
+    "M063E8": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "User",
+        "Bash(other)",
+        "Bash(other)"
+      ]
+    },
+    "M06C08": {
+      "kind": "ritual",
+      "sequence": [
+        "ToolSearch",
+        "Mcp(slack)"
+      ]
+    },
+    "M06DC0": {
+      "kind": "cycle",
+      "sequence": [
+        "Bash(python3:-c)"
+      ]
+    },
+    "M073B9": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "Bash(gh)"
+      ]
+    },
+    "M0832A": {
+      "kind": "cycle",
+      "sequence": [
+        "Bash(script)"
+      ]
+    },
+    "M08E6B": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(grep)",
+        "Bash(sed)",
+        "Bash(python3:stdin)"
+      ]
+    },
+    "M0A236": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "User",
+        "Bash(sed)"
+      ]
+    },
+    "M0A3F3": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "Bash(other)",
+        "Bash(git)"
+      ]
+    },
+    "M0A9EB": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(other)",
+        "Bash(other)"
+      ]
+    },
+    "M0AEFD": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(git)"
+      ]
+    },
+    "M0B063": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "User",
+        "User",
+        "Bash(gh)"
+      ]
+    },
+    "M0B56B": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "ToolSearch"
+      ]
+    },
+    "M0C195": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Task(general-purpose)"
+      ]
+    },
+    "M0C1D2": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(other)",
+        "Bash(other)",
+        "Bash(other)"
+      ]
+    },
+    "M0C3A3": {
+      "kind": "ritual",
+      "sequence": [
+        "Task(general-purpose)",
+        "User",
+        "Bash(other)"
+      ]
+    },
+    "M0C96A": {
+      "kind": "cycle",
+      "sequence": [
+        "Bash(python3:stdin)"
+      ]
+    },
+    "M0CB0A": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Task(general-purpose)"
+      ]
+    },
+    "M0CCB4": {
+      "kind": "ritual",
+      "sequence": [
+        "ToolSearch",
+        "Bash(git)"
+      ]
+    },
+    "M0CF4B": {
+      "kind": "ritual",
+      "sequence": [
+        "ToolSearch",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)"
+      ]
+    },
+    "M0D445": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "User"
+      ]
+    },
+    "M0E052": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(sed)",
+        "Bash(sed)",
+        "Bash(python3:stdin)"
+      ]
+    },
+    "M0F469": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "Bash(git)",
+        "Bash(git)",
+        "Bash(git)",
+        "User"
+      ]
+    },
+    "M0F498": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(grep)",
+        "Bash(sed)",
+        "Bash(sed)"
+      ]
+    },
+    "M109FD": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(sed)"
+      ]
+    },
+    "M1172E": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "ToolSearch"
+      ]
+    },
+    "M1216A": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(python3:-m)",
+        "Bash(python3:stdin)"
+      ]
+    },
+    "M12AE1": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "User",
+        "Bash(other)"
+      ]
+    },
+    "M13156": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "User",
+        "ToolSearch"
+      ]
+    },
+    "M1471E": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(sed)",
+        "Bash(grep)",
+        "Bash(sed)",
+        "Bash(sed)"
+      ]
+    },
+    "M147BC": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(other)",
+        "User"
+      ]
+    },
+    "M147DA": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(find)"
+      ]
+    },
+    "M1487F": {
+      "kind": "cycle",
+      "sequence": [
+        "Bash(grep)"
+      ]
+    },
+    "M14D89": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(sed)",
+        "Bash(git)"
+      ]
+    },
+    "M15B37": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(python3:stdin)",
+        "Bash(other)"
+      ]
+    },
+    "M15BBF": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "ToolSearch"
+      ]
+    },
+    "M16200": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(fireflies)",
+        "Mcp(fireflies)"
+      ]
+    },
+    "M192D2": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(grep)",
+        "Bash(git)"
+      ]
+    },
+    "M19A33": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Bash(git)"
+      ]
+    },
+    "M1ADAB": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(sed)"
+      ]
+    },
+    "M1C32D": {
+      "kind": "ritual",
+      "sequence": [
+        "ToolSearch",
+        "Mcp(fireflies)",
+        "Mcp(fireflies)",
+        "Mcp(fireflies)"
+      ]
+    },
+    "M1CE89": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(git)",
+        "Bash(git)",
+        "User"
+      ]
+    },
+    "M1D2D1": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(other)",
+        "User",
+        "Bash(other)"
+      ]
+    },
+    "M1D98C": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(gh)",
+        "Bash(gh)",
+        "Bash(gh)"
+      ]
+    },
+    "M1EEA9": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(grep)"
+      ]
+    },
+    "M1FF4F": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(python3:stdin)",
+        "Bash(python3:stdin)",
+        "Artifact"
+      ]
+    },
+    "M20424": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "Bash(other)",
+        "User"
+      ]
+    },
+    "M207B6": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(gh)"
+      ]
+    },
+    "M2327F": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "User",
+        "Bash(git)"
+      ]
+    },
+    "M23978": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(python3:-c)"
+      ]
+    },
+    "M254FE": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(gh)",
+        "Bash(gh)"
+      ]
+    },
+    "M25A33": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(gh)",
+        "Bash(git)"
+      ]
+    },
+    "M26219": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Bash(git)"
+      ]
+    },
+    "M27B09": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "User",
+        "Bash(other)",
+        "User"
+      ]
+    },
+    "M27C5A": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "User"
+      ]
+    },
+    "M289A6": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(find)",
+        "Bash(other)"
+      ]
+    },
+    "M2A24F": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(other)",
+        "Task(general-purpose)"
+      ]
+    },
+    "M2C0F3": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "ToolSearch",
+        "Bash(git)",
+        "Mcp(linear)"
+      ]
+    },
+    "M2D5A6": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(script)",
+        "User"
+      ]
+    },
+    "M2DDE1": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(gh)",
+        "Bash(other)"
+      ]
+    },
+    "M2F52D": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "User",
+        "Bash(find)"
+      ]
+    },
+    "M3014F": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(script)"
+      ]
+    },
+    "M3347D": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(git)",
+        "User"
+      ]
+    },
+    "M34180": {
+      "kind": "cycle",
+      "sequence": [
+        "Edit(.md)"
+      ]
+    },
+    "M3420B": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "ToolSearch"
+      ]
+    },
+    "M3796E": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(other)",
+        "Bash(grep)"
+      ]
+    },
+    "M39855": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(sed)",
+        "Bash(sed)",
+        "Bash(grep)"
+      ]
+    },
+    "M3A05D": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(gh)",
+        "Bash(git)",
+        "Bash(git)"
+      ]
+    },
+    "M3A75D": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(sed)",
+        "Bash(sed)",
+        "User"
+      ]
+    },
+    "M3AAB2": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "Task(general-purpose)"
+      ]
+    },
+    "M3B001": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(find)",
+        "Bash(other)"
+      ]
+    },
+    "M3B007": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "AskUserQuestion"
+      ]
+    },
+    "M3B6D0": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(python3:stdin)",
+        "Bash(grep)"
+      ]
+    },
+    "M3BE62": {
+      "kind": "ritual",
+      "sequence": [
+        "ToolSearch",
+        "Mcp(fireflies)"
+      ]
+    },
+    "M3CD5D": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "ToolSearch",
+        "Mcp(linear)",
+        "Mcp(linear)"
+      ]
+    },
+    "M3D8AF": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "User",
+        "User"
+      ]
+    },
+    "M3FE02": {
+      "kind": "ritual",
+      "sequence": [
+        "ToolSearch",
+        "Mcp(fireflies)",
+        "Mcp(fireflies)"
+      ]
+    },
+    "M3FFF6": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(python3:stdin)",
+        "User",
+        "User",
+        "User"
+      ]
+    },
+    "M4156E": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Mcp(linear)",
+        "Mcp(linear)"
+      ]
+    },
+    "M4430D": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "Bash(git)",
+        "User",
+        "Bash(git)"
+      ]
+    },
+    "M444B3": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "User"
+      ]
+    },
+    "M44592": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(script)",
+        "Bash(script)"
+      ]
+    },
+    "M45638": {
+      "kind": "ritual",
+      "sequence": [
+        "Skill(other)",
+        "User"
+      ]
+    },
+    "M4582B": {
+      "kind": "ritual",
+      "sequence": [
+        "ToolSearch",
+        "Bash(git)",
+        "Mcp(linear)"
+      ]
+    },
+    "M46048": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(other)",
+        "Bash(other)",
+        "User"
+      ]
+    },
+    "M4655D": {
+      "kind": "ritual",
+      "sequence": [
+        "AskUserQuestion",
+        "User"
+      ]
+    },
+    "M46C18": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "User",
+        "User",
+        "User"
+      ]
+    },
+    "M47752": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Task(general-purpose)",
+        "User"
+      ]
+    },
+    "M481EC": {
+      "kind": "cycle",
+      "sequence": [
+        "Mcp(harvest)"
+      ]
+    },
+    "M48FD5": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(git)",
+        "Bash(git)"
+      ]
+    },
+    "M49A78": {
+      "kind": "ritual",
+      "sequence": [
+        "Read(.png)",
+        "User"
+      ]
+    },
+    "M49E09": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(other)",
+        "Bash(script)"
+      ]
+    },
+    "M4A87E": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "ToolSearch",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)"
+      ]
+    },
+    "M4B19E": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(script)"
+      ]
+    },
+    "M4C474": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Mcp(box)",
+        "Mcp(box)",
+        "Mcp(box)"
+      ]
+    },
+    "M4D878": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(grep)",
+        "Bash(sed)",
+        "Bash(grep)"
+      ]
+    },
+    "M4EB84": {
+      "kind": "cycle",
+      "sequence": [
+        "Bash(other)"
+      ]
+    },
+    "M50CF3": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(find)"
+      ]
+    },
+    "M51424": {
+      "kind": "cycle",
+      "sequence": [
+        "Bash(sed)"
+      ]
+    },
+    "M52EF4": {
+      "kind": "ritual",
+      "sequence": [
+        "ToolSearch",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "User"
+      ]
+    },
+    "M53F23": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "User",
+        "Bash(sed)",
+        "Bash(sed)"
+      ]
+    },
+    "M55773": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(other)",
+        "Bash(sed)"
+      ]
+    },
+    "M55CC3": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(grep)",
+        "Bash(sed)",
+        "Bash(sed)",
+        "Bash(grep)"
+      ]
+    },
+    "M56043": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(sed)",
+        "User"
+      ]
+    },
+    "M560AA": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "Bash(other)",
+        "Bash(other)"
+      ]
+    },
+    "M5663E": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(gh)",
+        "User",
+        "Bash(gh)"
+      ]
+    },
+    "M57537": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "AskUserQuestion"
+      ]
+    },
+    "M58EAA": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "ToolSearch",
+        "Mcp(linear)"
+      ]
+    },
+    "M59229": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(git)",
+        "Bash(other)"
+      ]
+    },
+    "M59868": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "User",
+        "Bash(git)"
+      ]
+    },
+    "M59E22": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(sed)",
+        "Bash(other)",
+        "Bash(other)",
+        "Bash(other)"
+      ]
+    },
+    "M5AA8C": {
+      "kind": "ritual",
+      "sequence": [
+        "Task(general-purpose)",
+        "Bash(other)",
+        "Tool(other)",
+        "User",
+        "Bash(git)",
+        "Task(general-purpose)"
+      ]
+    },
+    "M5B158": {
+      "kind": "ritual",
+      "sequence": [
+        "Task(general-purpose)",
+        "User",
+        "Task(general-purpose)",
+        "User"
+      ]
+    },
+    "M5B3C7": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "ToolSearch",
+        "Mcp(linear)"
+      ]
+    },
+    "M5C007": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "ToolSearch",
+        "Mcp(linear)"
+      ]
+    },
+    "M5C663": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(python3:stdin)",
+        "Bash(python3:stdin)"
+      ]
+    },
+    "M5C862": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(fireflies)"
+      ]
+    },
+    "M5DEE1": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "User",
+        "User",
+        "Bash(other)"
+      ]
+    },
+    "M5ED14": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "Bash(git)",
+        "Bash(other)"
+      ]
+    },
+    "M5F5EE": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "User",
+        "User",
+        "Bash(git)"
+      ]
+    },
+    "M5FBC4": {
+      "kind": "cycle",
+      "sequence": [
+        "Bash(git)"
+      ]
+    },
+    "M61AC7": {
+      "kind": "ritual",
+      "sequence": [
+        "ToolSearch",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)"
+      ]
+    },
+    "M620E4": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "ToolSearch",
+        "Mcp(linear)",
+        "User"
+      ]
+    },
+    "M625A8": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Skill(other)"
+      ]
+    },
+    "M62EF1": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "User",
+        "ToolSearch"
+      ]
+    },
+    "M63ACA": {
+      "kind": "ritual",
+      "sequence": [
+        "Task(general-purpose)",
+        "Task(general-purpose)",
+        "User",
+        "User"
+      ]
+    },
+    "M63E3C": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "User",
+        "Bash(git)",
+        "Bash(git)"
+      ]
+    },
+    "M64343": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(script)",
+        "Bash(other)"
+      ]
+    },
+    "M643B3": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(sed)",
+        "Bash(grep)"
+      ]
+    },
+    "M6449B": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(other)",
+        "Bash(other)",
+        "Bash(sed)"
+      ]
+    },
+    "M64CB4": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "ToolSearch",
+        "ToolSearch"
+      ]
+    },
+    "M67A02": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "User",
+        "ToolSearch"
+      ]
+    },
+    "M67D81": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "User",
+        "Bash(other)",
+        "User"
+      ]
+    },
+    "M69CDA": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(fireflies)"
+      ]
+    },
+    "M6AED1": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Task(general-purpose)",
+        "User",
+        "Bash(other)"
+      ]
+    },
+    "M6D409": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(sed)",
+        "Bash(sed)",
+        "Bash(sed)"
+      ]
+    },
+    "M6E396": {
+      "kind": "ritual",
+      "sequence": [
+        "Task(general-purpose)",
+        "User"
+      ]
+    },
+    "M6E924": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)"
+      ]
+    },
+    "M6ED2F": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Task(general-purpose)",
+        "User",
+        "Task(general-purpose)",
+        "User"
+      ]
+    },
+    "M70EED": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(git)"
+      ]
+    },
+    "M7180B": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(grep)",
+        "Bash(other)"
+      ]
+    },
+    "M71C31": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "Bash(sed)"
+      ]
+    },
+    "M720A2": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(sed)",
+        "Bash(other)"
+      ]
+    },
+    "M72D08": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(python3:stdin)",
+        "Bash(python3:stdin)",
+        "Bash(other)"
+      ]
+    },
+    "M73DC8": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(sed)",
+        "Bash(sed)"
+      ]
+    },
+    "M75BBA": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(sed)",
+        "Bash(sed)",
+        "Bash(sed)",
+        "Bash(sed)"
+      ]
+    },
+    "M75C56": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "User",
+        "ToolSearch"
+      ]
+    },
+    "M76961": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Skill(other)",
+        "User",
+        "ToolSearch"
+      ]
+    },
+    "M76C0D": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Bash(other)"
+      ]
+    },
+    "M7768F": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "User",
+        "User"
+      ]
+    },
+    "M778AD": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(sed)",
+        "Bash(other)",
+        "Bash(other)"
+      ]
+    },
+    "M78DE2": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "User"
+      ]
+    },
+    "M79AC2": {
+      "kind": "ritual",
+      "sequence": [
+        "Write(.md)",
+        "ToolSearch"
+      ]
+    },
+    "M7A0E9": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "ToolSearch",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)"
+      ]
+    },
+    "M7A5A1": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(script)",
+        "Bash(sed)"
+      ]
+    },
+    "M7B317": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "Bash(git)",
+        "Bash(git)",
+        "User"
+      ]
+    },
+    "M7B591": {
+      "kind": "ritual",
+      "sequence": [
+        "ToolSearch",
+        "Mcp(box)",
+        "Mcp(box)"
+      ]
+    },
+    "M7C70B": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(grep)",
+        "Bash(python3:stdin)",
+        "Bash(python3:stdin)"
+      ]
+    },
+    "M7E0F0": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "User",
+        "ToolSearch"
+      ]
+    },
+    "M7F4CC": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(grep)",
+        "Bash(grep)",
+        "Bash(sed)",
+        "Bash(sed)"
+      ]
+    },
+    "M81C02": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "User",
+        "User"
+      ]
+    },
+    "M820B0": {
+      "kind": "ritual",
+      "sequence": [
+        "ToolSearch",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)"
+      ]
+    },
+    "M829AC": {
+      "kind": "ritual",
+      "sequence": [
+        "ToolSearch",
+        "Mcp(linear)",
+        "Mcp(linear)"
+      ]
+    },
+    "M87831": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(grep)",
+        "User"
+      ]
+    },
+    "M87DEF": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "User",
+        "User"
+      ]
+    },
+    "M87FCF": {
+      "kind": "cycle",
+      "sequence": [
+        "Mcp(slack)"
+      ]
+    },
+    "M8812E": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "Mcp(linear)",
+        "Mcp(linear)"
+      ]
+    },
+    "M881EB": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(gh)",
+        "Bash(gh)",
+        "User"
+      ]
+    },
+    "M88C51": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(other)",
+        "User",
+        "Bash(other)",
+        "User"
+      ]
+    },
+    "M89357": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "Bash(git)",
+        "User"
+      ]
+    },
+    "M8B10C": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Write(.md)"
+      ]
+    },
+    "M8B6B3": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(python3:stdin)",
+        "Artifact"
+      ]
+    },
+    "M8B8B7": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(python3:stdin)",
+        "User"
+      ]
+    },
+    "M8BD70": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "User",
+        "User",
+        "User",
+        "Bash(sed)"
+      ]
+    },
+    "M8C20A": {
+      "kind": "ritual",
+      "sequence": [
+        "Task(general-purpose)",
+        "Bash(other)"
+      ]
+    },
+    "M8E6CC": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "User",
+        "Bash(other)"
+      ]
+    },
+    "M8FCE7": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(python3:stdin)"
+      ]
+    },
+    "M8FD55": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(python3:stdin)",
+        "Bash(sed)",
+        "Bash(python3:stdin)",
+        "Bash(python3:stdin)",
+        "Bash(python3:stdin)",
+        "Bash(python3:stdin)"
+      ]
+    },
+    "M8FD5C": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "User",
+        "User"
+      ]
+    },
+    "M9120D": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(grep)",
+        "Bash(python3:stdin)"
+      ]
+    },
+    "M916DD": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(python3:stdin)"
+      ]
+    },
+    "M92E45": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "User",
+        "User",
+        "ToolSearch"
+      ]
+    },
+    "M93784": {
+      "kind": "cycle",
+      "sequence": [
+        "Task(general-purpose)"
+      ]
+    },
+    "M97E7F": {
+      "kind": "ritual",
+      "sequence": [
+        "AskUserQuestion",
+        "Bash(other)"
+      ]
+    },
+    "M99610": {
+      "kind": "cycle",
+      "sequence": [
+        "Mcp(linear)"
+      ]
+    },
+    "M999E8": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(sed)",
+        "Bash(python3:stdin)"
+      ]
+    },
+    "M9B3B5": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "User",
+        "Bash(gh)"
+      ]
+    },
+    "M9CE35": {
+      "kind": "cycle",
+      "sequence": [
+        "Edit(.py)"
+      ]
+    },
+    "M9DC10": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "ToolSearch",
+        "Mcp(linear)"
+      ]
+    },
+    "M9ED40": {
+      "kind": "cycle",
+      "sequence": [
+        "Mcp(box)"
+      ]
+    },
+    "M9EFAB": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "User",
+        "User",
+        "User",
+        "Bash(gh)"
+      ]
+    },
+    "M9F9EC": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Mcp(box)"
+      ]
+    },
+    "MA229B": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(find)",
+        "Bash(git)"
+      ]
+    },
+    "MA2FB7": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(other)"
+      ]
+    },
+    "MA369C": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(python3:stdin)",
+        "Bash(python3:file)"
+      ]
+    },
+    "MA3A9C": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(grep)",
+        "Bash(grep)"
+      ]
+    },
+    "MA4F33": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "Bash(git)",
+        "Bash(git)",
+        "User",
+        "Bash(git)"
+      ]
+    },
+    "MA6590": {
+      "kind": "ritual",
+      "sequence": [
+        "Skill(brainstorming)",
+        "User"
+      ]
+    },
+    "MA7740": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "ToolSearch",
+        "Bash(git)"
+      ]
+    },
+    "MA8FB0": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "User",
+        "User",
+        "User"
+      ]
+    },
+    "MA9006": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(git)",
+        "Bash(git)"
+      ]
+    },
+    "MA916D": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "User",
+        "Bash(grep)"
+      ]
+    },
+    "MA91B4": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "ToolSearch",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)"
+      ]
+    },
+    "MA9202": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(python3:stdin)",
+        "Bash(python3:stdin)",
+        "Bash(grep)"
+      ]
+    },
+    "MAA975": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "User"
+      ]
+    },
+    "MABFDF": {
+      "kind": "ritual",
+      "sequence": [
+        "Skill(artifact-design)",
+        "User"
+      ]
+    },
+    "MAD085": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(other)",
+        "Bash(script)",
+        "Bash(script)"
+      ]
+    },
+    "MAE684": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(gh)"
+      ]
+    },
+    "MAFD79": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(sed)",
+        "Bash(other)"
+      ]
+    },
+    "MB13CF": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(git)",
+        "Bash(other)"
+      ]
+    },
+    "MB22DF": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "Bash(grep)"
+      ]
+    },
+    "MB2635": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Mcp(linear)"
+      ]
+    },
+    "MB3A4B": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(other)",
+        "User",
+        "Bash(other)"
+      ]
+    },
+    "MB4CEB": {
+      "kind": "ritual",
+      "sequence": [
+        "Skill(other)",
+        "User",
+        "Bash(find)"
+      ]
+    },
+    "MB6288": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "ToolSearch"
+      ]
+    },
+    "MB6A22": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "ToolSearch",
+        "Mcp(harvest)",
+        "Mcp(harvest)"
+      ]
+    },
+    "MB6EB1": {
+      "kind": "cycle",
+      "sequence": [
+        "Mcp(fireflies)"
+      ]
+    },
+    "MB78F6": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(sed)",
+        "User",
+        "User"
+      ]
+    },
+    "MB7B0B": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "User",
+        "Skill(other)",
+        "User"
+      ]
+    },
+    "MB8615": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(gh)",
+        "Bash(other)",
+        "Bash(other)"
+      ]
+    },
+    "MB93EC": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(python3:stdin)",
+        "Bash(grep)",
+        "Bash(python3:stdin)"
+      ]
+    },
+    "MBBD8C": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "ToolSearch"
+      ]
+    },
+    "MBCD89": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(find)",
+        "Bash(other)",
+        "Bash(other)",
+        "Bash(other)"
+      ]
+    },
+    "MBCF0E": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(python3:stdin)",
+        "Bash(python3:stdin)",
+        "User"
+      ]
+    },
+    "MBD308": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "ToolSearch",
+        "Mcp(linear)"
+      ]
+    },
+    "MBD840": {
+      "kind": "ritual",
+      "sequence": [
+        "ToolSearch",
+        "Mcp(box)"
+      ]
+    },
+    "MBDD26": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(other)",
+        "User",
+        "User",
+        "User"
+      ]
+    },
+    "MBE91D": {
+      "kind": "ritual",
+      "sequence": [
+        "Write(.md)",
+        "User"
+      ]
+    },
+    "MBEB86": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(sed)",
+        "Bash(grep)",
+        "Bash(sed)"
+      ]
+    },
+    "MBF5A0": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Task(general-purpose)",
+        "Task(general-purpose)"
+      ]
+    },
+    "MC0B0C": {
+      "kind": "ritual",
+      "sequence": [
+        "ToolSearch",
+        "Mcp(linear)"
+      ]
+    },
+    "MC0F27": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Bash(gh)"
+      ]
+    },
+    "MC1695": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(gh)",
+        "Mcp(linear)"
+      ]
+    },
+    "MC16D9": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "User",
+        "Write(.md)"
+      ]
+    },
+    "MC22C1": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(python3:stdin)",
+        "Bash(sed)",
+        "Bash(python3:stdin)"
+      ]
+    },
+    "MC4314": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Skill(brainstorming)",
+        "User"
+      ]
+    },
+    "MC481A": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(python3:stdin)",
+        "Bash(python3:stdin)",
+        "Bash(python3:stdin)"
+      ]
+    },
+    "MC64EA": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "Mcp(linear)"
+      ]
+    },
+    "MC64EE": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(script)",
+        "Bash(git)"
+      ]
+    },
+    "MC6669": {
+      "kind": "ritual",
+      "sequence": [
+        "Task(general-purpose)",
+        "User",
+        "Task(general-purpose)"
+      ]
+    },
+    "MC690C": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(find)",
+        "Bash(other)",
+        "Bash(other)"
+      ]
+    },
+    "MC712F": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "ToolSearch",
+        "Mcp(linear)",
+        "Mcp(linear)"
+      ]
+    },
+    "MC84E5": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(python3:-c)"
+      ]
+    },
+    "MCA041": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "Bash(git)",
+        "Bash(gh)"
+      ]
+    },
+    "MCAEDF": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(find)",
+        "Bash(sed)"
+      ]
+    },
+    "MCB8CB": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(python3:stdin)",
+        "Bash(sed)"
+      ]
+    },
+    "MCD3C5": {
+      "kind": "ritual",
+      "sequence": [
+        "Task(general-purpose)",
+        "User",
+        "User"
+      ]
+    },
+    "MCE0C0": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "ToolSearch",
+        "Mcp(linear)",
+        "Mcp(linear)"
+      ]
+    },
+    "MD022E": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Mcp(linear)"
+      ]
+    },
+    "MD0521": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "User",
+        "User",
+        "User",
+        "Bash(git)"
+      ]
+    },
+    "MD0580": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Bash(gh)"
+      ]
+    },
+    "MD1A69": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(python3:file)",
+        "Bash(python3:stdin)"
+      ]
+    },
+    "MD2045": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(gh)",
+        "ToolSearch"
+      ]
+    },
+    "MD28CA": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(sed)",
+        "Bash(python3:stdin)",
+        "Bash(python3:stdin)",
+        "Bash(python3:stdin)"
+      ]
+    },
+    "MD391B": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "ToolSearch",
+        "Mcp(linear)",
+        "Mcp(linear)"
+      ]
+    },
+    "MD6063": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(git)",
+        "User"
+      ]
+    },
+    "MD76A4": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(git)",
+        "Bash(git)",
+        "Bash(git)"
+      ]
+    },
+    "MD83CB": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(gh)",
+        "User"
+      ]
+    },
+    "MD8E66": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(python3:stdin)",
+        "Bash(git)"
+      ]
+    },
+    "MD8F0A": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "Bash(other)"
+      ]
+    },
+    "MDA856": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(other)",
+        "Bash(git)"
+      ]
+    },
+    "MDA993": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)"
+      ]
+    },
+    "MDB4A4": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Skill(other)",
+        "User"
+      ]
+    },
+    "MDDF1F": {
+      "kind": "ritual",
+      "sequence": [
+        "Task(general-purpose)",
+        "Task(general-purpose)",
+        "Task(general-purpose)",
+        "User"
+      ]
+    },
+    "MDFB7D": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Bash(git)"
+      ]
+    },
+    "ME0AF3": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(fireflies)",
+        "Mcp(linear)"
+      ]
+    },
+    "ME1665": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(sed)",
+        "ToolSearch"
+      ]
+    },
+    "ME3F08": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "Bash(grep)"
+      ]
+    },
+    "ME468C": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "Bash(git)",
+        "Bash(sed)"
+      ]
+    },
+    "ME633B": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "ToolSearch",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)"
+      ]
+    },
+    "ME886F": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "Bash(git)",
+        "User",
+        "Bash(git)",
+        "Bash(git)"
+      ]
+    },
+    "ME8889": {
+      "kind": "ritual",
+      "sequence": [
+        "ToolSearch",
+        "Mcp(linear)",
+        "User"
+      ]
+    },
+    "MEA8FD": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(python3:stdin)",
+        "User"
+      ]
+    },
+    "MEC56A": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(git)",
+        "ToolSearch",
+        "Mcp(linear)",
+        "Mcp(linear)"
+      ]
+    },
+    "MEF129": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(python3:stdin)",
+        "Bash(script)"
+      ]
+    },
+    "MEFA34": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "User",
+        "User",
+        "Skill(other)",
+        "User"
+      ]
+    },
+    "MF15C8": {
+      "kind": "cycle",
+      "sequence": [
+        "Bash(gh)"
+      ]
+    },
+    "MF1C24": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Skill(other)",
+        "User",
+        "ToolSearch",
+        "Mcp(linear)"
+      ]
+    },
+    "MF20BE": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(sed)",
+        "Bash(sed)",
+        "Bash(grep)",
+        "Bash(sed)"
+      ]
+    },
+    "MF49B4": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Bash(other)"
+      ]
+    },
+    "MF5815": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(git)",
+        "ToolSearch"
+      ]
+    },
+    "MF7426": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(sed)",
+        "Bash(python3:stdin)",
+        "Bash(python3:stdin)"
+      ]
+    },
+    "MF8107": {
+      "kind": "ritual",
+      "sequence": [
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "Mcp(linear)",
+        "User"
+      ]
+    },
+    "MF8B70": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(sed)",
+        "Bash(sed)"
+      ]
+    },
+    "MF8FF9": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(find)",
+        "User"
+      ]
+    },
+    "MF9436": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(python3:stdin)",
+        "User",
+        "User"
+      ]
+    },
+    "MF9E9C": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(python3:file)"
+      ]
+    },
+    "MFB97A": {
+      "kind": "ritual",
+      "sequence": [
+        "Task(general-purpose)",
+        "Task(general-purpose)",
+        "Task(general-purpose)",
+        "Task(general-purpose)",
+        "User"
+      ]
+    },
+    "MFC66A": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(git)",
+        "Bash(git)",
+        "Bash(git)",
+        "Bash(git)"
+      ]
+    },
+    "MFCE6E": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(find)",
+        "Bash(grep)"
+      ]
+    },
+    "MFD346": {
+      "kind": "ritual",
+      "sequence": [
+        "Task(general-purpose)",
+        "Task(general-purpose)",
+        "User"
+      ]
+    },
+    "MFF42D": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(other)",
+        "User"
+      ]
+    },
+    "MFFB3F": {
+      "kind": "ritual",
+      "sequence": [
+        "Tool(other)",
+        "User"
+      ]
+    },
+    "MFFE0F": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "User",
+        "User",
+        "Bash(sed)"
+      ]
+    }
+  },
+  "nextNode": 40,
+  "nodes": {
+    "N001": {
+      "class": "doc",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 106,
+          "occurrences": 450,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M0025D",
+        "M0B56B",
+        "M13156",
+        "M3CD5D",
+        "M52EF4",
+        "M5C007",
+        "M620E4",
+        "M62EF1",
+        "M64CB4",
+        "M67A02",
+        "M75C56",
+        "M76961",
+        "M7E0F0",
+        "M92E45",
+        "MA7740",
+        "MA91B4",
+        "MB6A22",
+        "ME633B",
+        "ME8889",
+        "MF5815"
+      ],
+      "name": "deferred tool schema fetch",
+      "seed": [
+        "User",
+        "ToolSearch"
+      ],
+      "stats": {
+        "betweenness": 0.068,
+        "buildScore": 26205698,
+        "correctionRate": 0.058,
+        "crossProject": true,
+        "distinctProjects": 35,
+        "distinctSessions": 106,
+        "frictionMassMs": 24537170,
+        "medianElapsedMs": 11615,
+        "occurrences": 450,
+        "retryDepth": 1,
+        "weightedDegree": 315
+      },
+      "status": "new",
+      "summary": "A request lands and the first action is fetching deferred tool schemas, 450 times across 35 projects at a 12s median. The fetch is a fixed per-session cost that precedes the real work.",
+      "theme": "tool schemas",
+      "tool": "Preload the hot deferred tools per project in settings so the first action is the work itself.",
+      "type": "harness"
+    },
+    "N002": {
+      "class": "tool",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 96,
+          "occurrences": 900,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M01E0B",
+        "M063E8",
+        "M0A9EB",
+        "M0C1D2",
+        "M0C3A3",
+        "M12AE1",
+        "M147BC",
+        "M1D2D1",
+        "M20424",
+        "M27B09",
+        "M2A24F",
+        "M3347D",
+        "M3796E",
+        "M3B001",
+        "M3D8AF",
+        "M46048",
+        "M46C18",
+        "M4EB84",
+        "M5DEE1",
+        "M67D81",
+        "M6AED1",
+        "M88C51",
+        "M8E6CC",
+        "MA2FB7",
+        "MB13CF",
+        "MB3A4B",
+        "MBDD26",
+        "MFF42D"
+      ],
+      "name": "request to unrecognized command",
+      "seed": [
+        "User",
+        "Bash(other)"
+      ],
+      "stats": {
+        "betweenness": 1,
+        "buildScore": 190517596,
+        "correctionRate": 0.19,
+        "crossProject": true,
+        "distinctProjects": 43,
+        "distinctSessions": 96,
+        "frictionMassMs": 95258798,
+        "medianElapsedMs": 47689,
+        "occurrences": 900,
+        "retryDepth": 9,
+        "weightedDegree": 1036
+      },
+      "status": "new",
+      "summary": "A request is answered with an unrecognized or custom command, 900 times across 43 projects, with a 19% correction rate and re-run streaks up to 9 deep. This node has the highest betweenness in the flow graph: most workflows pass through it.",
+      "theme": "unrecognized commands",
+      "tool": "Widen the vocabulary for the commands behind this node so they can be named, then split it into real candidates.",
+      "type": "script"
+    },
+    "N003": {
+      "class": "tool",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 81,
+          "occurrences": 635,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M0AEFD",
+        "M0F469",
+        "M1CE89",
+        "M2327F",
+        "M27C5A",
+        "M4430D",
+        "M59868",
+        "M5F5EE",
+        "M5FBC4",
+        "M63E3C",
+        "M7B317",
+        "M89357",
+        "M8FD5C",
+        "MA4F33",
+        "MA9006",
+        "MD0521",
+        "MD6063",
+        "MD76A4",
+        "ME886F",
+        "MFC66A"
+      ],
+      "name": "git orientation and commit loop",
+      "seed": [
+        "User",
+        "Bash(git)"
+      ],
+      "stats": {
+        "betweenness": 0.425,
+        "buildScore": 112245067,
+        "correctionRate": 0.175,
+        "crossProject": true,
+        "distinctProjects": 38,
+        "distinctSessions": 81,
+        "frictionMassMs": 78768468,
+        "medianElapsedMs": 28089,
+        "occurrences": 635,
+        "retryDepth": 10,
+        "weightedDegree": 732
+      },
+      "status": "new",
+      "summary": "A request starts with git calls for orientation or ends with a walked commit sequence, 635 times across 38 projects, with streaks up to 10 git calls and a 17% correction rate. Git state is read one command at a time and then disputed.",
+      "theme": "git",
+      "tool": "A session-start repo primer plus a scripted commit-and-verify path enforced by a hook.",
+      "type": "hook"
+    },
+    "N004": {
+      "class": "tool",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 102,
+          "occurrences": 1266,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M04631",
+        "M0CF4B",
+        "M0D445",
+        "M15BBF",
+        "M16200",
+        "M19A33",
+        "M26219",
+        "M4156E",
+        "M444B3",
+        "M4A87E",
+        "M58EAA",
+        "M5B3C7",
+        "M5C862",
+        "M61AC7",
+        "M69CDA",
+        "M6E924",
+        "M76C0D",
+        "M7768F",
+        "M78DE2",
+        "M7A0E9",
+        "M81C02",
+        "M820B0",
+        "M829AC",
+        "M87DEF",
+        "M8812E",
+        "M99610",
+        "MA8FB0",
+        "MAA975",
+        "MB2635",
+        "MB6288",
+        "MBBD8C",
+        "MBD308",
+        "MC0B0C",
+        "MC0F27",
+        "MC1695",
+        "MC64EA",
+        "MC712F",
+        "MCE0C0",
+        "MD022E",
+        "MD0580",
+        "MD391B",
+        "MDA993",
+        "MDFB7D",
+        "ME0AF3",
+        "MF49B4",
+        "MF8107"
+      ],
+      "name": "linear ticket loops",
+      "seed": [
+        "Mcp(linear)"
+      ],
+      "stats": {
+        "betweenness": 0.107,
+        "buildScore": 161968119,
+        "correctionRate": 0.117,
+        "crossProject": true,
+        "distinctProjects": 30,
+        "distinctSessions": 102,
+        "frictionMassMs": 146312664,
+        "medianElapsedMs": 8425,
+        "occurrences": 1266,
+        "retryDepth": 15,
+        "weightedDegree": 501
+      },
+      "status": "new",
+      "summary": "Consecutive Linear MCP calls drive ticket creation and edits one API call at a time, 1266 times across 30 projects, with streaks up to 15 calls and a 12% correction rate. Ticket content is then reworked by hand.",
+      "theme": "linear",
+      "tool": "A bulk ticket upsert with a preview-before-write step, paired with the Linear project-management skills.",
+      "type": "mcp"
+    },
+    "N005": {
+      "class": "doc",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 52,
+          "occurrences": 186,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M45638",
+        "M625A8",
+        "MB4CEB",
+        "MB7B0B",
+        "MDB4A4",
+        "MEFA34"
+      ],
+      "name": "skill invocation handoff",
+      "seed": [
+        "Skill(other)",
+        "User"
+      ],
+      "stats": {
+        "betweenness": 0.01,
+        "buildScore": 1706988,
+        "correctionRate": 0.049,
+        "crossProject": true,
+        "distinctProjects": 32,
+        "distinctSessions": 52,
+        "frictionMassMs": 1690087,
+        "medianElapsedMs": 7606,
+        "occurrences": 186,
+        "retryDepth": 1,
+        "weightedDegree": 71
+      },
+      "status": "new",
+      "summary": "A non-generic skill is invoked and a user-role record follows at once, 186 times across 32 projects at an 8s median with a 5% correction rate. Most of these are the skill body arriving as a user message, not a correction.",
+      "theme": "skills",
+      "tool": "None yet; treat as a measure of skill usage and revisit if the correction rate rises.",
+      "type": "harness"
+    },
+    "N006": {
+      "class": "tool",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 70,
+          "occurrences": 780,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M0C96A",
+        "M0E052",
+        "M1216A",
+        "M15B37",
+        "M1FF4F",
+        "M3B6D0",
+        "M3FFF6",
+        "M5C663",
+        "M72D08",
+        "M7C70B",
+        "M8B6B3",
+        "M8B8B7",
+        "M8FCE7",
+        "M8FD55",
+        "M9120D",
+        "M916DD",
+        "M999E8",
+        "MA369C",
+        "MA9202",
+        "MB93EC",
+        "MBCF0E",
+        "MC22C1",
+        "MC481A",
+        "MCB8CB",
+        "MD1A69",
+        "MD28CA",
+        "MD8E66",
+        "MEA8FD",
+        "MEF129",
+        "MF7426",
+        "MF9436"
+      ],
+      "name": "inline python via heredoc",
+      "seed": [
+        "Bash(python3:stdin)"
+      ],
+      "stats": {
+        "betweenness": 0.162,
+        "buildScore": 52743810,
+        "correctionRate": 0.094,
+        "crossProject": true,
+        "distinctProjects": 36,
+        "distinctSessions": 70,
+        "frictionMassMs": 45390542,
+        "medianElapsedMs": 17956,
+        "occurrences": 780,
+        "retryDepth": 12,
+        "weightedDegree": 473
+      },
+      "status": "new",
+      "summary": "Hand-written Python fed through stdin for data inspection and munging, 780 times across 36 projects with re-run streaks up to 12 deep. Each request routinely costs several one-off scripts.",
+      "theme": "ad-hoc python",
+      "tool": "A checked data-inspection helper (query, shape, diff) that replaces ad-hoc heredoc Python with one call.",
+      "type": "script"
+    },
+    "N007": {
+      "class": "tool",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 60,
+          "occurrences": 413,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M01317",
+        "M015DF",
+        "M08E6B",
+        "M0F498",
+        "M1471E",
+        "M1487F",
+        "M39855",
+        "M4D878",
+        "M51424",
+        "M55CC3",
+        "M643B3",
+        "M7F4CC",
+        "MBEB86",
+        "MF20BE"
+      ],
+      "name": "search then rewrite loop",
+      "seed": [
+        "Bash(grep)",
+        "Bash(sed)"
+      ],
+      "stats": {
+        "betweenness": 0.402,
+        "buildScore": 5292086,
+        "correctionRate": 0.066,
+        "crossProject": true,
+        "distinctProjects": 31,
+        "distinctSessions": 60,
+        "frictionMassMs": 3774669,
+        "medianElapsedMs": 6690,
+        "occurrences": 413,
+        "retryDepth": 11,
+        "weightedDegree": 911
+      },
+      "status": "new",
+      "summary": "grep to locate, sed to rewrite in place, grep again to verify, 413 times across 31 projects with streaks up to 11 edits. The verification is manual and sed fails silently on a miss.",
+      "theme": "editing",
+      "tool": "A guarded batch-edit primitive: match, preview, apply, verify in one step.",
+      "type": "skill"
+    },
+    "N008": {
+      "class": "doc",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 48,
+          "occurrences": 73,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M2F52D",
+        "M50CF3",
+        "MF8FF9"
+      ],
+      "name": "filesystem orientation",
+      "seed": [
+        "User",
+        "Bash(find)"
+      ],
+      "stats": {
+        "betweenness": 0.001,
+        "buildScore": 2380165,
+        "correctionRate": 0.096,
+        "crossProject": true,
+        "distinctProjects": 31,
+        "distinctSessions": 48,
+        "frictionMassMs": 2377787,
+        "medianElapsedMs": 10096,
+        "occurrences": 73,
+        "retryDepth": 1,
+        "weightedDegree": 44
+      },
+      "status": "new",
+      "summary": "A request is answered by hunting the filesystem with find, 73 times across 31 projects. The agent lacks a map of the repo it is in.",
+      "theme": "orientation",
+      "tool": "Per-repo structure notes in CLAUDE.md or a shared repo-map primer at session start.",
+      "type": "harness"
+    },
+    "N009": {
+      "class": "unclassified",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 58,
+          "occurrences": 200,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M0A3F3",
+        "M48FD5",
+        "M560AA",
+        "M59229",
+        "M5ED14",
+        "M70EED",
+        "MD8F0A",
+        "MDA856"
+      ],
+      "name": "checkout then run",
+      "seed": [
+        "Bash(git)",
+        "Bash(other)"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 3693673,
+        "correctionRate": 0.195,
+        "crossProject": true,
+        "distinctProjects": 30,
+        "distinctSessions": 58,
+        "frictionMassMs": 3693673,
+        "medianElapsedMs": 14926,
+        "occurrences": 200,
+        "retryDepth": 1,
+        "weightedDegree": 296
+      },
+      "status": "new",
+      "summary": "A git call followed by an unrecognized or custom command, 200 times across 30 projects with a 20% correction rate. Pull or checkout, then run something that cannot yet be named.",
+      "theme": "unrecognized commands",
+      "tool": "Blocked on naming the command; widen the vocabulary first.",
+      "type": "script"
+    },
+    "N010": {
+      "class": "unclassified",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 46,
+          "occurrences": 220,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M0A236",
+        "M1ADAB",
+        "M3A75D",
+        "M53F23",
+        "M56043",
+        "M6D409",
+        "M75BBA",
+        "M8BD70",
+        "MB78F6",
+        "MF8B70",
+        "MFFE0F"
+      ],
+      "name": "direct in-place edit then correction",
+      "seed": [
+        "User",
+        "Bash(sed)"
+      ],
+      "stats": {
+        "betweenness": 0.001,
+        "buildScore": 32732962,
+        "correctionRate": 0.191,
+        "crossProject": true,
+        "distinctProjects": 22,
+        "distinctSessions": 46,
+        "frictionMassMs": 32700262,
+        "medianElapsedMs": 143737,
+        "occurrences": 220,
+        "retryDepth": 1,
+        "weightedDegree": 176
+      },
+      "status": "new",
+      "summary": "A request is answered with an immediate sed rewrite and the human intervenes about 2.5 minutes later, 220 times across 22 projects with a 19% correction rate. The edit lands unverified and gets caught late.",
+      "theme": "editing",
+      "tool": "The same guarded batch-edit primitive as the search-then-rewrite loop, with preview before apply.",
+      "type": "skill"
+    },
+    "N011": {
+      "class": "tool",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 23,
+          "occurrences": 376,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M0C195",
+        "M47752",
+        "M5B158",
+        "M63ACA",
+        "M6E396",
+        "M6ED2F",
+        "M93784",
+        "MBF5A0",
+        "MC6669",
+        "MCD3C5",
+        "MDDF1F",
+        "MFB97A",
+        "MFD346"
+      ],
+      "name": "subagent dispatch then correction",
+      "seed": [
+        "Task(general-purpose)",
+        "User"
+      ],
+      "stats": {
+        "betweenness": 0.062,
+        "buildScore": 57495870,
+        "correctionRate": 0.306,
+        "crossProject": true,
+        "distinctProjects": 13,
+        "distinctSessions": 23,
+        "frictionMassMs": 54139237,
+        "medianElapsedMs": 168540,
+        "occurrences": 376,
+        "retryDepth": 6,
+        "weightedDegree": 178
+      },
+      "status": "new",
+      "summary": "A general-purpose subagent returns and the human corrects about 3 minutes later, 376 times across 13 projects with a 31% correction rate. Delegated work does not land on first output.",
+      "theme": "delegation",
+      "tool": "Named subagent types with a tighter brief and return contract instead of ad-hoc general-purpose dispatch.",
+      "type": "harness"
+    },
+    "N012": {
+      "class": "unclassified",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 49,
+          "occurrences": 99,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M1EEA9",
+        "M87831",
+        "MA3A9C",
+        "MA916D"
+      ],
+      "name": "search orientation",
+      "seed": [
+        "User",
+        "Bash(grep)"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 9514886,
+        "correctionRate": 0.101,
+        "crossProject": true,
+        "distinctProjects": 27,
+        "distinctSessions": 49,
+        "frictionMassMs": 9514886,
+        "medianElapsedMs": 16588,
+        "occurrences": 99,
+        "retryDepth": 1,
+        "weightedDegree": 96
+      },
+      "status": "new",
+      "summary": "A request is answered with an immediate grep, 99 times across 27 projects. Same orientation gap as the find and git variants.",
+      "theme": "orientation",
+      "tool": "Repo structure notes; shared with the filesystem-orientation node.",
+      "type": "harness"
+    },
+    "N013": {
+      "class": "tool",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 20,
+          "occurrences": 215,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M4C474",
+        "M7B591",
+        "M9ED40",
+        "M9F9EC",
+        "MBD840"
+      ],
+      "name": "box document loops",
+      "seed": [
+        "Mcp(box)"
+      ],
+      "stats": {
+        "betweenness": 0.03,
+        "buildScore": 1036589,
+        "correctionRate": 0.019,
+        "crossProject": true,
+        "distinctProjects": 12,
+        "distinctSessions": 20,
+        "frictionMassMs": 1006397,
+        "medianElapsedMs": 3543,
+        "occurrences": 215,
+        "retryDepth": 21,
+        "weightedDegree": 89
+      },
+      "status": "new",
+      "summary": "Consecutive Box MCP calls fetch or list documents one file at a time, 215 times across 12 projects with streaks up to 21 calls. Bulk document work driven per file.",
+      "theme": "mcp bulk",
+      "tool": "A batch Box list-and-fetch helper.",
+      "type": "mcp"
+    },
+    "N014": {
+      "class": "doc",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 41,
+          "occurrences": 147,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M109FD",
+        "M55773",
+        "M59E22",
+        "M6449B",
+        "M720A2",
+        "M73DC8",
+        "M778AD",
+        "MAFD79"
+      ],
+      "name": "edit then run",
+      "seed": [
+        "Bash(sed)",
+        "Bash(other)"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 3580922,
+        "correctionRate": 0.048,
+        "crossProject": true,
+        "distinctProjects": 26,
+        "distinctSessions": 41,
+        "frictionMassMs": 3580922,
+        "medianElapsedMs": 21344,
+        "occurrences": 147,
+        "retryDepth": 1,
+        "weightedDegree": 198
+      },
+      "status": "new",
+      "summary": "An in-place rewrite followed by an unrecognized or custom command, 147 times across 26 projects with a 5% correction rate. Edit, then run something over the result: done correctly, but re-derived each time.",
+      "theme": "unrecognized commands",
+      "tool": "A runbook once the command is named; the edit half belongs to the batch-edit primitive.",
+      "type": "script"
+    },
+    "N015": {
+      "class": "tool",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 40,
+          "occurrences": 249,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M0B063",
+        "M1D98C",
+        "M254FE",
+        "M5663E",
+        "M881EB",
+        "M9B3B5",
+        "M9EFAB",
+        "MAE684",
+        "MD83CB",
+        "MF15C8"
+      ],
+      "name": "github cli lookups",
+      "seed": [
+        "User",
+        "Bash(gh)"
+      ],
+      "stats": {
+        "betweenness": 0.075,
+        "buildScore": 21527216,
+        "correctionRate": 0.136,
+        "crossProject": true,
+        "distinctProjects": 18,
+        "distinctSessions": 40,
+        "frictionMassMs": 20025317,
+        "medianElapsedMs": 16677,
+        "occurrences": 249,
+        "retryDepth": 14,
+        "weightedDegree": 232
+      },
+      "status": "new",
+      "summary": "A request is answered with gh calls for PR and issue context, 249 times across 18 projects with streaks up to 14 calls. PR state is assembled one query at a time.",
+      "theme": "git",
+      "tool": "A PR-context summarizer that runs at session start.",
+      "type": "skill"
+    },
+    "N016": {
+      "class": "unclassified",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 42,
+          "occurrences": 59,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M7180B",
+        "ME3F08"
+      ],
+      "name": "run then search output",
+      "seed": [
+        "Bash(other)",
+        "Bash(grep)"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 988549,
+        "correctionRate": 0.136,
+        "crossProject": true,
+        "distinctProjects": 24,
+        "distinctSessions": 42,
+        "frictionMassMs": 988549,
+        "medianElapsedMs": 12155,
+        "occurrences": 59,
+        "retryDepth": 1,
+        "weightedDegree": 118
+      },
+      "status": "new",
+      "summary": "An unrecognized command followed by a grep over its output or the files it touched, 59 times across 24 projects. The command's output is not structured enough to use directly.",
+      "theme": "unrecognized commands",
+      "tool": "A structured-output wrapper for the command once it is named.",
+      "type": "script"
+    },
+    "N017": {
+      "class": "doc",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 27,
+          "occurrences": 71,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M03C90",
+        "M14D89",
+        "M71C31",
+        "ME468C"
+      ],
+      "name": "git then edit",
+      "seed": [
+        "Bash(git)",
+        "Bash(sed)"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 760606,
+        "correctionRate": 0.056,
+        "crossProject": true,
+        "distinctProjects": 17,
+        "distinctSessions": 27,
+        "frictionMassMs": 760606,
+        "medianElapsedMs": 7188,
+        "occurrences": 71,
+        "retryDepth": 1,
+        "weightedDegree": 124
+      },
+      "status": "new",
+      "summary": "A git call followed by an in-place rewrite, 71 times across 17 projects with a 6% correction rate. Check state, then edit, done correctly.",
+      "theme": "editing",
+      "tool": "None; fold into the batch-edit primitive's documentation.",
+      "type": "skill"
+    },
+    "N018": {
+      "class": "tool",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 25,
+          "occurrences": 167,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M1C32D",
+        "M3BE62",
+        "M3FE02",
+        "MB6EB1"
+      ],
+      "name": "fireflies transcript loops",
+      "seed": [
+        "Mcp(fireflies)"
+      ],
+      "stats": {
+        "betweenness": 0.001,
+        "buildScore": 974812,
+        "correctionRate": 0.042,
+        "crossProject": true,
+        "distinctProjects": 14,
+        "distinctSessions": 25,
+        "frictionMassMs": 973838,
+        "medianElapsedMs": 4695,
+        "occurrences": 167,
+        "retryDepth": 8,
+        "weightedDegree": 95
+      },
+      "status": "new",
+      "summary": "Consecutive Fireflies MCP calls pull meeting data one call at a time, 167 times across 14 projects with streaks up to 8. Same per-item shape as the Box and Linear loops.",
+      "theme": "mcp bulk",
+      "tool": "A batch transcript fetch, or preloading the Fireflies tools so the loop is one call.",
+      "type": "mcp"
+    },
+    "N019": {
+      "class": "unclassified",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 31,
+          "occurrences": 70,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M073B9",
+        "M25A33",
+        "M3A05D",
+        "MCA041"
+      ],
+      "name": "commit then pull request",
+      "seed": [
+        "Bash(git)",
+        "Bash(gh)"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 1350547,
+        "correctionRate": 0.2,
+        "crossProject": true,
+        "distinctProjects": 16,
+        "distinctSessions": 31,
+        "frictionMassMs": 1350547,
+        "medianElapsedMs": 15488,
+        "occurrences": 70,
+        "retryDepth": 1,
+        "weightedDegree": 122
+      },
+      "status": "new",
+      "summary": "A git call followed by a gh call, 70 times across 16 projects with a 20% correction rate. Push, then open or inspect the PR, and the result gets disputed.",
+      "theme": "git",
+      "tool": "A commit-push-PR script that enforces the house branch and PR conventions.",
+      "type": "script"
+    },
+    "N020": {
+      "class": "tool",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 27,
+          "occurrences": 128,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M0832A",
+        "M44592",
+        "M49E09",
+        "M4B19E",
+        "M64343",
+        "MAD085"
+      ],
+      "name": "custom command then repo script",
+      "seed": [
+        "Bash(other)",
+        "Bash(script)"
+      ],
+      "stats": {
+        "betweenness": 0.034,
+        "buildScore": 2967584,
+        "correctionRate": 0.031,
+        "crossProject": true,
+        "distinctProjects": 17,
+        "distinctSessions": 27,
+        "frictionMassMs": 2870004,
+        "medianElapsedMs": 19552,
+        "occurrences": 128,
+        "retryDepth": 5,
+        "weightedDegree": 253
+      },
+      "status": "new",
+      "summary": "An unrecognized command followed by a repo script, 128 times across 17 projects with streaks up to 5 and a 3% correction rate. Build or generate, then run the repo's own check.",
+      "theme": "unrecognized commands",
+      "tool": "Name the repo script in INTERNAL_SCRIPTS, then fold both steps into one validate command.",
+      "type": "script"
+    },
+    "N021": {
+      "class": "unclassified",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 29,
+          "occurrences": 57,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M8B10C",
+        "MBE91D",
+        "MC16D9"
+      ],
+      "name": "markdown draft then correction",
+      "seed": [
+        "Write(.md)",
+        "User"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 10462718,
+        "correctionRate": 0.246,
+        "crossProject": true,
+        "distinctProjects": 16,
+        "distinctSessions": 29,
+        "frictionMassMs": 10462718,
+        "medianElapsedMs": 212936,
+        "occurrences": 57,
+        "retryDepth": 1,
+        "weightedDegree": 23
+      },
+      "status": "new",
+      "summary": "A markdown file is written and the human corrects about 3.5 minutes later, 57 times across 16 projects with a 25% correction rate. Documents are drafted whole and reworked by hand.",
+      "theme": "correction",
+      "tool": "A document outline-and-approve step before the full write.",
+      "type": "skill"
+    },
+    "N022": {
+      "class": "unclassified",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 29,
+          "occurrences": 58,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M147DA",
+        "M289A6",
+        "MBCD89",
+        "MC690C"
+      ],
+      "name": "locate then run",
+      "seed": [
+        "Bash(find)",
+        "Bash(other)"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 919285,
+        "correctionRate": 0.138,
+        "crossProject": true,
+        "distinctProjects": 21,
+        "distinctSessions": 29,
+        "frictionMassMs": 919285,
+        "medianElapsedMs": 9150,
+        "occurrences": 58,
+        "retryDepth": 1,
+        "weightedDegree": 51
+      },
+      "status": "new",
+      "summary": "find to locate a file, then an unrecognized command on it, 58 times across 21 projects. A find-and-operate wrapper is plausible once the command is named.",
+      "theme": "unrecognized commands",
+      "tool": "Blocked on naming the command.",
+      "type": "script"
+    },
+    "N023": {
+      "class": "unclassified",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 25,
+          "occurrences": 53,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M207B6",
+        "M2DDE1",
+        "MB8615"
+      ],
+      "name": "pull request then run",
+      "seed": [
+        "Bash(gh)",
+        "Bash(other)"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 779652,
+        "correctionRate": 0.189,
+        "crossProject": true,
+        "distinctProjects": 14,
+        "distinctSessions": 25,
+        "frictionMassMs": 779652,
+        "medianElapsedMs": 13811,
+        "occurrences": 53,
+        "retryDepth": 1,
+        "weightedDegree": 88
+      },
+      "status": "new",
+      "summary": "A gh call followed by an unrecognized command, 53 times across 14 projects with a 19% correction rate. Fetch PR context, then act on it with a custom tool.",
+      "theme": "unrecognized commands",
+      "tool": "Blocked on naming the command.",
+      "type": "script"
+    },
+    "N024": {
+      "class": "unclassified",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 25,
+          "occurrences": 37,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M4655D",
+        "M57537"
+      ],
+      "name": "clarifying question round trip",
+      "seed": [
+        "AskUserQuestion",
+        "User"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 3939426,
+        "correctionRate": 0.243,
+        "crossProject": true,
+        "distinctProjects": 22,
+        "distinctSessions": 25,
+        "frictionMassMs": 3939426,
+        "medianElapsedMs": 170820,
+        "occurrences": 37,
+        "retryDepth": 1,
+        "weightedDegree": 0
+      },
+      "status": "new",
+      "summary": "The agent asks a structured question and the answer arrives about 3 minutes later, 37 times across 22 projects. The wait is human time, and 24% of the time a further correction follows.",
+      "theme": "correction",
+      "tool": "None; a sign that briefs need sharpening before work starts.",
+      "type": "harness"
+    },
+    "N025": {
+      "class": "unclassified",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 17,
+          "occurrences": 17,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "MABFDF"
+      ],
+      "name": "artifact design skill load",
+      "seed": [
+        "Skill(artifact-design)",
+        "User"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 612,
+        "correctionRate": 0,
+        "crossProject": true,
+        "distinctProjects": 13,
+        "distinctSessions": 17,
+        "frictionMassMs": 612,
+        "medianElapsedMs": 36,
+        "occurrences": 17,
+        "retryDepth": 1,
+        "weightedDegree": 12
+      },
+      "status": "new",
+      "summary": "The artifact-design skill is invoked and a same-instant user record follows, 17 times across 13 projects at a 0s median. This is the skill body arriving as a user message, not a correction.",
+      "theme": "skills",
+      "tool": "None; a measurement artifact of skill loading.",
+      "type": "harness"
+    },
+    "N026": {
+      "class": "unclassified",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 19,
+          "occurrences": 37,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M2D5A6",
+        "M3014F"
+      ],
+      "name": "request to repo script",
+      "seed": [
+        "User",
+        "Bash(script)"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 4745566,
+        "correctionRate": 0.108,
+        "crossProject": true,
+        "distinctProjects": 11,
+        "distinctSessions": 19,
+        "frictionMassMs": 4745566,
+        "medianElapsedMs": 20383,
+        "occurrences": 37,
+        "retryDepth": 1,
+        "weightedDegree": 42
+      },
+      "status": "new",
+      "summary": "A request is answered by running a repo script, 37 times across 11 projects with an 11% correction rate. The script's name is not in INTERNAL_SCRIPTS, so it cannot be named.",
+      "theme": "unrecognized commands",
+      "tool": "Add the hot repo scripts to INTERNAL_SCRIPTS so this node can be split by script.",
+      "type": "script"
+    },
+    "N027": {
+      "class": "doc",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 29,
+          "occurrences": 75,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M0CCB4",
+        "M1172E",
+        "M2C0F3",
+        "M4582B",
+        "M9DC10",
+        "MEC56A"
+      ],
+      "name": "git then tool schema fetch",
+      "seed": [
+        "Bash(git)",
+        "ToolSearch"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 550938,
+        "correctionRate": 0.04,
+        "crossProject": true,
+        "distinctProjects": 17,
+        "distinctSessions": 29,
+        "frictionMassMs": 550938,
+        "medianElapsedMs": 8498,
+        "occurrences": 75,
+        "retryDepth": 1,
+        "weightedDegree": 62
+      },
+      "status": "new",
+      "summary": "A git call followed by a deferred tool schema fetch, 75 times across 17 projects with a 4% correction rate. Orientation, then loading the tools the work needs.",
+      "theme": "tool schemas",
+      "tool": "Preload the hot deferred tools; shared with the schema-fetch node.",
+      "type": "harness"
+    },
+    "N028": {
+      "class": "unclassified",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 24,
+          "occurrences": 44,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M192D2",
+        "MB22DF"
+      ],
+      "name": "search then git",
+      "seed": [
+        "Bash(grep)",
+        "Bash(git)"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 419801,
+        "correctionRate": 0.113,
+        "crossProject": true,
+        "distinctProjects": 13,
+        "distinctSessions": 24,
+        "frictionMassMs": 419801,
+        "medianElapsedMs": 8773,
+        "occurrences": 44,
+        "retryDepth": 1,
+        "weightedDegree": 88
+      },
+      "status": "new",
+      "summary": "A grep followed by a git call, 44 times across 13 projects. Locate, then check history or stage.",
+      "theme": "orientation",
+      "tool": "None on its own; covered by the orientation primer.",
+      "type": "harness"
+    },
+    "N029": {
+      "class": "tool",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 11,
+          "occurrences": 44,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M0CB0A",
+        "M8C20A"
+      ],
+      "name": "custom command then delegate",
+      "seed": [
+        "Bash(other)",
+        "Task(general-purpose)"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 1119657,
+        "correctionRate": 0.455,
+        "crossProject": true,
+        "distinctProjects": 7,
+        "distinctSessions": 11,
+        "frictionMassMs": 1119657,
+        "medianElapsedMs": 30123,
+        "occurrences": 44,
+        "retryDepth": 1,
+        "weightedDegree": 88
+      },
+      "status": "new",
+      "summary": "An unrecognized command followed by a general-purpose subagent dispatch, 44 times across 7 projects with a 46% correction rate, the highest in the graph. Something runs, and its output is handed to an agent that then misses.",
+      "theme": "delegation",
+      "tool": "A named subagent with a real brief for the workflow behind this command.",
+      "type": "harness"
+    },
+    "N030": {
+      "class": "tool",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 13,
+          "occurrences": 24,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "MFFB3F"
+      ],
+      "name": "unrecognized tool then correction",
+      "seed": [
+        "Tool(other)",
+        "User"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 2258568,
+        "correctionRate": 0.25,
+        "crossProject": true,
+        "distinctProjects": 8,
+        "distinctSessions": 13,
+        "frictionMassMs": 2258568,
+        "medianElapsedMs": 94107,
+        "occurrences": 24,
+        "retryDepth": 1,
+        "weightedDegree": 13
+      },
+      "status": "new",
+      "summary": "A tool outside the vocabulary is called and the human corrects about 1.5 minutes later, 24 times across 8 projects with a 25% correction rate.",
+      "theme": "correction",
+      "tool": "Add the tool to the vocabulary so this node can be named.",
+      "type": "harness"
+    },
+    "N031": {
+      "class": "tool",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 14,
+          "occurrences": 125,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M481EC"
+      ],
+      "name": "harvest time entry loops",
+      "seed": [
+        "Mcp(harvest)"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 356375,
+        "correctionRate": 0.088,
+        "crossProject": true,
+        "distinctProjects": 3,
+        "distinctSessions": 14,
+        "frictionMassMs": 356375,
+        "medianElapsedMs": 2851,
+        "occurrences": 125,
+        "retryDepth": 18,
+        "weightedDegree": 57
+      },
+      "status": "new",
+      "summary": "Consecutive Harvest MCP calls log time one entry at a time, 125 times across 3 projects with streaks up to 18 calls. Bulk time tracking done per entry.",
+      "theme": "mcp bulk",
+      "tool": "A batch time-entry operation or a CSV-to-Harvest loader.",
+      "type": "mcp"
+    },
+    "N032": {
+      "class": "unclassified",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 12,
+          "occurrences": 30,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M49A78"
+      ],
+      "name": "screenshot review",
+      "seed": [
+        "Read(.png)",
+        "User"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 3900,
+        "correctionRate": 0.2,
+        "crossProject": true,
+        "distinctProjects": 6,
+        "distinctSessions": 12,
+        "frictionMassMs": 3900,
+        "medianElapsedMs": 130,
+        "occurrences": 30,
+        "retryDepth": 1,
+        "weightedDegree": 20
+      },
+      "status": "new",
+      "summary": "A PNG is read and a user record follows at once, 30 times across 6 projects at a 0s median. Likely the image delivered as a user-role attachment rather than a correction.",
+      "theme": "skills",
+      "tool": "None; a measurement artifact until the projector distinguishes attachments.",
+      "type": "harness"
+    },
+    "N033": {
+      "class": "tool",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 5,
+          "occurrences": 108,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M9CE35"
+      ],
+      "name": "python edit streaks",
+      "seed": [
+        "Edit(.py)"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 467748,
+        "correctionRate": 0,
+        "crossProject": true,
+        "distinctProjects": 3,
+        "distinctSessions": 5,
+        "frictionMassMs": 467748,
+        "medianElapsedMs": 4331,
+        "occurrences": 108,
+        "retryDepth": 30,
+        "weightedDegree": 69
+      },
+      "status": "new",
+      "summary": "Consecutive edits to Python files, 108 times across 3 projects with streaks up to 30 edits and no corrections. Large refactors applied one Edit call at a time.",
+      "theme": "editing",
+      "tool": "A multi-file edit primitive, or accept as normal editing.",
+      "type": "skill"
+    },
+    "N034": {
+      "class": "unclassified",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 14,
+          "occurrences": 26,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M3B007",
+        "M97E7F"
+      ],
+      "name": "run then ask",
+      "seed": [
+        "Bash(other)",
+        "AskUserQuestion"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 2799782,
+        "correctionRate": 0.154,
+        "crossProject": true,
+        "distinctProjects": 11,
+        "distinctSessions": 14,
+        "frictionMassMs": 2799782,
+        "medianElapsedMs": 44791,
+        "occurrences": 26,
+        "retryDepth": 1,
+        "weightedDegree": 26
+      },
+      "status": "new",
+      "summary": "An unrecognized command followed by a structured question to the user, 26 times across 11 projects. The command's result raised a decision the agent could not make.",
+      "theme": "correction",
+      "tool": "Blocked on naming the command.",
+      "type": "harness"
+    },
+    "N035": {
+      "class": "tool",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 13,
+          "occurrences": 52,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M06C08",
+        "M87FCF"
+      ],
+      "name": "slack schema fetch and call",
+      "seed": [
+        "ToolSearch",
+        "Mcp(slack)"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 223145,
+        "correctionRate": 0.039,
+        "crossProject": true,
+        "distinctProjects": 10,
+        "distinctSessions": 13,
+        "frictionMassMs": 223145,
+        "medianElapsedMs": 3620,
+        "occurrences": 52,
+        "retryDepth": 7,
+        "weightedDegree": 43
+      },
+      "status": "new",
+      "summary": "Deferred Slack tool schemas are fetched and then Slack is called in streaks up to 7, 52 times across 10 projects. Same preload gap as Linear and Fireflies.",
+      "theme": "tool schemas",
+      "tool": "Preload the hot Slack tools per project.",
+      "type": "harness"
+    },
+    "N036": {
+      "class": "tool",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 10,
+          "occurrences": 16,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M0617C"
+      ],
+      "name": "artifact publish then correction",
+      "seed": [
+        "Artifact",
+        "User"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 3405984,
+        "correctionRate": 0.375,
+        "crossProject": true,
+        "distinctProjects": 8,
+        "distinctSessions": 10,
+        "frictionMassMs": 3405984,
+        "medianElapsedMs": 212874,
+        "occurrences": 16,
+        "retryDepth": 1,
+        "weightedDegree": 13
+      },
+      "status": "new",
+      "summary": "An artifact is published and the human corrects about 3.5 minutes later, 16 times across 8 projects with a 38% correction rate. Published pages are reviewed and reworked.",
+      "theme": "correction",
+      "tool": "A preview-and-approve step before publishing an artifact.",
+      "type": "skill"
+    },
+    "N037": {
+      "class": "tool",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 12,
+          "occurrences": 16,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M3AAB2"
+      ],
+      "name": "git then delegate",
+      "seed": [
+        "Bash(git)",
+        "Task(general-purpose)"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 599536,
+        "correctionRate": 0.313,
+        "crossProject": true,
+        "distinctProjects": 8,
+        "distinctSessions": 12,
+        "frictionMassMs": 599536,
+        "medianElapsedMs": 37471,
+        "occurrences": 16,
+        "retryDepth": 1,
+        "weightedDegree": 30
+      },
+      "status": "new",
+      "summary": "A git call followed by a general-purpose subagent dispatch, 16 times across 8 projects with a 31% correction rate. Orientation, then handing the work to an agent that misses.",
+      "theme": "delegation",
+      "tool": "Same as the delegation node: a named subagent with a real brief.",
+      "type": "harness"
+    },
+    "N038": {
+      "class": "tool",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 5,
+          "occurrences": 56,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M34180"
+      ],
+      "name": "markdown edit streaks",
+      "seed": [
+        "Edit(.md)"
+      ],
+      "stats": {
+        "betweenness": 0,
+        "buildScore": 286272,
+        "correctionRate": 0,
+        "crossProject": true,
+        "distinctProjects": 4,
+        "distinctSessions": 5,
+        "frictionMassMs": 286272,
+        "medianElapsedMs": 5112,
+        "occurrences": 56,
+        "retryDepth": 21,
+        "weightedDegree": 21
+      },
+      "status": "new",
+      "summary": "Consecutive edits to markdown files, 56 times across 4 projects with streaks up to 21 and no corrections. Documents revised one Edit call at a time.",
+      "theme": "editing",
+      "tool": "None on its own; pairs with the multi-file edit primitive.",
+      "type": "skill"
+    },
+    "N039": {
+      "class": "tool",
+      "created": "2026-09-14",
+      "history": [
+        {
+          "distinctSessions": 22,
+          "occurrences": 61,
+          "run": "2026-09-14"
+        }
+      ],
+      "mergedFrom": [],
+      "motifs": [
+        "M06DC0",
+        "M23978",
+        "MC84E5"
+      ],
+      "name": "inline python one-liners",
+      "seed": [
+        "Bash(python3:-c)"
+      ],
+      "stats": {
+        "betweenness": 0.001,
+        "buildScore": 692571,
+        "correctionRate": 0.115,
+        "crossProject": true,
+        "distinctProjects": 16,
+        "distinctSessions": 22,
+        "frictionMassMs": 691879,
+        "medianElapsedMs": 7648,
+        "occurrences": 61,
+        "retryDepth": 13,
+        "weightedDegree": 72
+      },
+      "status": "new",
+      "summary": "python3 -c one-liners for quick inspection, 61 times across 16 projects with streaks up to 13. The short form of the heredoc node.",
+      "theme": "ad-hoc python",
+      "tool": "The same checked data-inspection helper.",
+      "type": "script"
+    }
+  },
+  "run": "2026-09-14",
+  "runs": [
+    {
+      "run": "2026-09-14",
+      "sessions": 216
+    }
+  ],
+  "similarity": [
+    {
+      "a": "N001",
+      "b": "N027",
+      "weight": 0.636
+    },
+    {
+      "a": "N005",
+      "b": "N008",
+      "weight": 0.6
+    },
+    {
+      "a": "N004",
+      "b": "N027",
+      "weight": 0.538
+    },
+    {
+      "a": "N003",
+      "b": "N027",
+      "weight": 0.429
+    },
+    {
+      "a": "N001",
+      "b": "N004",
+      "weight": 0.412
+    },
+    {
+      "a": "N003",
+      "b": "N009",
+      "weight": 0.4
+    },
+    {
+      "a": "N003",
+      "b": "N017",
+      "weight": 0.4
+    },
+    {
+      "a": "N003",
+      "b": "N019",
+      "weight": 0.4
+    },
+    {
+      "a": "N003",
+      "b": "N028",
+      "weight": 0.4
+    },
+    {
+      "a": "N003",
+      "b": "N037",
+      "weight": 0.4
+    },
+    {
+      "a": "N008",
+      "b": "N022",
+      "weight": 0.4
+    },
+    {
+      "a": "N010",
+      "b": "N014",
+      "weight": 0.4
+    },
+    {
+      "a": "N010",
+      "b": "N017",
+      "weight": 0.4
+    },
+    {
+      "a": "N011",
+      "b": "N029",
+      "weight": 0.4
+    },
+    {
+      "a": "N011",
+      "b": "N037",
+      "weight": 0.4
+    },
+    {
+      "a": "N012",
+      "b": "N016",
+      "weight": 0.4
+    },
+    {
+      "a": "N012",
+      "b": "N028",
+      "weight": 0.4
+    },
+    {
+      "a": "N015",
+      "b": "N019",
+      "weight": 0.4
+    },
+    {
+      "a": "N015",
+      "b": "N023",
+      "weight": 0.4
+    },
+    {
+      "a": "N020",
+      "b": "N026",
+      "weight": 0.4
+    },
+    {
+      "a": "N024",
+      "b": "N034",
+      "weight": 0.4
+    },
+    {
+      "a": "N002",
+      "b": "N009",
+      "weight": 0.364
+    },
+    {
+      "a": "N002",
+      "b": "N016",
+      "weight": 0.364
+    },
+    {
+      "a": "N002",
+      "b": "N022",
+      "weight": 0.364
+    },
+    {
+      "a": "N002",
+      "b": "N028",
+      "weight": 0.364
+    },
+    {
+      "a": "N002",
+      "b": "N029",
+      "weight": 0.364
+    },
+    {
+      "a": "N002",
+      "b": "N037",
+      "weight": 0.364
+    },
+    {
+      "a": "N009",
+      "b": "N014",
+      "weight": 0.333
+    },
+    {
+      "a": "N009",
+      "b": "N016",
+      "weight": 0.333
+    },
+    {
+      "a": "N009",
+      "b": "N017",
+      "weight": 0.333
+    },
+    {
+      "a": "N009",
+      "b": "N019",
+      "weight": 0.333
+    },
+    {
+      "a": "N009",
+      "b": "N020",
+      "weight": 0.333
+    },
+    {
+      "a": "N009",
+      "b": "N022",
+      "weight": 0.333
+    },
+    {
+      "a": "N009",
+      "b": "N023",
+      "weight": 0.333
+    },
+    {
+      "a": "N009",
+      "b": "N028",
+      "weight": 0.333
+    },
+    {
+      "a": "N009",
+      "b": "N029",
+      "weight": 0.333
+    },
+    {
+      "a": "N009",
+      "b": "N034",
+      "weight": 0.333
+    },
+    {
+      "a": "N009",
+      "b": "N037",
+      "weight": 0.333
+    },
+    {
+      "a": "N013",
+      "b": "N027",
+      "weight": 0.333
+    },
+    {
+      "a": "N014",
+      "b": "N016",
+      "weight": 0.333
+    },
+    {
+      "a": "N014",
+      "b": "N017",
+      "weight": 0.333
+    },
+    {
+      "a": "N014",
+      "b": "N020",
+      "weight": 0.333
+    },
+    {
+      "a": "N014",
+      "b": "N022",
+      "weight": 0.333
+    },
+    {
+      "a": "N014",
+      "b": "N023",
+      "weight": 0.333
+    },
+    {
+      "a": "N014",
+      "b": "N029",
+      "weight": 0.333
+    },
+    {
+      "a": "N014",
+      "b": "N034",
+      "weight": 0.333
+    },
+    {
+      "a": "N016",
+      "b": "N020",
+      "weight": 0.333
+    },
+    {
+      "a": "N016",
+      "b": "N022",
+      "weight": 0.333
+    },
+    {
+      "a": "N016",
+      "b": "N023",
+      "weight": 0.333
+    },
+    {
+      "a": "N016",
+      "b": "N028",
+      "weight": 0.333
+    },
+    {
+      "a": "N016",
+      "b": "N029",
+      "weight": 0.333
+    },
+    {
+      "a": "N016",
+      "b": "N034",
+      "weight": 0.333
+    },
+    {
+      "a": "N017",
+      "b": "N019",
+      "weight": 0.333
+    },
+    {
+      "a": "N017",
+      "b": "N028",
+      "weight": 0.333
+    },
+    {
+      "a": "N017",
+      "b": "N037",
+      "weight": 0.333
+    },
+    {
+      "a": "N018",
+      "b": "N035",
+      "weight": 0.333
+    },
+    {
+      "a": "N019",
+      "b": "N023",
+      "weight": 0.333
+    },
+    {
+      "a": "N019",
+      "b": "N028",
+      "weight": 0.333
+    },
+    {
+      "a": "N019",
+      "b": "N037",
+      "weight": 0.333
+    },
+    {
+      "a": "N020",
+      "b": "N022",
+      "weight": 0.333
+    },
+    {
+      "a": "N020",
+      "b": "N023",
+      "weight": 0.333
+    },
+    {
+      "a": "N020",
+      "b": "N029",
+      "weight": 0.333
+    },
+    {
+      "a": "N020",
+      "b": "N034",
+      "weight": 0.333
+    },
+    {
+      "a": "N022",
+      "b": "N023",
+      "weight": 0.333
+    },
+    {
+      "a": "N022",
+      "b": "N029",
+      "weight": 0.333
+    },
+    {
+      "a": "N022",
+      "b": "N034",
+      "weight": 0.333
+    },
+    {
+      "a": "N023",
+      "b": "N029",
+      "weight": 0.333
+    },
+    {
+      "a": "N023",
+      "b": "N034",
+      "weight": 0.333
+    },
+    {
+      "a": "N028",
+      "b": "N037",
+      "weight": 0.333
+    },
+    {
+      "a": "N029",
+      "b": "N034",
+      "weight": 0.333
+    },
+    {
+      "a": "N029",
+      "b": "N037",
+      "weight": 0.333
+    },
+    {
+      "a": "N006",
+      "b": "N007",
+      "weight": 0.316
+    },
+    {
+      "a": "N004",
+      "b": "N009",
+      "weight": 0.308
+    },
+    {
+      "a": "N004",
+      "b": "N018",
+      "weight": 0.308
+    },
+    {
+      "a": "N004",
+      "b": "N019",
+      "weight": 0.308
+    },
+    {
+      "a": "N004",
+      "b": "N023",
+      "weight": 0.308
+    },
+    {
+      "a": "N002",
+      "b": "N006",
+      "weight": 0.304
+    },
+    {
+      "a": "N005",
+      "b": "N022",
+      "weight": 0.286
+    },
+    {
+      "a": "N007",
+      "b": "N010",
+      "weight": 0.286
+    },
+    {
+      "a": "N007",
+      "b": "N012",
+      "weight": 0.286
+    },
+    {
+      "a": "N009",
+      "b": "N039",
+      "weight": 0.286
+    },
+    {
+      "a": "N013",
+      "b": "N018",
+      "weight": 0.286
+    },
+    {
+      "a": "N013",
+      "b": "N035",
+      "weight": 0.286
+    },
+    {
+      "a": "N014",
+      "b": "N039",
+      "weight": 0.286
+    },
+    {
+      "a": "N016",
+      "b": "N039",
+      "weight": 0.286
+    },
+    {
+      "a": "N020",
+      "b": "N039",
+      "weight": 0.286
+    },
+    {
+      "a": "N022",
+      "b": "N039",
+      "weight": 0.286
+    },
+    {
+      "a": "N023",
+      "b": "N039",
+      "weight": 0.286
+    },
+    {
+      "a": "N029",
+      "b": "N039",
+      "weight": 0.286
+    },
+    {
+      "a": "N034",
+      "b": "N039",
+      "weight": 0.286
+    },
+    {
+      "a": "N001",
+      "b": "N003",
+      "weight": 0.273
+    },
+    {
+      "a": "N002",
+      "b": "N003",
+      "weight": 0.273
+    },
+    {
+      "a": "N002",
+      "b": "N008",
+      "weight": 0.273
+    },
+    {
+      "a": "N002",
+      "b": "N011",
+      "weight": 0.273
+    },
+    {
+      "a": "N002",
+      "b": "N012",
+      "weight": 0.273
+    },
+    {
+      "a": "N002",
+      "b": "N004",
+      "weight": 0.263
+    },
+    {
+      "a": "N007",
+      "b": "N014",
+      "weight": 0.25
+    },
+    {
+      "a": "N007",
+      "b": "N016",
+      "weight": 0.25
+    },
+    {
+      "a": "N007",
+      "b": "N017",
+      "weight": 0.25
+    },
+    {
+      "a": "N007",
+      "b": "N028",
+      "weight": 0.25
+    },
+    {
+      "a": "N001",
+      "b": "N005",
+      "weight": 0.231
+    },
+    {
+      "a": "N001",
+      "b": "N013",
+      "weight": 0.231
+    },
+    {
+      "a": "N002",
+      "b": "N005",
+      "weight": 0.231
+    },
+    {
+      "a": "N002",
+      "b": "N039",
+      "weight": 0.231
+    },
+    {
+      "a": "N003",
+      "b": "N004",
+      "weight": 0.231
+    },
+    {
+      "a": "N004",
+      "b": "N015",
+      "weight": 0.231
+    },
+    {
+      "a": "N009",
+      "b": "N027",
+      "weight": 0.222
+    },
+    {
+      "a": "N017",
+      "b": "N027",
+      "weight": 0.222
+    },
+    {
+      "a": "N018",
+      "b": "N027",
+      "weight": 0.222
+    },
+    {
+      "a": "N019",
+      "b": "N027",
+      "weight": 0.222
+    },
+    {
+      "a": "N027",
+      "b": "N028",
+      "weight": 0.222
+    },
+    {
+      "a": "N027",
+      "b": "N035",
+      "weight": 0.222
+    },
+    {
+      "a": "N027",
+      "b": "N037",
+      "weight": 0.222
+    },
+    {
+      "a": "N006",
+      "b": "N009",
+      "weight": 0.211
+    },
+    {
+      "a": "N006",
+      "b": "N014",
+      "weight": 0.211
+    },
+    {
+      "a": "N006",
+      "b": "N016",
+      "weight": 0.211
+    },
+    {
+      "a": "N006",
+      "b": "N017",
+      "weight": 0.211
+    },
+    {
+      "a": "N006",
+      "b": "N020",
+      "weight": 0.211
+    },
+    {
+      "a": "N006",
+      "b": "N028",
+      "weight": 0.211
+    },
+    {
+      "a": "N002",
+      "b": "N027",
+      "weight": 0.2
+    },
+    {
+      "a": "N003",
+      "b": "N008",
+      "weight": 0.2
+    },
+    {
+      "a": "N003",
+      "b": "N010",
+      "weight": 0.2
+    },
+    {
+      "a": "N003",
+      "b": "N011",
+      "weight": 0.2
+    },
+    {
+      "a": "N003",
+      "b": "N012",
+      "weight": 0.2
+    },
+    {
+      "a": "N003",
+      "b": "N015",
+      "weight": 0.2
+    },
+    {
+      "a": "N003",
+      "b": "N021",
+      "weight": 0.2
+    },
+    {
+      "a": "N003",
+      "b": "N024",
+      "weight": 0.2
+    },
+    {
+      "a": "N003",
+      "b": "N025",
+      "weight": 0.2
+    },
+    {
+      "a": "N003",
+      "b": "N026",
+      "weight": 0.2
+    },
+    {
+      "a": "N003",
+      "b": "N030",
+      "weight": 0.2
+    },
+    {
+      "a": "N003",
+      "b": "N032",
+      "weight": 0.2
+    },
+    {
+      "a": "N003",
+      "b": "N036",
+      "weight": 0.2
+    },
+    {
+      "a": "N004",
+      "b": "N013",
+      "weight": 0.2
+    },
+    {
+      "a": "N004",
+      "b": "N039",
+      "weight": 0.2
+    },
+    {
+      "a": "N008",
+      "b": "N010",
+      "weight": 0.2
+    },
+    {
+      "a": "N008",
+      "b": "N011",
+      "weight": 0.2
+    },
+    {
+      "a": "N008",
+      "b": "N012",
+      "weight": 0.2
+    },
+    {
+      "a": "N008",
+      "b": "N015",
+      "weight": 0.2
+    },
+    {
+      "a": "N008",
+      "b": "N021",
+      "weight": 0.2
+    },
+    {
+      "a": "N008",
+      "b": "N024",
+      "weight": 0.2
+    },
+    {
+      "a": "N008",
+      "b": "N025",
+      "weight": 0.2
+    },
+    {
+      "a": "N008",
+      "b": "N026",
+      "weight": 0.2
+    },
+    {
+      "a": "N008",
+      "b": "N030",
+      "weight": 0.2
+    },
+    {
+      "a": "N008",
+      "b": "N032",
+      "weight": 0.2
+    },
+    {
+      "a": "N008",
+      "b": "N036",
+      "weight": 0.2
+    },
+    {
+      "a": "N010",
+      "b": "N011",
+      "weight": 0.2
+    },
+    {
+      "a": "N010",
+      "b": "N012",
+      "weight": 0.2
+    },
+    {
+      "a": "N010",
+      "b": "N015",
+      "weight": 0.2
+    },
+    {
+      "a": "N010",
+      "b": "N021",
+      "weight": 0.2
+    },
+    {
+      "a": "N010",
+      "b": "N024",
+      "weight": 0.2
+    },
+    {
+      "a": "N010",
+      "b": "N025",
+      "weight": 0.2
+    },
+    {
+      "a": "N010",
+      "b": "N026",
+      "weight": 0.2
+    },
+    {
+      "a": "N010",
+      "b": "N030",
+      "weight": 0.2
+    },
+    {
+      "a": "N010",
+      "b": "N032",
+      "weight": 0.2
+    },
+    {
+      "a": "N010",
+      "b": "N036",
+      "weight": 0.2
+    },
+    {
+      "a": "N011",
+      "b": "N012",
+      "weight": 0.2
+    },
+    {
+      "a": "N011",
+      "b": "N015",
+      "weight": 0.2
+    },
+    {
+      "a": "N011",
+      "b": "N021",
+      "weight": 0.2
+    },
+    {
+      "a": "N011",
+      "b": "N024",
+      "weight": 0.2
+    },
+    {
+      "a": "N011",
+      "b": "N025",
+      "weight": 0.2
+    },
+    {
+      "a": "N011",
+      "b": "N026",
+      "weight": 0.2
+    },
+    {
+      "a": "N011",
+      "b": "N030",
+      "weight": 0.2
+    },
+    {
+      "a": "N011",
+      "b": "N032",
+      "weight": 0.2
+    },
+    {
+      "a": "N011",
+      "b": "N036",
+      "weight": 0.2
+    },
+    {
+      "a": "N012",
+      "b": "N015",
+      "weight": 0.2
+    },
+    {
+      "a": "N012",
+      "b": "N021",
+      "weight": 0.2
+    },
+    {
+      "a": "N012",
+      "b": "N024",
+      "weight": 0.2
+    },
+    {
+      "a": "N012",
+      "b": "N025",
+      "weight": 0.2
+    },
+    {
+      "a": "N012",
+      "b": "N026",
+      "weight": 0.2
+    },
+    {
+      "a": "N012",
+      "b": "N030",
+      "weight": 0.2
+    },
+    {
+      "a": "N012",
+      "b": "N032",
+      "weight": 0.2
+    },
+    {
+      "a": "N012",
+      "b": "N036",
+      "weight": 0.2
+    },
+    {
+      "a": "N015",
+      "b": "N021",
+      "weight": 0.2
+    },
+    {
+      "a": "N015",
+      "b": "N024",
+      "weight": 0.2
+    },
+    {
+      "a": "N015",
+      "b": "N025",
+      "weight": 0.2
+    },
+    {
+      "a": "N015",
+      "b": "N026",
+      "weight": 0.2
+    },
+    {
+      "a": "N015",
+      "b": "N030",
+      "weight": 0.2
+    },
+    {
+      "a": "N015",
+      "b": "N032",
+      "weight": 0.2
+    },
+    {
+      "a": "N015",
+      "b": "N036",
+      "weight": 0.2
+    },
+    {
+      "a": "N021",
+      "b": "N024",
+      "weight": 0.2
+    },
+    {
+      "a": "N021",
+      "b": "N025",
+      "weight": 0.2
+    },
+    {
+      "a": "N021",
+      "b": "N026",
+      "weight": 0.2
+    },
+    {
+      "a": "N021",
+      "b": "N030",
+      "weight": 0.2
+    },
+    {
+      "a": "N021",
+      "b": "N032",
+      "weight": 0.2
+    },
+    {
+      "a": "N021",
+      "b": "N036",
+      "weight": 0.2
+    },
+    {
+      "a": "N024",
+      "b": "N025",
+      "weight": 0.2
+    },
+    {
+      "a": "N024",
+      "b": "N026",
+      "weight": 0.2
+    },
+    {
+      "a": "N024",
+      "b": "N030",
+      "weight": 0.2
+    },
+    {
+      "a": "N024",
+      "b": "N032",
+      "weight": 0.2
+    },
+    {
+      "a": "N024",
+      "b": "N036",
+      "weight": 0.2
+    },
+    {
+      "a": "N025",
+      "b": "N026",
+      "weight": 0.2
+    },
+    {
+      "a": "N025",
+      "b": "N030",
+      "weight": 0.2
+    },
+    {
+      "a": "N025",
+      "b": "N032",
+      "weight": 0.2
+    },
+    {
+      "a": "N025",
+      "b": "N036",
+      "weight": 0.2
+    },
+    {
+      "a": "N026",
+      "b": "N030",
+      "weight": 0.2
+    },
+    {
+      "a": "N026",
+      "b": "N032",
+      "weight": 0.2
+    },
+    {
+      "a": "N026",
+      "b": "N036",
+      "weight": 0.2
+    },
+    {
+      "a": "N030",
+      "b": "N032",
+      "weight": 0.2
+    },
+    {
+      "a": "N030",
+      "b": "N036",
+      "weight": 0.2
+    },
+    {
+      "a": "N032",
+      "b": "N036",
+      "weight": 0.2
+    },
+    {
+      "a": "N004",
+      "b": "N006",
+      "weight": 0.185
+    },
+    {
+      "a": "N001",
+      "b": "N031",
+      "weight": 0.182
+    },
+    {
+      "a": "N001",
+      "b": "N002",
+      "weight": 0.158
+    },
+    {
+      "a": "N003",
+      "b": "N006",
+      "weight": 0.158
+    },
+    {
+      "a": "N006",
+      "b": "N010",
+      "weight": 0.158
+    },
+    {
+      "a": "N006",
+      "b": "N012",
+      "weight": 0.158
+    },
+    {
+      "a": "N006",
+      "b": "N026",
+      "weight": 0.158
+    },
+    {
+      "a": "N006",
+      "b": "N036",
+      "weight": 0.158
+    },
+    {
+      "a": "N001",
+      "b": "N009",
+      "weight": 0.154
+    },
+    {
+      "a": "N001",
+      "b": "N017",
+      "weight": 0.154
+    },
+    {
+      "a": "N001",
+      "b": "N018",
+      "weight": 0.154
+    },
+    {
+      "a": "N001",
+      "b": "N019",
+      "weight": 0.154
+    },
+    {
+      "a": "N001",
+      "b": "N028",
+      "weight": 0.154
+    },
+    {
+      "a": "N001",
+      "b": "N035",
+      "weight": 0.154
+    },
+    {
+      "a": "N001",
+      "b": "N037",
+      "weight": 0.154
+    },
+    {
+      "a": "N002",
+      "b": "N014",
+      "weight": 0.154
+    },
+    {
+      "a": "N002",
+      "b": "N017",
+      "weight": 0.154
+    },
+    {
+      "a": "N002",
+      "b": "N019",
+      "weight": 0.154
+    },
+    {
+      "a": "N002",
+      "b": "N020",
+      "weight": 0.154
+    },
+    {
+      "a": "N002",
+      "b": "N023",
+      "weight": 0.154
+    },
+    {
+      "a": "N002",
+      "b": "N034",
+      "weight": 0.154
+    },
+    {
+      "a": "N003",
+      "b": "N005",
+      "weight": 0.143
+    },
+    {
+      "a": "N003",
+      "b": "N013",
+      "weight": 0.143
+    },
+    {
+      "a": "N003",
+      "b": "N039",
+      "weight": 0.143
+    },
+    {
+      "a": "N005",
+      "b": "N010",
+      "weight": 0.143
+    },
+    {
+      "a": "N005",
+      "b": "N011",
+      "weight": 0.143
+    },
+    {
+      "a": "N005",
+      "b": "N012",
+      "weight": 0.143
+    },
+    {
+      "a": "N005",
+      "b": "N015",
+      "weight": 0.143
+    },
+    {
+      "a": "N005",
+      "b": "N021",
+      "weight": 0.143
+    },
+    {
+      "a": "N005",
+      "b": "N024",
+      "weight": 0.143
+    },
+    {
+      "a": "N005",
+      "b": "N025",
+      "weight": 0.143
+    },
+    {
+      "a": "N005",
+      "b": "N026",
+      "weight": 0.143
+    },
+    {
+      "a": "N005",
+      "b": "N030",
+      "weight": 0.143
+    },
+    {
+      "a": "N005",
+      "b": "N032",
+      "weight": 0.143
+    },
+    {
+      "a": "N005",
+      "b": "N036",
+      "weight": 0.143
+    },
+    {
+      "a": "N006",
+      "b": "N039",
+      "weight": 0.143
+    },
+    {
+      "a": "N008",
+      "b": "N013",
+      "weight": 0.143
+    },
+    {
+      "a": "N008",
+      "b": "N039",
+      "weight": 0.143
+    },
+    {
+      "a": "N010",
+      "b": "N013",
+      "weight": 0.143
+    },
+    {
+      "a": "N010",
+      "b": "N039",
+      "weight": 0.143
+    },
+    {
+      "a": "N011",
+      "b": "N013",
+      "weight": 0.143
+    },
+    {
+      "a": "N011",
+      "b": "N039",
+      "weight": 0.143
+    },
+    {
+      "a": "N012",
+      "b": "N013",
+      "weight": 0.143
+    },
+    {
+      "a": "N012",
+      "b": "N039",
+      "weight": 0.143
+    },
+    {
+      "a": "N013",
+      "b": "N015",
+      "weight": 0.143
+    },
+    {
+      "a": "N013",
+      "b": "N021",
+      "weight": 0.143
+    },
+    {
+      "a": "N013",
+      "b": "N024",
+      "weight": 0.143
+    },
+    {
+      "a": "N013",
+      "b": "N025",
+      "weight": 0.143
+    },
+    {
+      "a": "N013",
+      "b": "N026",
+      "weight": 0.143
+    },
+    {
+      "a": "N013",
+      "b": "N030",
+      "weight": 0.143
+    },
+    {
+      "a": "N013",
+      "b": "N032",
+      "weight": 0.143
+    },
+    {
+      "a": "N013",
+      "b": "N036",
+      "weight": 0.143
+    },
+    {
+      "a": "N015",
+      "b": "N039",
+      "weight": 0.143
+    },
+    {
+      "a": "N021",
+      "b": "N039",
+      "weight": 0.143
+    },
+    {
+      "a": "N024",
+      "b": "N039",
+      "weight": 0.143
+    },
+    {
+      "a": "N025",
+      "b": "N039",
+      "weight": 0.143
+    },
+    {
+      "a": "N026",
+      "b": "N039",
+      "weight": 0.143
+    },
+    {
+      "a": "N030",
+      "b": "N039",
+      "weight": 0.143
+    },
+    {
+      "a": "N032",
+      "b": "N039",
+      "weight": 0.143
+    },
+    {
+      "a": "N036",
+      "b": "N039",
+      "weight": 0.143
+    },
+    {
+      "a": "N002",
+      "b": "N007",
+      "weight": 0.133
+    },
+    {
+      "a": "N004",
+      "b": "N014",
+      "weight": 0.133
+    },
+    {
+      "a": "N004",
+      "b": "N016",
+      "weight": 0.133
+    },
+    {
+      "a": "N004",
+      "b": "N017",
+      "weight": 0.133
+    },
+    {
+      "a": "N004",
+      "b": "N020",
+      "weight": 0.133
+    },
+    {
+      "a": "N004",
+      "b": "N022",
+      "weight": 0.133
+    },
+    {
+      "a": "N004",
+      "b": "N028",
+      "weight": 0.133
+    },
+    {
+      "a": "N004",
+      "b": "N029",
+      "weight": 0.133
+    },
+    {
+      "a": "N004",
+      "b": "N034",
+      "weight": 0.133
+    },
+    {
+      "a": "N004",
+      "b": "N035",
+      "weight": 0.133
+    },
+    {
+      "a": "N004",
+      "b": "N037",
+      "weight": 0.133
+    },
+    {
+      "a": "N006",
+      "b": "N027",
+      "weight": 0.13
+    },
+    {
+      "a": "N001",
+      "b": "N006",
+      "weight": 0.111
+    },
+    {
+      "a": "N005",
+      "b": "N013",
+      "weight": 0.111
+    },
+    {
+      "a": "N005",
+      "b": "N039",
+      "weight": 0.111
+    },
+    {
+      "a": "N008",
+      "b": "N027",
+      "weight": 0.111
+    },
+    {
+      "a": "N010",
+      "b": "N027",
+      "weight": 0.111
+    },
+    {
+      "a": "N011",
+      "b": "N027",
+      "weight": 0.111
+    },
+    {
+      "a": "N012",
+      "b": "N027",
+      "weight": 0.111
+    },
+    {
+      "a": "N013",
+      "b": "N039",
+      "weight": 0.111
+    },
+    {
+      "a": "N015",
+      "b": "N027",
+      "weight": 0.111
+    },
+    {
+      "a": "N021",
+      "b": "N027",
+      "weight": 0.111
+    },
+    {
+      "a": "N024",
+      "b": "N027",
+      "weight": 0.111
+    },
+    {
+      "a": "N025",
+      "b": "N027",
+      "weight": 0.111
+    },
+    {
+      "a": "N026",
+      "b": "N027",
+      "weight": 0.111
+    },
+    {
+      "a": "N027",
+      "b": "N030",
+      "weight": 0.111
+    },
+    {
+      "a": "N027",
+      "b": "N032",
+      "weight": 0.111
+    },
+    {
+      "a": "N027",
+      "b": "N036",
+      "weight": 0.111
+    },
+    {
+      "a": "N006",
+      "b": "N019",
+      "weight": 0.095
+    },
+    {
+      "a": "N006",
+      "b": "N022",
+      "weight": 0.095
+    },
+    {
+      "a": "N006",
+      "b": "N023",
+      "weight": 0.095
+    },
+    {
+      "a": "N006",
+      "b": "N029",
+      "weight": 0.095
+    },
+    {
+      "a": "N006",
+      "b": "N034",
+      "weight": 0.095
+    },
+    {
+      "a": "N006",
+      "b": "N037",
+      "weight": 0.095
+    },
+    {
+      "a": "N005",
+      "b": "N027",
+      "weight": 0.091
+    },
+    {
+      "a": "N027",
+      "b": "N039",
+      "weight": 0.091
+    },
+    {
+      "a": "N001",
+      "b": "N008",
+      "weight": 0.077
+    },
+    {
+      "a": "N001",
+      "b": "N010",
+      "weight": 0.077
+    },
+    {
+      "a": "N001",
+      "b": "N011",
+      "weight": 0.077
+    },
+    {
+      "a": "N001",
+      "b": "N012",
+      "weight": 0.077
+    },
+    {
+      "a": "N001",
+      "b": "N015",
+      "weight": 0.077
+    },
+    {
+      "a": "N001",
+      "b": "N021",
+      "weight": 0.077
+    },
+    {
+      "a": "N001",
+      "b": "N024",
+      "weight": 0.077
+    },
+    {
+      "a": "N001",
+      "b": "N025",
+      "weight": 0.077
+    },
+    {
+      "a": "N001",
+      "b": "N026",
+      "weight": 0.077
+    },
+    {
+      "a": "N001",
+      "b": "N030",
+      "weight": 0.077
+    },
+    {
+      "a": "N001",
+      "b": "N032",
+      "weight": 0.077
+    },
+    {
+      "a": "N001",
+      "b": "N036",
+      "weight": 0.077
+    },
+    {
+      "a": "N002",
+      "b": "N010",
+      "weight": 0.077
+    },
+    {
+      "a": "N002",
+      "b": "N015",
+      "weight": 0.077
+    },
+    {
+      "a": "N002",
+      "b": "N021",
+      "weight": 0.077
+    },
+    {
+      "a": "N002",
+      "b": "N024",
+      "weight": 0.077
+    },
+    {
+      "a": "N002",
+      "b": "N025",
+      "weight": 0.077
+    },
+    {
+      "a": "N002",
+      "b": "N026",
+      "weight": 0.077
+    },
+    {
+      "a": "N002",
+      "b": "N030",
+      "weight": 0.077
+    },
+    {
+      "a": "N002",
+      "b": "N032",
+      "weight": 0.077
+    },
+    {
+      "a": "N002",
+      "b": "N036",
+      "weight": 0.077
+    },
+    {
+      "a": "N001",
+      "b": "N039",
+      "weight": 0.067
+    },
+    {
+      "a": "N002",
+      "b": "N013",
+      "weight": 0.067
+    },
+    {
+      "a": "N004",
+      "b": "N008",
+      "weight": 0.067
+    },
+    {
+      "a": "N004",
+      "b": "N010",
+      "weight": 0.067
+    },
+    {
+      "a": "N004",
+      "b": "N011",
+      "weight": 0.067
+    },
+    {
+      "a": "N004",
+      "b": "N012",
+      "weight": 0.067
+    },
+    {
+      "a": "N004",
+      "b": "N021",
+      "weight": 0.067
+    },
+    {
+      "a": "N004",
+      "b": "N024",
+      "weight": 0.067
+    },
+    {
+      "a": "N004",
+      "b": "N025",
+      "weight": 0.067
+    },
+    {
+      "a": "N004",
+      "b": "N026",
+      "weight": 0.067
+    },
+    {
+      "a": "N004",
+      "b": "N030",
+      "weight": 0.067
+    },
+    {
+      "a": "N004",
+      "b": "N032",
+      "weight": 0.067
+    },
+    {
+      "a": "N004",
+      "b": "N036",
+      "weight": 0.067
+    },
+    {
+      "a": "N004",
+      "b": "N005",
+      "weight": 0.059
+    },
+    {
+      "a": "N006",
+      "b": "N008",
+      "weight": 0.048
+    },
+    {
+      "a": "N006",
+      "b": "N011",
+      "weight": 0.048
+    },
+    {
+      "a": "N006",
+      "b": "N015",
+      "weight": 0.048
+    },
+    {
+      "a": "N006",
+      "b": "N021",
+      "weight": 0.048
+    },
+    {
+      "a": "N006",
+      "b": "N024",
+      "weight": 0.048
+    },
+    {
+      "a": "N006",
+      "b": "N025",
+      "weight": 0.048
+    },
+    {
+      "a": "N006",
+      "b": "N030",
+      "weight": 0.048
+    },
+    {
+      "a": "N006",
+      "b": "N032",
+      "weight": 0.048
+    },
+    {
+      "a": "N005",
+      "b": "N006",
+      "weight": 0.043
+    },
+    {
+      "a": "N006",
+      "b": "N013",
+      "weight": 0.043
+    }
+  ],
+  "unassigned": [
+    "M23978",
+    "M3420B",
+    "M5AA8C",
+    "M79AC2",
+    "M7A5A1",
+    "MA229B",
+    "MA6590",
+    "MC4314",
+    "MC64EE",
+    "MC84E5",
+    "MCAEDF",
+    "MD2045",
+    "ME1665",
+    "MF1C24",
+    "MF9E9C",
+    "MFCE6E"
+  ],
+  "version": 1
+}

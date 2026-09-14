@@ -1,103 +1,85 @@
 ---
 name: comb
-description: Mine past Claude Code sessions for recurring action patterns and maintain a ranked list of internal developer-tool candidates for the MSP division. Use when the user says "comb the sessions", "spot automations", "what should I automate", "run comb", "update candidates", or "/comb". Reads only client-redacted action skeletons, never raw transcripts.
+description: Mine past Claude Code sessions into a networked ontology of automation candidates for the MSP division. Use when the user says "run comb", "comb the sessions", "what should I automate", "update the ontology", or "/comb". Reads only the projected corpus and comb/ontology.json, never a transcript.
 ---
 
 # comb
 
-Turn observed session behavior into a ranked list of automation candidates in `candidates.md`.
+Turn observed session behavior into a network of candidate workflows. The machine does the
+grouping, scoring, and ranking. You name the nodes and write the prose.
 
-## Non-negotiable invariants
+## Invariants
 
-**Never read a transcript directly.** Not with Read, not with Bash, not "just to check
-something". `~/.claude/projects/**` is off-limits to you. Your only inputs are
-`comb/.work/motifs.json` and the existing `candidates.md`. Stage 1
-(`project.mjs`) exists precisely so that no model ever sees client data; reading around
-it defeats the entire design.
+**Never read a transcript.** Not with Read, not with Bash, not to check one thing.
+`~/.claude/projects/**` is off-limits. Your inputs are the JSON that `comb.mjs` prints and
+`comb/ontology.json`. Stage 1 exists so that no model sees client data.
 
-**Prose tiering.** A motif with `crossProject: true` appears at two or more distinct
-engagements and therefore cannot be client-specific — describe it freely. A motif with
-`crossProject: false` occurred at a single engagement: give it a mechanical description
-only (restate the sequence and the numbers). Never speculate about which client, what
-system, or what domain a single-project motif belongs to. You do not know, and guessing
-is exactly the leak this tool is built to prevent.
+**Prose tiering.** A node with `stats.crossProject: true` spans two or more engagements and
+cannot be client-specific. Describe it freely. A node with `crossProject: false` gets a
+mechanical description only: restate the `seed` sequence and the numbers. Never guess which
+client, system, or domain a single-project node belongs to.
 
-**Never overwrite the `Status` column.** It is human-owned. Same for a `Candidate tool`
-cell a human has clearly rewritten — preserve their wording and update only the numbers.
+**Never write `status`.** It is human-owned. Never edit `candidates.md` or
+`comb/ontology.json` by hand. Use `bun comb/ontology.mjs annotate`.
+
+**Never decide membership.** Report merge proposals. A human accepts or dismisses them.
 
 ## Workflow
 
-### 1. Refresh the data
+### 1. Run the pipeline
 
 ```sh
-bun comb/project.mjs      # transcripts -> skeletons (incremental)
-bun comb/motifs.mjs       # skeletons -> ranked motifs
+bun comb/comb.mjs
 ```
 
-Add `--all` to `project.mjs` to rebuild from scratch, ignoring watermarks. Useful after
-changing the projection vocabulary, since old skeletons were built with the old tables.
-Run from the repo root: paths resolve against the current directory. `COMB_TEAM_KEY`
-should be set to the team key so pooled skeletons hash consistently; a changed key
-is refused unless `--all` is passed.
+Add `--all` after a change to `comb/vocabulary.mjs`. Run from the repo root. The command
+prints one JSON object: `unnamedNodes`, `proposals`, `buildOrder`, and `waiting` (motifs
+below the seed floor).
 
-### 2. Read the motifs
+### 2. Name each unnamed node
 
-Read `comb/.work/motifs.json`. Each motif has: `id`, `kind`
-(`cycle` = trial-and-error loop within one session, `ritual` = sequence recurring across
-sessions), `sequence`, `occurrences`, `distinctSessions`, `distinctProjects`,
-`crossProject`, `medianElapsedMs`, and `rank`.
+For each entry in `unnamedNodes`, read `seed`, `stats`, `class`, and `motifs`. Then:
 
-Prioritize by judgment, not by rank alone:
+- Pick a short lowercase `name` (two to four words) that names the workflow, not the tool.
+- Write a `summary` of two sentences: what the operator is doing, and why it costs time.
+  Use the numbers: occurrences, median time, correction rate.
+- Write a one-sentence `tool`: the concrete thing to build or change.
+- Pick a `type`: `hook`, `skill`, `script`, `mcp`, or `harness` (a Claude Code
+  configuration change).
+- Pick a `theme`: a one-word or two-word label for the family this node belongs to.
+  Reuse an existing label from `candidates.md` when one fits.
 
-- **`cycle` motifs outrank `ritual` motifs of similar size.** A loop is friction you
-  actually felt; a ritual may just be how work is shaped.
-- **High `medianElapsedMs` is the ROI signal.** A motif occurring 12 times at 200s each
-  is worth more than one occurring 40 times at 3s each.
-- **`Bash(other)` means an unrecognized command.** It is a real signal — usually a custom
-  script — but you cannot say which. Describe it as "an unrecognized/custom command",
-  never guess what it does. If `Bash(other)` dominates the table, say so in the summary:
-  it means the allowlist in `vocabulary.mjs` needs new verbs.
-- **A motif ending in `User` is a correction.** The agent acted, then the human
-  intervened. These are the highest-value candidates — they mark where the current
-  workflow gets things wrong unaided.
-- **Ignore motifs where `sidechain: true`** unless nothing else is interesting. That is
-  subagent behavior, not the operator's.
+```sh
+bun comb/ontology.mjs annotate N001 --name "guarded batch edit" \
+  --summary "..." --tool "..." --type skill --theme editing
+```
 
-### 3. Upsert `candidates.md`
+Rules of thumb:
 
-Read the existing `candidates.md`. For each motif you judge worth listing:
+- `cycle` motifs (repeats inside one session) are friction the operator felt. Rank them
+  above rituals of similar size.
+- A high `correctionRate` means the agent acted and the human stepped in. Those are the
+  highest-value candidates.
+- `Bash(other)` is an unrecognized command. Say "an unrecognized or custom command", never
+  guess what it does. `Bash(script)` is a repo script whose name is not in
+  `INTERNAL_SCRIPTS`; say "a repo script".
 
-- **ID already present** → update `Occurrences`, `Distinct projects`, `Median time`.
-  Leave `Status` and any human-edited `Candidate tool` text alone.
-- **ID absent** → append a new row with `Status: new`.
-- **Row present but motif no longer in the data** → leave it. Never delete rows; a
-  candidate someone triaged should not silently vanish because thresholds moved.
+### 3. Report
 
-Row format:
+Tell the user, in this order:
 
-| ID | Motif | Occurrences | Distinct projects | Median time | Candidate tool | Type | Status |
-|---|---|---|---|---|---|---|---|
-| `M015DF` | `Bash(grep) → Bash(sed)` | 18 | 10 | 4s | in-place refactor helper that greps and rewrites in one step | skill | new |
+1. Nodes named this run, one line each.
+2. Merge proposals, with a one-line opinion on each. Do not apply them.
+3. The top three of `buildOrder`, with your reasoning.
+4. The "Since last run" signals from `candidates.md`, if any.
 
-`Type` is one of `hook`, `skill`, `script`, `mcp`, or `harness` (a Claude Code config
-change rather than a tool). `Distinct projects` is a **count** — never engagement names.
-
-### 4. Report
-
-Tell the user how many rows were added versus updated, and name the two or three
-candidates you think are actually worth building, with your reasoning. Do not restate
-the whole table — they can read it.
+Do not restate the table. The user can read `candidates.md`.
 
 ## Tuning
 
-If the table is thin or dominated by noise, adjust and re-run:
-
-- `--min-sessions N` (default 2) — how many distinct sessions a ritual must span.
-- `--min-cycles N` (default 3) — how many repeats make a cycle.
-- `LOW_SIGNAL_VERBS` in `vocabulary.mjs` — inspection verbs filtered out of motifs.
-- `BASH_VERBS` in `vocabulary.mjs` — add verbs here to convert `Bash(other)` noise into
-  named signal. This is the highest-leverage tuning knob.
-
-After editing `vocabulary.mjs`, run `bun test comb/` — the audit test
-asserts that every token emitted across the entire real corpus is a member of the closed
-vocabulary. That test is the security control. Do not weaken it.
+- `bun comb/comb.mjs --min-sessions N --min-cycles N --max-motifs N` change the miner.
+- `THRESHOLDS` in `comb/ontology.mjs` change grouping and rendering.
+- `BASH_VERBS`, `INTERNAL_SCRIPTS`, `RUNNER_VERBS` in `comb/vocabulary.mjs` turn
+  unrecognized commands into named signal. After any change there, run
+  `bun test comb/`. The audit test asserts every emitted token is in the closed
+  vocabulary. That test is the security control. Do not weaken it.

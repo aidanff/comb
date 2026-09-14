@@ -1,5 +1,7 @@
 # Extending comb to tools, docs, and plugins
 
+> Phases 1 and 2 landed through `2026-09-14-comb-ontology-design.md`. Phases 3 and 4 (`inventory.mjs`, `docsmap.mjs`) stay deferred behind the internal-repo allowlist decision.
+
 Status: design, not built. 2026-09-10.
 Source: conversation with Roman on 2026-09-10. Companion to
 `2026-08-25-comb-design.md` and `docs/runbooks/testing-plugins.md`.

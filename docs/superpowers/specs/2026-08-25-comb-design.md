@@ -1,5 +1,7 @@
 # comb — Design
 
+> Superseded in part by `2026-09-14-comb-ontology-design.md`: the deliverable, stage 3, and the corpus scope. The projection and miner sections still apply.
+
 **Date:** 2026-08-25
 **Status:** Approved for planning
 **Repo:** `~/dev/RnD`

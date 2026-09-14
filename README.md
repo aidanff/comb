@@ -15,7 +15,7 @@ bun comb/comb.mjs --all      # rebuild the corpus after a vocabulary change
 bun test comb/               # unit tests and the redaction audit
 ```
 
-Then run the `comb` skill. It names new nodes and themes and reports the build order.
+Then run the `comb` skill. It names and labels new nodes and reports the build order.
 
 Run from the repo root. Set `COMB_TEAM_KEY` from the shared secret store before the first
 run. The key makes session and project IDs identical on every machine, so the team can
@@ -48,8 +48,10 @@ workflow transcripts on purpose. comb measures operator friction, not delegated 
 ## The ontology
 
 A **motif** is a short action sequence that the miner found in two or more sessions, or a
-loop inside one session. A **node** is a group of motifs with a similarity score of 0.7 or
-more. A **theme** is a group of nodes with a score of 0.3 or more.
+loop inside one session. A **node** is a group of motifs that score 0.5 or more against the
+node's seed motif. A motif may open a new node only after it appears in 3 projects and 15
+times; smaller motifs wait and are retried every run. A **theme** is a label the skill gives
+a node.
 
 Two edge types connect nodes:
 
@@ -69,8 +71,7 @@ the CLI. The network grows by deepening nodes, not by adding rows.
 
 | Command | Who runs it | Effect |
 |---|---|---|
-| `bun comb/ontology.mjs annotate N001 --name .. --summary .. --tool .. --type ..` | the skill | Set the descriptive fields |
-| `bun comb/ontology.mjs annotate T01 --name ..` | the skill | Name a theme |
+| `bun comb/ontology.mjs annotate N001 --name .. --summary .. --tool .. --type .. --theme ..` | the skill | Set the descriptive fields |
 | `bun comb/ontology.mjs status N001 built` | a human | `new`, `building`, `built`, or `rejected` |
 | `bun comb/ontology.mjs merge N001 N004` | a human | Fold N004 into N001 |
 | `bun comb/ontology.mjs merge --dismiss N002 N005` | a human | Stop proposing this merge |

@@ -2,16 +2,16 @@ import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   THRESHOLDS, similarity, emptyOntology, indexMotifs, assignMotifs, nodeTokens,
-  computeThemes, computeStats, classify,
+  computeStats, classify,
 } from '../ontology.mjs';
 
 const motif = (id, sequence, o = {}) => ({
   id, kind: o.kind ?? 'ritual', sequence, length: sequence.length,
-  occurrences: o.occurrences ?? 10, distinctSessions: o.sessions?.length ?? 2,
-  distinctProjects: o.projects?.length ?? 2, sidechain: false,
-  crossProject: (o.projects?.length ?? 2) >= 2, medianElapsedMs: o.median ?? 1000,
+  occurrences: o.occurrences ?? 20, distinctSessions: o.sessions?.length ?? 2,
+  distinctProjects: o.projects?.length ?? 3, sidechain: false,
+  crossProject: (o.projects?.length ?? 3) >= 2, medianElapsedMs: o.median ?? 1000,
   rank: o.rank ?? 10, correctionRate: o.correctionRate ?? 0, retryDepth: o.retryDepth ?? 1,
-  sessions: o.sessions ?? ['s1', 's2'], projects: o.projects ?? ['p1', 'p2'],
+  sessions: o.sessions ?? ['s1', 's2'], projects: o.projects ?? ['p1', 'p2', 'p3'],
 });
 
 describe('similarity — weighted Jaccard', () => {
@@ -61,17 +61,42 @@ describe('assignMotifs — sticky node formation', () => {
     assert.equal(o.assignments.M1, 'N001');
   });
 
-  test('a new motif joins the existing node it matches at 0.7, and seeds a node at 0.69', () => {
+  test('a new motif joins the existing node it matches at or above JOIN, and seeds a node below it', () => {
     const o = emptyOntology();
     const base = [motif('M1', ['A', 'B', 'C'])];
     indexMotifs(o, base); assignMotifs(o, base, '2026-09-14');
-    // {A,B,C,D} vs {A,B,C}: 3/4 = 0.75 joins. {A,B,X,Y} vs {A,B,C}: 2/5 = 0.4 seeds.
+    // {A,B,C,D} vs {A,B,C}: 3/4 = 0.75 joins. {A,B,X,Y} vs {A,B,C}: 2/5 = 0.4 seeds (JOIN is 0.5).
     const next = [...base, motif('M2', ['A', 'B', 'C', 'D']), motif('M3', ['A', 'B', 'X', 'Y'])];
     indexMotifs(o, next);
     const { created } = assignMotifs(o, next, '2026-09-15');
     assert.equal(o.assignments.M2, 'N001');
     assert.equal(o.assignments.M3, 'N002');
     assert.deepEqual(created, ['N002']);
+  });
+
+  test('a motif below the seed floor waits in unassigned, then joins a node it matches later', () => {
+    const o = emptyOntology();
+    const small = [motif('M1', ['A', 'B'], { occurrences: 5, projects: ['p1', 'p2'] })];
+    indexMotifs(o, small);
+    assert.deepEqual(assignMotifs(o, small, '2026-09-14').created, []);
+    assert.deepEqual(o.unassigned, ['M1']);
+    const later = [motif('M2', ['A', 'B', 'C'], { rank: 50 }), ...small];
+    indexMotifs(o, later);
+    assert.deepEqual(assignMotifs(o, later, '2026-09-15').created, ['N001']);
+    assert.equal(o.assignments.M1, 'N001');   // {A,B} vs {A,B,C} = 0.667 >= JOIN
+    assert.deepEqual(o.unassigned, []);
+  });
+
+  test('no transitive chaining: a motif joins only if it matches the seed itself', () => {
+    const o = emptyOntology();
+    // M1 seeds. M2 matches M1 (0.75). M3 matches M2 (0.75) but not M1 (0.5 < ... equal to JOIN, so it joins);
+    // use M3 = {C,D,E,F}: vs M1 {A,B,C,D} = 2/6 = 0.333, vs M2 {A,B,C,D,E} = 3/6 = 0.5.
+    const ms = [motif('M1', ['A', 'B', 'C', 'D'], { rank: 30 }), motif('M2', ['A', 'B', 'C', 'D', 'E'], { rank: 20 }), motif('M3', ['C', 'D', 'E', 'F'], { rank: 10 })];
+    indexMotifs(o, ms);
+    const { created } = assignMotifs(o, ms, '2026-09-14');
+    assert.deepEqual(created, ['N001', 'N002']);
+    assert.equal(o.assignments.M2, 'N001');
+    assert.equal(o.assignments.M3, 'N002');
   });
 
   test('a motif absent from the new motif set keeps its assignment and its tokens', () => {
@@ -84,40 +109,19 @@ describe('assignMotifs — sticky node formation', () => {
   });
 });
 
-describe('computeThemes', () => {
-  test('nodes at or above THEME share a theme; names persist across runs by member overlap', () => {
-    const o = emptyOntology();
-    const ms = [
-      motif('M1', ['Bash(grep)', 'Bash(sed)'], { rank: 40 }),
-      motif('M2', ['Bash(sed)', 'Bash(python3)'], { rank: 30 }),        // 1/3 = 0.33 to N001 -> same theme
-      motif('M3', ['ToolSearch', 'Mcp(linear)'], { rank: 20 }),          // 0 -> other theme
-    ];
-    indexMotifs(o, ms); assignMotifs(o, ms, '2026-09-14');
-    computeThemes(o);
-    assert.equal(Object.keys(o.themes).length, 2);
-    assert.equal(o.nodes.N001.theme, o.nodes.N002.theme);
-    assert.notEqual(o.nodes.N001.theme, o.nodes.N003.theme);
-    const tid = o.nodes.N001.theme;
-    o.themes[tid].name = 'editing';
-    computeThemes(o);
-    assert.equal(o.themes[tid].name, 'editing');
-    assert.equal(o.nodes.N001.theme, tid);
-  });
-});
-
 describe('computeStats and classify', () => {
   test('aggregates member motifs', () => {
     const o = emptyOntology();
     const ms = [
-      motif('M1', ['A', 'B'], { occurrences: 10, median: 1000, correctionRate: 0.4, retryDepth: 1, sessions: ['s1', 's2'], projects: ['p1'] }),
-      motif('M2', ['B', 'A', 'B'], { occurrences: 30, median: 3000, correctionRate: 0.2, retryDepth: 5, sessions: ['s2', 's3'], projects: ['p2'] }),
+      motif('M1', ['A', 'B'], { occurrences: 10, median: 1000, correctionRate: 0.4, retryDepth: 1, sessions: ['s1', 's2'], projects: ['p1', 'p2', 'p3'] }),
+      motif('M2', ['B', 'A', 'B'], { occurrences: 30, median: 3000, correctionRate: 0.2, retryDepth: 5, sessions: ['s2', 's3'], projects: ['p2', 'p3', 'p4'], rank: 50 }),
     ];
     indexMotifs(o, ms); assignMotifs(o, ms, '2026-09-14');
     computeStats(o, new Map(ms.map((m) => [m.id, m])));
     const s = o.nodes.N001.stats;
     assert.equal(s.occurrences, 40);
     assert.equal(s.distinctSessions, 3);
-    assert.equal(s.distinctProjects, 2);
+    assert.equal(s.distinctProjects, 4);
     assert.equal(s.crossProject, true);
     assert.equal(s.medianElapsedMs, 3000);            // occurrence-weighted median of {1000 x10, 3000 x30}
     assert.equal(s.correctionRate, 0.25);             // (0.4*10 + 0.2*30) / 40
@@ -184,14 +188,14 @@ describe('computeCentrality', () => {
     indexMotifs(o, ms); assignMotifs(o, ms, '2026-09-14');
     computeStats(o, new Map(ms.map((m) => [m.id, m])));
     o.flow = [
-      { from: 'N001', to: 'N002', count: 5, sessions: 3, medianGapMs: 0 },
-      { from: 'N002', to: 'N003', count: 4, sessions: 2, medianGapMs: 0 },
-      { from: 'N003', to: 'N001', count: 1, sessions: 1, medianGapMs: 0 },   // below render threshold, ignored
+      { from: 'N001', to: 'N002', count: 6, sessions: 3, medianGapMs: 0 },
+      { from: 'N002', to: 'N003', count: 5, sessions: 3, medianGapMs: 0 },
+      { from: 'N003', to: 'N001', count: 2, sessions: 1, medianGapMs: 0 },   // below render threshold, ignored
     ];
     computeCentrality(o);
     assert.equal(o.nodes.N002.stats.betweenness, 1);
     assert.equal(o.nodes.N001.stats.betweenness, 0);
-    assert.equal(o.nodes.N002.stats.weightedDegree, 9);
+    assert.equal(o.nodes.N002.stats.weightedDegree, 11);
     assert.equal(o.nodes.N002.stats.buildScore, o.nodes.N002.stats.frictionMassMs * 2);
     assert.equal(o.nodes.N001.stats.buildScore, o.nodes.N001.stats.frictionMassMs);
   });
@@ -258,11 +262,11 @@ describe('upsert — ownership', () => {
     upsert(o, ms, steps, '2026-09-14');
     o.nodes.N001.name = 'batch edit'; o.nodes.N001.summary = 's'; o.nodes.N001.tool = 't'; o.nodes.N001.type = 'skill';
     o.nodes.N001.status = 'built'; o.nodes.N001.mergedFrom = ['N009'];
-    o.themes[o.nodes.N001.theme].name = 'editing'; o.dismissedMerges = [['N001', 'N002']];
+    o.nodes.N001.theme = 'editing'; o.dismissedMerges = [['N001', 'N002']];
     const before = structuredClone(o);
     upsert(o, ms, steps, '2026-09-15');
-    for (const f of ['name', 'summary', 'tool', 'type', 'status', 'mergedFrom']) assert.deepEqual(o.nodes.N001[f], before.nodes.N001[f]);
-    assert.equal(o.themes[o.nodes.N001.theme].name, 'editing');
+    for (const f of ['name', 'summary', 'tool', 'type', 'theme', 'status', 'mergedFrom']) assert.deepEqual(o.nodes.N001[f], before.nodes.N001[f]);
+    assert.equal(o.nodes.N001.theme, 'editing');
     assert.deepEqual(o.dismissedMerges, [['N001', 'N002']]);
     assert.equal(o.run, '2026-09-15');
     assert.equal(o.corpus.steps, 3);
@@ -279,7 +283,7 @@ const populated = () => {
     motif('M3', ['ToolSearch', 'Mcp(linear)'], { rank: 10, occurrences: 100, median: 4000 }),
   ];
   const steps = [];
-  for (let s = 0; s < 3; s++) {
+  for (let s = 0; s < 5; s++) {
     steps.push(stepAt('Bash(grep)', 0, { session: `s${s}` }), stepAt('Bash(sed)', 1, { session: `s${s}` }),
       stepAt('ToolSearch', 10, { session: `s${s}` }), stepAt('Mcp(linear)', 11, { session: `s${s}` }));
   }
@@ -305,7 +309,7 @@ describe('render', () => {
   test('renders a mermaid flow graph and "no window yet" on a first run', () => {
     const md = render(populated());
     assert.ok(md.includes('```mermaid\ngraph LR'));
-    assert.ok(md.includes('N001 -->|3| N002'));
+    assert.ok(md.includes('N001 -->|5| N002'));
     assert.ok(md.includes('no window yet'));
   });
 });
@@ -317,8 +321,8 @@ describe('CLI mutations', () => {
     assert.equal(o.nodes.N001.type, 'skill');
     assert.throws(() => annotate(o, 'N001', { type: 'rocket' }), /type/);
     assert.throws(() => annotate(o, 'N001', { status: 'built' }), /not annotatable/);
-    annotate(o, o.nodes.N001.theme, { name: 'editing' });
-    assert.equal(o.themes[o.nodes.N001.theme].name, 'editing');
+    annotate(o, 'N001', { theme: 'editing' });
+    assert.equal(o.nodes.N001.theme, 'editing');
   });
   test('status validates its value', () => {
     const o = populated();

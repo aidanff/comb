@@ -436,6 +436,29 @@ From the 2026-09-14 review of the previous version:
 | 6 | AUDIT test cannot pass | timeout moved |
 | 7 | triage never started | `status` CLI, build order, impact section give triage a reason to happen |
 
+## Revisions during implementation (2026-09-14)
+
+The first run on the real corpus produced 81 nodes, 41 of them single-motif, and one theme
+holding 76 nodes. Aidan restated the goal: grow a sufficiently large yet refined graph of
+distinct candidates. Four changes followed. Each replaces the matching text above.
+
+| Section | Change | Reason |
+|---|---|---|
+| Node formation, step 4 | **Seed-anchored grouping** replaces connected components. The highest-ranked pending motif opens a node; every pending motif at or above `JOIN` to that seed joins it. No transitive chaining. | Components chained motifs through shared tokens. At `JOIN` 0.5, six nodes held 290 motifs. |
+| Node formation, new step | **Seed floor.** A motif may open a node only with `SEED_PROJECTS` (3) distinct projects and `SEED_OCCURRENCES` (15) occurrences. Smaller motifs that match nothing wait in `unassigned` and are retried every run. | Removes single-motif nodes without losing evidence. The graph grows as motifs cross the floor. |
+| Themes | **Machine-computed themes are removed.** `theme` is a free-text label the skill sets with `annotate --theme`. The Themes table groups nodes by label. `themes`, `nextTheme`, and theme IDs leave the data model. | Single-linkage over token sets produced one giant theme at every threshold, because `git`, `sed`, `User`, and `Bash(other)` connect nearly every node. |
+| Thresholds and rendering | `JOIN` 0.5 (was 0.7). `RENDER_FLOW_COUNT` 5 and `RENDER_FLOW_SESSIONS` 3 (were 3 and 2). New `GRAPH_EDGES` 40: the Mermaid graph draws the top 40 flow edges; the Flow table lists all rendered edges. | 0.5 with seed anchoring gave 39 distinct nodes on the 2026-09-14 corpus. A 352-edge Mermaid graph is unreadable. |
+
+Measured on the 2026-09-14 corpus (10,417 steps, 216 sessions, 300 motifs):
+
+| Settings | Nodes | Single-motif | Waiting |
+|---|---|---|---|
+| spec as written (0.7, components, no floor) | 81 | 41 | 0 |
+| 0.6, seed-anchored, floor 3/15 | 52 | 13 | 22 |
+| **0.5, seed-anchored, floor 3/15 (adopted)** | **39** | **8** | **16** |
+
+Data model additions: `unassigned: string[]` (upsert-owned). `annotate` accepts `--theme`.
+
 ## Open questions
 
 None block implementation. Deferred items are in "Non-goals".
