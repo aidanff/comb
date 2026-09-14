@@ -292,9 +292,10 @@
   "corpus": {
     "projects": 68,
     "sessions": 216,
-    "steps": 10417
+    "steps": 10420
   },
   "dismissedMerges": [],
+  "dismissedReviews": [],
   "flow": [
     {
       "count": 116,
@@ -6845,7 +6846,7 @@
       "type": "script"
     },
     "N021": {
-      "class": "unclassified",
+      "class": "tool",
       "created": "2026-09-14",
       "history": [
         {
@@ -6868,7 +6869,7 @@
       "stats": {
         "betweenness": 0,
         "buildScore": 10462718,
-        "correctionRate": 0.246,
+        "correctionRate": 0.263,
         "crossProject": true,
         "distinctProjects": 16,
         "distinctSessions": 29,
@@ -7582,6 +7583,92 @@
       "tool": "The same checked data-inspection helper.",
       "type": "script"
     }
+  },
+  "review": {
+    "proposals": [
+      {
+        "id": "R001",
+        "kind": "prune",
+        "node": "N025",
+        "reason": "1 motif, 17 occurrences, correctionRate 0, medianElapsedMs 36, frictionShare 0.0000: the skill body arriving as a user record, a harness artifact rather than friction."
+      },
+      {
+        "id": "R002",
+        "kind": "prune",
+        "node": "N005",
+        "reason": "correctionRate 0.049, retryDepth 1, betweenness 0.01, frictionShare 0.003, and the seed is a skill load the harness requires; the tool field itself says none yet."
+      },
+      {
+        "id": "R003",
+        "kind": "prune",
+        "node": "N014",
+        "reason": "correctionRate 0.048, retryDepth 1, betweenness 0, frictionShare 0.0063; the fix is naming the command, which N002 (908 occurrences, betweenness 1) already carries, so this adds nothing."
+      },
+      {
+        "id": "R004",
+        "kind": "prune",
+        "node": "N016",
+        "reason": "59 occurrences, frictionShare 0.0018, retryDepth 1, betweenness 0; blocked on naming the command, which is N002's job, so the node is shadowed."
+      },
+      {
+        "id": "R005",
+        "kind": "prune",
+        "node": "N022",
+        "reason": "58 occurrences, frictionShare 0.0016, retryDepth 1, betweenness 0; tool is blocked on naming the command, already covered by N002."
+      },
+      {
+        "id": "R006",
+        "kind": "prune",
+        "node": "N023",
+        "reason": "53 occurrences, frictionShare 0.0014, retryDepth 1, betweenness 0; blocked on naming the command and shadowed by N002 and N015 (249 occurrences, retryDepth 14)."
+      },
+      {
+        "id": "R007",
+        "kind": "prune",
+        "node": "N034",
+        "reason": "26 occurrences, frictionShare 0.005, retryDepth 1, betweenness 0; blocked on naming the command, shadowed by N002."
+      },
+      {
+        "id": "R008",
+        "kind": "prune",
+        "node": "N009",
+        "reason": "correctionRate 0.195, retryDepth 1, betweenness 0, frictionShare 0.0065; tool is blocked on naming, and the loop is covered by N002 (betweenness 1) and N003 (betweenness 0.425) with 74 and 63 flow edges each."
+      },
+      {
+        "id": "R009",
+        "kind": "prune",
+        "node": "N017",
+        "reason": "frictionShare 0.0013, correctionRate 0.056, retryDepth 1, betweenness 0; the tool says none, fold into N007 (413 occurrences, betweenness 0.402), so it is shadowed."
+      },
+      {
+        "id": "R010",
+        "kind": "prune",
+        "node": "N028",
+        "reason": "44 occurrences, frictionShare 0.0007, retryDepth 1, betweenness 0; the tool says none on its own and the orientation primer is N003 and N012's fix."
+      },
+      {
+        "id": "R011",
+        "into": "N001",
+        "kind": "merge",
+        "node": "N027",
+        "reason": "Similarity 0.636 is the highest pair in the graph; both seeds end in the same deferred schema fetch and share the preload fix. N027 has correctionRate 0.04 and frictionShare 0.001, N001 has 457 occurrences."
+      },
+      {
+        "id": "R012",
+        "into": "N020",
+        "kind": "merge",
+        "node": "N026",
+        "reason": "Similarity 0.4 and flow N026 to N020 of 22; both tools are the same INTERNAL_SCRIPTS naming fix. N026 has 37 occurrences and retryDepth 1, N020 has 128 and retryDepth 5."
+      },
+      {
+        "id": "R013",
+        "into": "N006",
+        "kind": "merge",
+        "node": "N039",
+        "reason": "Both seeds are inline Python via Bash and the tool field names the same data-inspection helper; flow N039 to N006 is 11. N039 has 61 occurrences, N006 has 780 with retryDepth 12."
+      }
+    ],
+    "run": "2026-09-14"
   },
   "run": "2026-09-14",
   "runs": [
