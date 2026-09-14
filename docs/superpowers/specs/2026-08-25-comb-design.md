@@ -1,4 +1,6 @@
-# Automation Spotter — Design
+# comb — Design
+
+> Superseded in part by `2026-09-14-comb-ontology-design.md`: the deliverable, stage 3, and the corpus scope. The projection and miner sections still apply.
 
 **Date:** 2026-08-25
 **Status:** Approved for planning
@@ -99,7 +101,7 @@ thinking blocks, all message text, all file paths and basenames, all file conten
 the operator's behavior and should not be conflated in the motif counts.
 
 **Self-exclusion:** the RnD project directory is skipped by default (overridable),
-so the spotter does not recommend automating itself.
+so comb does not recommend automating itself.
 
 ### Stage 2 — `motifs.mjs`
 
@@ -114,7 +116,7 @@ Consumes skeletons, emits ranked motifs. No model involvement.
 Overlapping n-grams are collapsed to the longest form meeting the threshold to avoid
 flooding the table with sub-motifs.
 
-### Stage 3 — `.claude/skills/automation-spotter/SKILL.md`
+### Stage 3 — `.claude/skills/comb/SKILL.md`
 
 The agent reads **only** `motifs.json`. Its job is interpretation, not extraction:
 name each motif, propose a concrete tool, classify it (hook / skill / script / MCP),
@@ -146,11 +148,11 @@ overwritten by the agent on re-run.
 
 Per session file: a `uuid` watermark, not a done-flag. A session that has grown since
 the last run is topped up from its watermark. This makes runs idempotent and
-incremental, and makes it safe to run the spotter while a client session is still open.
+incremental, and makes it safe to run comb while a client session is still open.
 
 ## Operating model
 
-The spotter runs from `~/dev/RnD`, never inside a client repo. It reads
+comb runs from `~/dev/RnD`, never inside a client repo. It reads
 `~/.claude/projects/` globally and post-hoc. There is no ritual attached to any
 individual session — the user works normally in client repos and runs the skill
 whenever convenient. It may be run concurrently with an active client session.
@@ -162,16 +164,16 @@ a populated ranked table immediately. Subsequent runs are incremental top-ups.
 
 ```
 RnD/
-  .claude/skills/automation-spotter/
+  .claude/skills/comb/
     SKILL.md              # registered as a project-level skill
-  automation-spotter/
+  comb/
     project.mjs
     motifs.mjs
     vocabulary.mjs
     test/
   candidates.md
   state/processed.json
-  docs/superpowers/specs/2026-08-25-automation-spotter-design.md
+  docs/superpowers/specs/2026-08-25-comb-design.md
 ```
 
 ## Out of scope for MVP
@@ -180,7 +182,7 @@ RnD/
 - L2 projection fidelity (normalized argument shapes)
 - Generating the candidate tools themselves
 - HTML reporting
-- Lockfile for concurrent spotter runs
+- Lockfile for concurrent comb runs
 - Any writeback to a client repository
 
 ## Implementation notes (added 2026-08-25, post-build)

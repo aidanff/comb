@@ -38,6 +38,24 @@ export const BASH_VERBS = new Set([
 // Commands that are scaffolding rather than the payload of a step.
 export const BASH_NOISE = new Set(['cd', 'export', 'source', '.', 'set', 'unset', 'pushd', 'popd', 'eval', 'exec']);
 
+// Our own repo scripts, matched by basename and emitted as a constant. A client script
+// that shares a name is mis-attributed to us; that is an analysis error, not a leak.
+export const INTERNAL_SCRIPTS = new Set([
+  'validate-all.sh', 'run_checks.sh', 'guard-tests.sh', 'agent-checks.sh',
+  'connector-checks.sh', 'skill-budget-checks.sh', 'delivery.sh',
+]);
+
+// Runner verbs whose second token names the work: `uv run`, `npm test`.
+export const RUNNER_VERBS = new Set([
+  'uv', 'uvx', 'npm', 'npx', 'pnpm', 'yarn', 'bun', 'deno', 'cargo', 'go', 'make', 'just',
+  'task', 'poetry', 'docker',
+]);
+export const SECOND_TOKENS = new Set(['run', 'test', 'check', 'lint', 'build', 'install']);
+
+// Inline-Python shapes. The shape is selected, never sliced from the command.
+export const PYTHON_VERBS = new Set(['python', 'python3']);
+export const PYTHON_SHAPES = ['-c', '-m', 'stdin', 'file'];
+
 // File extensions we recognize. Unknown extensions collapse to `.other`,
 // so a client-specific format (.acmeconf) cannot surface.
 export const FILE_EXTS = new Set([
@@ -106,6 +124,10 @@ export function buildVocabulary() {
   for (const s of GENERIC_SKILLS) v.add(`Skill(${s})`);
   for (const a of GENERIC_AGENTS) v.add(`Task(${a})`);
   for (const m of GENERIC_MCP) v.add(`Mcp(${m})`);
+  v.add('Bash(script)');
+  for (const s of INTERNAL_SCRIPTS) v.add(`Bash(script:${s})`);
+  for (const r of RUNNER_VERBS) for (const t of SECOND_TOKENS) v.add(`Bash(${r}:${t})`);
+  for (const p of PYTHON_VERBS) for (const s of PYTHON_SHAPES) v.add(`Bash(${p}:${s})`);
   return v;
 }
 

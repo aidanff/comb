@@ -15,14 +15,19 @@
  *
  * Usage:
  *   bun project.mjs [--workspace DIR] [--out FILE] [--state FILE] [--team-key HEX] [--all] [--projects DIR]
+ *                   [--exclude DIRNAME]...
+ *
+ * Only top-level session transcripts are read. Nested subagent and workflow transcripts
+ * are skipped on purpose: comb measures the operator's main chain. --exclude names a
+ * project directory to skip; names persist in the state file under excludeDirs.
  *
  * Runs under Bun or Node (>= 20). Paths default to the WORKSPACE, which is
- * --workspace, else $SPOTTER_WORKSPACE, else the current directory. The
+ * --workspace, else $COMB_WORKSPACE, else the current directory. The
  * workspace is the checkout that holds candidates.md and the committed corpus.
  * Session and project IDs are hashes of transcript directory names mixed with a
  * secret TEAM KEY. The key keeps the IDs unguessable and, when every teammate uses
  * the same key, identical across machines so skeletons can be pooled. It comes from
- * $SPOTTER_TEAM_KEY (or --team-key); otherwise a per-machine key is generated.
+ * $COMB_TEAM_KEY (or --team-key); otherwise a per-machine key is generated.
  */
 
 import { readdirSync, readFileSync, writeFileSync, existsSync, mkdirSync, statSync } from 'node:fs';
@@ -33,6 +38,7 @@ import { createHash, randomBytes } from 'node:crypto';
 import {
   BASH_VERBS, BASH_NOISE, FILE_EXTS, BARE_TOOLS, FILE_TOOLS,
   GENERIC_SKILLS, GENERIC_AGENTS, GENERIC_MCP,
+  INTERNAL_SCRIPTS, RUNNER_VERBS, SECOND_TOKENS, PYTHON_VERBS,
 } from './vocabulary.mjs';
 
 // ---------------------------------------------------------------------------
@@ -67,15 +73,32 @@ export function projectBash(command) {
   if (payload === null) return 'Bash(noise)';
 
   // Within a pipeline the payload is the FIRST stage; the rest are pagers.
-  const head = headToken(payload.split('|')[0]);
+  const stage = payload.split('|')[0];
+  const words = stage.trim().split(/\s+/);
+  const head = headToken(stage);
   if (head === null) return 'Bash(other)';
 
-  // Path-like invocations (./scripts/acme_sync.sh) deliberately fail closed:
-  // the basename could encode a client name, so it is never unwrapped.
-  if (head.includes('/')) return 'Bash(other)';
+  // Path-like invocations: emit the script constant. If the basename is one of our own
+  // scripts, emit its constant. Never emit the basename itself.
+  if (head.includes('/')) {
+    const base = head.split('/').pop();
+    return INTERNAL_SCRIPTS.has(base) ? `Bash(script:${base})` : 'Bash(script)';
+  }
+
+  if (!BASH_VERBS.has(head)) return 'Bash(other)';
+
+  const second = (words[1] ?? '').toLowerCase();
+  if (PYTHON_VERBS.has(head)) {
+    if (second === '-c') return `Bash(${head}:-c)`;
+    if (second === '-m') return `Bash(${head}:-m)`;
+    if (second === '-' || command.includes('<<')) return `Bash(${head}:stdin)`;
+    if (second) return `Bash(${head}:file)`;
+    return `Bash(${head})`;
+  }
+  if (RUNNER_VERBS.has(head) && SECOND_TOKENS.has(second)) return `Bash(${head}:${second})`;
 
   // Match-and-emit-a-constant. Never emit a slice of the input.
-  return BASH_VERBS.has(head) ? `Bash(${head})` : 'Bash(other)';
+  return `Bash(${head})`;
 }
 
 function headToken(segment) {
@@ -207,23 +230,24 @@ function parseArgs(argv) {
     else if (argv[i] === '--projects') a.projects = argv[++i];
     else if (argv[i] === '--workspace') a.workspace = argv[++i];
     else if (argv[i] === '--team-key') a.teamKey = argv[++i];
+    else if (argv[i] === '--exclude') (a.exclude ??= []).push(argv[++i]);
   }
   return a;
 }
 
-/** Resolve the workspace: --workspace, else $SPOTTER_WORKSPACE, else cwd. */
+/** Resolve the workspace: --workspace, else $COMB_WORKSPACE, else cwd. */
 export function resolveWorkspace(args, env = process.env) {
-  return resolve(args.workspace ?? env.SPOTTER_WORKSPACE ?? process.cwd());
+  return resolve(args.workspace ?? env.COMB_WORKSPACE ?? process.cwd());
 }
 
 /**
- * Load run state. A team key supplied via --team-key / $SPOTTER_TEAM_KEY wins over
+ * Load run state. A team key supplied via --team-key / $COMB_TEAM_KEY wins over
  * the stored one, but switching keys silently would fragment session and project
  * IDs, so a mismatch is refused unless --all rebuilds the corpus from scratch.
  * State files written before the rename stored the key under `salt`; that field is
  * still read and migrated.
  */
-export function loadState(path, { teamKey, all = false } = {}) {
+export function loadState(path, { teamKey, all = false, exclude = [] } = {}) {
   let s = { teamKey: null, files: {} };
   if (existsSync(path)) {
     try { s = JSON.parse(readFileSync(path, 'utf8')); } catch { s = { teamKey: null, files: {} }; }
@@ -239,21 +263,43 @@ export function loadState(path, { teamKey, all = false } = {}) {
   }
   if (!s.teamKey) s.teamKey = randomBytes(16).toString('hex');
   if (all) s.files = {};
+  s.excludeDirs = [...new Set([...(s.excludeDirs ?? []), ...exclude])];
   return s;
 }
 
 const hashId = (teamKey, value) => createHash('sha256').update(teamKey).update(value).digest('hex').slice(0, 12);
+
+/**
+ * Top-level session transcripts only. Claude Code stores subagent and workflow
+ * transcripts in nested directories (`<session>/subagents/`, `wf_*`); comb measures the
+ * operator's main chain, so those are not descended into. See the spec, "Corpus scope".
+ */
+export function listTranscripts(root, { skip }) {
+  const out = [];
+  let dirs = [];
+  try { dirs = readdirSync(root, { withFileTypes: true }).filter((d) => d.isDirectory()); } catch { return out; }
+  for (const dir of dirs) {
+    if (skip(dir.name)) continue;
+    let files;
+    try { files = readdirSync(join(root, dir.name), { withFileTypes: true }); } catch { continue; }
+    for (const f of files) {
+      if (!f.isFile() || !f.name.endsWith('.jsonl')) continue;
+      out.push({ dir: dir.name, file: f.name, full: join(root, dir.name, f.name) });
+    }
+  }
+  return out;
+}
 
 function main() {
   const args = parseArgs(process.argv.slice(2));
   const root = args.projects ?? join(homedir(), '.claude', 'projects');
   const workspace = resolveWorkspace(args);
   const statePath = args.state ?? join(workspace, 'state', 'processed.json');
-  const outPath = args.out ?? join(workspace, 'automation-spotter', '.work', 'skeletons.jsonl');
+  const outPath = args.out ?? join(workspace, 'comb', '.work', 'skeletons.jsonl');
 
   let state;
   try {
-    state = loadState(statePath, { teamKey: args.teamKey ?? process.env.SPOTTER_TEAM_KEY, all: args.all });
+    state = loadState(statePath, { teamKey: args.teamKey ?? process.env.COMB_TEAM_KEY, all: args.all, exclude: args.exclude ?? [] });
   } catch (e) {
     console.error(e.message);
     process.exit(2);
@@ -277,35 +323,27 @@ function main() {
   let filesProcessed = 0;
   let filesSkipped = 0;
 
-  const projectDirs = readdirSync(root, { withFileTypes: true }).filter((d) => d.isDirectory());
-  for (const dir of projectDirs) {
-    if (isSelf(dir.name)) { filesSkipped++; continue; }
-    const dirPath = join(root, dir.name);
-    const projectId = hashId(state.teamKey, dir.name);
+  const excluded = new Set(state.excludeDirs);
+  const skip = (name) => isSelf(name) || excluded.has(name);
+  for (const { dir, file, full } of listTranscripts(root, { skip })) {
+    const projectId = hashId(state.teamKey, dir);
+    const key = `${dir}/${file}`;
+    const prior = args.all ? null : state.files[key];
+    const size = statSync(full).size;
+    if (prior && prior.size === size) { filesSkipped++; continue; }
 
-    let files;
-    try { files = readdirSync(dirPath).filter((f) => f.endsWith('.jsonl')); } catch { continue; }
+    let lines;
+    try { lines = readFileSync(full, 'utf8').split('\n'); } catch { continue; }
 
-    for (const file of files) {
-      const full = join(dirPath, file);
-      const key = `${dir.name}/${file}`;
-      const prior = args.all ? null : state.files[key];
-      const size = statSync(full).size;
-      if (prior && prior.size === size) { filesSkipped++; continue; }
+    // A file shorter than its watermark was pruned or rewritten; re-project it
+    // from the top rather than silently emitting nothing.
+    const startLine = prior && prior.lines <= lines.length ? prior.lines : 0;
+    const sessionId = hashId(state.teamKey, file);
+    const { steps, lastUuid, linesSeen } = projectLines(lines, { sessionId, projectId, startLine });
 
-      let lines;
-      try { lines = readFileSync(full, 'utf8').split('\n'); } catch { continue; }
-
-      // A file shorter than its watermark was pruned or rewritten; re-project it
-      // from the top rather than silently emitting nothing.
-      const startLine = prior && prior.lines <= lines.length ? prior.lines : 0;
-      const sessionId = hashId(state.teamKey, file);
-      const { steps, lastUuid, linesSeen } = projectLines(lines, { sessionId, projectId, startLine });
-
-      out.push(...steps);
-      state.files[key] = { lines: linesSeen, size, lastUuid, project: projectId };
-      filesProcessed++;
-    }
+    out.push(...steps);
+    state.files[key] = { lines: linesSeen, size, lastUuid, project: projectId };
+    filesProcessed++;
   }
 
   mkdirSync(dirname(outPath), { recursive: true });
