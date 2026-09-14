@@ -295,7 +295,12 @@
     "steps": 10428
   },
   "dismissedMerges": [],
-  "dismissedReviews": [],
+  "dismissedReviews": [
+    {
+      "kind": "prune",
+      "node": "N009"
+    }
+  ],
   "flow": [
     {
       "count": 126,
@@ -7124,14 +7129,7 @@
     }
   },
   "review": {
-    "proposals": [
-      {
-        "id": "R008",
-        "kind": "prune",
-        "node": "N009",
-        "reason": "correctionRate 0.195, retryDepth 1, betweenness 0, frictionShare 0.0065; tool is blocked on naming, and the loop is covered by N002 (betweenness 1) and N003 (betweenness 0.425) with 74 and 63 flow edges each."
-      }
-    ],
+    "proposals": [],
     "run": "2026-09-14"
   },
   "run": "2026-09-14",
