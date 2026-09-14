@@ -14,7 +14,7 @@
  *                       [--min-sessions N] [--min-cycles N]
  *
  * Runs under Bun or Node (>= 20). Paths default to the workspace
- * (--workspace, else $SPOTTER_WORKSPACE, else cwd), like project.mjs.
+ * (--workspace, else $COMB_WORKSPACE, else cwd), like project.mjs.
  */
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
@@ -204,9 +204,9 @@ function parseArgs(argv) {
 
 function main() {
   const args = parseArgs(process.argv.slice(2));
-  const workspace = resolve(args.workspace ?? process.env.SPOTTER_WORKSPACE ?? process.cwd());
-  const inPath = args.in ?? join(workspace, 'automation-spotter', '.work', 'skeletons.jsonl');
-  const outPath = args.out ?? join(workspace, 'automation-spotter', '.work', 'motifs.json');
+  const workspace = resolve(args.workspace ?? process.env.COMB_WORKSPACE ?? process.cwd());
+  const inPath = args.in ?? join(workspace, 'comb', '.work', 'skeletons.jsonl');
+  const outPath = args.out ?? join(workspace, 'comb', '.work', 'motifs.json');
 
   if (!existsSync(inPath)) {
     console.error(`no skeletons at ${inPath} — run project.mjs first`);

@@ -1,12 +1,12 @@
-# Extending the automation spotter to tools, docs, and plugins
+# Extending comb to tools, docs, and plugins
 
 Status: design, not built. 2026-09-10.
 Source: conversation with Roman on 2026-09-10. Companion to
-`2026-08-25-automation-spotter-design.md` and `docs/runbooks/testing-plugins.md`.
+`2026-08-25-comb-design.md` and `docs/runbooks/testing-plugins.md`.
 
 ## What changes
 
-The spotter produces one kind of answer today: build a tool. Roman asked for three,
+comb produces one kind of answer today: build a tool. Roman asked for three,
 because two of them are cheaper than building anything.
 
 | Class | The finding | The output |
@@ -107,7 +107,7 @@ The docs input answers two questions by set difference:
 | `motifs.mjs` | Record `correctionRate` and `retryDepth` per motif. Both come from the sequences already built in `buildSequences`. |
 | `motifs.mjs` | Emit a `class` field of `tool`, `doc`, or `plugin` from the discriminator table above. |
 | `candidates.md` | Add a `Class` column. Keep `Type` as the tool subtype it already is. Existing rows default to `tool`. |
-| `.claude/skills/automation-spotter/SKILL.md` | Three upsert sections instead of one table. A `doc` candidate must land as a runbook stub under `docs/runbooks/`, named and empty, rather than as a table row that no one can act on. |
+| `.claude/skills/comb/SKILL.md` | Three upsert sections instead of one table. A `doc` candidate must land as a runbook stub under `docs/runbooks/`, named and empty, rather than as a table row that no one can act on. |
 | `test/projection.test.mjs` | No change. The new tokens are constants, so the closure assertion covers them once `buildVocabulary` lists them. |
 
 ## Phases
@@ -116,10 +116,10 @@ Ordered so that each phase is useful on its own and none blocks on the next.
 
 1. **Split `Bash(other)`.** Add `Bash(script)`, the `INTERNAL_SCRIPTS` basename
    allowlist, and the second-token allowlist, then
-   `bun automation-spotter/project.mjs --all` and re-run the miner. This is a
+   `bun comb/project.mjs --all` and re-run the miner. This is a
    one-file change that unblocks the top three candidate rows (`MFF42D`, `M4EB84`,
    `M01E0B`), all of which are currently blocked on naming the command. Do this
-   first, and run `bun test automation-spotter/` before the rebuild so the closure
+   first, and run `bun test comb/` before the rebuild so the closure
    assertion covers the new constants.
 2. **Add the two signals.** `correctionRate` and `retryDepth` in the miner, plus the
    `Class` column. Re-rank and re-triage `candidates.md`.

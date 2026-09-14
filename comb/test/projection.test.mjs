@@ -192,7 +192,7 @@ import { mkdtempSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 
 describe('loadState — team key', () => {
-  const dir = mkdtempSync(join(tmpdir(), 'spotter-state-'));
+  const dir = mkdtempSync(join(tmpdir(), 'comb-state-'));
   const path = join(dir, 'processed.json');
 
   test('generates a team key when none is stored or supplied', () => {

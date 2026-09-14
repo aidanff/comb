@@ -1,9 +1,9 @@
 ---
-name: automation-spotter
-description: Mine past Claude Code sessions for recurring action patterns and maintain a ranked list of internal developer-tool candidates for the MSP division. Use when the user says "spot automations", "what should I automate", "run the automation spotter", "update candidates", or "/automation-spotter". Reads only client-redacted action skeletons, never raw transcripts.
+name: comb
+description: Mine past Claude Code sessions for recurring action patterns and maintain a ranked list of internal developer-tool candidates for the MSP division. Use when the user says "comb the sessions", "spot automations", "what should I automate", "run comb", "update candidates", or "/comb". Reads only client-redacted action skeletons, never raw transcripts.
 ---
 
-# Automation Spotter
+# comb
 
 Turn observed session behavior into a ranked list of automation candidates in `candidates.md`.
 
@@ -11,7 +11,7 @@ Turn observed session behavior into a ranked list of automation candidates in `c
 
 **Never read a transcript directly.** Not with Read, not with Bash, not "just to check
 something". `~/.claude/projects/**` is off-limits to you. Your only inputs are
-`automation-spotter/.work/motifs.json` and the existing `candidates.md`. Stage 1
+`comb/.work/motifs.json` and the existing `candidates.md`. Stage 1
 (`project.mjs`) exists precisely so that no model ever sees client data; reading around
 it defeats the entire design.
 
@@ -30,19 +30,19 @@ cell a human has clearly rewritten — preserve their wording and update only th
 ### 1. Refresh the data
 
 ```sh
-bun automation-spotter/project.mjs      # transcripts -> skeletons (incremental)
-bun automation-spotter/motifs.mjs       # skeletons -> ranked motifs
+bun comb/project.mjs      # transcripts -> skeletons (incremental)
+bun comb/motifs.mjs       # skeletons -> ranked motifs
 ```
 
 Add `--all` to `project.mjs` to rebuild from scratch, ignoring watermarks. Useful after
 changing the projection vocabulary, since old skeletons were built with the old tables.
-Run from the repo root: paths resolve against the current directory. `SPOTTER_TEAM_KEY`
+Run from the repo root: paths resolve against the current directory. `COMB_TEAM_KEY`
 should be set to the team key so pooled skeletons hash consistently; a changed key
 is refused unless `--all` is passed.
 
 ### 2. Read the motifs
 
-Read `automation-spotter/.work/motifs.json`. Each motif has: `id`, `kind`
+Read `comb/.work/motifs.json`. Each motif has: `id`, `kind`
 (`cycle` = trial-and-error loop within one session, `ritual` = sequence recurring across
 sessions), `sequence`, `occurrences`, `distinctSessions`, `distinctProjects`,
 `crossProject`, `medianElapsedMs`, and `rank`.
@@ -98,6 +98,6 @@ If the table is thin or dominated by noise, adjust and re-run:
 - `BASH_VERBS` in `vocabulary.mjs` — add verbs here to convert `Bash(other)` noise into
   named signal. This is the highest-leverage tuning knob.
 
-After editing `vocabulary.mjs`, run `bun test automation-spotter/` — the audit test
+After editing `vocabulary.mjs`, run `bun test comb/` — the audit test
 asserts that every token emitted across the entire real corpus is a member of the closed
 vocabulary. That test is the security control. Do not weaken it.

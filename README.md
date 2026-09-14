@@ -97,4 +97,4 @@ Two more rules protect the output:
 ## Docs
 
 - Design: [`docs/superpowers/specs/2026-09-14-comb-ontology-design.md`](docs/superpowers/specs/2026-09-14-comb-ontology-design.md)
-- History: the two `automation-spotter` specs in the same directory
+- History: the two earlier specs in the same directory

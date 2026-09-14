@@ -3,14 +3,14 @@
 **Date:** 2026-09-14
 **Status:** Approved for planning
 **Repo:** `~/dev/comb` (`github.com/aidanff/comb`, private), branch `feat/comb-ontology`.
-Cloned from `~/dev/RnD` so the `automation-spotter` history is kept.
+Cloned from `~/dev/RnD` so the earlier history is kept.
 **Supersedes:** the deliverable and stage-3 sections of
-`2026-08-25-automation-spotter-design.md`, and phases 1 and 2 of
-`2026-09-10-spotter-tools-docs-plugins.md`. Phases 3 and 4 of that spec stay deferred.
+`2026-08-25-comb-design.md`, and phases 1 and 2 of
+`2026-09-10-comb-tools-docs-plugins.md`. Phases 3 and 4 of that spec stay deferred.
 
 ## Summary
 
-`automation-spotter` becomes `comb`. The projector and the miner stay. A new ontology
+The tool is named `comb`. The projector and the miner stay. A new ontology
 stage sits above the miner. It groups motifs into candidate nodes, connects the nodes with
 similarity edges and flow edges, computes a build order, and records per-run history so the
 team can see whether a built tool removed the friction it targeted. `candidates.md` becomes
@@ -51,27 +51,28 @@ claim that subagent steps are "tagged and counted separately" is withdrawn.
 ## Repository and layout
 
 comb gets its own repository. `~/dev/RnD` is cloned to `~/dev/comb`, so every
-`automation-spotter` commit stays in the history. The remote is `aidanff/comb`, private.
+earlier commit stays in the history. The remote is `aidanff/comb`, private.
 
 What stays in RnD: `docs/2026-08-25-automation-ideas-roman-1on1.md` (a business menu, not
 comb) and `docs/runbooks/testing-plugins.md` (about the marketplace). RnD's README gains a
-pointer to the comb repo, and its copy of the spotter code is deleted on the
+pointer to the comb repo, and its copy of the comb code is deleted on the
 `feat/comb-ontology` branch there.
 
-| Before (in RnD) | After (in comb) | Note |
+The directory, skill, and spec renames landed on 2026-09-14. Final layout:
+
+| Path | Committed | Role |
 |---|---|---|
-| `automation-spotter/` | `comb/` | `git mv`, history kept |
-| `.claude/skills/automation-spotter/` | `.claude/skills/comb/` | skill name `comb` |
-| `SPOTTER_WORKSPACE`, `SPOTTER_TEAM_KEY` | `COMB_WORKSPACE`, `COMB_TEAM_KEY` | old names are not read |
-| `state/processed.json` | unchanged | gitignored; holds the team key and `excludeDirs` |
-| `automation-spotter/.work/skeletons.jsonl` | `comb/.work/skeletons.jsonl` | committed corpus |
-| `automation-spotter/.work/motifs.json` | `comb/.work/motifs.json` | gitignored |
-| `candidates.md` | unchanged path | rendered view, never hand-edited |
-| `docs/superpowers/specs/2026-08-25-*.md`, `2026-09-10-*.md` | same paths | history |
-| new | `comb/ontology.json` | committed, source of truth |
-| new | `comb/ontology.mjs` | stage 3, deterministic |
-| new | `comb/comb.mjs` | one-command driver |
-| new | `comb/test/ontology.test.mjs`, `comb/test/comb.test.mjs` | |
+| `comb/` | yes | projector, miner, ontology stage, driver, tests |
+| `.claude/skills/comb/` | yes | the skill, named `comb` |
+| `comb/.work/skeletons.jsonl` | yes | the corpus |
+| `comb/.work/motifs.json` | no | regenerated each run |
+| `comb/ontology.json` | yes | new; source of truth |
+| `candidates.md` | yes | rendered view, never hand-edited |
+| `state/processed.json` | no | team key, watermarks, `excludeDirs` |
+| `docs/superpowers/specs/2026-08-25-comb-design.md`, `2026-09-10-comb-tools-docs-plugins.md` | yes | history |
+
+Environment variables are `COMB_WORKSPACE` and `COMB_TEAM_KEY`. New files this spec adds:
+`comb/ontology.mjs`, `comb/comb.mjs`, `comb/test/ontology.test.mjs`, `comb/test/comb.test.mjs`.
 
 `.gitignore` changes: `comb/.work/*` ignored, `!comb/.work/skeletons.jsonl` kept.
 
@@ -389,7 +390,7 @@ Workflow:
 0. `git clone ~/dev/RnD ~/dev/comb`, check out `feat/comb-ontology`, point `origin` at
    `aidanff/comb`. Delete the two RnD-only docs from comb. Copy `state/processed.json` from
    RnD so the team key and watermarks carry over.
-1. `git mv automation-spotter comb`, `git mv .claude/skills/automation-spotter .claude/skills/comb`.
+1. Rename the directory, the skill, and the two earlier specs. Done on 2026-09-14.
 2. `bun test comb/` must pass before the rebuild, so the closure test covers the new constants.
 3. `bun comb/comb.mjs --all --exclude -Users-aidan-dev-RnD` rebuilds the corpus under the new
    vocabulary and records the exclusion. The team key in `state/processed.json` is unchanged,
@@ -404,10 +405,10 @@ Workflow:
 | File | Change |
 |---|---|
 | `README.md` (comb) | rewritten for comb: pipeline, one command, CLI table, corpus scope, redaction. Mirror claim deleted. |
-| `README.md` (RnD) | spotter section replaced by a pointer to `aidanff/comb` |
-| `docs/runbooks/testing-plugins.md` (RnD) | mirror bullet under "Known gaps" deleted; `automation-spotter` references become `comb` with a link to the repo |
-| `docs/superpowers/specs/2026-08-25-automation-spotter-design.md` | one line at top: superseded in part by this spec |
-| `docs/superpowers/specs/2026-09-10-spotter-tools-docs-plugins.md` | one line at top: phases 1 and 2 land here; 3 and 4 deferred |
+| `README.md` (RnD) | comb section replaced by a pointer to `aidanff/comb` |
+| `docs/runbooks/testing-plugins.md` (RnD) | mirror bullet under "Known gaps" deleted; references point to the comb repo |
+| `docs/superpowers/specs/2026-08-25-comb-design.md` | one line at top: superseded in part by this spec |
+| `docs/superpowers/specs/2026-09-10-comb-tools-docs-plugins.md` | one line at top: phases 1 and 2 land here; 3 and 4 deferred |
 | `.claude/skills/comb/SKILL.md` | rewritten per stage 4 |
 
 ## Tests
@@ -423,7 +424,7 @@ All under `comb/test/`, run with `bun test comb/`.
 
 ## Gaps closed
 
-From the 2026-09-14 review of `automation-spotter`:
+From the 2026-09-14 review of the previous version:
 
 | # | Gap | Closed by |
 |---|---|---|

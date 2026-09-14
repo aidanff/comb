@@ -17,12 +17,12 @@
  *   bun project.mjs [--workspace DIR] [--out FILE] [--state FILE] [--team-key HEX] [--all] [--projects DIR]
  *
  * Runs under Bun or Node (>= 20). Paths default to the WORKSPACE, which is
- * --workspace, else $SPOTTER_WORKSPACE, else the current directory. The
+ * --workspace, else $COMB_WORKSPACE, else the current directory. The
  * workspace is the checkout that holds candidates.md and the committed corpus.
  * Session and project IDs are hashes of transcript directory names mixed with a
  * secret TEAM KEY. The key keeps the IDs unguessable and, when every teammate uses
  * the same key, identical across machines so skeletons can be pooled. It comes from
- * $SPOTTER_TEAM_KEY (or --team-key); otherwise a per-machine key is generated.
+ * $COMB_TEAM_KEY (or --team-key); otherwise a per-machine key is generated.
  */
 
 import { readdirSync, readFileSync, writeFileSync, existsSync, mkdirSync, statSync } from 'node:fs';
@@ -211,13 +211,13 @@ function parseArgs(argv) {
   return a;
 }
 
-/** Resolve the workspace: --workspace, else $SPOTTER_WORKSPACE, else cwd. */
+/** Resolve the workspace: --workspace, else $COMB_WORKSPACE, else cwd. */
 export function resolveWorkspace(args, env = process.env) {
-  return resolve(args.workspace ?? env.SPOTTER_WORKSPACE ?? process.cwd());
+  return resolve(args.workspace ?? env.COMB_WORKSPACE ?? process.cwd());
 }
 
 /**
- * Load run state. A team key supplied via --team-key / $SPOTTER_TEAM_KEY wins over
+ * Load run state. A team key supplied via --team-key / $COMB_TEAM_KEY wins over
  * the stored one, but switching keys silently would fragment session and project
  * IDs, so a mismatch is refused unless --all rebuilds the corpus from scratch.
  * State files written before the rename stored the key under `salt`; that field is
@@ -249,11 +249,11 @@ function main() {
   const root = args.projects ?? join(homedir(), '.claude', 'projects');
   const workspace = resolveWorkspace(args);
   const statePath = args.state ?? join(workspace, 'state', 'processed.json');
-  const outPath = args.out ?? join(workspace, 'automation-spotter', '.work', 'skeletons.jsonl');
+  const outPath = args.out ?? join(workspace, 'comb', '.work', 'skeletons.jsonl');
 
   let state;
   try {
-    state = loadState(statePath, { teamKey: args.teamKey ?? process.env.SPOTTER_TEAM_KEY, all: args.all });
+    state = loadState(statePath, { teamKey: args.teamKey ?? process.env.COMB_TEAM_KEY, all: args.all });
   } catch (e) {
     console.error(e.message);
     process.exit(2);
