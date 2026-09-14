@@ -229,3 +229,208 @@ export function computeStats(o, motifsById) {
     node.class = classify(s);
   }
 }
+
+// ---------------------------------------------------------------------------
+// Edges
+// ---------------------------------------------------------------------------
+
+const median = (xs) => {
+  if (!xs.length) return 0;
+  const s = [...xs].sort((a, b) => a - b); const m = s.length >> 1;
+  return s.length % 2 ? s[m] : Math.round((s[m - 1] + s[m]) / 2);
+};
+
+/** Every (start, end, node) occurrence of any member motif inside one token sequence. */
+function nodeOccurrences(o, toks) {
+  const occ = [];
+  for (const [nid, node] of Object.entries(o.nodes)) {
+    for (const mid of node.motifs) {
+      const seq = o.motifIndex[mid]?.sequence; if (!seq?.length) continue;
+      for (let i = 0; i + seq.length <= toks.length; i++) {
+        let ok = true;
+        for (let k = 0; k < seq.length; k++) if (toks[i + k] !== seq[k]) { ok = false; break; }
+        if (ok) occ.push({ start: i, end: i + seq.length - 1, node: nid });
+      }
+    }
+  }
+  return occ.sort((a, b) => (a.start - b.start) || (a.end - b.end) || (a.node < b.node ? -1 : 1));
+}
+
+/** Directed transitions between nodes inside each session. */
+export function computeFlow(o, sequences) {
+  const edges = new Map();
+  for (const seq of sequences) {
+    const toks = seq.steps.map((s) => s.step);
+    const occ = nodeOccurrences(o, toks);
+    const collapsed = [];
+    for (const x of occ) if (!collapsed.length || collapsed[collapsed.length - 1].node !== x.node) collapsed.push(x);
+    for (let i = 1; i < collapsed.length; i++) {
+      const a = collapsed[i - 1]; const b = collapsed[i];
+      const key = `${a.node}>${b.node}`;
+      if (!edges.has(key)) edges.set(key, { from: a.node, to: b.node, count: 0, sessionSet: new Set(), gaps: [] });
+      const e = edges.get(key);
+      e.count++; e.sessionSet.add(seq.session);
+      const ta = seq.steps[a.end]?.ts ? Date.parse(seq.steps[a.end].ts) : NaN;
+      const tb = seq.steps[b.start]?.ts ? Date.parse(seq.steps[b.start].ts) : NaN;
+      if (Number.isFinite(ta) && Number.isFinite(tb)) e.gaps.push(Math.max(0, tb - ta));
+    }
+  }
+  o.flow = [...edges.values()]
+    .map((e) => ({ from: e.from, to: e.to, count: e.count, sessions: e.sessionSet.size, medianGapMs: median(e.gaps) }))
+    .sort((a, b) => (b.count - a.count) || (a.from < b.from ? -1 : 1) || (a.to < b.to ? -1 : 1));
+}
+
+/** Undirected node-level similarity edges, weight rounded to 3 places, zero-weight pairs dropped. */
+export function computeSimilarityEdges(o) {
+  const ids = Object.keys(o.nodes).sort();
+  const toks = new Map(ids.map((id) => [id, nodeTokens(o, id)]));
+  const out = [];
+  for (let i = 0; i < ids.length; i++) for (let j = i + 1; j < ids.length; j++) {
+    const w = Number(similarity(toks.get(ids[i]), toks.get(ids[j])).toFixed(3));
+    if (w > 0) out.push({ a: ids[i], b: ids[j], weight: w });
+  }
+  o.similarity = out.sort((x, y) => (y.weight - x.weight) || (x.a < y.a ? -1 : 1) || (x.b < y.b ? -1 : 1));
+}
+
+// ---------------------------------------------------------------------------
+// Centrality and build score
+// ---------------------------------------------------------------------------
+
+const renderedFlow = (o) => o.flow.filter((e) => e.count >= THRESHOLDS.RENDER_FLOW_COUNT && e.sessions >= THRESHOLDS.RENDER_FLOW_SESSIONS);
+
+/** Brandes betweenness on the undirected, unweighted rendered flow graph; normalized by the max. */
+export function computeCentrality(o) {
+  const ids = Object.keys(o.nodes).sort();
+  const adj = new Map(ids.map((id) => [id, new Set()]));
+  const degree = new Map(ids.map((id) => [id, 0]));
+  for (const e of renderedFlow(o)) {
+    adj.get(e.from)?.add(e.to); adj.get(e.to)?.add(e.from);
+    degree.set(e.from, (degree.get(e.from) ?? 0) + e.count);
+    degree.set(e.to, (degree.get(e.to) ?? 0) + e.count);
+  }
+  const bc = new Map(ids.map((id) => [id, 0]));
+  for (const s of ids) {
+    const stack = []; const pred = new Map(ids.map((id) => [id, []]));
+    const sigma = new Map(ids.map((id) => [id, 0])); sigma.set(s, 1);
+    const dist = new Map(ids.map((id) => [id, -1])); dist.set(s, 0);
+    const queue = [s];
+    while (queue.length) {
+      const v = queue.shift(); stack.push(v);
+      for (const w of adj.get(v)) {
+        if (dist.get(w) < 0) { dist.set(w, dist.get(v) + 1); queue.push(w); }
+        if (dist.get(w) === dist.get(v) + 1) { sigma.set(w, sigma.get(w) + sigma.get(v)); pred.get(w).push(v); }
+      }
+    }
+    const delta = new Map(ids.map((id) => [id, 0]));
+    while (stack.length) {
+      const w = stack.pop();
+      for (const v of pred.get(w)) delta.set(v, delta.get(v) + (sigma.get(v) / sigma.get(w)) * (1 + delta.get(w)));
+      if (w !== s) bc.set(w, bc.get(w) + delta.get(w));
+    }
+  }
+  const max = Math.max(0, ...bc.values());
+  for (const id of ids) {
+    const s = o.nodes[id].stats;
+    s.weightedDegree = degree.get(id);
+    s.betweenness = max ? Number((bc.get(id) / max).toFixed(3)) : 0;
+    s.buildScore = Math.round((s.frictionMassMs ?? 0) * (1 + s.betweenness));
+  }
+}
+
+/** Nodes still worth building, by buildScore, with cumulative share of total friction. */
+export function buildOrder(o) {
+  const total = Object.values(o.nodes).reduce((a, n) => a + (n.stats.frictionMassMs ?? 0), 0) || 1;
+  let acc = 0;
+  return Object.entries(o.nodes)
+    .filter(([, n]) => n.status === 'new' || n.status === 'building')
+    .sort(([ia, a], [ib, b]) => (b.stats.buildScore - a.stats.buildScore) || (ia < ib ? -1 : 1))
+    .map(([id, n]) => { acc += n.stats.frictionMassMs ?? 0; return { id, buildScore: n.stats.buildScore, cumulativeShare: Number((acc / total).toFixed(3)) }; });
+}
+
+// ---------------------------------------------------------------------------
+// History and impact
+// ---------------------------------------------------------------------------
+
+export function recordHistory(o, runDate) {
+  o.runs = o.runs.filter((r) => r.run !== runDate).concat([{ run: runDate, sessions: o.corpus.sessions }]).sort((a, b) => (a.run < b.run ? -1 : 1));
+  for (const n of Object.values(o.nodes)) {
+    const entry = { run: runDate, occurrences: n.stats.occurrences ?? 0, distinctSessions: n.stats.distinctSessions ?? 0 };
+    n.history = (n.history ?? []).filter((h) => h.run !== runDate).concat([entry]).sort((a, b) => (a.run < b.run ? -1 : 1));
+  }
+}
+
+const rateIn = (node, fromRun, toRun) => {
+  const h0 = node.history.find((h) => h.run === fromRun.run); const h1 = node.history.find((h) => h.run === toRun.run);
+  const ds = toRun.sessions - fromRun.sessions;
+  if (!h0 || !h1 || ds <= 0) return null;
+  return (h1.occurrences - h0.occurrences) / ds;
+};
+const baselineRate = (node, run) => {
+  const h = node.history.find((x) => x.run === run.run);
+  return h && run.sessions ? h.occurrences / run.sessions : null;
+};
+
+/**
+ * Compare each built/rejected node's rate in the latest window (occurrences per new
+ * session between the last two runs) against its cumulative rate before that window.
+ */
+export function impactSignals(o) {
+  if (o.runs.length < 2) return { window: null, signals: [] };
+  const from = o.runs[o.runs.length - 2]; const to = o.runs[o.runs.length - 1];
+  const window = { from: from.run, to: to.run, sessions: to.sessions - from.sessions };
+  const signals = [];
+  const change = (node) => {
+    const base = baselineRate(node, from); const now = rateIn(node, from, to);
+    if (base === null || now === null || base === 0) return null;
+    return (now - base) / base;
+  };
+  for (const [id, node] of Object.entries(o.nodes)) {
+    const c = change(node); if (c === null) continue;
+    if (node.status === 'built' && c <= -0.5) signals.push({ kind: 'confirmed-win', node: id, change: Number(c.toFixed(2)) });
+    if (node.status === 'rejected' && c >= 0.5) signals.push({ kind: 're-open', node: id, change: Number(c.toFixed(2)) });
+    if (node.status === 'built') {
+      for (const e of o.flow.filter((f) => f.from === id)) {
+        const cs = change(o.nodes[e.to]);
+        if (cs !== null && cs >= 0.2) signals.push({ kind: 'displacement', node: id, successor: e.to, change: Number(cs.toFixed(2)) });
+      }
+    }
+  }
+  return { window, signals };
+}
+
+// ---------------------------------------------------------------------------
+// Merge proposals and upsert
+// ---------------------------------------------------------------------------
+
+export function mergeProposals(o) {
+  const dismissed = new Set(o.dismissedMerges.map(([a, b]) => [a, b].sort().join('|')));
+  const ids = Object.keys(o.nodes).sort();
+  const toks = new Map(ids.map((id) => [id, nodeTokens(o, id)]));
+  const out = [];
+  for (let i = 0; i < ids.length; i++) for (let j = i + 1; j < ids.length; j++) {
+    if (dismissed.has(`${ids[i]}|${ids[j]}`)) continue;
+    const w = Number(similarity(toks.get(ids[i]), toks.get(ids[j])).toFixed(3));
+    if (w >= THRESHOLDS.MERGE) out.push({ a: ids[i], b: ids[j], weight: w });
+  }
+  return out.sort((x, y) => y.weight - x.weight);
+}
+
+/** The whole machine-owned update, in order. */
+export function upsert(o, motifs, steps, runDate) {
+  const sequences = buildSequences(steps);
+  o.run = runDate;
+  o.corpus = {
+    steps: steps.length,
+    sessions: new Set(sequences.map((s) => s.session)).size,
+    projects: new Set(sequences.map((s) => s.project)).size,
+  };
+  indexMotifs(o, motifs);
+  const { created } = assignMotifs(o, motifs, runDate);
+  computeStats(o, new Map(motifs.map((m) => [m.id, m])));
+  computeThemes(o);
+  computeFlow(o, sequences);
+  computeSimilarityEdges(o);
+  computeCentrality(o);
+  recordHistory(o, runDate);
+  return { created, proposals: mergeProposals(o) };
+}

@@ -132,3 +132,139 @@ describe('computeStats and classify', () => {
     assert.equal(classify({ correctionRate: 0.15, retryDepth: 1, crossProject: true, occurrences: 25 }), 'unclassified');
   });
 });
+
+import { computeFlow, computeSimilarityEdges, computeCentrality, recordHistory, impactSignals, mergeProposals, upsert } from '../ontology.mjs';
+import { buildSequences } from '../motifs.mjs';
+
+const stepAt = (s, sec, o = {}) => ({ step: s, session: o.session ?? 's1', project: o.project ?? 'p1', sidechain: false, ts: new Date(Date.UTC(2026, 0, 1, 0, 0, sec)).toISOString() });
+
+describe('computeFlow', () => {
+  test('counts transitions between nodes inside a session, with the gap between them', () => {
+    const o = emptyOntology();
+    const ms = [motif('M1', ['A', 'B'], { rank: 20 }), motif('M2', ['X', 'Y'], { rank: 10 })];
+    indexMotifs(o, ms); assignMotifs(o, ms, '2026-09-14');
+    // A B (end t=1) ... X Y (start t=41) -> gap 40s. Then A B again -> X Y -> A B.
+    const steps = [
+      stepAt('A', 0), stepAt('B', 1), stepAt('X', 41), stepAt('Y', 42),
+      stepAt('A', 50), stepAt('B', 51), stepAt('X', 60), stepAt('Y', 61), stepAt('A', 70), stepAt('B', 71),
+      stepAt('A', 0, { session: 's2' }), stepAt('B', 1, { session: 's2' }), stepAt('X', 5, { session: 's2' }), stepAt('Y', 6, { session: 's2' }),
+    ];
+    computeFlow(o, buildSequences(steps));
+    const ab = o.flow.find((e) => e.from === 'N001' && e.to === 'N002');
+    const ba = o.flow.find((e) => e.from === 'N002' && e.to === 'N001');
+    assert.equal(ab.count, 3);
+    assert.equal(ab.sessions, 2);
+    assert.equal(ab.medianGapMs, 9000);   // gaps 40000, 9000, 4000 -> median 9000
+    assert.equal(ba.count, 2);
+    assert.equal(ba.sessions, 1);
+  });
+  test('consecutive occurrences of the same node collapse', () => {
+    const o = emptyOntology();
+    const ms = [motif('M1', ['A', 'B'])];
+    indexMotifs(o, ms); assignMotifs(o, ms, '2026-09-14');
+    computeFlow(o, buildSequences([stepAt('A', 0), stepAt('B', 1), stepAt('A', 2), stepAt('B', 3)]));
+    assert.deepEqual(o.flow, []);
+  });
+});
+
+describe('computeSimilarityEdges', () => {
+  test('stores node pairs with weight above zero, sorted by weight', () => {
+    const o = emptyOntology();
+    const ms = [motif('M1', ['A', 'B'], { rank: 30 }), motif('M2', ['B', 'C'], { rank: 20 }), motif('M3', ['X'], { rank: 10 })];
+    indexMotifs(o, ms); assignMotifs(o, ms, '2026-09-14');
+    computeSimilarityEdges(o);
+    assert.deepEqual(o.similarity, [{ a: 'N001', b: 'N002', weight: 0.333 }]);
+  });
+});
+
+describe('computeCentrality', () => {
+  test('betweenness on a path: the middle node is 1, ends are 0; degree sums counts', () => {
+    const o = emptyOntology();
+    const ms = [motif('M1', ['A'], { rank: 30 }), motif('M2', ['B'], { rank: 20 }), motif('M3', ['C'], { rank: 10 })];
+    indexMotifs(o, ms); assignMotifs(o, ms, '2026-09-14');
+    computeStats(o, new Map(ms.map((m) => [m.id, m])));
+    o.flow = [
+      { from: 'N001', to: 'N002', count: 5, sessions: 3, medianGapMs: 0 },
+      { from: 'N002', to: 'N003', count: 4, sessions: 2, medianGapMs: 0 },
+      { from: 'N003', to: 'N001', count: 1, sessions: 1, medianGapMs: 0 },   // below render threshold, ignored
+    ];
+    computeCentrality(o);
+    assert.equal(o.nodes.N002.stats.betweenness, 1);
+    assert.equal(o.nodes.N001.stats.betweenness, 0);
+    assert.equal(o.nodes.N002.stats.weightedDegree, 9);
+    assert.equal(o.nodes.N002.stats.buildScore, o.nodes.N002.stats.frictionMassMs * 2);
+    assert.equal(o.nodes.N001.stats.buildScore, o.nodes.N001.stats.frictionMassMs);
+  });
+});
+
+describe('recordHistory and impactSignals', () => {
+  const seeded = () => {
+    const o = emptyOntology();
+    const ms = [motif('M1', ['A', 'B'], { rank: 20 }), motif('M2', ['X'], { rank: 10 })];
+    indexMotifs(o, ms); assignMotifs(o, ms, '2026-09-14');
+    return o;
+  };
+  test('one entry per run date; same date replaces', () => {
+    const o = seeded();
+    o.nodes.N001.stats = { occurrences: 10, distinctSessions: 4 }; o.corpus.sessions = 100;
+    recordHistory(o, '2026-09-14');
+    o.nodes.N001.stats = { occurrences: 12, distinctSessions: 5 };
+    recordHistory(o, '2026-09-14');
+    assert.deepEqual(o.nodes.N001.history, [{ run: '2026-09-14', occurrences: 12, distinctSessions: 5 }]);
+    assert.deepEqual(o.runs, [{ run: '2026-09-14', sessions: 100 }]);
+  });
+  test('no window with fewer than two runs', () => {
+    const o = seeded();
+    o.nodes.N001.stats = { occurrences: 10, distinctSessions: 4 }; o.corpus.sessions = 100;
+    recordHistory(o, '2026-09-14');
+    assert.deepEqual(impactSignals(o), { window: null, signals: [] });
+  });
+  test('confirmed win, displacement, and re-open', () => {
+    const o = seeded();
+    o.nodes.N001.status = 'built'; o.nodes.N002.status = 'rejected';
+    o.flow = [{ from: 'N001', to: 'N002', count: 5, sessions: 3, medianGapMs: 0 }];
+    // Run 1: 100 sessions. N001 50 occ (0.5/session), N002 10 occ (0.1/session).
+    o.corpus.sessions = 100; o.nodes.N001.stats = { occurrences: 50 }; o.nodes.N002.stats = { occurrences: 10 };
+    recordHistory(o, '2026-09-14');
+    // Run 2: +20 sessions. N001 +2 (0.1/session, down 80%). N002 +10 (0.5/session, up 400%).
+    o.corpus.sessions = 120; o.nodes.N001.stats = { occurrences: 52 }; o.nodes.N002.stats = { occurrences: 20 };
+    recordHistory(o, '2026-09-15');
+    const { window, signals } = impactSignals(o);
+    assert.deepEqual(window, { from: '2026-09-14', to: '2026-09-15', sessions: 20 });
+    const kinds = signals.map((s) => `${s.kind}:${s.node}`).sort();
+    assert.deepEqual(kinds, ['confirmed-win:N001', 'displacement:N001', 're-open:N002']);
+  });
+});
+
+describe('mergeProposals', () => {
+  test('proposes node pairs at or above MERGE unless dismissed', () => {
+    const o = emptyOntology();
+    const ms = [motif('M1', ['A', 'B', 'C'], { rank: 20 })];
+    indexMotifs(o, ms); assignMotifs(o, ms, '2026-09-14');
+    // Force a second node with near-identical tokens (as a human `move` could produce).
+    o.nodes.N002 = { ...structuredClone(o.nodes.N001), motifs: ['M2'], seed: ['A', 'B', 'C', 'D'] };
+    o.motifIndex.M2 = { sequence: ['A', 'B', 'C', 'D'], kind: 'ritual' }; o.assignments.M2 = 'N002';
+    assert.deepEqual(mergeProposals(o), [{ a: 'N001', b: 'N002', weight: 0.75 }]);
+    o.dismissedMerges.push(['N001', 'N002']);
+    assert.deepEqual(mergeProposals(o), []);
+  });
+});
+
+describe('upsert — ownership', () => {
+  test('never writes skill-owned or human-owned fields', () => {
+    const o = emptyOntology();
+    const ms = [motif('M1', ['A', 'B'], { rank: 20 }), motif('M2', ['X'], { rank: 10 })];
+    const steps = [stepAt('A', 0), stepAt('B', 1), stepAt('X', 5)];
+    upsert(o, ms, steps, '2026-09-14');
+    o.nodes.N001.name = 'batch edit'; o.nodes.N001.summary = 's'; o.nodes.N001.tool = 't'; o.nodes.N001.type = 'skill';
+    o.nodes.N001.status = 'built'; o.nodes.N001.mergedFrom = ['N009'];
+    o.themes[o.nodes.N001.theme].name = 'editing'; o.dismissedMerges = [['N001', 'N002']];
+    const before = structuredClone(o);
+    upsert(o, ms, steps, '2026-09-15');
+    for (const f of ['name', 'summary', 'tool', 'type', 'status', 'mergedFrom']) assert.deepEqual(o.nodes.N001[f], before.nodes.N001[f]);
+    assert.equal(o.themes[o.nodes.N001.theme].name, 'editing');
+    assert.deepEqual(o.dismissedMerges, [['N001', 'N002']]);
+    assert.equal(o.run, '2026-09-15');
+    assert.equal(o.corpus.steps, 3);
+  });
+});
