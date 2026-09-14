@@ -75,6 +75,33 @@ Tell the user, in this order:
 
 Do not restate the table. The user can read `candidates.md`.
 
+## Scheduling
+
+The user can ask for comb to run on its own. You turn the sentence into flags; the CLI
+installs a macOS launchd agent. The agent runs the deterministic pipeline, commits the
+generated files, and pushes. It runs no model: new nodes wait unnamed until the next `/comb`.
+
+| The user says | You run |
+|---|---|
+| "run comb every weekday at 6pm" | `bun comb/schedule.mjs set --days mon-fri --at 18:00` |
+| "run it daily at 7am" | `bun comb/schedule.mjs set --days daily --at 07:00` |
+| "run it Monday, Wednesday and Friday at noon" | `bun comb/schedule.mjs set --days mon,wed,fri --at 12:00` |
+| "when does comb run?" / "schedule status" | `bun comb/schedule.mjs show` |
+| "stop the schedule" / "don't run comb automatically" | `bun comb/schedule.mjs remove` |
+| "run it now" | `bun comb/schedule.mjs run` |
+
+Rules:
+
+- `--days` takes `daily`, `weekdays`, a range like `mon-fri`, or a list like `mon,wed,fri`.
+  `--at` takes 24-hour `HH:MM`. Convert "6pm" to `18:00` yourself.
+- If the sentence names no time, ask one question: "What time?" Do not guess.
+- If the sentence names no days, use `weekdays` and say so in the confirmation.
+- After `set`, repeat the CLI's confirmation to the user: the days, the time, and the next run.
+- On the first `set` on a machine, also run `bun comb/schedule.mjs run --no-commit` once and
+  report the `exit`, `newNodes`, and `error` fields. That proves the job body works before
+  launchd is trusted with it.
+- Never edit the plist or `state/schedule.json` by hand.
+
 ## Tuning
 
 - `bun comb/comb.mjs --min-sessions N --min-cycles N --max-motifs N` change the miner.

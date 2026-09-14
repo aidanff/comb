@@ -79,6 +79,23 @@ the CLI. The network grows by deepening nodes, not by adding rows.
 
 Every command rewrites `ontology.json` with sorted keys and re-renders `candidates.md`.
 
+## Schedule
+
+comb can run on its own through a macOS launchd agent. Ask the skill in plain words ("run
+comb every weekday at 6pm") or use the CLI:
+
+```sh
+bun comb/schedule.mjs set --days mon-fri --at 18:00   # install or replace the schedule
+bun comb/schedule.mjs show                           # days, time, last run, next run
+bun comb/schedule.mjs run --no-commit                # one run now, without git writes
+bun comb/schedule.mjs remove                         # unload and delete the schedule
+```
+
+A scheduled run executes `bun comb/comb.mjs`, then commits `comb/ontology.json`,
+`candidates.md`, and the corpus and pushes, but only when the tree was clean before the run.
+It runs no model. New nodes wait unnamed until the next `/comb`. Per-machine state lives in
+`state/schedule.json`, `state/last-run.json`, and `state/logs/`.
+
 ## Redaction
 
 The projector never copies a byte from a transcript. It uses transcript content only to
