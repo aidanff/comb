@@ -37,6 +37,7 @@
     "M0E052": "N006",
     "M0F469": "N003",
     "M0F498": "N007",
+    "M0F88E": "N015",
     "M109FD": "N014",
     "M1172E": "N001",
     "M11CD8": "N012",
@@ -55,6 +56,7 @@
     "M15BBF": "N004",
     "M15EF6": "N035",
     "M16200": "N004",
+    "M172BD": "N030",
     "M1801E": "N030",
     "M1904A": "N011",
     "M192D2": "N028",
@@ -389,6 +391,7 @@
     "MF8FF9": "N008",
     "MF9436": "N006",
     "MFB97A": "N011",
+    "MFBC22": "N009",
     "MFC186": "N040",
     "MFC66A": "N003",
     "MFD346": "N011",
@@ -397,173 +400,187 @@
     "MFFE0F": "N010"
   },
   "corpus": {
-    "projects": 88,
-    "sessions": 359,
-    "steps": 21208
+    "projects": 90,
+    "sessions": 366,
+    "steps": 21911
   },
   "dismissedMerges": [],
   "dismissedReviews": [],
   "flow": [
     {
-      "count": 261,
+      "count": 299,
       "from": "N009",
       "medianGapMs": 0,
-      "sessions": 106,
+      "sessions": 115,
       "to": "N002"
     },
     {
-      "count": 251,
+      "count": 292,
       "from": "N002",
       "medianGapMs": 0,
-      "sessions": 100,
+      "sessions": 104,
       "to": "N009"
     },
     {
-      "count": 234,
+      "count": 249,
       "from": "N003",
       "medianGapMs": 0,
-      "sessions": 83,
+      "sessions": 87,
       "to": "N009"
     },
     {
-      "count": 212,
+      "count": 230,
       "from": "N009",
       "medianGapMs": 0,
-      "sessions": 84,
+      "sessions": 89,
       "to": "N003"
     },
     {
-      "count": 191,
+      "count": 217,
       "from": "N007",
       "medianGapMs": 0,
-      "sessions": 72,
+      "sessions": 74,
       "to": "N006"
     },
     {
-      "count": 189,
+      "count": 198,
       "from": "N010",
       "medianGapMs": 0,
-      "sessions": 84,
+      "sessions": 88,
       "to": "N007"
     },
     {
-      "count": 176,
+      "count": 183,
       "from": "N001",
       "medianGapMs": 0,
-      "sessions": 91,
+      "sessions": 95,
       "to": "N004"
     },
     {
-      "count": 156,
+      "count": 160,
       "from": "N007",
       "medianGapMs": 0,
-      "sessions": 62,
+      "sessions": 64,
       "to": "N010"
     },
     {
-      "count": 144,
+      "count": 152,
       "from": "N003",
       "medianGapMs": 0,
-      "sessions": 54,
+      "sessions": 56,
       "to": "N028"
     },
     {
-      "count": 143,
+      "count": 146,
       "from": "N012",
       "medianGapMs": 0,
-      "sessions": 78,
+      "sessions": 79,
       "to": "N007"
     },
     {
-      "count": 133,
+      "count": 143,
+      "from": "N006",
+      "medianGapMs": 13679,
+      "sessions": 60,
+      "to": "N007"
+    },
+    {
+      "count": 135,
       "from": "N007",
       "medianGapMs": 0,
-      "sessions": 73,
+      "sessions": 74,
       "to": "N012"
     },
     {
-      "count": 126,
-      "from": "N006",
-      "medianGapMs": 13440,
-      "sessions": 57,
-      "to": "N007"
-    },
-    {
-      "count": 114,
+      "count": 123,
       "from": "N003",
       "medianGapMs": 0,
-      "sessions": 57,
+      "sessions": 60,
       "to": "N019"
     },
     {
-      "count": 114,
+      "count": 122,
       "from": "N019",
       "medianGapMs": 0,
-      "sessions": 64,
+      "sessions": 67,
       "to": "N015"
     },
     {
-      "count": 105,
-      "from": "N003",
-      "medianGapMs": 0,
-      "sessions": 49,
-      "to": "N017"
-    },
-    {
-      "count": 105,
+      "count": 118,
       "from": "N017",
       "medianGapMs": 0,
-      "sessions": 54,
+      "sessions": 56,
       "to": "N007"
     },
     {
-      "count": 103,
-      "from": "N028",
+      "count": 116,
+      "from": "N003",
       "medianGapMs": 0,
-      "sessions": 58,
+      "sessions": 51,
+      "to": "N017"
+    },
+    {
+      "count": 109,
+      "from": "N019",
+      "medianGapMs": 0,
+      "sessions": 62,
       "to": "N003"
     },
     {
-      "count": 102,
+      "count": 108,
       "from": "N015",
       "medianGapMs": 0,
-      "sessions": 53,
+      "sessions": 54,
       "to": "N019"
     },
     {
-      "count": 102,
-      "from": "N019",
+      "count": 106,
+      "from": "N028",
       "medianGapMs": 0,
-      "sessions": 61,
+      "sessions": 60,
+      "to": "N003"
+    },
+    {
+      "count": 104,
+      "from": "N003",
+      "medianGapMs": 0,
+      "sessions": 70,
+      "to": "N001"
+    },
+    {
+      "count": 103,
+      "from": "N006",
+      "medianGapMs": 24220,
+      "sessions": 48,
       "to": "N003"
     },
     {
       "count": 99,
-      "from": "N003",
-      "medianGapMs": 0,
-      "sessions": 65,
-      "to": "N001"
-    },
-    {
-      "count": 94,
-      "from": "N006",
-      "medianGapMs": 24656,
-      "sessions": 46,
-      "to": "N003"
-    },
-    {
-      "count": 92,
       "from": "N002",
       "medianGapMs": 0,
       "sessions": 53,
+      "to": "N014"
+    },
+    {
+      "count": 97,
+      "from": "N006",
+      "medianGapMs": 28068,
+      "sessions": 49,
+      "to": "N002"
+    },
+    {
+      "count": 93,
+      "from": "N002",
+      "medianGapMs": 0,
+      "sessions": 54,
       "to": "N016"
     },
     {
       "count": 92,
-      "from": "N002",
+      "from": "N004",
       "medianGapMs": 0,
-      "sessions": 51,
-      "to": "N014"
+      "sessions": 43,
+      "to": "N001"
     },
     {
       "count": 92,
@@ -573,25 +590,39 @@
       "to": "N002"
     },
     {
-      "count": 90,
+      "count": 91,
       "from": "N003",
       "medianGapMs": 0,
-      "sessions": 28,
+      "sessions": 29,
       "to": "N037"
     },
     {
-      "count": 88,
-      "from": "N004",
+      "count": 89,
+      "from": "N014",
       "medianGapMs": 0,
-      "sessions": 42,
-      "to": "N001"
+      "sessions": 52,
+      "to": "N002"
     },
     {
       "count": 88,
-      "from": "N006",
-      "medianGapMs": 28898,
-      "sessions": 45,
-      "to": "N002"
+      "from": "N016",
+      "medianGapMs": 0,
+      "sessions": 61,
+      "to": "N007"
+    },
+    {
+      "count": 87,
+      "from": "N002",
+      "medianGapMs": 0,
+      "sessions": 57,
+      "to": "N003"
+    },
+    {
+      "count": 87,
+      "from": "N002",
+      "medianGapMs": 0,
+      "sessions": 33,
+      "to": "N020"
     },
     {
       "count": 87,
@@ -601,81 +632,60 @@
       "to": "N016"
     },
     {
-      "count": 87,
-      "from": "N016",
+      "count": 86,
+      "from": "N017",
       "medianGapMs": 0,
-      "sessions": 60,
-      "to": "N007"
-    },
-    {
-      "count": 85,
-      "from": "N002",
-      "medianGapMs": 0,
-      "sessions": 31,
-      "to": "N020"
-    },
-    {
-      "count": 84,
-      "from": "N014",
-      "medianGapMs": 0,
-      "sessions": 50,
-      "to": "N002"
-    },
-    {
-      "count": 81,
-      "from": "N002",
-      "medianGapMs": 0,
-      "sessions": 54,
+      "sessions": 51,
       "to": "N003"
     },
     {
-      "count": 80,
+      "count": 83,
       "from": "N020",
-      "medianGapMs": 18054,
-      "sessions": 38,
+      "medianGapMs": 19009,
+      "sessions": 41,
       "to": "N002"
     },
     {
-      "count": 79,
+      "count": 82,
       "from": "N002",
-      "medianGapMs": 1159,
-      "sessions": 54,
+      "medianGapMs": 0,
+      "sessions": 55,
       "to": "N006"
     },
     {
-      "count": 77,
-      "from": "N017",
-      "medianGapMs": 0,
-      "sessions": 47,
-      "to": "N003"
-    },
-    {
-      "count": 72,
+      "count": 79,
       "from": "N003",
-      "medianGapMs": 38100,
-      "sessions": 51,
+      "medianGapMs": 30375,
+      "sessions": 55,
       "to": "N002"
     },
     {
-      "count": 68,
+      "count": 78,
       "from": "N004",
-      "medianGapMs": 19038,
-      "sessions": 50,
+      "medianGapMs": 18464,
+      "sessions": 56,
       "to": "N003"
     },
     {
-      "count": 66,
+      "count": 73,
       "from": "N014",
       "medianGapMs": 0,
-      "sessions": 51,
+      "sessions": 53,
       "to": "N007"
     },
     {
-      "count": 66,
+      "count": 69,
       "from": "N028",
       "medianGapMs": 0,
-      "sessions": 45,
+      "sessions": 46,
       "to": "N007"
+    },
+    {
+      "count": 63,
+      "from": "N007",
+      "medianGapMs": 0,
+      "sessions": 45,
+      "to": "N014"
     },
     {
       "count": 62,
@@ -685,11 +695,32 @@
       "to": "N003"
     },
     {
-      "count": 58,
+      "count": 61,
       "from": "N007",
       "medianGapMs": 0,
-      "sessions": 43,
-      "to": "N014"
+      "sessions": 42,
+      "to": "N017"
+    },
+    {
+      "count": 56,
+      "from": "N015",
+      "medianGapMs": 0,
+      "sessions": 45,
+      "to": "N023"
+    },
+    {
+      "count": 56,
+      "from": "N023",
+      "medianGapMs": 0,
+      "sessions": 45,
+      "to": "N002"
+    },
+    {
+      "count": 56,
+      "from": "N037",
+      "medianGapMs": 0,
+      "sessions": 29,
+      "to": "N011"
     },
     {
       "count": 55,
@@ -700,24 +731,24 @@
     },
     {
       "count": 55,
-      "from": "N037",
-      "medianGapMs": 0,
-      "sessions": 28,
-      "to": "N011"
-    },
-    {
-      "count": 54,
       "from": "N003",
       "medianGapMs": 0,
-      "sessions": 39,
+      "sessions": 40,
       "to": "N004"
     },
     {
-      "count": 54,
-      "from": "N007",
+      "count": 52,
+      "from": "N002",
       "medianGapMs": 0,
-      "sessions": 38,
-      "to": "N017"
+      "sessions": 22,
+      "to": "N029"
+    },
+    {
+      "count": 52,
+      "from": "N007",
+      "medianGapMs": 16581,
+      "sessions": 34,
+      "to": "N020"
     },
     {
       "count": 52,
@@ -728,59 +759,45 @@
     },
     {
       "count": 52,
-      "from": "N015",
-      "medianGapMs": 0,
-      "sessions": 42,
-      "to": "N023"
-    },
-    {
-      "count": 52,
-      "from": "N023",
-      "medianGapMs": 0,
-      "sessions": 42,
-      "to": "N002"
-    },
-    {
-      "count": 51,
-      "from": "N002",
-      "medianGapMs": 0,
-      "sessions": 21,
-      "to": "N029"
-    },
-    {
-      "count": 51,
       "from": "N029",
       "medianGapMs": 0,
-      "sessions": 21,
+      "sessions": 22,
       "to": "N011"
     },
     {
-      "count": 49,
+      "count": 51,
       "from": "N002",
       "medianGapMs": 0,
-      "sessions": 36,
+      "sessions": 37,
       "to": "N023"
     },
     {
-      "count": 49,
+      "count": 51,
       "from": "N023",
       "medianGapMs": 0,
-      "sessions": 36,
+      "sessions": 37,
       "to": "N015"
     },
     {
-      "count": 48,
+      "count": 50,
       "from": "N007",
       "medianGapMs": 0,
-      "sessions": 36,
+      "sessions": 38,
       "to": "N028"
     },
     {
-      "count": 48,
-      "from": "N007",
-      "medianGapMs": 16581,
-      "sessions": 31,
-      "to": "N020"
+      "count": 49,
+      "from": "N003",
+      "medianGapMs": 0,
+      "sessions": 29,
+      "to": "N044"
+    },
+    {
+      "count": 49,
+      "from": "N044",
+      "medianGapMs": 0,
+      "sessions": 29,
+      "to": "N006"
     },
     {
       "count": 46,
@@ -788,6 +805,13 @@
       "medianGapMs": 0,
       "sessions": 40,
       "to": "N035"
+    },
+    {
+      "count": 45,
+      "from": "N020",
+      "medianGapMs": 0,
+      "sessions": 29,
+      "to": "N043"
     },
     {
       "count": 45,
@@ -804,18 +828,11 @@
       "to": "N003"
     },
     {
-      "count": 43,
-      "from": "N003",
+      "count": 45,
+      "from": "N043",
       "medianGapMs": 0,
-      "sessions": 27,
-      "to": "N044"
-    },
-    {
-      "count": 43,
-      "from": "N044",
-      "medianGapMs": 0,
-      "sessions": 27,
-      "to": "N006"
+      "sessions": 29,
+      "to": "N003"
     },
     {
       "count": 42,
@@ -826,37 +843,30 @@
     },
     {
       "count": 42,
-      "from": "N020",
-      "medianGapMs": 0,
-      "sessions": 26,
-      "to": "N043"
-    },
-    {
-      "count": 42,
-      "from": "N043",
-      "medianGapMs": 0,
-      "sessions": 26,
-      "to": "N003"
-    },
-    {
-      "count": 41,
       "from": "N015",
       "medianGapMs": 0,
-      "sessions": 29,
+      "sessions": 30,
       "to": "N004"
     },
     {
-      "count": 39,
+      "count": 40,
       "from": "N003",
       "medianGapMs": 0,
-      "sessions": 18,
+      "sessions": 19,
       "to": "N043"
     },
     {
-      "count": 39,
+      "count": 40,
       "from": "N043",
       "medianGapMs": 0,
-      "sessions": 18,
+      "sessions": 19,
+      "to": "N020"
+    },
+    {
+      "count": 39,
+      "from": "N006",
+      "medianGapMs": 46962,
+      "sessions": 28,
       "to": "N020"
     },
     {
@@ -868,37 +878,30 @@
     },
     {
       "count": 37,
-      "from": "N006",
-      "medianGapMs": 46962,
-      "sessions": 27,
-      "to": "N020"
-    },
-    {
-      "count": 36,
       "from": "N004",
-      "medianGapMs": 25319,
-      "sessions": 35,
+      "medianGapMs": 24977,
+      "sessions": 36,
       "to": "N002"
     },
     {
-      "count": 36,
+      "count": 37,
       "from": "N007",
-      "medianGapMs": 50216,
-      "sessions": 26,
+      "medianGapMs": 49909,
+      "sessions": 27,
       "to": "N002"
     },
     {
-      "count": 35,
+      "count": 36,
       "from": "N004",
-      "medianGapMs": 15757,
-      "sessions": 28,
+      "medianGapMs": 15817,
+      "sessions": 29,
       "to": "N007"
     },
     {
-      "count": 35,
+      "count": 36,
       "from": "N012",
       "medianGapMs": 0,
-      "sessions": 27,
+      "sessions": 28,
       "to": "N010"
     },
     {
@@ -924,6 +927,13 @@
     },
     {
       "count": 32,
+      "from": "N030",
+      "medianGapMs": 23826,
+      "sessions": 13,
+      "to": "N003"
+    },
+    {
+      "count": 32,
       "from": "N045",
       "medianGapMs": 0,
       "sessions": 24,
@@ -931,10 +941,17 @@
     },
     {
       "count": 31,
-      "from": "N030",
-      "medianGapMs": 39302,
-      "sessions": 12,
-      "to": "N003"
+      "from": "N040",
+      "medianGapMs": 23361,
+      "sessions": 16,
+      "to": "N007"
+    },
+    {
+      "count": 30,
+      "from": "N002",
+      "medianGapMs": 1067,
+      "sessions": 15,
+      "to": "N011"
     },
     {
       "count": 30,
@@ -952,38 +969,31 @@
     },
     {
       "count": 30,
-      "from": "N040",
-      "medianGapMs": 23304,
-      "sessions": 16,
-      "to": "N007"
+      "from": "N007",
+      "medianGapMs": 89110,
+      "sessions": 24,
+      "to": "N003"
     },
     {
       "count": 29,
       "from": "N002",
       "medianGapMs": 0,
-      "sessions": 14,
-      "to": "N011"
-    },
-    {
-      "count": 28,
-      "from": "N002",
-      "medianGapMs": 0,
-      "sessions": 23,
+      "sessions": 24,
       "to": "N048"
     },
     {
-      "count": 28,
-      "from": "N007",
-      "medianGapMs": 103068,
-      "sessions": 22,
-      "to": "N003"
-    },
-    {
-      "count": 27,
+      "count": 29,
       "from": "N007",
       "medianGapMs": 17275,
       "sessions": 14,
       "to": "N040"
+    },
+    {
+      "count": 29,
+      "from": "N035",
+      "medianGapMs": 2667,
+      "sessions": 22,
+      "to": "N004"
     },
     {
       "count": 27,
@@ -994,10 +1004,17 @@
     },
     {
       "count": 27,
-      "from": "N035",
-      "medianGapMs": 2667,
-      "sessions": 20,
-      "to": "N004"
+      "from": "N015",
+      "medianGapMs": 0,
+      "sessions": 23,
+      "to": "N051"
+    },
+    {
+      "count": 27,
+      "from": "N028",
+      "medianGapMs": 0,
+      "sessions": 21,
+      "to": "N017"
     },
     {
       "count": 26,
@@ -1014,11 +1031,39 @@
       "to": "N030"
     },
     {
+      "count": 26,
+      "from": "N020",
+      "medianGapMs": 12410,
+      "sessions": 19,
+      "to": "N007"
+    },
+    {
+      "count": 26,
+      "from": "N020",
+      "medianGapMs": 0,
+      "sessions": 18,
+      "to": "N050"
+    },
+    {
+      "count": 26,
+      "from": "N050",
+      "medianGapMs": 0,
+      "sessions": 18,
+      "to": "N006"
+    },
+    {
       "count": 25,
       "from": "N001",
       "medianGapMs": 2594,
       "sessions": 16,
       "to": "N031"
+    },
+    {
+      "count": 25,
+      "from": "N001",
+      "medianGapMs": 0,
+      "sessions": 20,
+      "to": "N030"
     },
     {
       "count": 25,
@@ -1036,6 +1081,13 @@
     },
     {
       "count": 25,
+      "from": "N004",
+      "medianGapMs": 3294,
+      "sessions": 19,
+      "to": "N035"
+    },
+    {
+      "count": 25,
       "from": "N007",
       "medianGapMs": 7644,
       "sessions": 22,
@@ -1050,6 +1102,13 @@
     },
     {
       "count": 25,
+      "from": "N030",
+      "medianGapMs": 0,
+      "sessions": 20,
+      "to": "N041"
+    },
+    {
+      "count": 25,
       "from": "N040",
       "medianGapMs": 3790,
       "sessions": 19,
@@ -1057,24 +1116,10 @@
     },
     {
       "count": 24,
-      "from": "N001",
-      "medianGapMs": 0,
-      "sessions": 19,
-      "to": "N030"
-    },
-    {
-      "count": 24,
-      "from": "N015",
-      "medianGapMs": 0,
-      "sessions": 21,
-      "to": "N051"
-    },
-    {
-      "count": 24,
-      "from": "N020",
-      "medianGapMs": 12410,
+      "from": "N002",
+      "medianGapMs": 126619,
       "sessions": 17,
-      "to": "N007"
+      "to": "N015"
     },
     {
       "count": 24,
@@ -1085,24 +1130,31 @@
     },
     {
       "count": 24,
-      "from": "N030",
+      "from": "N041",
       "medianGapMs": 0,
-      "sessions": 19,
-      "to": "N041"
+      "sessions": 21,
+      "to": "N030"
     },
     {
       "count": 23,
       "from": "N002",
-      "medianGapMs": 137287,
-      "sessions": 16,
-      "to": "N015"
+      "medianGapMs": 0,
+      "sessions": 22,
+      "to": "N004"
     },
     {
       "count": 23,
-      "from": "N004",
-      "medianGapMs": 3294,
+      "from": "N007",
+      "medianGapMs": 12567,
+      "sessions": 8,
+      "to": "N033"
+    },
+    {
+      "count": 23,
+      "from": "N007",
+      "medianGapMs": 18900,
       "sessions": 17,
-      "to": "N035"
+      "to": "N038"
     },
     {
       "count": 23,
@@ -1113,45 +1165,10 @@
     },
     {
       "count": 23,
-      "from": "N020",
-      "medianGapMs": 0,
-      "sessions": 16,
-      "to": "N050"
-    },
-    {
-      "count": 23,
-      "from": "N028",
-      "medianGapMs": 0,
-      "sessions": 19,
-      "to": "N017"
-    },
-    {
-      "count": 23,
       "from": "N029",
       "medianGapMs": 0,
       "sessions": 12,
       "to": "N002"
-    },
-    {
-      "count": 23,
-      "from": "N050",
-      "medianGapMs": 0,
-      "sessions": 16,
-      "to": "N006"
-    },
-    {
-      "count": 22,
-      "from": "N002",
-      "medianGapMs": 0,
-      "sessions": 21,
-      "to": "N004"
-    },
-    {
-      "count": 22,
-      "from": "N007",
-      "medianGapMs": 26554,
-      "sessions": 16,
-      "to": "N038"
     },
     {
       "count": 22,
@@ -1169,10 +1186,17 @@
     },
     {
       "count": 22,
-      "from": "N041",
+      "from": "N018",
       "medianGapMs": 0,
-      "sessions": 19,
-      "to": "N030"
+      "sessions": 16,
+      "to": "N004"
+    },
+    {
+      "count": 21,
+      "from": "N002",
+      "medianGapMs": 41165,
+      "sessions": 14,
+      "to": "N007"
     },
     {
       "count": 21,
@@ -1183,17 +1207,10 @@
     },
     {
       "count": 21,
-      "from": "N007",
-      "medianGapMs": 17195,
-      "sessions": 7,
-      "to": "N033"
-    },
-    {
-      "count": 21,
-      "from": "N018",
+      "from": "N020",
       "medianGapMs": 0,
-      "sessions": 15,
-      "to": "N004"
+      "sessions": 16,
+      "to": "N053"
     },
     {
       "count": 21,
@@ -1203,11 +1220,25 @@
       "to": "N002"
     },
     {
+      "count": 21,
+      "from": "N053",
+      "medianGapMs": 0,
+      "sessions": 16,
+      "to": "N007"
+    },
+    {
       "count": 20,
       "from": "N003",
       "medianGapMs": 69596,
       "sessions": 10,
       "to": "N030"
+    },
+    {
+      "count": 20,
+      "from": "N006",
+      "medianGapMs": 46982,
+      "sessions": 12,
+      "to": "N015"
     },
     {
       "count": 20,
@@ -1225,23 +1256,9 @@
     },
     {
       "count": 20,
-      "from": "N020",
-      "medianGapMs": 0,
-      "sessions": 15,
-      "to": "N053"
-    },
-    {
-      "count": 20,
       "from": "N049",
       "medianGapMs": 0,
       "sessions": 18,
-      "to": "N007"
-    },
-    {
-      "count": 20,
-      "from": "N053",
-      "medianGapMs": 0,
-      "sessions": 15,
       "to": "N007"
     },
     {
@@ -1253,17 +1270,10 @@
     },
     {
       "count": 19,
-      "from": "N002",
-      "medianGapMs": 40680,
-      "sessions": 12,
-      "to": "N007"
-    },
-    {
-      "count": 19,
-      "from": "N006",
-      "medianGapMs": 46528,
-      "sessions": 11,
-      "to": "N015"
+      "from": "N005",
+      "medianGapMs": 69,
+      "sessions": 19,
+      "to": "N002"
     },
     {
       "count": 19,
@@ -1281,9 +1291,23 @@
     },
     {
       "count": 18,
+      "from": "N003",
+      "medianGapMs": 41339,
+      "sessions": 15,
+      "to": "N007"
+    },
+    {
+      "count": 18,
       "from": "N015",
       "medianGapMs": 11537,
       "sessions": 16,
+      "to": "N007"
+    },
+    {
+      "count": 18,
+      "from": "N033",
+      "medianGapMs": 14087,
+      "sessions": 7,
       "to": "N007"
     },
     {
@@ -1316,17 +1340,10 @@
     },
     {
       "count": 17,
-      "from": "N003",
-      "medianGapMs": 39599,
-      "sessions": 14,
-      "to": "N007"
-    },
-    {
-      "count": 17,
-      "from": "N033",
-      "medianGapMs": 13586,
-      "sessions": 6,
-      "to": "N007"
+      "from": "N011",
+      "medianGapMs": 14598,
+      "sessions": 11,
+      "to": "N004"
     },
     {
       "count": 16,
@@ -1337,10 +1354,17 @@
     },
     {
       "count": 16,
-      "from": "N005",
-      "medianGapMs": 53,
-      "sessions": 16,
-      "to": "N002"
+      "from": "N002",
+      "medianGapMs": 105580,
+      "sessions": 10,
+      "to": "N030"
+    },
+    {
+      "count": 16,
+      "from": "N003",
+      "medianGapMs": 61841,
+      "sessions": 15,
+      "to": "N005"
     },
     {
       "count": 16,
@@ -1348,13 +1372,6 @@
       "medianGapMs": 33125,
       "sessions": 14,
       "to": "N011"
-    },
-    {
-      "count": 16,
-      "from": "N011",
-      "medianGapMs": 14626,
-      "sessions": 10,
-      "to": "N004"
     },
     {
       "count": 16,
@@ -1372,17 +1389,17 @@
     },
     {
       "count": 15,
-      "from": "N002",
-      "medianGapMs": 128629,
-      "sessions": 9,
-      "to": "N030"
-    },
-    {
-      "count": 15,
       "from": "N003",
       "medianGapMs": 96819,
       "sessions": 12,
       "to": "N006"
+    },
+    {
+      "count": 15,
+      "from": "N003",
+      "medianGapMs": 241075,
+      "sessions": 15,
+      "to": "N012"
     },
     {
       "count": 15,
@@ -1401,23 +1418,23 @@
     {
       "count": 14,
       "from": "N003",
+      "medianGapMs": 421977,
+      "sessions": 14,
+      "to": "N010"
+    },
+    {
+      "count": 14,
+      "from": "N003",
       "medianGapMs": 89423,
       "sessions": 12,
       "to": "N011"
     },
     {
       "count": 14,
-      "from": "N003",
-      "medianGapMs": 240831,
-      "sessions": 14,
-      "to": "N012"
-    },
-    {
-      "count": 14,
-      "from": "N003",
-      "medianGapMs": 42719,
-      "sessions": 14,
-      "to": "N005"
+      "from": "N004",
+      "medianGapMs": 22467,
+      "sessions": 10,
+      "to": "N006"
     },
     {
       "count": 14,
@@ -1477,20 +1494,6 @@
     },
     {
       "count": 13,
-      "from": "N003",
-      "medianGapMs": 467316,
-      "sessions": 13,
-      "to": "N010"
-    },
-    {
-      "count": 13,
-      "from": "N004",
-      "medianGapMs": 22968,
-      "sessions": 9,
-      "to": "N006"
-    },
-    {
-      "count": 13,
       "from": "N004",
       "medianGapMs": 17462,
       "sessions": 9,
@@ -1512,10 +1515,31 @@
     },
     {
       "count": 13,
+      "from": "N011",
+      "medianGapMs": 210106,
+      "sessions": 12,
+      "to": "N001"
+    },
+    {
+      "count": 13,
       "from": "N013",
       "medianGapMs": 2907,
       "sessions": 6,
       "to": "N035"
+    },
+    {
+      "count": 13,
+      "from": "N015",
+      "medianGapMs": 29020,
+      "sessions": 11,
+      "to": "N003"
+    },
+    {
+      "count": 13,
+      "from": "N030",
+      "medianGapMs": 0,
+      "sessions": 8,
+      "to": "N015"
     },
     {
       "count": 13,
@@ -1530,6 +1554,13 @@
       "medianGapMs": 0,
       "sessions": 12,
       "to": "N047"
+    },
+    {
+      "count": 12,
+      "from": "N002",
+      "medianGapMs": 122551,
+      "sessions": 11,
+      "to": "N012"
     },
     {
       "count": 12,
@@ -1554,20 +1585,6 @@
     },
     {
       "count": 12,
-      "from": "N011",
-      "medianGapMs": 190012,
-      "sessions": 11,
-      "to": "N001"
-    },
-    {
-      "count": 12,
-      "from": "N015",
-      "medianGapMs": 35446,
-      "sessions": 10,
-      "to": "N003"
-    },
-    {
-      "count": 12,
       "from": "N018",
       "medianGapMs": 29660,
       "sessions": 10,
@@ -1579,6 +1596,13 @@
       "medianGapMs": 55845,
       "sessions": 4,
       "to": "N033"
+    },
+    {
+      "count": 12,
+      "from": "N038",
+      "medianGapMs": 19932,
+      "sessions": 8,
+      "to": "N020"
     },
     {
       "count": 12,
@@ -1603,13 +1627,6 @@
     },
     {
       "count": 11,
-      "from": "N002",
-      "medianGapMs": 115226,
-      "sessions": 10,
-      "to": "N012"
-    },
-    {
-      "count": 11,
       "from": "N003",
       "medianGapMs": 45470,
       "sessions": 11,
@@ -1631,6 +1648,13 @@
     },
     {
       "count": 11,
+      "from": "N011",
+      "medianGapMs": 324756,
+      "sessions": 10,
+      "to": "N010"
+    },
+    {
+      "count": 11,
       "from": "N013",
       "medianGapMs": 18239,
       "sessions": 8,
@@ -1642,13 +1666,6 @@
       "medianGapMs": 38277,
       "sessions": 9,
       "to": "N006"
-    },
-    {
-      "count": 11,
-      "from": "N030",
-      "medianGapMs": 0,
-      "sessions": 7,
-      "to": "N015"
     },
     {
       "count": 11,
@@ -1666,10 +1683,24 @@
     },
     {
       "count": 11,
+      "from": "N035",
+      "medianGapMs": 1054,
+      "sessions": 9,
+      "to": "N018"
+    },
+    {
+      "count": 11,
       "from": "N036",
       "medianGapMs": 8470,
       "sessions": 9,
       "to": "N040"
+    },
+    {
+      "count": 11,
+      "from": "N051",
+      "medianGapMs": 0,
+      "sessions": 11,
+      "to": "N004"
     },
     {
       "count": 10,
@@ -1677,6 +1708,13 @@
       "medianGapMs": 27092,
       "sessions": 8,
       "to": "N038"
+    },
+    {
+      "count": 10,
+      "from": "N002",
+      "medianGapMs": 11293,
+      "sessions": 10,
+      "to": "N035"
     },
     {
       "count": 10,
@@ -1709,6 +1747,13 @@
     {
       "count": 10,
       "from": "N006",
+      "medianGapMs": 173840,
+      "sessions": 9,
+      "to": "N012"
+    },
+    {
+      "count": 10,
+      "from": "N006",
       "medianGapMs": 153134,
       "sessions": 9,
       "to": "N001"
@@ -1730,13 +1775,6 @@
     {
       "count": 10,
       "from": "N011",
-      "medianGapMs": 332051,
-      "sessions": 9,
-      "to": "N010"
-    },
-    {
-      "count": 10,
-      "from": "N011",
       "medianGapMs": 12237,
       "sessions": 7,
       "to": "N007"
@@ -1752,6 +1790,13 @@
       "count": 10,
       "from": "N012",
       "medianGapMs": 0,
+      "sessions": 10,
+      "to": "N002"
+    },
+    {
+      "count": 10,
+      "from": "N012",
+      "medianGapMs": 0,
       "sessions": 9,
       "to": "N001"
     },
@@ -1761,6 +1806,13 @@
       "medianGapMs": 39882,
       "sessions": 7,
       "to": "N003"
+    },
+    {
+      "count": 10,
+      "from": "N018",
+      "medianGapMs": 5861,
+      "sessions": 9,
+      "to": "N035"
     },
     {
       "count": 10,
@@ -1784,25 +1836,18 @@
       "to": "N007"
     },
     {
-      "count": 10,
-      "from": "N038",
-      "medianGapMs": 15338,
-      "sessions": 7,
-      "to": "N020"
-    },
-    {
       "count": 9,
-      "from": "N002",
-      "medianGapMs": 8639,
+      "from": "N001",
+      "medianGapMs": 4553,
       "sessions": 9,
-      "to": "N035"
+      "to": "N002"
     },
     {
       "count": 9,
-      "from": "N006",
-      "medianGapMs": 102697,
+      "from": "N003",
+      "medianGapMs": 18586,
       "sessions": 8,
-      "to": "N012"
+      "to": "N038"
     },
     {
       "count": 9,
@@ -1834,13 +1879,6 @@
     },
     {
       "count": 9,
-      "from": "N012",
-      "medianGapMs": 0,
-      "sessions": 9,
-      "to": "N002"
-    },
-    {
-      "count": 9,
       "from": "N015",
       "medianGapMs": 122126,
       "sessions": 6,
@@ -1859,13 +1897,6 @@
       "medianGapMs": 30493,
       "sessions": 8,
       "to": "N002"
-    },
-    {
-      "count": 9,
-      "from": "N018",
-      "medianGapMs": 7354,
-      "sessions": 8,
-      "to": "N035"
     },
     {
       "count": 9,
@@ -1898,30 +1929,9 @@
     {
       "count": 9,
       "from": "N035",
-      "medianGapMs": 989,
-      "sessions": 8,
-      "to": "N018"
-    },
-    {
-      "count": 9,
-      "from": "N035",
       "medianGapMs": 5717,
       "sessions": 8,
       "to": "N015"
-    },
-    {
-      "count": 9,
-      "from": "N051",
-      "medianGapMs": 0,
-      "sessions": 9,
-      "to": "N004"
-    },
-    {
-      "count": 8,
-      "from": "N001",
-      "medianGapMs": 5041,
-      "sessions": 8,
-      "to": "N002"
     },
     {
       "count": 8,
@@ -1960,13 +1970,6 @@
     },
     {
       "count": 8,
-      "from": "N003",
-      "medianGapMs": 20746,
-      "sessions": 7,
-      "to": "N038"
-    },
-    {
-      "count": 8,
       "from": "N004",
       "medianGapMs": 4247,
       "sessions": 8,
@@ -2002,6 +2005,13 @@
     },
     {
       "count": 8,
+      "from": "N007",
+      "medianGapMs": 85305,
+      "sessions": 8,
+      "to": "N030"
+    },
+    {
+      "count": 8,
       "from": "N013",
       "medianGapMs": 42681,
       "sessions": 7,
@@ -2013,6 +2023,13 @@
       "medianGapMs": 13840,
       "sessions": 7,
       "to": "N040"
+    },
+    {
+      "count": 8,
+      "from": "N015",
+      "medianGapMs": 83154,
+      "sessions": 8,
+      "to": "N030"
     },
     {
       "count": 8,
@@ -2033,6 +2050,13 @@
       "from": "N036",
       "medianGapMs": 0,
       "sessions": 6,
+      "to": "N002"
+    },
+    {
+      "count": 8,
+      "from": "N038",
+      "medianGapMs": 11852,
+      "sessions": 5,
       "to": "N002"
     },
     {
@@ -2107,13 +2131,6 @@
     },
     {
       "count": 7,
-      "from": "N007",
-      "medianGapMs": 22428,
-      "sessions": 7,
-      "to": "N030"
-    },
-    {
-      "count": 7,
       "from": "N010",
       "medianGapMs": 0,
       "sessions": 7,
@@ -2125,13 +2142,6 @@
       "medianGapMs": 28568,
       "sessions": 6,
       "to": "N004"
-    },
-    {
-      "count": 7,
-      "from": "N015",
-      "medianGapMs": 36522,
-      "sessions": 7,
-      "to": "N030"
     },
     {
       "count": 7,
@@ -2163,13 +2173,6 @@
     },
     {
       "count": 7,
-      "from": "N038",
-      "medianGapMs": 9571,
-      "sessions": 4,
-      "to": "N002"
-    },
-    {
-      "count": 7,
       "from": "N040",
       "medianGapMs": 694,
       "sessions": 7,
@@ -2181,6 +2184,20 @@
       "medianGapMs": 1047,
       "sessions": 7,
       "to": "N018"
+    },
+    {
+      "count": 7,
+      "from": "N041",
+      "medianGapMs": 40470,
+      "sessions": 7,
+      "to": "N003"
+    },
+    {
+      "count": 7,
+      "from": "N041",
+      "medianGapMs": 11368,
+      "sessions": 7,
+      "to": "N002"
     },
     {
       "count": 7,
@@ -2198,10 +2215,24 @@
     },
     {
       "count": 6,
+      "from": "N001",
+      "medianGapMs": 0,
+      "sessions": 6,
+      "to": "N041"
+    },
+    {
+      "count": 6,
       "from": "N002",
       "medianGapMs": 87390,
       "sessions": 6,
       "to": "N010"
+    },
+    {
+      "count": 6,
+      "from": "N003",
+      "medianGapMs": 139745,
+      "sessions": 6,
+      "to": "N008"
     },
     {
       "count": 6,
@@ -2268,10 +2299,24 @@
     },
     {
       "count": 6,
+      "from": "N030",
+      "medianGapMs": 0,
+      "sessions": 6,
+      "to": "N010"
+    },
+    {
+      "count": 6,
       "from": "N031",
       "medianGapMs": 20691,
       "sessions": 6,
       "to": "N004"
+    },
+    {
+      "count": 6,
+      "from": "N033",
+      "medianGapMs": 8956,
+      "sessions": 4,
+      "to": "N038"
     },
     {
       "count": 6,
@@ -2282,31 +2327,10 @@
     },
     {
       "count": 6,
-      "from": "N041",
-      "medianGapMs": 56988,
-      "sessions": 6,
-      "to": "N003"
-    },
-    {
-      "count": 6,
-      "from": "N041",
-      "medianGapMs": 10070,
-      "sessions": 6,
-      "to": "N002"
-    },
-    {
-      "count": 5,
-      "from": "N001",
+      "from": "N048",
       "medianGapMs": 0,
-      "sessions": 5,
+      "sessions": 6,
       "to": "N041"
-    },
-    {
-      "count": 5,
-      "from": "N003",
-      "medianGapMs": 31529,
-      "sessions": 5,
-      "to": "N008"
     },
     {
       "count": 5,
@@ -2394,13 +2418,6 @@
     },
     {
       "count": 5,
-      "from": "N030",
-      "medianGapMs": 0,
-      "sessions": 5,
-      "to": "N010"
-    },
-    {
-      "count": 5,
       "from": "N031",
       "medianGapMs": 701,
       "sessions": 5,
@@ -2464,13 +2481,6 @@
     },
     {
       "count": 5,
-      "from": "N048",
-      "medianGapMs": 0,
-      "sessions": 5,
-      "to": "N041"
-    },
-    {
-      "count": 5,
       "from": "N052",
       "medianGapMs": 5750,
       "sessions": 5,
@@ -2496,6 +2506,13 @@
       "medianGapMs": 165020,
       "sessions": 4,
       "to": "N011"
+    },
+    {
+      "count": 4,
+      "from": "N004",
+      "medianGapMs": 963633,
+      "sessions": 4,
+      "to": "N010"
     },
     {
       "count": 4,
@@ -2545,6 +2562,13 @@
       "medianGapMs": 6261,
       "sessions": 4,
       "to": "N003"
+    },
+    {
+      "count": 4,
+      "from": "N008",
+      "medianGapMs": 41952,
+      "sessions": 4,
+      "to": "N004"
     },
     {
       "count": 4,
@@ -2605,6 +2629,13 @@
     {
       "count": 4,
       "from": "N020",
+      "medianGapMs": 24295,
+      "sessions": 4,
+      "to": "N032"
+    },
+    {
+      "count": 4,
+      "from": "N020",
       "medianGapMs": 108697,
       "sessions": 2,
       "to": "N013"
@@ -2629,6 +2660,13 @@
       "medianGapMs": 16551,
       "sessions": 4,
       "to": "N007"
+    },
+    {
+      "count": 4,
+      "from": "N024",
+      "medianGapMs": 20118,
+      "sessions": 4,
+      "to": "N002"
     },
     {
       "count": 4,
@@ -2671,13 +2709,6 @@
       "medianGapMs": 0,
       "sessions": 2,
       "to": "N002"
-    },
-    {
-      "count": 4,
-      "from": "N033",
-      "medianGapMs": 27004,
-      "sessions": 3,
-      "to": "N038"
     },
     {
       "count": 4,
@@ -2794,6 +2825,13 @@
     {
       "count": 3,
       "from": "N003",
+      "medianGapMs": 40397,
+      "sessions": 3,
+      "to": "N033"
+    },
+    {
+      "count": 3,
+      "from": "N003",
       "medianGapMs": 321061,
       "sessions": 3,
       "to": "N054"
@@ -2811,13 +2849,6 @@
       "medianGapMs": 147532,
       "sessions": 3,
       "to": "N054"
-    },
-    {
-      "count": 3,
-      "from": "N004",
-      "medianGapMs": 232319,
-      "sessions": 3,
-      "to": "N010"
     },
     {
       "count": 3,
@@ -2850,6 +2881,13 @@
     {
       "count": 3,
       "from": "N007",
+      "medianGapMs": 71066,
+      "sessions": 3,
+      "to": "N024"
+    },
+    {
+      "count": 3,
+      "from": "N007",
       "medianGapMs": 65928,
       "sessions": 3,
       "to": "N005"
@@ -2874,13 +2912,6 @@
       "medianGapMs": 23189,
       "sessions": 3,
       "to": "N046"
-    },
-    {
-      "count": 3,
-      "from": "N008",
-      "medianGapMs": 46973,
-      "sessions": 3,
-      "to": "N004"
     },
     {
       "count": 3,
@@ -2965,13 +2996,6 @@
       "medianGapMs": 22219,
       "sessions": 3,
       "to": "N040"
-    },
-    {
-      "count": 3,
-      "from": "N020",
-      "medianGapMs": 29703,
-      "sessions": 3,
-      "to": "N032"
     },
     {
       "count": 3,
@@ -3067,13 +3091,6 @@
     {
       "count": 3,
       "from": "N024",
-      "medianGapMs": 40236,
-      "sessions": 3,
-      "to": "N002"
-    },
-    {
-      "count": 3,
-      "from": "N024",
       "medianGapMs": 127159,
       "sessions": 2,
       "to": "N040"
@@ -3101,6 +3118,13 @@
     },
     {
       "count": 3,
+      "from": "N032",
+      "medianGapMs": 0,
+      "sessions": 3,
+      "to": "N020"
+    },
+    {
+      "count": 3,
       "from": "N033",
       "medianGapMs": 22302,
       "sessions": 2,
@@ -3112,6 +3136,13 @@
       "medianGapMs": 21660,
       "sessions": 3,
       "to": "N031"
+    },
+    {
+      "count": 3,
+      "from": "N040",
+      "medianGapMs": 52112,
+      "sessions": 3,
+      "to": "N020"
     },
     {
       "count": 3,
@@ -3200,13 +3231,6 @@
     {
       "count": 2,
       "from": "N003",
-      "medianGapMs": 899283,
-      "sessions": 2,
-      "to": "N033"
-    },
-    {
-      "count": 2,
-      "from": "N003",
       "medianGapMs": 51153,
       "sessions": 2,
       "to": "N032"
@@ -3287,13 +3311,6 @@
       "medianGapMs": 538032,
       "sessions": 2,
       "to": "N034"
-    },
-    {
-      "count": 2,
-      "from": "N007",
-      "medianGapMs": 73047,
-      "sessions": 2,
-      "to": "N024"
     },
     {
       "count": 2,
@@ -3514,6 +3531,13 @@
     },
     {
       "count": 2,
+      "from": "N030",
+      "medianGapMs": 410567,
+      "sessions": 2,
+      "to": "N004"
+    },
+    {
+      "count": 2,
       "from": "N031",
       "medianGapMs": 8451,
       "sessions": 2,
@@ -3532,13 +3556,6 @@
       "medianGapMs": 6969,
       "sessions": 2,
       "to": "N012"
-    },
-    {
-      "count": 2,
-      "from": "N032",
-      "medianGapMs": 49712,
-      "sessions": 2,
-      "to": "N020"
     },
     {
       "count": 2,
@@ -3641,13 +3658,6 @@
     {
       "count": 2,
       "from": "N040",
-      "medianGapMs": 1060774,
-      "sessions": 2,
-      "to": "N020"
-    },
-    {
-      "count": 2,
-      "from": "N040",
       "medianGapMs": 31336,
       "sessions": 2,
       "to": "N047"
@@ -3714,6 +3724,13 @@
       "medianGapMs": 612440,
       "sessions": 2,
       "to": "N003"
+    },
+    {
+      "count": 2,
+      "from": "N051",
+      "medianGapMs": 0,
+      "sessions": 2,
+      "to": "N041"
     },
     {
       "count": 2,
@@ -4501,13 +4518,6 @@
     },
     {
       "count": 1,
-      "from": "N030",
-      "medianGapMs": 7082,
-      "sessions": 1,
-      "to": "N004"
-    },
-    {
-      "count": 1,
       "from": "N031",
       "medianGapMs": 142906,
       "sessions": 1,
@@ -4715,6 +4725,13 @@
       "medianGapMs": 39130,
       "sessions": 1,
       "to": "N001"
+    },
+    {
+      "count": 1,
+      "from": "N038",
+      "medianGapMs": 2844,
+      "sessions": 1,
+      "to": "N015"
     },
     {
       "count": 1,
@@ -4974,13 +4991,6 @@
       "medianGapMs": 2000,
       "sessions": 1,
       "to": "N015"
-    },
-    {
-      "count": 1,
-      "from": "N051",
-      "medianGapMs": 0,
-      "sessions": 1,
-      "to": "N041"
     },
     {
       "count": 1,
@@ -5308,6 +5318,15 @@
         "Bash(sed)"
       ]
     },
+    "M0F88E": {
+      "kind": "ritual",
+      "sequence": [
+        "Bash(gh)",
+        "User",
+        "Bash(gh)",
+        "Bash(gh)"
+      ]
+    },
     "M109FD": {
       "kind": "ritual",
       "sequence": [
@@ -5446,6 +5465,14 @@
         "Mcp(linear)",
         "Mcp(fireflies)",
         "Mcp(fireflies)"
+      ]
+    },
+    "M172BD": {
+      "kind": "ritual",
+      "sequence": [
+        "ToolSearch",
+        "Tool(other)",
+        "User"
       ]
     },
     "M1801E": {
@@ -8225,6 +8252,14 @@
         "User"
       ]
     },
+    "MFBC22": {
+      "kind": "ritual",
+      "sequence": [
+        "User",
+        "Bash(other)",
+        "Bash(git)"
+      ]
+    },
     "MFC186": {
       "kind": "ritual",
       "sequence": [
@@ -8322,6 +8357,11 @@
           "distinctSessions": 206,
           "occurrences": 851,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 211,
+          "occurrences": 870,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [
@@ -8363,16 +8403,16 @@
       ],
       "stats": {
         "betweenness": 0.252,
-        "buildScore": 43895074,
-        "correctionRate": 0.05,
+        "buildScore": 43465794,
+        "correctionRate": 0.051,
         "crossProject": true,
-        "distinctProjects": 55,
-        "distinctSessions": 206,
-        "frictionMassMs": 35059963,
-        "medianElapsedMs": 7610,
-        "occurrences": 851,
+        "distinctProjects": 56,
+        "distinctSessions": 211,
+        "frictionMassMs": 34717088,
+        "medianElapsedMs": 9604,
+        "occurrences": 870,
         "retryDepth": 1,
-        "weightedDegree": 770
+        "weightedDegree": 790
       },
       "status": "new",
       "summary": "A request lands and the first action is fetching deferred tool schemas, 450 times across 35 projects at a 12s median. The fetch is a fixed per-session cost that precedes the real work.",
@@ -8418,6 +8458,11 @@
           "distinctSessions": 161,
           "occurrences": 1550,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 165,
+          "occurrences": 1629,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -8459,16 +8504,16 @@
       ],
       "stats": {
         "betweenness": 1,
-        "buildScore": 294740480,
-        "correctionRate": 0.211,
+        "buildScore": 303661100,
+        "correctionRate": 0.212,
         "crossProject": true,
-        "distinctProjects": 57,
-        "distinctSessions": 161,
-        "frictionMassMs": 147370240,
-        "medianElapsedMs": 37007,
-        "occurrences": 1550,
+        "distinctProjects": 58,
+        "distinctSessions": 165,
+        "frictionMassMs": 151830550,
+        "medianElapsedMs": 36635,
+        "occurrences": 1629,
         "retryDepth": 11,
-        "weightedDegree": 2160
+        "weightedDegree": 2307
       },
       "status": "new",
       "summary": "A request is answered with an unrecognized or custom command, 900 times across 43 projects, with a 19% correction rate and re-run streaks up to 9 deep. This node has the highest betweenness in the flow graph: most workflows pass through it.",
@@ -8514,6 +8559,11 @@
           "distinctSessions": 168,
           "occurrences": 2150,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 175,
+          "occurrences": 2241,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -8556,16 +8606,16 @@
       ],
       "stats": {
         "betweenness": 0.897,
-        "buildScore": 476550376,
-        "correctionRate": 0.194,
+        "buildScore": 502274815,
+        "correctionRate": 0.196,
         "crossProject": true,
-        "distinctProjects": 55,
-        "distinctSessions": 168,
-        "frictionMassMs": 251212639,
-        "medianElapsedMs": 30240,
-        "occurrences": 2150,
-        "retryDepth": 10,
-        "weightedDegree": 2408
+        "distinctProjects": 57,
+        "distinctSessions": 175,
+        "frictionMassMs": 264773229,
+        "medianElapsedMs": 22863,
+        "occurrences": 2241,
+        "retryDepth": 11,
+        "weightedDegree": 2549
       },
       "status": "new",
       "summary": "A request starts with git calls for orientation or ends with a walked commit sequence, 635 times across 38 projects, with streaks up to 10 git calls and a 17% correction rate. Git state is read one command at a time and then disputed.",
@@ -8611,6 +8661,11 @@
           "distinctSessions": 150,
           "occurrences": 1563,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 154,
+          "occurrences": 1671,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -8668,16 +8723,16 @@
       ],
       "stats": {
         "betweenness": 0.175,
-        "buildScore": 137179332,
-        "correctionRate": 0.122,
+        "buildScore": 154418190,
+        "correctionRate": 0.12,
         "crossProject": true,
-        "distinctProjects": 45,
-        "distinctSessions": 150,
-        "frictionMassMs": 116748368,
-        "medianElapsedMs": 6208,
-        "occurrences": 1563,
+        "distinctProjects": 46,
+        "distinctSessions": 154,
+        "frictionMassMs": 131419736,
+        "medianElapsedMs": 6103,
+        "occurrences": 1671,
         "retryDepth": 17,
-        "weightedDegree": 821
+        "weightedDegree": 856
       },
       "status": "new",
       "summary": "Consecutive Linear MCP calls drive ticket creation and edits one API call at a time, 1266 times across 30 projects, with streaks up to 15 calls and a 12% correction rate. Ticket content is then reworked by hand.",
@@ -8723,6 +8778,11 @@
           "distinctSessions": 91,
           "occurrences": 335,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 93,
+          "occurrences": 345,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -8741,16 +8801,16 @@
       ],
       "stats": {
         "betweenness": 0.01,
-        "buildScore": 4162809,
-        "correctionRate": 0.066,
+        "buildScore": 4597612,
+        "correctionRate": 0.064,
         "crossProject": true,
         "distinctProjects": 47,
-        "distinctSessions": 91,
-        "frictionMassMs": 4121593,
-        "medianElapsedMs": 5421,
-        "occurrences": 335,
+        "distinctSessions": 93,
+        "frictionMassMs": 4552091,
+        "medianElapsedMs": 5152,
+        "occurrences": 345,
         "retryDepth": 1,
-        "weightedDegree": 147
+        "weightedDegree": 152
       },
       "status": "rejected",
       "summary": "A non-generic skill is invoked and a user-role record follows at once, 186 times across 32 projects at an 8s median with a 5% correction rate. Most of these are the skill body arriving as a user message, not a correction.",
@@ -8796,6 +8856,11 @@
           "distinctSessions": 106,
           "occurrences": 923,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 108,
+          "occurrences": 990,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [
@@ -8843,16 +8908,16 @@
       ],
       "stats": {
         "betweenness": 0.443,
-        "buildScore": 48436133,
-        "correctionRate": 0.09,
+        "buildScore": 45441983,
+        "correctionRate": 0.081,
         "crossProject": true,
-        "distinctProjects": 46,
-        "distinctSessions": 106,
-        "frictionMassMs": 33566274,
-        "medianElapsedMs": 14529,
-        "occurrences": 923,
+        "distinctProjects": 48,
+        "distinctSessions": 108,
+        "frictionMassMs": 31491326,
+        "medianElapsedMs": 14348,
+        "occurrences": 990,
         "retryDepth": 12,
-        "weightedDegree": 946
+        "weightedDegree": 1024
       },
       "status": "new",
       "summary": "Hand-written Python fed through stdin for data inspection and munging, 780 times across 36 projects with re-run streaks up to 12 deep. Each request routinely costs several one-off scripts.",
@@ -8898,6 +8963,11 @@
           "distinctSessions": 109,
           "occurrences": 683,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 111,
+          "occurrences": 740,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -8924,16 +8994,16 @@
       ],
       "stats": {
         "betweenness": 0.681,
-        "buildScore": 8041334,
-        "correctionRate": 0.088,
+        "buildScore": 9140747,
+        "correctionRate": 0.083,
         "crossProject": true,
-        "distinctProjects": 49,
-        "distinctSessions": 109,
-        "frictionMassMs": 4783661,
+        "distinctProjects": 51,
+        "distinctSessions": 111,
+        "frictionMassMs": 5437684,
         "medianElapsedMs": 5169,
-        "occurrences": 683,
+        "occurrences": 740,
         "retryDepth": 11,
-        "weightedDegree": 2098
+        "weightedDegree": 2219
       },
       "status": "new",
       "summary": "grep to locate, sed to rewrite in place, grep again to verify, 413 times across 31 projects with streaks up to 11 edits. The verification is manual and sed fails silently on a miss.",
@@ -8979,6 +9049,11 @@
           "distinctSessions": 49,
           "occurrences": 55,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 50,
+          "occurrences": 56,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -8994,16 +9069,16 @@
       ],
       "stats": {
         "betweenness": 0.001,
-        "buildScore": 546146,
-        "correctionRate": 0.109,
+        "buildScore": 553721,
+        "correctionRate": 0.125,
         "crossProject": true,
         "distinctProjects": 33,
-        "distinctSessions": 49,
-        "frictionMassMs": 545600,
-        "medianElapsedMs": 9920,
-        "occurrences": 55,
+        "distinctSessions": 50,
+        "frictionMassMs": 553168,
+        "medianElapsedMs": 9878,
+        "occurrences": 56,
         "retryDepth": 1,
-        "weightedDegree": 48
+        "weightedDegree": 49
       },
       "status": "new",
       "summary": "A request is answered by hunting the filesystem with find, 73 times across 31 projects. The agent lacks a map of the repo it is in.",
@@ -9049,6 +9124,11 @@
           "distinctSessions": 117,
           "occurrences": 602,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 126,
+          "occurrences": 696,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -9068,7 +9148,8 @@
         "MB3F6A",
         "MD408D",
         "MD8F0A",
-        "MDA856"
+        "MDA856",
+        "MFBC22"
       ],
       "name": "checkout then run",
       "seed": [
@@ -9077,16 +9158,16 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 23607454,
+        "buildScore": 28898766,
         "correctionRate": 0.165,
         "crossProject": true,
-        "distinctProjects": 45,
-        "distinctSessions": 117,
-        "frictionMassMs": 23607454,
-        "medianElapsedMs": 17706,
-        "occurrences": 602,
+        "distinctProjects": 49,
+        "distinctSessions": 126,
+        "frictionMassMs": 28898766,
+        "medianElapsedMs": 18443,
+        "occurrences": 696,
         "retryDepth": 1,
-        "weightedDegree": 958
+        "weightedDegree": 1070
       },
       "status": "new",
       "summary": "A git call followed by an unrecognized or custom command, 200 times across 30 projects with a 20% correction rate. Pull or checkout, then run something that cannot yet be named.",
@@ -9132,6 +9213,11 @@
           "distinctSessions": 91,
           "occurrences": 438,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 94,
+          "occurrences": 434,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -9159,16 +9245,16 @@
       ],
       "stats": {
         "betweenness": 0.006,
-        "buildScore": 57517729,
-        "correctionRate": 0.226,
+        "buildScore": 57381440,
+        "correctionRate": 0.221,
         "crossProject": true,
-        "distinctProjects": 39,
-        "distinctSessions": 91,
-        "frictionMassMs": 57174681,
+        "distinctProjects": 41,
+        "distinctSessions": 94,
+        "frictionMassMs": 57039205,
         "medianElapsedMs": 120048,
-        "occurrences": 438,
+        "occurrences": 434,
         "retryDepth": 1,
-        "weightedDegree": 489
+        "weightedDegree": 506
       },
       "status": "new",
       "summary": "A request is answered with an immediate sed rewrite and the human intervenes about 2.5 minutes later, 220 times across 22 projects with a 19% correction rate. The edit lands unverified and gets caught late.",
@@ -9214,6 +9300,11 @@
           "distinctSessions": 63,
           "occurrences": 1006,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 66,
+          "occurrences": 1015,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -9249,16 +9340,16 @@
       ],
       "stats": {
         "betweenness": 0.113,
-        "buildScore": 189695095,
-        "correctionRate": 0.347,
+        "buildScore": 194813081,
+        "correctionRate": 0.351,
         "crossProject": true,
-        "distinctProjects": 27,
-        "distinctSessions": 63,
-        "frictionMassMs": 170435845,
-        "medianElapsedMs": 208321,
-        "occurrences": 1006,
+        "distinctProjects": 29,
+        "distinctSessions": 66,
+        "frictionMassMs": 175034215,
+        "medianElapsedMs": 204684,
+        "occurrences": 1015,
         "retryDepth": 13,
-        "weightedDegree": 547
+        "weightedDegree": 553
       },
       "status": "new",
       "summary": "A general-purpose subagent returns and the human corrects about 3 minutes later, 376 times across 13 projects with a 31% correction rate. Delegated work does not land on first output.",
@@ -9304,6 +9395,11 @@
           "distinctSessions": 107,
           "occurrences": 382,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 109,
+          "occurrences": 390,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -9323,16 +9419,16 @@
       ],
       "stats": {
         "betweenness": 0.027,
-        "buildScore": 41427119,
-        "correctionRate": 0.196,
+        "buildScore": 41402976,
+        "correctionRate": 0.197,
         "crossProject": true,
-        "distinctProjects": 44,
-        "distinctSessions": 107,
-        "frictionMassMs": 40337993,
+        "distinctProjects": 45,
+        "distinctSessions": 109,
+        "frictionMassMs": 40314485,
         "medianElapsedMs": 92577,
-        "occurrences": 382,
+        "occurrences": 390,
         "retryDepth": 1,
-        "weightedDegree": 450
+        "weightedDegree": 460
       },
       "status": "new",
       "summary": "A request is answered with an immediate grep, 99 times across 27 projects. Same orientation gap as the find and git variants.",
@@ -9378,6 +9474,11 @@
           "distinctSessions": 27,
           "occurrences": 212,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 27,
+          "occurrences": 212,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -9449,6 +9550,11 @@
           "distinctSessions": 66,
           "occurrences": 181,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 68,
+          "occurrences": 194,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -9469,16 +9575,16 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 3125796,
-        "correctionRate": 0.072,
+        "buildScore": 3260697,
+        "correctionRate": 0.067,
         "crossProject": true,
-        "distinctProjects": 36,
-        "distinctSessions": 66,
-        "frictionMassMs": 3125796,
-        "medianElapsedMs": 14286,
-        "occurrences": 181,
+        "distinctProjects": 38,
+        "distinctSessions": 68,
+        "frictionMassMs": 3260697,
+        "medianElapsedMs": 14036,
+        "occurrences": 194,
         "retryDepth": 1,
-        "weightedDegree": 300
+        "weightedDegree": 324
       },
       "status": "rejected",
       "summary": "An in-place rewrite followed by an unrecognized or custom command, 147 times across 26 projects with a 5% correction rate. Edit, then run something over the result: done correctly, but re-derived each time.",
@@ -9524,11 +9630,17 @@
           "distinctSessions": 90,
           "occurrences": 716,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 92,
+          "occurrences": 769,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
       "motifs": [
         "M0B063",
+        "M0F88E",
         "M1D98C",
         "M254FE",
         "M5663E",
@@ -9549,16 +9661,16 @@
       ],
       "stats": {
         "betweenness": 0.272,
-        "buildScore": 94467918,
-        "correctionRate": 0.2,
+        "buildScore": 95303953,
+        "correctionRate": 0.202,
         "crossProject": true,
-        "distinctProjects": 32,
-        "distinctSessions": 90,
-        "frictionMassMs": 74267231,
-        "medianElapsedMs": 14067,
-        "occurrences": 716,
+        "distinctProjects": 33,
+        "distinctSessions": 92,
+        "frictionMassMs": 74924491,
+        "medianElapsedMs": 19149,
+        "occurrences": 769,
         "retryDepth": 14,
-        "weightedDegree": 717
+        "weightedDegree": 747
       },
       "status": "new",
       "summary": "A request is answered with gh calls for PR and issue context, 249 times across 18 projects with streaks up to 14 calls. PR state is assembled one query at a time.",
@@ -9604,6 +9716,11 @@
           "distinctSessions": 75,
           "occurrences": 202,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 76,
+          "occurrences": 203,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -9622,16 +9739,16 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 3047836,
+        "buildScore": 3052014,
         "correctionRate": 0.089,
         "crossProject": true,
         "distinctProjects": 37,
-        "distinctSessions": 75,
-        "frictionMassMs": 3047836,
+        "distinctSessions": 76,
+        "frictionMassMs": 3052014,
         "medianElapsedMs": 9474,
-        "occurrences": 202,
+        "occurrences": 203,
         "retryDepth": 1,
-        "weightedDegree": 358
+        "weightedDegree": 360
       },
       "status": "rejected",
       "summary": "An unrecognized command followed by a grep over its output or the files it touched, 59 times across 24 projects. The command's output is not structured enough to use directly.",
@@ -9677,6 +9794,11 @@
           "distinctSessions": 68,
           "occurrences": 204,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 71,
+          "occurrences": 227,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -9694,16 +9816,16 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 1880249,
-        "correctionRate": 0.113,
+        "buildScore": 2087232,
+        "correctionRate": 0.101,
         "crossProject": true,
-        "distinctProjects": 32,
-        "distinctSessions": 68,
-        "frictionMassMs": 1880249,
-        "medianElapsedMs": 6885,
-        "occurrences": 204,
+        "distinctProjects": 34,
+        "distinctSessions": 71,
+        "frictionMassMs": 2087232,
+        "medianElapsedMs": 6916,
+        "occurrences": 227,
         "retryDepth": 1,
-        "weightedDegree": 364
+        "weightedDegree": 408
       },
       "status": "rejected",
       "summary": "A git call followed by an in-place rewrite, 71 times across 17 projects with a 6% correction rate. Check state, then edit, done correctly.",
@@ -9749,6 +9871,11 @@
           "distinctSessions": 34,
           "occurrences": 178,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 35,
+          "occurrences": 160,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -9764,16 +9891,16 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 821838,
-        "correctionRate": 0.039,
+        "buildScore": 646776,
+        "correctionRate": 0.031,
         "crossProject": true,
         "distinctProjects": 20,
-        "distinctSessions": 34,
-        "frictionMassMs": 821838,
+        "distinctSessions": 35,
+        "frictionMassMs": 646776,
         "medianElapsedMs": 4458,
-        "occurrences": 178,
+        "occurrences": 160,
         "retryDepth": 8,
-        "weightedDegree": 146
+        "weightedDegree": 150
       },
       "status": "new",
       "summary": "Consecutive Fireflies MCP calls pull meeting data one call at a time, 167 times across 14 projects with streaks up to 8. Same per-item shape as the Box and Linear loops.",
@@ -9819,6 +9946,11 @@
           "distinctSessions": 78,
           "occurrences": 253,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 81,
+          "occurrences": 272,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -9839,16 +9971,16 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 17863741,
-        "correctionRate": 0.217,
+        "buildScore": 16926448,
+        "correctionRate": 0.209,
         "crossProject": true,
-        "distinctProjects": 31,
-        "distinctSessions": 78,
-        "frictionMassMs": 17863741,
-        "medianElapsedMs": 9326,
-        "occurrences": 253,
+        "distinctProjects": 32,
+        "distinctSessions": 81,
+        "frictionMassMs": 16926448,
+        "medianElapsedMs": 9095,
+        "occurrences": 272,
         "retryDepth": 1,
-        "weightedDegree": 432
+        "weightedDegree": 462
       },
       "status": "new",
       "summary": "A git call followed by a gh call, 70 times across 16 projects with a 20% correction rate. Push, then open or inspect the PR, and the result gets disputed.",
@@ -9894,6 +10026,11 @@
           "distinctSessions": 76,
           "occurrences": 357,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 79,
+          "occurrences": 346,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [
@@ -9917,16 +10054,16 @@
       ],
       "stats": {
         "betweenness": 0.177,
-        "buildScore": 26702987,
-        "correctionRate": 0.109,
+        "buildScore": 26640186,
+        "correctionRate": 0.113,
         "crossProject": true,
-        "distinctProjects": 32,
-        "distinctSessions": 76,
-        "frictionMassMs": 22687330,
-        "medianElapsedMs": 17001,
-        "occurrences": 357,
+        "distinctProjects": 33,
+        "distinctSessions": 79,
+        "frictionMassMs": 22633973,
+        "medianElapsedMs": 15997,
+        "occurrences": 346,
         "retryDepth": 6,
-        "weightedDegree": 558
+        "weightedDegree": 581
       },
       "status": "new",
       "summary": "An unrecognized command followed by a repo script, 128 times across 17 projects with streaks up to 5 and a 3% correction rate. Build or generate, then run the repo's own check.",
@@ -9972,6 +10109,11 @@
           "distinctSessions": 52,
           "occurrences": 100,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 52,
+          "occurrences": 100,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -10042,6 +10184,11 @@
           "distinctSessions": 35,
           "occurrences": 48,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 35,
+          "occurrences": 48,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -10113,6 +10260,11 @@
           "distinctSessions": 53,
           "occurrences": 101,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 56,
+          "occurrences": 107,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -10128,16 +10280,16 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 1032691,
-        "correctionRate": 0.228,
+        "buildScore": 1066877,
+        "correctionRate": 0.224,
         "crossProject": true,
-        "distinctProjects": 26,
-        "distinctSessions": 53,
-        "frictionMassMs": 1032691,
-        "medianElapsedMs": 10671,
-        "occurrences": 101,
+        "distinctProjects": 27,
+        "distinctSessions": 56,
+        "frictionMassMs": 1066877,
+        "medianElapsedMs": 10171,
+        "occurrences": 107,
         "retryDepth": 1,
-        "weightedDegree": 202
+        "weightedDegree": 214
       },
       "status": "rejected",
       "summary": "A gh call followed by an unrecognized command, 53 times across 14 projects with a 19% correction rate. Fetch PR context, then act on it with a custom tool.",
@@ -10183,6 +10335,11 @@
           "distinctSessions": 30,
           "occurrences": 46,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 31,
+          "occurrences": 47,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -10197,14 +10354,14 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 4524192,
-        "correctionRate": 0.261,
+        "buildScore": 4792121,
+        "correctionRate": 0.255,
         "crossProject": true,
-        "distinctProjects": 25,
-        "distinctSessions": 30,
-        "frictionMassMs": 4524192,
-        "medianElapsedMs": 34711,
-        "occurrences": 46,
+        "distinctProjects": 26,
+        "distinctSessions": 31,
+        "frictionMassMs": 4792121,
+        "medianElapsedMs": 166407,
+        "occurrences": 47,
         "retryDepth": 1,
         "weightedDegree": 5
       },
@@ -10252,6 +10409,11 @@
           "distinctSessions": 0,
           "occurrences": 0,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 0,
+          "occurrences": 0,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -10320,6 +10482,11 @@
           "distinctSessions": 67,
           "occurrences": 208,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 69,
+          "occurrences": 218,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -10337,16 +10504,16 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 1995426,
-        "correctionRate": 0.159,
+        "buildScore": 2038544,
+        "correctionRate": 0.151,
         "crossProject": true,
-        "distinctProjects": 28,
-        "distinctSessions": 67,
-        "frictionMassMs": 1995426,
-        "medianElapsedMs": 6790,
-        "occurrences": 208,
+        "distinctProjects": 30,
+        "distinctSessions": 69,
+        "frictionMassMs": 2038544,
+        "medianElapsedMs": 6832,
+        "occurrences": 218,
         "retryDepth": 1,
-        "weightedDegree": 384
+        "weightedDegree": 404
       },
       "status": "rejected",
       "summary": "A grep followed by a git call, 44 times across 13 projects. Locate, then check history or stage.",
@@ -10392,6 +10559,11 @@
           "distinctSessions": 21,
           "occurrences": 51,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 22,
+          "occurrences": 52,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -10407,16 +10579,16 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 1263831,
-        "correctionRate": 0.451,
+        "buildScore": 1278836,
+        "correctionRate": 0.462,
         "crossProject": true,
-        "distinctProjects": 15,
-        "distinctSessions": 21,
-        "frictionMassMs": 1263831,
-        "medianElapsedMs": 24781,
-        "occurrences": 51,
+        "distinctProjects": 16,
+        "distinctSessions": 22,
+        "frictionMassMs": 1278836,
+        "medianElapsedMs": 24593,
+        "occurrences": 52,
         "retryDepth": 1,
-        "weightedDegree": 148
+        "weightedDegree": 150
       },
       "status": "new",
       "summary": "An unrecognized command followed by a general-purpose subagent dispatch, 44 times across 7 projects with a 46% correction rate, the highest in the graph. Something runs, and its output is handed to an agent that then misses.",
@@ -10462,10 +10634,16 @@
           "distinctSessions": 42,
           "occurrences": 287,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 43,
+          "occurrences": 315,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
       "motifs": [
+        "M172BD",
         "M1801E",
         "M960B6",
         "MB17D7",
@@ -10479,16 +10657,16 @@
       ],
       "stats": {
         "betweenness": 0.009,
-        "buildScore": 25137852,
-        "correctionRate": 0.394,
+        "buildScore": 30867356,
+        "correctionRate": 0.387,
         "crossProject": true,
-        "distinctProjects": 21,
-        "distinctSessions": 42,
-        "frictionMassMs": 24913629,
-        "medianElapsedMs": 82521,
-        "occurrences": 287,
+        "distinctProjects": 22,
+        "distinctSessions": 43,
+        "frictionMassMs": 30592028,
+        "medianElapsedMs": 83043,
+        "occurrences": 315,
         "retryDepth": 1,
-        "weightedDegree": 240
+        "weightedDegree": 251
       },
       "status": "new",
       "summary": "A tool outside the vocabulary is called and the human corrects about 1.5 minutes later, 24 times across 8 projects with a 25% correction rate.",
@@ -10534,6 +10712,11 @@
           "distinctSessions": 20,
           "occurrences": 181,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 20,
+          "occurrences": 181,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -10547,7 +10730,7 @@
       "stats": {
         "betweenness": 0,
         "buildScore": 353131,
-        "correctionRate": 0.083,
+        "correctionRate": 0.088,
         "crossProject": true,
         "distinctProjects": 4,
         "distinctSessions": 20,
@@ -10601,6 +10784,11 @@
           "distinctSessions": 40,
           "occurrences": 84,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 40,
+          "occurrences": 85,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -10615,14 +10803,14 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 16468612,
-        "correctionRate": 0.179,
+        "buildScore": 16468833,
+        "correctionRate": 0.176,
         "crossProject": true,
         "distinctProjects": 15,
         "distinctSessions": 40,
-        "frictionMassMs": 16468612,
+        "frictionMassMs": 16468833,
         "medianElapsedMs": 221,
-        "occurrences": 84,
+        "occurrences": 85,
         "retryDepth": 1,
         "weightedDegree": 26
       },
@@ -10633,7 +10821,7 @@
       "type": "harness"
     },
     "N033": {
-      "class": "unclassified",
+      "class": "tool",
       "created": "2026-09-14",
       "history": [
         {
@@ -10670,6 +10858,11 @@
           "distinctSessions": 0,
           "occurrences": 0,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 8,
+          "occurrences": 140,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -10682,16 +10875,16 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 0,
-        "correctionRate": 0,
-        "crossProject": false,
-        "distinctProjects": 0,
-        "distinctSessions": 0,
-        "frictionMassMs": 0,
-        "medianElapsedMs": 0,
-        "occurrences": 0,
-        "retryDepth": 0,
-        "weightedDegree": 89
+        "buildScore": 590100,
+        "correctionRate": 0.007,
+        "crossProject": true,
+        "distinctProjects": 5,
+        "distinctSessions": 8,
+        "frictionMassMs": 590100,
+        "medianElapsedMs": 4215,
+        "occurrences": 140,
+        "retryDepth": 30,
+        "weightedDegree": 98
       },
       "status": "new",
       "summary": "Consecutive edits to Python files, 108 times across 3 projects with streaks up to 30 edits and no corrections. Large refactors applied one Edit call at a time.",
@@ -10737,6 +10930,11 @@
           "distinctSessions": 0,
           "occurrences": 0,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 0,
+          "occurrences": 0,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -10806,6 +11004,11 @@
           "distinctSessions": 58,
           "occurrences": 389,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 56,
+          "occurrences": 366,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -10827,16 +11030,16 @@
       ],
       "stats": {
         "betweenness": 0.032,
-        "buildScore": 6062590,
-        "correctionRate": 0.105,
+        "buildScore": 5924565,
+        "correctionRate": 0.112,
         "crossProject": true,
         "distinctProjects": 23,
-        "distinctSessions": 58,
-        "frictionMassMs": 5874603,
+        "distinctSessions": 56,
+        "frictionMassMs": 5740858,
         "medianElapsedMs": 2653,
-        "occurrences": 389,
+        "occurrences": 366,
         "retryDepth": 7,
-        "weightedDegree": 315
+        "weightedDegree": 323
       },
       "status": "new",
       "summary": "Deferred Slack tool schemas are fetched and then Slack is called in streaks up to 7, 52 times across 10 projects. Same preload gap as Linear and Fireflies.",
@@ -10845,7 +11048,7 @@
       "type": "harness"
     },
     "N036": {
-      "class": "tool",
+      "class": "unclassified",
       "created": "2026-09-14",
       "history": [
         {
@@ -10882,6 +11085,11 @@
           "distinctSessions": 15,
           "occurrences": 31,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 0,
+          "occurrences": 0,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -10896,15 +11104,15 @@
       ],
       "stats": {
         "betweenness": 0.009,
-        "buildScore": 8838757,
-        "correctionRate": 0.258,
-        "crossProject": true,
-        "distinctProjects": 9,
-        "distinctSessions": 15,
-        "frictionMassMs": 8759918,
-        "medianElapsedMs": 282578,
-        "occurrences": 31,
-        "retryDepth": 1,
+        "buildScore": 0,
+        "correctionRate": 0,
+        "crossProject": false,
+        "distinctProjects": 0,
+        "distinctSessions": 0,
+        "frictionMassMs": 0,
+        "medianElapsedMs": 0,
+        "occurrences": 0,
+        "retryDepth": 0,
         "weightedDegree": 58
       },
       "status": "new",
@@ -10951,6 +11159,11 @@
           "distinctSessions": 33,
           "occurrences": 161,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 34,
+          "occurrences": 162,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -10968,16 +11181,16 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 16976153,
-        "correctionRate": 0.323,
+        "buildScore": 16995098,
+        "correctionRate": 0.321,
         "crossProject": true,
-        "distinctProjects": 21,
-        "distinctSessions": 33,
-        "frictionMassMs": 16976153,
+        "distinctProjects": 22,
+        "distinctSessions": 34,
+        "frictionMassMs": 16995098,
         "medianElapsedMs": 31290,
-        "occurrences": 161,
+        "occurrences": 162,
         "retryDepth": 1,
-        "weightedDegree": 234
+        "weightedDegree": 236
       },
       "status": "new",
       "summary": "A git call followed by a general-purpose subagent dispatch, 16 times across 8 projects with a 31% correction rate. Orientation, then handing the work to an agent that misses.",
@@ -11023,6 +11236,11 @@
           "distinctSessions": 28,
           "occurrences": 169,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 28,
+          "occurrences": 169,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -11037,16 +11255,16 @@
       ],
       "stats": {
         "betweenness": 0.009,
-        "buildScore": 5264243,
-        "correctionRate": 0.119,
+        "buildScore": 5068825,
+        "correctionRate": 0.077,
         "crossProject": true,
         "distinctProjects": 19,
         "distinctSessions": 28,
-        "frictionMassMs": 5217287,
-        "medianElapsedMs": 2047,
+        "frictionMassMs": 5023612,
+        "medianElapsedMs": 1962,
         "occurrences": 169,
         "retryDepth": 21,
-        "weightedDegree": 108
+        "weightedDegree": 119
       },
       "status": "new",
       "summary": "Consecutive edits to markdown files, 56 times across 4 projects with streaks up to 21 and no corrections. Documents revised one Edit call at a time.",
@@ -11087,6 +11305,11 @@
           "distinctSessions": 73,
           "occurrences": 1619,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 73,
+          "occurrences": 1584,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -11118,16 +11341,16 @@
       ],
       "stats": {
         "betweenness": 0.175,
-        "buildScore": 149266556,
-        "correctionRate": 0.1,
+        "buildScore": 147959180,
+        "correctionRate": 0.102,
         "crossProject": true,
         "distinctProjects": 20,
         "distinctSessions": 73,
-        "frictionMassMs": 127035367,
+        "frictionMassMs": 125922706,
         "medianElapsedMs": 6547,
-        "occurrences": 1619,
+        "occurrences": 1584,
         "retryDepth": 71,
-        "weightedDegree": 425
+        "weightedDegree": 428
       },
       "status": "new",
       "summary": null,
@@ -11168,6 +11391,11 @@
           "distinctSessions": 38,
           "occurrences": 47,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 41,
+          "occurrences": 51,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -11181,16 +11409,16 @@
       ],
       "stats": {
         "betweenness": 0.011,
-        "buildScore": 289474,
-        "correctionRate": 0.362,
+        "buildScore": 247854,
+        "correctionRate": 0.373,
         "crossProject": true,
-        "distinctProjects": 20,
-        "distinctSessions": 38,
-        "frictionMassMs": 286324,
-        "medianElapsedMs": 6092,
-        "occurrences": 47,
+        "distinctProjects": 21,
+        "distinctSessions": 41,
+        "frictionMassMs": 245157,
+        "medianElapsedMs": 4807,
+        "occurrences": 51,
         "retryDepth": 1,
-        "weightedDegree": 68
+        "weightedDegree": 75
       },
       "status": "new",
       "summary": null,
@@ -11231,6 +11459,11 @@
           "distinctSessions": 34,
           "occurrences": 45,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 34,
+          "occurrences": 45,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -11294,6 +11527,11 @@
           "distinctSessions": 33,
           "occurrences": 81,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 36,
+          "occurrences": 85,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -11308,16 +11546,16 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 984417,
-        "correctionRate": 0.123,
+        "buildScore": 968320,
+        "correctionRate": 0.118,
         "crossProject": true,
-        "distinctProjects": 21,
-        "distinctSessions": 33,
-        "frictionMassMs": 984417,
-        "medianElapsedMs": 14735,
-        "occurrences": 81,
+        "distinctProjects": 22,
+        "distinctSessions": 36,
+        "frictionMassMs": 968320,
+        "medianElapsedMs": 12928,
+        "occurrences": 85,
         "retryDepth": 1,
-        "weightedDegree": 162
+        "weightedDegree": 170
       },
       "status": "new",
       "summary": null,
@@ -11358,6 +11596,11 @@
           "distinctSessions": 27,
           "occurrences": 43,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 29,
+          "occurrences": 49,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -11371,16 +11614,16 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 519397,
-        "correctionRate": 0.023,
+        "buildScore": 583051,
+        "correctionRate": 0.02,
         "crossProject": true,
-        "distinctProjects": 15,
-        "distinctSessions": 27,
-        "frictionMassMs": 519397,
-        "medianElapsedMs": 12079,
-        "occurrences": 43,
+        "distinctProjects": 17,
+        "distinctSessions": 29,
+        "frictionMassMs": 583051,
+        "medianElapsedMs": 11899,
+        "occurrences": 49,
         "retryDepth": 1,
-        "weightedDegree": 86
+        "weightedDegree": 98
       },
       "status": "new",
       "summary": null,
@@ -11421,6 +11664,11 @@
           "distinctSessions": 24,
           "occurrences": 32,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 24,
+          "occurrences": 32,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -11485,6 +11733,11 @@
           "distinctSessions": 21,
           "occurrences": 37,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 21,
+          "occurrences": 37,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -11550,6 +11803,11 @@
           "distinctSessions": 0,
           "occurrences": 0,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 0,
+          "occurrences": 0,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -11613,6 +11871,11 @@
           "distinctSessions": 23,
           "occurrences": 28,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 24,
+          "occurrences": 29,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -11626,16 +11889,16 @@
       ],
       "stats": {
         "betweenness": 0.001,
-        "buildScore": 343932,
-        "correctionRate": 0.179,
+        "buildScore": 323064,
+        "correctionRate": 0.172,
         "crossProject": true,
         "distinctProjects": 11,
-        "distinctSessions": 23,
-        "frictionMassMs": 343588,
-        "medianElapsedMs": 12271,
-        "occurrences": 28,
+        "distinctSessions": 24,
+        "frictionMassMs": 322741,
+        "medianElapsedMs": 11129,
+        "occurrences": 29,
         "retryDepth": 1,
-        "weightedDegree": 38
+        "weightedDegree": 40
       },
       "status": "new",
       "summary": null,
@@ -11676,6 +11939,11 @@
           "distinctSessions": 18,
           "occurrences": 20,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 18,
+          "occurrences": 20,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -11739,6 +12007,11 @@
           "distinctSessions": 16,
           "occurrences": 23,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 18,
+          "occurrences": 26,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -11752,16 +12025,16 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 420693,
-        "correctionRate": 0.13,
+        "buildScore": 476970,
+        "correctionRate": 0.115,
         "crossProject": true,
-        "distinctProjects": 12,
-        "distinctSessions": 16,
-        "frictionMassMs": 420693,
-        "medianElapsedMs": 18291,
-        "occurrences": 23,
+        "distinctProjects": 13,
+        "distinctSessions": 18,
+        "frictionMassMs": 476970,
+        "medianElapsedMs": 18345,
+        "occurrences": 26,
         "retryDepth": 1,
-        "weightedDegree": 46
+        "weightedDegree": 52
       },
       "status": "new",
       "summary": null,
@@ -11797,6 +12070,11 @@
           "distinctSessions": 21,
           "occurrences": 24,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 23,
+          "occurrences": 27,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -11810,16 +12088,16 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 172416,
+        "buildScore": 183843,
         "correctionRate": 0,
         "crossProject": true,
-        "distinctProjects": 15,
-        "distinctSessions": 21,
-        "frictionMassMs": 172416,
-        "medianElapsedMs": 7184,
-        "occurrences": 24,
+        "distinctProjects": 16,
+        "distinctSessions": 23,
+        "frictionMassMs": 183843,
+        "medianElapsedMs": 6809,
+        "occurrences": 27,
         "retryDepth": 1,
-        "weightedDegree": 33
+        "weightedDegree": 38
       },
       "status": "new",
       "summary": null,
@@ -11855,6 +12133,11 @@
           "distinctSessions": 18,
           "occurrences": 25,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 18,
+          "occurrences": 25,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -11886,7 +12169,7 @@
       "type": null
     },
     "N053": {
-      "class": "unclassified",
+      "class": "doc",
       "created": "2026-11-02",
       "history": [
         {
@@ -11913,6 +12196,11 @@
           "distinctSessions": 0,
           "occurrences": 0,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 16,
+          "occurrences": 21,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -11926,16 +12214,16 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 0,
-        "correctionRate": 0,
-        "crossProject": false,
-        "distinctProjects": 0,
-        "distinctSessions": 0,
-        "frictionMassMs": 0,
-        "medianElapsedMs": 0,
-        "occurrences": 0,
-        "retryDepth": 0,
-        "weightedDegree": 40
+        "buildScore": 220206,
+        "correctionRate": 0.048,
+        "crossProject": true,
+        "distinctProjects": 14,
+        "distinctSessions": 16,
+        "frictionMassMs": 220206,
+        "medianElapsedMs": 10486,
+        "occurrences": 21,
+        "retryDepth": 1,
+        "weightedDegree": 42
       },
       "status": "new",
       "summary": null,
@@ -11944,13 +12232,18 @@
       "type": null
     },
     "N054": {
-      "class": "tool",
+      "class": "unclassified",
       "created": "2026-11-06",
       "history": [
         {
           "distinctSessions": 15,
           "occurrences": 18,
           "run": "2026-11-06"
+        },
+        {
+          "distinctSessions": 0,
+          "occurrences": 0,
+          "run": "2026-11-09"
         }
       ],
       "mergedFrom": [],
@@ -11965,15 +12258,15 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 3105504,
-        "correctionRate": 0.278,
-        "crossProject": true,
-        "distinctProjects": 10,
-        "distinctSessions": 15,
-        "frictionMassMs": 3105504,
-        "medianElapsedMs": 172528,
-        "occurrences": 18,
-        "retryDepth": 1,
+        "buildScore": 0,
+        "correctionRate": 0,
+        "crossProject": false,
+        "distinctProjects": 0,
+        "distinctSessions": 0,
+        "frictionMassMs": 0,
+        "medianElapsedMs": 0,
+        "occurrences": 0,
+        "retryDepth": 0,
         "weightedDegree": 18
       },
       "status": "new",
@@ -11994,7 +12287,7 @@
     ],
     "run": "2026-09-14"
   },
-  "run": "2026-11-06",
+  "run": "2026-11-09",
   "runs": [
     {
       "run": "2026-09-14",
@@ -12023,6 +12316,10 @@
     {
       "run": "2026-11-06",
       "sessions": 359
+    },
+    {
+      "run": "2026-11-09",
+      "sessions": 366
     }
   ],
   "similarity": [
