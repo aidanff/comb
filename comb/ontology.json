@@ -422,8 +422,8 @@
   },
   "corpus": {
     "projects": 102,
-    "sessions": 474,
-    "steps": 29128
+    "sessions": 476,
+    "steps": 29166
   },
   "dismissedMerges": [],
   "dismissedReviews": [],
@@ -443,10 +443,10 @@
       "to": "N009"
     },
     {
-      "count": 346,
+      "count": 347,
       "from": "N007",
       "medianGapMs": 0,
-      "sessions": 96,
+      "sessions": 97,
       "to": "N006"
     },
     {
@@ -485,10 +485,10 @@
       "to": "N007"
     },
     {
-      "count": 215,
+      "count": 216,
       "from": "N001",
       "medianGapMs": 0,
-      "sessions": 113,
+      "sessions": 114,
       "to": "N004"
     },
     {
@@ -730,11 +730,18 @@
       "to": "N007"
     },
     {
-      "count": 80,
+      "count": 81,
       "from": "N001",
       "medianGapMs": 0,
-      "sessions": 67,
+      "sessions": 68,
       "to": "N035"
+    },
+    {
+      "count": 81,
+      "from": "N035",
+      "medianGapMs": 3119,
+      "sessions": 54,
+      "to": "N042"
     },
     {
       "count": 80,
@@ -749,13 +756,6 @@
       "medianGapMs": 0,
       "sessions": 58,
       "to": "N002"
-    },
-    {
-      "count": 80,
-      "from": "N035",
-      "medianGapMs": 3020,
-      "sessions": 53,
-      "to": "N042"
     },
     {
       "count": 76,
@@ -990,6 +990,13 @@
     },
     {
       "count": 40,
+      "from": "N040",
+      "medianGapMs": 21198,
+      "sessions": 25,
+      "to": "N007"
+    },
+    {
+      "count": 40,
       "from": "N042",
       "medianGapMs": 0,
       "sessions": 26,
@@ -1008,13 +1015,6 @@
       "medianGapMs": 4196,
       "sessions": 28,
       "to": "N035"
-    },
-    {
-      "count": 39,
-      "from": "N040",
-      "medianGapMs": 23246,
-      "sessions": 24,
-      "to": "N007"
     },
     {
       "count": 38,
@@ -1150,18 +1150,18 @@
       "to": "N002"
     },
     {
+      "count": 33,
+      "from": "N040",
+      "medianGapMs": 393563,
+      "sessions": 24,
+      "to": "N001"
+    },
+    {
       "count": 32,
       "from": "N030",
       "medianGapMs": 13250,
       "sessions": 14,
       "to": "N002"
-    },
-    {
-      "count": 32,
-      "from": "N040",
-      "medianGapMs": 379895,
-      "sessions": 23,
-      "to": "N001"
     },
     {
       "count": 31,
@@ -1263,6 +1263,13 @@
     },
     {
       "count": 27,
+      "from": "N001",
+      "medianGapMs": 2359,
+      "sessions": 25,
+      "to": "N040"
+    },
+    {
+      "count": 27,
       "from": "N002",
       "medianGapMs": 128629,
       "sessions": 15,
@@ -1295,13 +1302,6 @@
       "medianGapMs": 0,
       "sessions": 25,
       "to": "N005"
-    },
-    {
-      "count": 26,
-      "from": "N001",
-      "medianGapMs": 2483,
-      "sessions": 24,
-      "to": "N040"
     },
     {
       "count": 26,
@@ -1389,6 +1389,13 @@
     },
     {
       "count": 22,
+      "from": "N006",
+      "medianGapMs": 18726,
+      "sessions": 17,
+      "to": "N040"
+    },
+    {
+      "count": 22,
       "from": "N008",
       "medianGapMs": 0,
       "sessions": 22,
@@ -1462,13 +1469,6 @@
       "from": "N005",
       "medianGapMs": 146,
       "sessions": 18,
-      "to": "N040"
-    },
-    {
-      "count": 21,
-      "from": "N006",
-      "medianGapMs": 18341,
-      "sessions": 16,
       "to": "N040"
     },
     {
@@ -1633,6 +1633,13 @@
       "to": "N007"
     },
     {
+      "count": 17,
+      "from": "N042",
+      "medianGapMs": 0,
+      "sessions": 14,
+      "to": "N001"
+    },
+    {
       "count": 16,
       "from": "N001",
       "medianGapMs": 0,
@@ -1701,13 +1708,6 @@
       "medianGapMs": 20486,
       "sessions": 13,
       "to": "N015"
-    },
-    {
-      "count": 16,
-      "from": "N042",
-      "medianGapMs": 0,
-      "sessions": 13,
-      "to": "N001"
     },
     {
       "count": 16,
@@ -1837,6 +1837,13 @@
     },
     {
       "count": 14,
+      "from": "N036",
+      "medianGapMs": 7649,
+      "sessions": 11,
+      "to": "N040"
+    },
+    {
+      "count": 14,
       "from": "N040",
       "medianGapMs": 4678,
       "sessions": 10,
@@ -1911,13 +1918,6 @@
       "medianGapMs": 7592,
       "sessions": 8,
       "to": "N013"
-    },
-    {
-      "count": 13,
-      "from": "N036",
-      "medianGapMs": 8470,
-      "sessions": 10,
-      "to": "N040"
     },
     {
       "count": 13,
@@ -2943,6 +2943,13 @@
     },
     {
       "count": 4,
+      "from": "N005",
+      "medianGapMs": 54,
+      "sessions": 3,
+      "to": "N036"
+    },
+    {
+      "count": 4,
       "from": "N006",
       "medianGapMs": 59726,
       "sessions": 4,
@@ -3304,13 +3311,6 @@
       "medianGapMs": 19,
       "sessions": 3,
       "to": "N021"
-    },
-    {
-      "count": 3,
-      "from": "N005",
-      "medianGapMs": 0,
-      "sessions": 2,
-      "to": "N036"
     },
     {
       "count": 3,
@@ -8987,6 +8987,11 @@
           "distinctSessions": 281,
           "occurrences": 1154,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 282,
+          "occurrences": 1158,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [
@@ -9028,16 +9033,16 @@
       ],
       "stats": {
         "betweenness": 0.221,
-        "buildScore": 50046871,
+        "buildScore": 50049021,
         "correctionRate": 0.045,
         "crossProject": true,
         "distinctProjects": 64,
-        "distinctSessions": 281,
-        "frictionMassMs": 40988428,
+        "distinctSessions": 282,
+        "frictionMassMs": 40990189,
         "medianElapsedMs": 7346,
-        "occurrences": 1154,
+        "occurrences": 1158,
         "retryDepth": 1,
-        "weightedDegree": 1047
+        "weightedDegree": 1052
       },
       "status": "new",
       "summary": "A request lands and the first action is fetching deferred tool schemas, 450 times across 35 projects at a 12s median. The fetch is a fixed per-session cost that precedes the real work.",
@@ -9138,6 +9143,11 @@
           "distinctSessions": 198,
           "occurrences": 2029,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 198,
+          "occurrences": 2029,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -9289,6 +9299,11 @@
           "distinctSessions": 224,
           "occurrences": 2852,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 224,
+          "occurrences": 2852,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -9442,6 +9457,11 @@
           "distinctSessions": 186,
           "occurrences": 2344,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 187,
+          "occurrences": 2345,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -9499,16 +9519,16 @@
       ],
       "stats": {
         "betweenness": 0.122,
-        "buildScore": 228053359,
+        "buildScore": 228055699,
         "correctionRate": 0.125,
         "crossProject": true,
         "distinctProjects": 54,
-        "distinctSessions": 186,
-        "frictionMassMs": 203256113,
+        "distinctSessions": 187,
+        "frictionMassMs": 203258199,
         "medianElapsedMs": 4658,
-        "occurrences": 2344,
+        "occurrences": 2345,
         "retryDepth": 19,
-        "weightedDegree": 1136
+        "weightedDegree": 1137
       },
       "status": "new",
       "summary": "Consecutive Linear MCP calls drive ticket creation and edits one API call at a time, 1266 times across 30 projects, with streaks up to 15 calls and a 12% correction rate. Ticket content is then reworked by hand.",
@@ -9609,6 +9629,11 @@
           "distinctSessions": 128,
           "occurrences": 480,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 129,
+          "occurrences": 483,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -9627,14 +9652,14 @@
       ],
       "stats": {
         "betweenness": 0.12,
-        "buildScore": 6217938,
+        "buildScore": 6240749,
         "correctionRate": 0.052,
         "crossProject": true,
         "distinctProjects": 52,
-        "distinctSessions": 128,
-        "frictionMassMs": 5551730,
-        "medianElapsedMs": 4454,
-        "occurrences": 480,
+        "distinctSessions": 129,
+        "frictionMassMs": 5572097,
+        "medianElapsedMs": 4513,
+        "occurrences": 483,
         "retryDepth": 1,
         "weightedDegree": 310
       },
@@ -9737,6 +9762,11 @@
           "distinctSessions": 136,
           "occurrences": 1341,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 137,
+          "occurrences": 1342,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [
@@ -9784,16 +9814,16 @@
       ],
       "stats": {
         "betweenness": 0.27,
-        "buildScore": 48707650,
+        "buildScore": 48716216,
         "correctionRate": 0.08,
         "crossProject": true,
         "distinctProjects": 55,
-        "distinctSessions": 136,
-        "frictionMassMs": 38352480,
+        "distinctSessions": 137,
+        "frictionMassMs": 38359225,
         "medianElapsedMs": 12922,
-        "occurrences": 1341,
+        "occurrences": 1342,
         "retryDepth": 12,
-        "weightedDegree": 1478
+        "weightedDegree": 1480
       },
       "status": "new",
       "summary": "Hand-written Python fed through stdin for data inspection and munging, 780 times across 36 projects with re-run streaks up to 12 deep. Each request routinely costs several one-off scripts.",
@@ -9894,6 +9924,11 @@
           "distinctSessions": 143,
           "occurrences": 1033,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 143,
+          "occurrences": 1033,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -9929,7 +9964,7 @@
         "medianElapsedMs": 4858,
         "occurrences": 1033,
         "retryDepth": 11,
-        "weightedDegree": 2993
+        "weightedDegree": 2995
       },
       "status": "new",
       "summary": "grep to locate, sed to rewrite in place, grep again to verify, 413 times across 31 projects with streaks up to 11 edits. The verification is manual and sed fails silently on a miss.",
@@ -10030,6 +10065,11 @@
           "distinctSessions": 54,
           "occurrences": 60,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 54,
+          "occurrences": 60,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -10155,6 +10195,11 @@
           "distinctSessions": 156,
           "occurrences": 851,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 156,
+          "occurrences": 851,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -10295,6 +10340,11 @@
           "distinctSessions": 123,
           "occurrences": 575,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 123,
+          "occurrences": 575,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -10432,6 +10482,11 @@
           "distinctSessions": 97,
           "occurrences": 1418,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 97,
+          "occurrences": 1418,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -10579,6 +10634,11 @@
           "distinctSessions": 144,
           "occurrences": 588,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 144,
+          "occurrences": 588,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -10709,6 +10769,11 @@
           "distinctSessions": 35,
           "occurrences": 268,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 35,
+          "occurrences": 268,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -10835,6 +10900,11 @@
           "distinctSessions": 79,
           "occurrences": 199,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 79,
+          "occurrences": 199,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -10965,6 +11035,11 @@
           "distinctSessions": 123,
           "occurrences": 1123,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 123,
+          "occurrences": 1123,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -11102,6 +11177,11 @@
           "distinctSessions": 90,
           "occurrences": 225,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 90,
+          "occurrences": 225,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -11230,6 +11310,11 @@
           "distinctSessions": 95,
           "occurrences": 289,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 95,
+          "occurrences": 289,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -11357,6 +11442,11 @@
           "distinctSessions": 41,
           "occurrences": 176,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 41,
+          "occurrences": 176,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -11482,6 +11572,11 @@
           "distinctSessions": 106,
           "occurrences": 350,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 106,
+          "occurrences": 328,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -11502,14 +11597,14 @@
       ],
       "stats": {
         "betweenness": 0,
-        "buildScore": 20932026,
-        "correctionRate": 0.197,
+        "buildScore": 20504412,
+        "correctionRate": 0.207,
         "crossProject": true,
         "distinctProjects": 39,
         "distinctSessions": 106,
-        "frictionMassMs": 20932026,
+        "frictionMassMs": 20504412,
         "medianElapsedMs": 9526,
-        "occurrences": 350,
+        "occurrences": 328,
         "retryDepth": 1,
         "weightedDegree": 604
       },
@@ -11612,6 +11707,11 @@
           "distinctSessions": 112,
           "occurrences": 395,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 112,
+          "occurrences": 395,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [
@@ -11745,6 +11845,11 @@
           "distinctSessions": 68,
           "occurrences": 136,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 68,
+          "occurrences": 136,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -11870,6 +11975,11 @@
           "distinctSessions": 25,
           "occurrences": 26,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 25,
+          "occurrences": 26,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -11996,6 +12106,11 @@
           "distinctSessions": 74,
           "occurrences": 156,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 74,
+          "occurrences": 156,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -12123,6 +12238,11 @@
           "distinctSessions": 36,
           "occurrences": 56,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 36,
+          "occurrences": 56,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -12247,6 +12367,11 @@
           "distinctSessions": 0,
           "occurrences": 0,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 0,
+          "occurrences": 0,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -12370,6 +12495,11 @@
           "distinctSessions": 90,
           "occurrences": 294,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 90,
+          "occurrences": 294,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -12497,6 +12627,11 @@
           "distinctSessions": 29,
           "occurrences": 146,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 29,
+          "occurrences": 146,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -12623,6 +12758,11 @@
           "distinctSessions": 56,
           "occurrences": 450,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 56,
+          "occurrences": 450,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -12752,6 +12892,11 @@
           "distinctSessions": 22,
           "occurrences": 199,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 22,
+          "occurrences": 199,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -12874,6 +13019,11 @@
           "distinctSessions": 31,
           "occurrences": 53,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 51,
+          "occurrences": 107,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -12888,14 +13038,14 @@
       ],
       "stats": {
         "betweenness": 0.002,
-        "buildScore": 20704914,
-        "correctionRate": 0.189,
+        "buildScore": 21250462,
+        "correctionRate": 0.205,
         "crossProject": true,
-        "distinctProjects": 12,
-        "distinctSessions": 31,
-        "frictionMassMs": 20663587,
-        "medianElapsedMs": 389879,
-        "occurrences": 53,
+        "distinctProjects": 18,
+        "distinctSessions": 51,
+        "frictionMassMs": 21208046,
+        "medianElapsedMs": 392455,
+        "occurrences": 107,
         "retryDepth": 1,
         "weightedDegree": 37
       },
@@ -12998,6 +13148,11 @@
           "distinctSessions": 11,
           "occurrences": 156,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 11,
+          "occurrences": 156,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -13120,6 +13275,11 @@
           "distinctSessions": 0,
           "occurrences": 0,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 0,
+          "occurrences": 0,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -13244,6 +13404,11 @@
           "distinctSessions": 91,
           "occurrences": 740,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 92,
+          "occurrences": 750,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -13266,16 +13431,16 @@
       ],
       "stats": {
         "betweenness": 0.011,
-        "buildScore": 10495773,
-        "correctionRate": 0.105,
+        "buildScore": 10207628,
+        "correctionRate": 0.108,
         "crossProject": true,
         "distinctProjects": 30,
-        "distinctSessions": 91,
-        "frictionMassMs": 10381576,
-        "medianElapsedMs": 2567,
-        "occurrences": 740,
+        "distinctSessions": 92,
+        "frictionMassMs": 10096566,
+        "medianElapsedMs": 2560,
+        "occurrences": 750,
         "retryDepth": 10,
-        "weightedDegree": 562
+        "weightedDegree": 564
       },
       "status": "new",
       "summary": "Deferred Slack tool schemas are fetched and then Slack is called in streaks up to 7, 52 times across 10 projects. Same preload gap as Linear and Fireflies.",
@@ -13376,6 +13541,11 @@
           "distinctSessions": 21,
           "occurrences": 39,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 21,
+          "occurrences": 39,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -13399,7 +13569,7 @@
         "medianElapsedMs": 360212,
         "occurrences": 39,
         "retryDepth": 1,
-        "weightedDegree": 78
+        "weightedDegree": 79
       },
       "status": "new",
       "summary": "An artifact is published and the human corrects about 3.5 minutes later, 16 times across 8 projects with a 38% correction rate. Published pages are reviewed and reworked.",
@@ -13500,6 +13670,11 @@
           "distinctSessions": 41,
           "occurrences": 199,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 41,
+          "occurrences": 199,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -13627,6 +13802,11 @@
           "distinctSessions": 39,
           "occurrences": 227,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 39,
+          "occurrences": 227,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -13746,6 +13926,11 @@
           "distinctSessions": 117,
           "occurrences": 2360,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 119,
+          "occurrences": 2377,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -13779,16 +13964,16 @@
       ],
       "stats": {
         "betweenness": 0.24,
-        "buildScore": 186073818,
-        "correctionRate": 0.12,
+        "buildScore": 192368923,
+        "correctionRate": 0.119,
         "crossProject": true,
         "distinctProjects": 25,
-        "distinctSessions": 117,
-        "frictionMassMs": 150059531,
+        "distinctSessions": 119,
+        "frictionMassMs": 155136228,
         "medianElapsedMs": 5393,
-        "occurrences": 2360,
+        "occurrences": 2377,
         "retryDepth": 71,
-        "weightedDegree": 728
+        "weightedDegree": 733
       },
       "status": "new",
       "summary": null,
@@ -13884,6 +14069,11 @@
           "distinctSessions": 49,
           "occurrences": 61,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 49,
+          "occurrences": 61,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -14002,6 +14192,11 @@
           "distinctSessions": 56,
           "occurrences": 118,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 57,
+          "occurrences": 119,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -14016,16 +14211,16 @@
       ],
       "stats": {
         "betweenness": 0.001,
-        "buildScore": 13363167,
-        "correctionRate": 0.271,
+        "buildScore": 13365728,
+        "correctionRate": 0.269,
         "crossProject": true,
         "distinctProjects": 24,
-        "distinctSessions": 56,
-        "frictionMassMs": 13349817,
-        "medianElapsedMs": 166959,
-        "occurrences": 118,
+        "distinctSessions": 57,
+        "frictionMassMs": 13352376,
+        "medianElapsedMs": 164904,
+        "occurrences": 119,
         "retryDepth": 1,
-        "weightedDegree": 175
+        "weightedDegree": 177
       },
       "status": "new",
       "summary": null,
@@ -14121,6 +14316,11 @@
           "distinctSessions": 45,
           "occurrences": 103,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 45,
+          "occurrences": 103,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -14240,6 +14440,11 @@
           "distinctSessions": 34,
           "occurrences": 63,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 34,
+          "occurrences": 63,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -14359,6 +14564,11 @@
           "distinctSessions": 44,
           "occurrences": 55,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 44,
+          "occurrences": 55,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -14478,6 +14688,11 @@
           "distinctSessions": 0,
           "occurrences": 0,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 0,
+          "occurrences": 0,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -14598,6 +14813,11 @@
           "distinctSessions": 0,
           "occurrences": 0,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 0,
+          "occurrences": 0,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -14716,6 +14936,11 @@
           "distinctSessions": 33,
           "occurrences": 38,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 33,
+          "occurrences": 38,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -14834,6 +15059,11 @@
           "distinctSessions": 0,
           "occurrences": 0,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 0,
+          "occurrences": 0,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -14952,6 +15182,11 @@
           "distinctSessions": 24,
           "occurrences": 35,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 24,
+          "occurrences": 35,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -15065,6 +15300,11 @@
           "distinctSessions": 33,
           "occurrences": 38,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 33,
+          "occurrences": 38,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -15178,6 +15418,11 @@
           "distinctSessions": 24,
           "occurrences": 34,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 24,
+          "occurrences": 34,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -15291,6 +15536,11 @@
           "distinctSessions": 0,
           "occurrences": 0,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 0,
+          "occurrences": 0,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -15384,6 +15634,11 @@
           "distinctSessions": 0,
           "occurrences": 0,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 0,
+          "occurrences": 0,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -15463,6 +15718,11 @@
           "distinctSessions": 0,
           "occurrences": 0,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 0,
+          "occurrences": 0,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -15538,6 +15798,11 @@
           "distinctSessions": 25,
           "occurrences": 27,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 25,
+          "occurrences": 27,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -15614,6 +15879,11 @@
           "distinctSessions": 21,
           "occurrences": 28,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 21,
+          "occurrences": 28,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -15672,6 +15942,11 @@
           "distinctSessions": 0,
           "occurrences": 0,
           "run": "2026-11-23"
+        },
+        {
+          "distinctSessions": 0,
+          "occurrences": 0,
+          "run": "2026-11-24"
         }
       ],
       "mergedFrom": [],
@@ -15715,7 +15990,7 @@
     ],
     "run": "2026-09-14"
   },
-  "run": "2026-11-23",
+  "run": "2026-11-24",
   "runs": [
     {
       "run": "2026-09-14",
@@ -15788,6 +16063,10 @@
     {
       "run": "2026-11-23",
       "sessions": 474
+    },
+    {
+      "run": "2026-11-24",
+      "sessions": 476
     }
   ],
   "similarity": [
